@@ -20,21 +20,158 @@ namespace kk_sms.masterManagement.supplier
             }
             base.Dispose(disposing);
         }
-
-        #region Windows Form Designer generated code
-
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(supplier_delete));
+            this.supplier_delete_label = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.textBox_supplier_name = new System.Windows.Forms.TextBox();
+            this.textBox_supplier_no = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.button_delete = new System.Windows.Forms.Button();
+            this.button_cancel = new System.Windows.Forms.Button();
+            this.label_description = new System.Windows.Forms.Label();
+            this.groupBox1.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // supplier_delete_label
+            // 
+            this.supplier_delete_label.BackColor = System.Drawing.Color.DarkViolet;
+            this.supplier_delete_label.Font = new System.Drawing.Font("Meiryo", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.supplier_delete_label.ForeColor = System.Drawing.Color.Gold;
+            this.supplier_delete_label.Location = new System.Drawing.Point(15, 30);
+            this.supplier_delete_label.Name = "supplier_delete_label";
+            this.supplier_delete_label.Size = new System.Drawing.Size(300, 40);
+            this.supplier_delete_label.TabIndex = 0;
+            this.supplier_delete_label.Text = "仕⼊先削除";
+            this.supplier_delete_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.BackColor = System.Drawing.Color.PowderBlue;
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.textBox_supplier_name);
+            this.groupBox1.Controls.Add(this.textBox_supplier_no);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.groupBox1.Location = new System.Drawing.Point(15, 80);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(300, 100);
+            this.groupBox1.TabIndex = 2;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "削除対象仕⼊先";
+            // 
+            // label4
+            // 
+            this.label4.BackColor = System.Drawing.Color.MediumBlue;
+            this.label4.ForeColor = System.Drawing.Color.Gold;
+            this.label4.Location = new System.Drawing.Point(157, 26);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(130, 20);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "[ - ] で一覧、[ . ]検索";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // textBox_supplier_name
+            // 
+            this.textBox_supplier_name.Enabled = false;
+            this.textBox_supplier_name.Location = new System.Drawing.Point(107, 56);
+            this.textBox_supplier_name.Name = "textBox_supplier_name";
+            this.textBox_supplier_name.Size = new System.Drawing.Size(137, 20);
+            this.textBox_supplier_name.TabIndex = 3;
+            // 
+            // textBox_supplier_no
+            // 
+            this.textBox_supplier_no.Location = new System.Drawing.Point(107, 26);
+            this.textBox_supplier_no.Name = "textBox_supplier_no";
+            this.textBox_supplier_no.Size = new System.Drawing.Size(40, 20);
+            this.textBox_supplier_no.TabIndex = 2;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label2.Location = new System.Drawing.Point(37, 59);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(52, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "仕⼊先名";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label1.Location = new System.Drawing.Point(37, 29);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(64, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "仕⼊先番号";
+            // 
+            // button_delete
+            // 
+            this.button_delete.Location = new System.Drawing.Point(43, 192);
+            this.button_delete.Name = "button_delete";
+            this.button_delete.Size = new System.Drawing.Size(100, 40);
+            this.button_delete.TabIndex = 3;
+            this.button_delete.Text = "削除( &D )";
+            this.button_delete.UseVisualStyleBackColor = true;
+            this.button_delete.Click += new System.EventHandler(this.button_delete_Click);
+            // 
+            // button_cancel
+            // 
+            this.button_cancel.Location = new System.Drawing.Point(179, 192);
+            this.button_cancel.Name = "button_cancel";
+            this.button_cancel.Size = new System.Drawing.Size(100, 40);
+            this.button_cancel.TabIndex = 4;
+            this.button_cancel.Text = "終了( &E )";
+            this.button_cancel.UseVisualStyleBackColor = true;
+            this.button_cancel.Click += new System.EventHandler(this.button_cancel_Click);
+            // 
+            // label_description
+            // 
+            this.label_description.BackColor = System.Drawing.Color.Yellow;
+            this.label_description.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label_description.Location = new System.Drawing.Point(15, 255);
+            this.label_description.Name = "label_description";
+            this.label_description.Padding = new System.Windows.Forms.Padding(2, 0, 0, 0);
+            this.label_description.Size = new System.Drawing.Size(300, 17);
+            this.label_description.TabIndex = 5;
+            this.label_description.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // supplier_delete
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "supplier_delete";
+            this.ClientSize = new System.Drawing.Size(334, 281);
+            this.Controls.Add(this.label_description);
+            this.Controls.Add(this.button_cancel);
+            this.Controls.Add(this.button_delete);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.supplier_delete_label);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "supplier_delete";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "仕⼊先削除";
+            this.Load += new System.EventHandler(this.supplier_delete_Load);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.ResumeLayout(false);
+
         }
 
-        #endregion
+        private System.Windows.Forms.Label supplier_delete_label;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.TextBox textBox_supplier_name;
+        private System.Windows.Forms.TextBox textBox_supplier_no;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button_delete;
+        private System.Windows.Forms.Button button_cancel;
+        private System.Windows.Forms.Label label_description;
+        private System.Windows.Forms.Label label4;
     }
+
 }

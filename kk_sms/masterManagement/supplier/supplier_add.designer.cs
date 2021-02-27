@@ -32,12 +32,12 @@ namespace kk_sms.masterManagement.supplier
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(supplier_add));
             this.supplier_add_label = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox_supplier_name = new System.Windows.Forms.TextBox();
+            this.textBox_supplier_no = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.button_save = new System.Windows.Forms.Button();
+            this.button_cancel = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -57,8 +57,8 @@ namespace kk_sms.masterManagement.supplier
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.PowderBlue;
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.textBox_supplier_name);
+            this.groupBox1.Controls.Add(this.textBox_supplier_no);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
@@ -69,19 +69,19 @@ namespace kk_sms.masterManagement.supplier
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "追加仕⼊先";
             // 
-            // textBox2
+            // textBox_supplier_name
             // 
-            this.textBox2.Location = new System.Drawing.Point(130, 57);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(137, 20);
-            this.textBox2.TabIndex = 3;
+            this.textBox_supplier_name.Location = new System.Drawing.Point(130, 57);
+            this.textBox_supplier_name.Name = "textBox_supplier_name";
+            this.textBox_supplier_name.Size = new System.Drawing.Size(137, 20);
+            this.textBox_supplier_name.TabIndex = 3;
             // 
-            // textBox1
+            // textBox_supplier_no
             // 
-            this.textBox1.Location = new System.Drawing.Point(130, 25);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(40, 20);
-            this.textBox1.TabIndex = 2;
+            this.textBox_supplier_no.Location = new System.Drawing.Point(130, 25);
+            this.textBox_supplier_no.Name = "textBox_supplier_no";
+            this.textBox_supplier_no.Size = new System.Drawing.Size(40, 20);
+            this.textBox_supplier_no.TabIndex = 2;
             // 
             // label2
             // 
@@ -103,25 +103,25 @@ namespace kk_sms.masterManagement.supplier
             this.label1.TabIndex = 0;
             this.label1.Text = "仕⼊先番号";
             // 
-            // button1
+            // button_save
             // 
-            this.button1.Location = new System.Drawing.Point(43, 192);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 40);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "保存( &S )";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button_save.Location = new System.Drawing.Point(43, 192);
+            this.button_save.Name = "button_save";
+            this.button_save.Size = new System.Drawing.Size(100, 40);
+            this.button_save.TabIndex = 3;
+            this.button_save.Text = "保存( &S )";
+            this.button_save.UseVisualStyleBackColor = true;
+            this.button_save.Click += new System.EventHandler(this.button_save_Click);
             // 
-            // button2
+            // button_cancel
             // 
-            this.button2.Location = new System.Drawing.Point(179, 192);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(100, 40);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "キャンセル( &C )";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button_cancel.Location = new System.Drawing.Point(179, 192);
+            this.button_cancel.Name = "button_cancel";
+            this.button_cancel.Size = new System.Drawing.Size(100, 40);
+            this.button_cancel.TabIndex = 4;
+            this.button_cancel.Text = "キャンセル( &C )";
+            this.button_cancel.UseVisualStyleBackColor = true;
+            this.button_cancel.Click += new System.EventHandler(this.button_cancel_Click);
             // 
             // label3
             // 
@@ -140,12 +140,13 @@ namespace kk_sms.masterManagement.supplier
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(334, 281);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.button_cancel);
+            this.Controls.Add(this.button_save);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.supplier_add_label);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "supplier_add";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "仕⼊先追加";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -157,12 +158,12 @@ namespace kk_sms.masterManagement.supplier
 
         private System.Windows.Forms.Label supplier_add_label;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox_supplier_name;
+        private System.Windows.Forms.TextBox textBox_supplier_no;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button_save;
+        private System.Windows.Forms.Button button_cancel;
         private System.Windows.Forms.Label label3;
     }
 }

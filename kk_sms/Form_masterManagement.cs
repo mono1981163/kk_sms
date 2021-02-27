@@ -19,55 +19,55 @@ namespace kk_sms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Close();
+            //this.Close();
             var form = new kk_sms.masterManagement.Form_supplier();
             form.Show();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.Close();
+            //this.Close();
             var form = new kk_sms.masterManagement.Form_payment();
             form.Show();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            this.Close();
+            //this.Close();
             var form = new kk_sms.masterManagement.Form_customer();
             form.Show();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            this.Close();
+            //this.Close();
             var form = new kk_sms.masterManagement.Form_product();
             form.Show();
         }
         private void button5_Click(object sender, EventArgs e)
         {
-            this.Close();
+            //this.Close();
             var form = new kk_sms.masterManagement.Form_grade();
             form.Show();
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            this.Close();
-            var form = new kk_sms.masterManagement.Form_class();
+            //this.Close();
+            var form = new kk_sms.masterManagement.Form_group();
             form.Show();
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
-            this.Close();
+            //this.Close();
             var form = new kk_sms.masterManagement.Form_employee();
             form.Show();
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
-            this.Close();
+            //this.Close();
             var form = new kk_sms.masterManagement.Form_consumption_tax();
             form.Show();
         }

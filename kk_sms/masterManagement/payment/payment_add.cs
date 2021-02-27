@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace kk_sms.masterManagement.supplier
+namespace kk_sms.masterManagement.payment
 {
-    public partial class list_display : Form
+    public partial class payment_add : Form
     {
-        public list_display()
+        public payment_add()
         {
             InitializeComponent();
         }

@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace kk_sms.masterManagement
+namespace kk_sms.masterManagement.employee
 {
-    public partial class Form_class : Form
+    public partial class employee_delete : Form
     {
-        public Form_class()
+        public employee_delete()
         {
             InitializeComponent();
         }
