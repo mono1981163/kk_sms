@@ -14,8 +14,9 @@ using iText.Layout.Properties;
 using iText.Kernel.Font;
 using iText.Kernel.Colors;
 using Color = iText.Kernel.Colors.Color;
-using System.Configuration;
 using MySql.Data.MySqlClient;
+using IniParser;
+using IniParser.Model;
 
 namespace kk_sms.dailyReportPrinting
 {
@@ -37,6 +38,10 @@ namespace kk_sms.dailyReportPrinting
             this.Close();
             try
             {
+                var iniparser = new FileIniDataParser();
+                IniData inidata = iniparser.ReadFile("kk_sms.ini");
+                saveFileDialog_savePdf.InitialDirectory = inidata["Pdf"]["path"];
+                saveFileDialog_savePdf.RestoreDirectory = true;
                 saveFileDialog_savePdf.FileName = "代払別売上一覧表__" + date;
                 if (saveFileDialog_savePdf.ShowDialog() == DialogResult.OK)
                 {
@@ -112,7 +117,7 @@ namespace kk_sms.dailyReportPrinting
                     table.AddCell(cell);
 
                     // Database Connection
-                    string mysqlConf = ConfigurationManager.ConnectionStrings["MysqlConnection"].ConnectionString;
+                    string mysqlConf = "server=" + inidata["Mysql"]["server"] + ";user=" + inidata["Mysql"]["user"] + ";database=" + inidata["Mysql"]["database"] + ";port=" + inidata["Mysql"]["port"] + ";password=" + inidata["Mysql"]["password"] + ";";
                     var mysqlConnection = new MySqlConnection(mysqlConf);
                     mysqlConnection.Open();
                     string query = "SELECT daino, dainame, daysales, discount, netsales, monthsales, daytax, monthtax FROM tbl_daibarai WHERE dday LIKE '" + date + "%' ORDER BY daino";
