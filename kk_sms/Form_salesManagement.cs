@@ -21,5 +21,10 @@ namespace kk_sms
         {
 
         }
+
+        private void button_input_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

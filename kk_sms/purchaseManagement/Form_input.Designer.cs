@@ -553,6 +553,7 @@ namespace kk_sms.purchaseManagement
             // label_description
             // 
             this.label_description.BackColor = System.Drawing.Color.Yellow;
+            this.label_description.Font = new System.Drawing.Font("Meiryo", 8.25F);
             this.label_description.Location = new System.Drawing.Point(31, 421);
             this.label_description.Name = "label_description";
             this.label_description.Padding = new System.Windows.Forms.Padding(2);
