@@ -111,6 +111,7 @@ namespace kk_sms
             this.button_input.TabIndex = 0;
             this.button_input.Text = "売上伝票入力 ( &I )";
             this.button_input.UseVisualStyleBackColor = true;
+            this.button_input.Click += new System.EventHandler(this.button_input_Click);
             // 
             // button_exit
             // 
