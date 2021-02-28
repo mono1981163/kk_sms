@@ -1,7 +1,7 @@
 ﻿
-namespace kk_sms.dailyReportPrinting
+namespace kk_sms.inventoryManagement
 {
-    partial class Form_selectDate2
+    partial class Form_ProductPrinting
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace kk_sms.dailyReportPrinting
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_selectDate1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_ProductPrinting));
             this.label1 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.button_ok = new System.Windows.Forms.Button();
@@ -90,11 +90,10 @@ namespace kk_sms.dailyReportPrinting
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Form_selectDate1";
+            this.Name = "Form_ProductPrinting";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "日付を選択";
-            this.Load += new System.EventHandler(this.Form_selectDate2_Load);
+            this.Load += new System.EventHandler(this.Form_ProductPrinting_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
