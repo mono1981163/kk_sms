@@ -1,7 +1,7 @@
 ﻿
 namespace kk_sms.purchaseManagement
 {
-    partial class Form_input_selectRep
+    partial class Form_correct_selectRep
     {
         /// <summary>
         /// Required designer variable.

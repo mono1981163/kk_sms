@@ -78,6 +78,7 @@ namespace kk_sms.dailyReportPrinting
             // 
             this.saveFileDialog_savePdf.DefaultExt = "pdf";
             this.saveFileDialog_savePdf.RestoreDirectory = true;
+            this.saveFileDialog_savePdf.FileOk += new System.ComponentModel.CancelEventHandler(this.saveFileDialog_savePdf_FileOk);
             // 
             // Form_selectDate1
             // 

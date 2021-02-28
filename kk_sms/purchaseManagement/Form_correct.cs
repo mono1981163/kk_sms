@@ -13,9 +13,9 @@ using IniParser.Model;
 
 namespace kk_sms.purchaseManagement
 {
-    public partial class Form_input : Form
+    public partial class Form_correct : Form
     {
-        private bool isOrdernoExist = true;
+        private bool isOrdernoDontExist = true;
         private bool isRepInvalid = true;
         private bool isSupplierInvalid = true;
         private bool isProductInvalid = true;
@@ -23,7 +23,7 @@ namespace kk_sms.purchaseManagement
         private bool isClassInvalid = true;
         private bool isPackingInvalid = true;
 
-        public Form_input()
+        public Form_correct()
         {
             InitializeComponent();
         }
@@ -41,6 +41,11 @@ namespace kk_sms.purchaseManagement
             {
                 button_exit.Focus();
             }
+            else if (slipNo == "-")
+            {
+                var form_selectOrder = new kk_sms.purchaseManagement.Form_correct_selectOrder(this);
+                form_selectOrder.ShowDialog(this);
+            }
             else if (!slipNo.All(char.IsDigit))
             {
                 label_description.Text = "伝票番号は数字でなければなりません。";
@@ -56,18 +61,66 @@ namespace kk_sms.purchaseManagement
                     var inputValue = textBox_slipNo.Text;
                     var mysqlConnection = new MySqlConnection(mysqlConf);
                     mysqlConnection.Open();
-                    string query = "SELECT uid FROM tbl_nyuko WHERE orderno = " + inputValue;
+                    string query = "SELECT * FROM tbl_nyuko WHERE orderno = " + inputValue;
                     MySqlCommand sqlCommand = new MySqlCommand(query, mysqlConnection);
-                    var result = sqlCommand.ExecuteScalar();
-                    if (result != null)
+                    var result = sqlCommand.ExecuteReader();
+                    if (result.HasRows)
                     {
-                        label_description.Text = "入力された伝票番号は既にあります";
-                        isOrdernoExist = true;
+                        result.Read();
+                        textBox_date.Text = result.GetValue(2).ToString();
+                        textBox_slipNo.Text = result.GetValue(1).ToString();
+                        textBox_repCode.Text = result.GetValue(3).ToString();
+                        textBox_rep.Text = result.GetValue(4).ToString();
+                        textBox_supplierCode.Text = result.GetValue(5).ToString();
+                        textBox_supplier.Text = result.GetValue(6).ToString();
+                        textBox_productCode.Text = result.GetValue(7).ToString();
+                        textBox_productName.Text = result.GetValue(8).ToString();
+                        textBox_gradeCode.Text = result.GetValue(9).ToString();
+                        textBox_grade.Text = result.GetValue(10).ToString();
+                        textBox_classCode.Text = result.GetValue(11).ToString();
+                        textBox_class.Text = result.GetValue(12).ToString();
+                        textBox_quantity.Text = result.GetValue(13).ToString();
+                        textBox_packingCode.Text = result.GetValue(15).ToString();
+                        textBox_packing.Text = result.GetValue(16).ToString();
+                        textBox_purchaseQuantity.Text = result.GetValue(14).ToString();
+                        textBox_unitPrice.Text = result.GetValue(19).ToString();
+                        textBox_amount.Text = result.GetValue(20).ToString();
+                        label_description.Text = "";
+                        isOrdernoDontExist = false;
+                        isRepInvalid = false;
+                        isSupplierInvalid = false;
+                        isProductInvalid = false;
+                        isGradeInvalid = false;
+                        isClassInvalid = false;
+                        isPackingInvalid = false;
                     }
                     else
                     {
-                        label_description.Text = "";
-                        isOrdernoExist = false;
+                        label_description.Text = "そのようなデータはありません";
+                        textBox_date.Text = "";
+                        textBox_repCode.Text = "";
+                        textBox_rep.Text = "";
+                        textBox_supplierCode.Text = "";
+                        textBox_supplier.Text = "";
+                        textBox_productCode.Text = "";
+                        textBox_productName.Text = "";
+                        textBox_gradeCode.Text = "";
+                        textBox_grade.Text = "";
+                        textBox_classCode.Text = "";
+                        textBox_class.Text = "";
+                        textBox_quantity.Text = "";
+                        textBox_packingCode.Text = "";
+                        textBox_packing.Text = "";
+                        textBox_purchaseQuantity.Text = "";
+                        textBox_unitPrice.Text = "";
+                        textBox_amount.Text = "";
+                        isOrdernoDontExist = true;
+                        isRepInvalid = true;
+                        isSupplierInvalid = true;
+                        isProductInvalid = true;
+                        isGradeInvalid = true;
+                        isClassInvalid = true;
+                        isPackingInvalid = true;
                     }
                     mysqlConnection.Close();
                 }
@@ -78,12 +131,34 @@ namespace kk_sms.purchaseManagement
             }
         }
 
+        public void changeData(string[] param)
+        {
+            textBox_date.Text = param[1];
+            textBox_slipNo.Text = param[0];
+            textBox_repCode.Text = param[2];
+            textBox_rep.Text = param[3];
+            textBox_supplierCode.Text = param[4];
+            textBox_supplier.Text = param[5];
+            textBox_productCode.Text = param[6];
+            textBox_productName.Text = param[7];
+            textBox_gradeCode.Text = param[8];
+            textBox_grade.Text = param[9];
+            textBox_classCode.Text = param[10];
+            textBox_class.Text = param[11];
+            textBox_quantity.Text = param[12];
+            textBox_packingCode.Text = param[14];
+            textBox_packing.Text = param[15];
+            textBox_purchaseQuantity.Text = param[13];
+            textBox_unitPrice.Text = param[18];
+            textBox_amount.Text = param[19];
+        }
+
         private void TextBox_repCode_TextChanged(object sender, EventArgs e)
         {
             var inputValue = textBox_repCode.Text;
             if (inputValue == "-")
             {
-                var form_selectRep = new kk_sms.purchaseManagement.Form_input_selectRep(this);
+                var form_selectRep = new kk_sms.purchaseManagement.Form_correct_selectRep(this);
                 form_selectRep.ShowDialog(this);
             }
             else
@@ -133,7 +208,7 @@ namespace kk_sms.purchaseManagement
             var inputValue = textBox_supplierCode.Text;
             if (inputValue == "-")
             {
-                var form_selectSupplier = new kk_sms.purchaseManagement.Form_input_selectSupplier(this);
+                var form_selectSupplier = new kk_sms.purchaseManagement.Form_correct_selectSupplier(this);
                 form_selectSupplier.ShowDialog(this);
             }
             else
@@ -183,7 +258,7 @@ namespace kk_sms.purchaseManagement
             var inputValue = textBox_productCode.Text;
             if (inputValue == "-")
             {
-                var form_selectProduct = new kk_sms.purchaseManagement.Form_input_selectProduct(this);
+                var form_selectProduct = new kk_sms.purchaseManagement.Form_correct_selectProduct(this);
                 form_selectProduct.ShowDialog(this);
             }
             else
@@ -233,7 +308,7 @@ namespace kk_sms.purchaseManagement
             var inputValue = textBox_gradeCode.Text;
             if (inputValue == "-")
             {
-                var form_selectGrade = new kk_sms.purchaseManagement.Form_input_selectGrade(this);
+                var form_selectGrade = new kk_sms.purchaseManagement.Form_correct_selectGrade(this);
                 form_selectGrade.ShowDialog(this);
             }
             else
@@ -283,7 +358,7 @@ namespace kk_sms.purchaseManagement
             var inputValue = textBox_classCode.Text;
             if (inputValue == "-")
             {
-                var form_selectClass = new kk_sms.purchaseManagement.Form_input_selectClass(this);
+                var form_selectClass = new kk_sms.purchaseManagement.Form_correct_selectClass(this);
                 form_selectClass.ShowDialog(this);
             }
             else
@@ -342,7 +417,7 @@ namespace kk_sms.purchaseManagement
             var inputValue = textBox_packingCode.Text;
             if (inputValue == "-")
             {
-                var form_selectPacking = new kk_sms.purchaseManagement.Form_input_selectPacking(this);
+                var form_selectPacking = new kk_sms.purchaseManagement.Form_correct_selectPacking(this);
                 form_selectPacking.ShowDialog(this);
             }
             else
@@ -433,7 +508,6 @@ namespace kk_sms.purchaseManagement
         private void Button_ok_Click(object sender, EventArgs e)
         {
             string orderno = textBox_slipNo.Text;
-            string nyukoday = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
             string syainno = textBox_repCode.Text;
             string syainname = textBox_rep.Text;
             string siireno = textBox_supplierCode.Text;
@@ -448,20 +522,27 @@ namespace kk_sms.purchaseManagement
             string siiresu = textBox_purchaseQuantity.Text;
             string nisugatano = textBox_packingCode.Text;
             string nisugataname = textBox_packing.Text;
-            string zaikosu = siiresu;
-            string souurisu = "";
-
             string tanka = textBox_unitPrice.Text;
             string kingaku = textBox_amount.Text;
-            string kuban = "0";
-            string nyuukokubun = "";
-            string zaikoadjust1 = "0";
-            string zaikoadjust2 = "0";
-            string zaikoadjust3 = "0";
-            string adjustCumulative1 = "0";
-            string adjustCumulative2 = "0";
-            string adjustCumulative3 = "0";
 
+            string query = "UPDATE tbl_nyuko SET";
+            query += " syainno = '" + syainno;
+            query += "', syainname = '" + syainname;
+            query += "', siireno = '" + siireno;
+            query += "', siirename = '" + siirename;
+            query += "', hinban = '" + hinban;
+            query += "', hinmaei = '" + hinmaei;
+            query += "', toukyuno = '" + toukyuno;
+            query += "', toukyuname = '" + toukyuname;
+            query += "', kaikyuno = '" + kaikyuno;
+            query += "', kaikyuname = '" + kaikyuname;
+            query += "', irisu = '" + irisu;
+            query += "', siiresu = '" + siiresu;
+            query += "', nisugatano = '" + nisugatano;
+            query += "', nisugataname = '" + nisugataname;
+            query += "', tanka = '" + tanka;
+            query += "', kingaku = '" + kingaku;
+            query += "' WHERE orderno = '" + orderno + "';";
             float temp_float;
 
             if (orderno == "")
@@ -474,9 +555,9 @@ namespace kk_sms.purchaseManagement
                 label_description.Text = "伝票番号は数字でなければなりません";
                 button_correction.Focus();
             }    
-            else if (isOrdernoExist)
+            else if (isOrdernoDontExist)
             {
-                label_description.Text = "入力された伝票番号は既にあります";
+                label_description.Text = "そのようなデータはありません";
                 button_correction.Focus();
             }
             else if (isRepInvalid)
@@ -543,11 +624,10 @@ namespace kk_sms.purchaseManagement
                     string mysqlConf = "server=" + inidata["Mysql"]["server"] + ";user=" + inidata["Mysql"]["user"] + ";database=" + inidata["Mysql"]["database"] + ";port=" + inidata["Mysql"]["port"] + ";password=" + inidata["Mysql"]["password"] + ";";
                     var mysqlConnection = new MySqlConnection(mysqlConf);
                     mysqlConnection.Open();
-                    string query = "INSERT INTO tbl_nyuko(orderno, nyukoday, syainno, syainname, siireno, siirename, hinban, hinmaei, toukyuno, toukyuname, kaikyuno, kaikyuname, irisu, siiresu, nisugatano, nisugataname, zaikosu, souurisu, tanka, kingaku, kuban, nyuukokubun, zaikoadjust1, zaikoadjust2, zaikoadjust3, adjustCumulative1, adjustCumulative2, adjustCumulative3) VALUES('" + orderno + "','" + nyukoday + "','" + syainno + "','" + syainname + "','" + siireno + "','" + siirename + "','" + hinban + "','" + hinmaei + "','" + toukyuno + "','" + toukyuname + "','" + kaikyuno + "','" + kaikyuname + "','" + irisu + "','" + siiresu + "','" + nisugatano + "','" + nisugataname + "','" + zaikosu + "','" + souurisu + "','" + tanka + "','" + kingaku + "','" + kuban + "','" + nyuukokubun + "','" + zaikoadjust1 + "','" + zaikoadjust2 + "','" + zaikoadjust3 + "','" + adjustCumulative1 + "','" + adjustCumulative2 + "','" + adjustCumulative3 + "')";
                     MySqlCommand sqlCommand = new MySqlCommand(query, mysqlConnection);
                     MySqlDataReader mySqlDataReader = sqlCommand.ExecuteReader();
                     mysqlConnection.Close();
-                    label_description.Text = "入力データが正常に登録されました";
+                    label_description.Text = "正常に変更されました";
                 }
                 catch (Exception ex)
                 {

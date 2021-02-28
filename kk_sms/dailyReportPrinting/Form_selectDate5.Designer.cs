@@ -1,7 +1,7 @@
 ﻿
 namespace kk_sms.dailyReportPrinting
 {
-    partial class Form_selectDate2
+    partial class Form_selectDate5
     {
         /// <summary>
         /// Required designer variable.
@@ -94,7 +94,7 @@ namespace kk_sms.dailyReportPrinting
             this.Name = "Form_selectDate1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "日付を選択";
-            this.Load += new System.EventHandler(this.Form_selectDate2_Load);
+            this.Load += new System.EventHandler(this.Form_selectDate5_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
