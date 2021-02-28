@@ -71,6 +71,8 @@ namespace kk_sms
             this.button_changePurchaser.TabIndex = 2;
             this.button_changePurchaser.Text = "商品仕入担当者変更 ( &C )";
             this.button_changePurchaser.UseVisualStyleBackColor = true;
+            this.button_changePurchaser.Click += new System.EventHandler(this.button_changePurchaser_Click);
+            this.button_changePurchaser.GotFocus += new System.EventHandler(this.button_changePurchaser_GotFocus);
             // 
             // button_printTable
             // 
@@ -80,6 +82,8 @@ namespace kk_sms
             this.button_printTable.TabIndex = 1;
             this.button_printTable.Text = "在庫商品一覧表印刷 ( &P )";
             this.button_printTable.UseVisualStyleBackColor = true;
+            this.button_printTable.Click += new System.EventHandler(this.button_printTable_Click);
+            this.button_printTable.GotFocus += new System.EventHandler(this.button_printTable_GotFocus);
             // 
             // button_input
             // 
@@ -89,6 +93,8 @@ namespace kk_sms
             this.button_input.TabIndex = 0;
             this.button_input.Text = "在庫調整入力 ( &M )";
             this.button_input.UseVisualStyleBackColor = true;
+            this.button_input.Click += new System.EventHandler(this.button_input_Click);
+            this.button_input.GotFocus += new System.EventHandler(this.button_input_GotFocus);
             // 
             // button_exit
             // 
@@ -98,6 +104,8 @@ namespace kk_sms
             this.button_exit.TabIndex = 2;
             this.button_exit.Text = "終了 ・ 戻る ( &E )";
             this.button_exit.UseVisualStyleBackColor = true;
+            this.button_exit.Click += new System.EventHandler(this.button_exit_Click);
+            this.button_exit.GotFocus += new System.EventHandler(this.button_exit_GotFocus);
             // 
             // label_description
             // 

@@ -255,6 +255,24 @@
     <Compile Include="Form_voucherPrinting.Designer.cs">
       <DependentUpon>Form_voucherPrinting.cs</DependentUpon>
     </Compile>
+    <Compile Include="inventoryManagement\Form_Adjustment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="inventoryManagement\Form_Adjustment.Designer.cs">
+      <DependentUpon>Form_Adjustment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="inventoryManagement\Form_ChangePurchaser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="inventoryManagement\Form_ChangePurchaser.Designer.cs">
+      <DependentUpon>Form_ChangePurchaser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="inventoryManagement\Form_SelectPerson.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="inventoryManagement\Form_SelectPerson.Designer.cs">
+      <DependentUpon>Form_SelectPerson.cs</DependentUpon>
+    </Compile>
     <Compile Include="masterManagement\Form_class.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -443,6 +461,15 @@
     <EmbeddedResource Include="Form_voucherPrinting.resx">
       <DependentUpon>Form_voucherPrinting.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="inventoryManagement\Form_Adjustment.resx">
+      <DependentUpon>Form_Adjustment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="inventoryManagement\Form_ChangePurchaser.resx">
+      <DependentUpon>Form_ChangePurchaser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="inventoryManagement\Form_SelectPerson.resx">
+      <DependentUpon>Form_SelectPerson.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="masterManagement\Form_supplier.resx">
       <DependentUpon>Form_supplier.cs</DependentUpon>
     </EmbeddedResource>
@@ -519,7 +546,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="inventoryManagement\" />
     <Folder Include="monthlyProcessing\" />
     <Folder Include="salesManagement\" />
     <Folder Include="voucherPrinting\" />

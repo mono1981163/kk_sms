@@ -21,5 +21,47 @@ namespace kk_sms
         {
 
         }
+        private void button_input_GotFocus(object sender, EventArgs e)
+        {
+            label_description.Text = "在庫品仕入担当変更に移ります";
+        }
+
+        private void button_printTable_GotFocus(object sender, EventArgs e)
+        {
+            label_description.Text = "";
+        }
+
+        private void button_changePurchaser_GotFocus(object sender, EventArgs e)
+        {
+            label_description.Text = "在庫調整数入力に移ります";
+        }
+
+
+        private void button_exit_GotFocus(object sender, EventArgs e)
+        {
+            label_description.Text = "";
+        }
+
+        private void button_input_Click(object sender, EventArgs e)
+        {
+            var form = new kk_sms.inventoryManagement.Form_SelectPerson();
+            form.Show();
+        }
+
+        private void button_printTable_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_changePurchaser_Click(object sender, EventArgs e)
+        {
+            var form = new kk_sms.inventoryManagement.Form_ChangePurchaser();
+            form.Show();
+        }
+
+        private void button_exit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
