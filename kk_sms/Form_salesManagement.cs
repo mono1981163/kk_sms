@@ -24,7 +24,35 @@ namespace kk_sms
 
         private void button_input_Click(object sender, EventArgs e)
         {
+            var form = new kk_sms.salesManagement.Form_salesSlipInput();
+            form.Show();
+            this.Close();
+        }
 
+        private void button_correct_Click(object sender, EventArgs e)
+        {
+            var form = new kk_sms.salesManagement.Form_salesSlipCorrection();
+            form.Show();
+            this.Close();
+        }
+
+        private void button_inputAccident_Click(object sender, EventArgs e)
+        {
+            var form = new kk_sms.salesManagement.Form_accidentInput();
+            form.Show();
+            this.Close();
+        }
+
+        private void button_correctAccident_Click(object sender, EventArgs e)
+        {
+            var form = new kk_sms.salesManagement.Form_accidentCorrection();
+            form.Show();
+            this.Close();
+        }
+
+        private void button_exit_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -75,6 +75,7 @@ namespace kk_sms
             this.button_correctAccident.TabIndex = 4;
             this.button_correctAccident.Text = "売上事故伝票修正 ( &K )";
             this.button_correctAccident.UseVisualStyleBackColor = true;
+            this.button_correctAccident.Click += new System.EventHandler(this.button_correctAccident_Click);
             // 
             // button_inputAccident
             // 
@@ -84,6 +85,7 @@ namespace kk_sms
             this.button_inputAccident.TabIndex = 3;
             this.button_inputAccident.Text = "売上事故伝票入力 ( &J )";
             this.button_inputAccident.UseVisualStyleBackColor = true;
+            this.button_inputAccident.Click += new System.EventHandler(this.button_inputAccident_Click);
             // 
             // button_printTable
             // 
@@ -102,6 +104,7 @@ namespace kk_sms
             this.button_correct.TabIndex = 1;
             this.button_correct.Text = "売上伝票修正 ( &M )";
             this.button_correct.UseVisualStyleBackColor = true;
+            this.button_correct.Click += new System.EventHandler(this.button_correct_Click);
             // 
             // button_input
             // 
@@ -121,6 +124,7 @@ namespace kk_sms
             this.button_exit.TabIndex = 2;
             this.button_exit.Text = "終了 ・ 戻る ( &E )";
             this.button_exit.UseVisualStyleBackColor = true;
+            this.button_exit.Click += new System.EventHandler(this.button_exit_Click);
             // 
             // label_description
             // 

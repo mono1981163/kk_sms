@@ -311,6 +311,36 @@
     <Compile Include="purchaseManagement\Form_input_selectRep.Designer.cs">
       <DependentUpon>Form_input_selectRep.cs</DependentUpon>
     </Compile>
+    <Compile Include="salesManagement\Form_accidentCorrection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="salesManagement\Form_accidentCorrection.Designer.cs">
+      <DependentUpon>Form_accidentCorrection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="salesManagement\Form_accidentInput.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="salesManagement\Form_accidentInput.Designer.cs">
+      <DependentUpon>Form_accidentInput.cs</DependentUpon>
+    </Compile>
+    <Compile Include="salesManagement\Form_salesSlipCorrection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="salesManagement\Form_salesSlipCorrection.Designer.cs">
+      <DependentUpon>Form_salesSlipCorrection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="salesManagement\Form_salesSlipInput.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="salesManagement\Form_salesSlipInput.Designer.cs">
+      <DependentUpon>Form_salesSlipInput.cs</DependentUpon>
+    </Compile>
+    <Compile Include="salesManagement\Form_slipInputSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="salesManagement\Form_slipInputSearch.Designer.cs">
+      <DependentUpon>Form_slipInputSearch.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="dailyReportPrinting\Form_selectDate2.resx">
       <DependentUpon>Form_selectDate2.cs</DependentUpon>
     </EmbeddedResource>
@@ -362,6 +392,21 @@
     <EmbeddedResource Include="purchaseManagement\Form_input_selectRep.resx">
       <DependentUpon>Form_input_selectRep.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="salesManagement\Form_accidentCorrection.resx">
+      <DependentUpon>Form_accidentCorrection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="salesManagement\Form_accidentInput.resx">
+      <DependentUpon>Form_accidentInput.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="salesManagement\Form_salesSlipCorrection.resx">
+      <DependentUpon>Form_salesSlipCorrection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="salesManagement\Form_salesSlipInput.resx">
+      <DependentUpon>Form_salesSlipInput.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="salesManagement\Form_slipInputSearch.resx">
+      <DependentUpon>Form_slipInputSearch.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="kk_sms_TemporaryKey.pfx" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -380,7 +425,6 @@
   <ItemGroup>
     <Folder Include="inventoryManagement\" />
     <Folder Include="monthlyProcessing\" />
-    <Folder Include="salesManagement\" />
     <Folder Include="voucherPrinting\" />
   </ItemGroup>
   <ItemGroup>
