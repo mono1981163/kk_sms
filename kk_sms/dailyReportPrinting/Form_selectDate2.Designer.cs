@@ -79,7 +79,7 @@ namespace kk_sms.dailyReportPrinting
             this.saveFileDialog_savePdf.DefaultExt = "pdf";
             this.saveFileDialog_savePdf.RestoreDirectory = true;
             // 
-            // Form_selectDate2
+            // Form_selectDate1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -91,7 +91,7 @@ namespace kk_sms.dailyReportPrinting
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Form_selectDate2";
+            this.Name = "Form_selectDate1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "日付を選択";
             this.Load += new System.EventHandler(this.Form_selectDate2_Load);
