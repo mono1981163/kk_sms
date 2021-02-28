@@ -31,7 +31,9 @@ namespace kk_sms
 
         private void Button_correct_Click(object sender, EventArgs e)
         {
-
+            this.Close();
+            var form = new kk_sms.purchaseManagement.Form_correct();
+            form.Show();
         }
 
         private void Button_printTable_Click(object sender, EventArgs e)

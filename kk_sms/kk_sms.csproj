@@ -23,7 +23,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationRevision>3</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -171,6 +171,30 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="dailyReportPrinting\Form_selectDate6.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dailyReportPrinting\Form_selectDate6.Designer.cs">
+      <DependentUpon>Form_selectDate6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dailyReportPrinting\Form_selectDate5.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dailyReportPrinting\Form_selectDate5.Designer.cs">
+      <DependentUpon>Form_selectDate5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dailyReportPrinting\Form_selectDate4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dailyReportPrinting\Form_selectDate4.Designer.cs">
+      <DependentUpon>Form_selectDate4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dailyReportPrinting\Form_selectDate3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dailyReportPrinting\Form_selectDate3.Designer.cs">
+      <DependentUpon>Form_selectDate3.cs</DependentUpon>
+    </Compile>
     <Compile Include="dailyReportPrinting\Form_selectDate2.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -230,6 +254,30 @@
     </Compile>
     <Compile Include="Form_voucherPrinting.Designer.cs">
       <DependentUpon>Form_voucherPrinting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="inventoryManagement\Form_Adjustment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="inventoryManagement\Form_Adjustment.Designer.cs">
+      <DependentUpon>Form_Adjustment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="inventoryManagement\Form_ChangePurchaser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="inventoryManagement\Form_ChangePurchaser.Designer.cs">
+      <DependentUpon>Form_ChangePurchaser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="inventoryManagement\Form_ProductPrinting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="inventoryManagement\Form_ProductPrinting.Designer.cs">
+      <DependentUpon>Form_ProductPrinting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="inventoryManagement\Form_SelectPerson.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="inventoryManagement\Form_SelectPerson.Designer.cs">
+      <DependentUpon>Form_SelectPerson.cs</DependentUpon>
     </Compile>
     <Compile Include="masterManagement\Form_class.cs">
       <SubType>Form</SubType>
@@ -299,11 +347,89 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="purchaseManagement\Form_correct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="purchaseManagement\Form_correct.Designer.cs">
+      <DependentUpon>Form_correct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="purchaseManagement\Form_correct_selectOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="purchaseManagement\Form_correct_selectOrder.Designer.cs">
+      <DependentUpon>Form_correct_selectOrder.cs</DependentUpon>
+    </Compile>
     <Compile Include="purchaseManagement\Form_input.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="purchaseManagement\Form_input.Designer.cs">
       <DependentUpon>Form_input.cs</DependentUpon>
+    </Compile>
+    <Compile Include="purchaseManagement\Form_correct_selectClass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="purchaseManagement\Form_correct_selectClass.Designer.cs">
+      <DependentUpon>Form_correct_selectClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="purchaseManagement\Form_input_selectClass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="purchaseManagement\Form_input_selectClass.Designer.cs">
+      <DependentUpon>Form_input_selectClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="purchaseManagement\Form_correct_selectGrade.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="purchaseManagement\Form_correct_selectGrade.Designer.cs">
+      <DependentUpon>Form_correct_selectGrade.cs</DependentUpon>
+    </Compile>
+    <Compile Include="purchaseManagement\Form_correct_selectPacking.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="purchaseManagement\Form_correct_selectPacking.Designer.cs">
+      <DependentUpon>Form_correct_selectPacking.cs</DependentUpon>
+    </Compile>
+    <Compile Include="purchaseManagement\Form_correct_selectProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="purchaseManagement\Form_correct_selectProduct.Designer.cs">
+      <DependentUpon>Form_correct_selectProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="purchaseManagement\Form_input_selectProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="purchaseManagement\Form_input_selectProduct.Designer.cs">
+      <DependentUpon>Form_input_selectProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="purchaseManagement\Form_input_selectGrade.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="purchaseManagement\Form_input_selectGrade.Designer.cs">
+      <DependentUpon>Form_input_selectGrade.cs</DependentUpon>
+    </Compile>
+    <Compile Include="purchaseManagement\Form_input_selectPacking.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="purchaseManagement\Form_input_selectPacking.Designer.cs">
+      <DependentUpon>Form_input_selectPacking.cs</DependentUpon>
+    </Compile>
+    <Compile Include="purchaseManagement\Form_correct_selectRep.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="purchaseManagement\Form_correct_selectRep.Designer.cs">
+      <DependentUpon>Form_correct_selectRep.cs</DependentUpon>
+    </Compile>
+    <Compile Include="purchaseManagement\Form_correct_selectSupplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="purchaseManagement\Form_correct_selectSupplier.Designer.cs">
+      <DependentUpon>Form_correct_selectSupplier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="purchaseManagement\Form_input_selectSupplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="purchaseManagement\Form_input_selectSupplier.Designer.cs">
+      <DependentUpon>Form_input_selectSupplier.cs</DependentUpon>
     </Compile>
     <Compile Include="purchaseManagement\Form_input_selectRep.cs">
       <SubType>Form</SubType>
@@ -371,6 +497,15 @@
     <EmbeddedResource Include="Form_voucherPrinting.resx">
       <DependentUpon>Form_voucherPrinting.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="inventoryManagement\Form_Adjustment.resx">
+      <DependentUpon>Form_Adjustment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="inventoryManagement\Form_ChangePurchaser.resx">
+      <DependentUpon>Form_ChangePurchaser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="inventoryManagement\Form_SelectPerson.resx">
+      <DependentUpon>Form_SelectPerson.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="masterManagement\Form_supplier.resx">
       <DependentUpon>Form_supplier.cs</DependentUpon>
     </EmbeddedResource>
@@ -386,8 +521,47 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="purchaseManagement\Form_correct.resx">
+      <DependentUpon>Form_correct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="purchaseManagement\Form_correct_selectOrder.resx">
+      <DependentUpon>Form_correct_selectOrder.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="purchaseManagement\Form_input.resx">
       <DependentUpon>Form_input.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="purchaseManagement\Form_correct_selectClass.resx">
+      <DependentUpon>Form_correct_selectClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="purchaseManagement\Form_input_selectClass.resx">
+      <DependentUpon>Form_input_selectClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="purchaseManagement\Form_correct_selectGrade.resx">
+      <DependentUpon>Form_correct_selectGrade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="purchaseManagement\Form_correct_selectPacking.resx">
+      <DependentUpon>Form_correct_selectPacking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="purchaseManagement\Form_correct_selectProduct.resx">
+      <DependentUpon>Form_correct_selectProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="purchaseManagement\Form_input_selectProduct.resx">
+      <DependentUpon>Form_input_selectProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="purchaseManagement\Form_input_selectGrade.resx">
+      <DependentUpon>Form_input_selectGrade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="purchaseManagement\Form_input_selectPacking.resx">
+      <DependentUpon>Form_input_selectPacking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="purchaseManagement\Form_correct_selectRep.resx">
+      <DependentUpon>Form_correct_selectRep.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="purchaseManagement\Form_correct_selectSupplier.resx">
+      <DependentUpon>Form_correct_selectSupplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="purchaseManagement\Form_input_selectSupplier.resx">
+      <DependentUpon>Form_input_selectSupplier.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="purchaseManagement\Form_input_selectRep.resx">
       <DependentUpon>Form_input_selectRep.cs</DependentUpon>
@@ -423,7 +597,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="inventoryManagement\" />
     <Folder Include="monthlyProcessing\" />
     <Folder Include="voucherPrinting\" />
   </ItemGroup>
