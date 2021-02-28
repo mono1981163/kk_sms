@@ -109,7 +109,7 @@ namespace kk_sms.purchaseManagement
             this.button_ok.UseVisualStyleBackColor = true;
             this.button_ok.Click += new System.EventHandler(this.button_ok_Click);
             // 
-            // Form_selectRep
+            // Form_input_selectRep
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -123,7 +123,7 @@ namespace kk_sms.purchaseManagement
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
-            this.Name = "Form_selectRep";
+            this.Name = "Form_input_selectRep";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "社員一覽";
             this.Load += new System.EventHandler(this.Form_selectRep_Load);

@@ -16,5 +16,15 @@ namespace kk_sms.masterManagement.consumption_tax
         {
             InitializeComponent();
         }
+
+        private void button_ok_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void button_end_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
