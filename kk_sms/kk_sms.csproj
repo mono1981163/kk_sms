@@ -497,6 +497,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="purchaseManagement\Form_accident.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="purchaseManagement\Form_accident.Designer.cs">
+      <DependentUpon>Form_accident.cs</DependentUpon>
+    </Compile>
     <Compile Include="purchaseManagement\Form_correct.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -521,6 +527,12 @@
     <Compile Include="purchaseManagement\Form_correct_selectClass.Designer.cs">
       <DependentUpon>Form_correct_selectClass.cs</DependentUpon>
     </Compile>
+    <Compile Include="purchaseManagement\Form_accident_selectClass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="purchaseManagement\Form_accident_selectClass.Designer.cs">
+      <DependentUpon>Form_accident_selectClass.cs</DependentUpon>
+    </Compile>
     <Compile Include="purchaseManagement\Form_input_selectClass.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -544,6 +556,18 @@
     </Compile>
     <Compile Include="purchaseManagement\Form_correct_selectProduct.Designer.cs">
       <DependentUpon>Form_correct_selectProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="purchaseManagement\Form_accident_selectGrade.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="purchaseManagement\Form_accident_selectGrade.Designer.cs">
+      <DependentUpon>Form_accident_selectGrade.cs</DependentUpon>
+    </Compile>
+    <Compile Include="purchaseManagement\Form_accident_selectProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="purchaseManagement\Form_accident_selectProduct.Designer.cs">
+      <DependentUpon>Form_accident_selectProduct.cs</DependentUpon>
     </Compile>
     <Compile Include="purchaseManagement\Form_input_selectProduct.cs">
       <SubType>Form</SubType>
@@ -574,6 +598,18 @@
     </Compile>
     <Compile Include="purchaseManagement\Form_correct_selectSupplier.Designer.cs">
       <DependentUpon>Form_correct_selectSupplier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="purchaseManagement\Form_accident_selectRep.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="purchaseManagement\Form_accident_selectRep.Designer.cs">
+      <DependentUpon>Form_accident_selectRep.cs</DependentUpon>
+    </Compile>
+    <Compile Include="purchaseManagement\Form_accident_selectSupplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="purchaseManagement\Form_accident_selectSupplier.Designer.cs">
+      <DependentUpon>Form_accident_selectSupplier.cs</DependentUpon>
     </Compile>
     <Compile Include="purchaseManagement\Form_input_selectSupplier.cs">
       <SubType>Form</SubType>
@@ -743,6 +779,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="purchaseManagement\Form_accident.resx">
+      <DependentUpon>Form_accident.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="purchaseManagement\Form_correct.resx">
       <DependentUpon>Form_correct.cs</DependentUpon>
     </EmbeddedResource>
@@ -755,6 +794,9 @@
     <EmbeddedResource Include="purchaseManagement\Form_correct_selectClass.resx">
       <DependentUpon>Form_correct_selectClass.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="purchaseManagement\Form_accident_selectClass.resx">
+      <DependentUpon>Form_accident_selectClass.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="purchaseManagement\Form_input_selectClass.resx">
       <DependentUpon>Form_input_selectClass.cs</DependentUpon>
     </EmbeddedResource>
@@ -766,6 +808,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="purchaseManagement\Form_correct_selectProduct.resx">
       <DependentUpon>Form_correct_selectProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="purchaseManagement\Form_accident_selectGrade.resx">
+      <DependentUpon>Form_accident_selectGrade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="purchaseManagement\Form_accident_selectProduct.resx">
+      <DependentUpon>Form_accident_selectProduct.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="purchaseManagement\Form_input_selectProduct.resx">
       <DependentUpon>Form_input_selectProduct.cs</DependentUpon>
@@ -781,6 +829,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="purchaseManagement\Form_correct_selectSupplier.resx">
       <DependentUpon>Form_correct_selectSupplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="purchaseManagement\Form_accident_selectRep.resx">
+      <DependentUpon>Form_accident_selectRep.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="purchaseManagement\Form_accident_selectSupplier.resx">
+      <DependentUpon>Form_accident_selectSupplier.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="purchaseManagement\Form_input_selectSupplier.resx">
       <DependentUpon>Form_input_selectSupplier.cs</DependentUpon>
