@@ -50,7 +50,8 @@ namespace kk_sms
 
         private void button_printTable_Click(object sender, EventArgs e)
         {
-
+            var form = new kk_sms.inventoryManagement.Form_ProductPrinting();
+            form.Show();
         }
 
         private void button_changePurchaser_Click(object sender, EventArgs e)

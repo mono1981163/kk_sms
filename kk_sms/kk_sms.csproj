@@ -267,6 +267,12 @@
     <Compile Include="inventoryManagement\Form_ChangePurchaser.Designer.cs">
       <DependentUpon>Form_ChangePurchaser.cs</DependentUpon>
     </Compile>
+    <Compile Include="inventoryManagement\Form_ProductPrinting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="inventoryManagement\Form_ProductPrinting.Designer.cs">
+      <DependentUpon>Form_ProductPrinting.cs</DependentUpon>
+    </Compile>
     <Compile Include="inventoryManagement\Form_SelectPerson.cs">
       <SubType>Form</SubType>
     </Compile>
