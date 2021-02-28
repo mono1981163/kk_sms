@@ -341,6 +341,12 @@
     <EmbeddedResource Include="dailyReportPrinting\Form_selectDate3.resx">
       <DependentUpon>Form_selectDate3.cs</DependentUpon>
     </EmbeddedResource>
+    <Compile Include="purchaseManagement\Form_input_selectRep.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="purchaseManagement\Form_input_selectRep.Designer.cs">
+      <DependentUpon>Form_input_selectRep.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="dailyReportPrinting\Form_selectDate2.resx">
       <DependentUpon>Form_selectDate2.cs</DependentUpon>
     </EmbeddedResource>
@@ -388,6 +394,9 @@
     </Compile>
     <EmbeddedResource Include="purchaseManagement\Form_input.resx">
       <DependentUpon>Form_input.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="purchaseManagement\Form_input_selectRep.resx">
+      <DependentUpon>Form_input_selectRep.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="kk_sms_TemporaryKey.pfx" />
     <None Include="packages.config" />

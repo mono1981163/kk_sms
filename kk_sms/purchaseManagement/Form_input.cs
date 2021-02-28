@@ -37,36 +37,77 @@ namespace kk_sms.purchaseManagement
             {
                 button_correction.Focus();
             }
+            else
+            {
+                try
+                {
+                    var iniparser = new FileIniDataParser();
+                    IniData inidata = iniparser.ReadFile("kk_sms.ini");
+                    string mysqlConf = "server=" + inidata["Mysql"]["server"] + ";user=" + inidata["Mysql"]["user"] + ";database=" + inidata["Mysql"]["database"] + ";port=" + inidata["Mysql"]["port"] + ";password=" + inidata["Mysql"]["password"] + ";";
+                    var inputValue = textBox_slipNo.Text;
+                    var mysqlConnection = new MySqlConnection(mysqlConf);
+                    mysqlConnection.Open();
+                    string query = "SELECT uid FROM tbl_nyuko WHERE orderno = " + inputValue;
+                    MySqlCommand sqlCommand = new MySqlCommand(query, mysqlConnection);
+                    var result = sqlCommand.ExecuteScalar();
+                    if (result != null)
+                    {
+                        label_description.Text = "入力された伝票番号は既にあります";
+                    }
+                    else
+                    {
+                        label_description.Text = "";
+                    }
+                    mysqlConnection.Close();
+                }
+                catch (Exception ex)
+                {
+                    label_description.Text = "";
+                }
+            }
         }
 
         private void TextBox_repCode_TextChanged(object sender, EventArgs e)
         {
-            try
+            var inputValue = textBox_repCode.Text;
+            if (inputValue == "-")
             {
-                var iniparser = new FileIniDataParser();
-                IniData inidata = iniparser.ReadFile("kk_sms.ini");
-                string mysqlConf = "server=" + inidata["Mysql"]["server"] + ";user=" + inidata["Mysql"]["user"] + ";database=" + inidata["Mysql"]["database"] + ";port=" + inidata["Mysql"]["port"] + ";password=" + inidata["Mysql"]["password"] + ";";
-                var inputValue = textBox_repCode.Text;
-                if (!inputValue.All(char.IsDigit))
-                {
-                    button_correction.Focus();
-                }
-                var mysqlConnection = new MySqlConnection(mysqlConf);
-                mysqlConnection.Open();
-                string query = "SELECT login_name FROM m_user WHERE user_id = " + inputValue;
-                MySqlCommand sqlCommand = new MySqlCommand(query, mysqlConnection);
-                var result = sqlCommand.ExecuteScalar();
-                if (result != null)
-                {
-                    textBox_rep.Text = result.ToString();
-                }
-                mysqlConnection.Close();
+                var form_selectRep = new kk_sms.purchaseManagement.Form_input_selectRep(this);
+                form_selectRep.ShowDialog(this);
             }
-            catch (Exception ex)
+            else
             {
-                textBox_rep.Text = "";
+                try
+                {
+                    var iniparser = new FileIniDataParser();
+                    IniData inidata = iniparser.ReadFile("kk_sms.ini");
+                    string mysqlConf = "server=" + inidata["Mysql"]["server"] + ";user=" + inidata["Mysql"]["user"] + ";database=" + inidata["Mysql"]["database"] + ";port=" + inidata["Mysql"]["port"] + ";password=" + inidata["Mysql"]["password"] + ";";
+                    if (!inputValue.All(char.IsDigit))
+                    {
+                        button_correction.Focus();
+                    }
+                    var mysqlConnection = new MySqlConnection(mysqlConf);
+                    mysqlConnection.Open();
+                    string query = "SELECT login_name FROM m_user WHERE user_id = " + inputValue;
+                    MySqlCommand sqlCommand = new MySqlCommand(query, mysqlConnection);
+                    var result = sqlCommand.ExecuteScalar();
+                    if (result != null)
+                    {
+                        textBox_rep.Text = result.ToString();
+                    }
+                    mysqlConnection.Close();
+                }
+                catch (Exception ex)
+                {
+                    textBox_rep.Text = "";
+                }
             }
+        }
 
+        public void change_rep(string code, string name)
+        {
+            textBox_repCode.Text = code;
+            textBox_rep.Text = name;
         }
 
         private void TextBox_supplierCode_TextChanged(object sender, EventArgs e)
@@ -277,7 +318,7 @@ namespace kk_sms.purchaseManagement
             string siiresu = textBox_purchaseQuantity.Text;
             string nisugatano = textBox_packingCode.Text;
             string nisugataname = textBox_packing.Text;
-            string zaikosu = textBox_quantity.Text;
+            string zaikosu = siiresu;
             //string souurisu = (Convert.ToInt64(siiresu) - Convert.ToInt64(zaikosu)).ToString();
             string souurisu = "";
 
