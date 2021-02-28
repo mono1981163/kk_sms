@@ -84,7 +84,10 @@ namespace kk_sms.inventoryManagement
 
         private void display_Click(object sender, EventArgs e)
         {
-            if(m_currentPage == m_pageCount)
+          
+          
+
+            if (m_currentPage == m_pageCount)
             {
                 statuslabel.Text = "ファイルの絡端です";
             }
@@ -140,13 +143,45 @@ namespace kk_sms.inventoryManagement
                 }
                 else
                 {
-                    display.Text = "次のページ (&N)";
+                    try
+                    {
+                        display.Text = "次のページ (&N)";
+                       
+                        for (int i = 0; i < 13; i++)
+                        {
+                            var iniparser = new FileIniDataParser();
+                            IniData inidata = iniparser.ReadFile("kk_sms.ini");
+                            string mysqlConf = "server=" + inidata["Mysql"]["server"] + ";user=" + inidata["Mysql"]["user"] + ";database=" + inidata["Mysql"]["database"] + ";port=" + inidata["Mysql"]["port"] + ";password=" + inidata["Mysql"]["password"] + ";convert zero datetime=True" + ";Character Set=utf8";
+                            var mysqlConnection = new MySqlConnection(mysqlConf);
+                            mysqlConnection.Open();
+                            string query;
+                            MySqlCommand sqlCommand;
+                            query = "UPDATE tbl_nyuko SET zaikosu = '" + m_quantitysdisplay[i] + "', zaikoadjust1 = '" + m_lostnew[i] + "', zaikoadjust2 = '" + m_theftnew[i] + "', zaikoadjust3 = '" + m_othersnew[i] + "', adjustCumulative1 = '" + (m_lost[i] + m_lostnew[i]) + "', adjustCumulative2 = '" + (m_theft[i] + m_theftnew[i]) + "', adjustCumulative3 = '" + (m_others[i] + m_othersnew[i]) + "' WHERE orderno='" + m_orderids[i] + "';";
+                            sqlCommand = new MySqlCommand(query, mysqlConnection);
+                            var result = sqlCommand.ExecuteReader();
+                            mysqlConnection.Close();
+                        }
+                       
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                  
                 }
                 m_display = !m_display;
-                
+                for (int i = 1; i < 14; i++)
+                {
+                    TextBox quantity = this.Controls.Find("quantity" + i, true).FirstOrDefault() as TextBox;
+                    TextBox lost = this.Controls.Find("lost" + i, true).FirstOrDefault() as TextBox;
+                    TextBox others = this.Controls.Find("others" + i, true).FirstOrDefault() as TextBox;
+                    TextBox theft = this.Controls.Find("theft" + i, true).FirstOrDefault() as TextBox;
+                    quantity.Text = "";
+                    lost.Text = "";
+                    others.Text = "";
+                    theft.Text = "";
+                }
             }
-            
-
         }
 
         private void lost1_TextChanged(object sender, EventArgs e)
@@ -159,7 +194,6 @@ namespace kk_sms.inventoryManagement
             a = (lost1.Text == "") ? 0 : Int32.Parse(lost1.Text);
             b = (theft1.Text == "") ? 0 : Int32.Parse(theft1.Text);
             c = (others1.Text == "") ? 0 : Int32.Parse(others1.Text);
-
             m_quantitysdisplay[0] = m_quantitys[0] - a - b + c;
             quantity1.Text = m_quantitysdisplay[0].ToString();
             m_lostnew[0] = a;

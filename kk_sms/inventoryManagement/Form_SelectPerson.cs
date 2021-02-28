@@ -43,7 +43,6 @@ namespace kk_sms.inventoryManagement
                 panel1.Size = new System.Drawing.Size(width, panelheight);
                 panel1.TabIndex = 1;
                 var top = 10;
-
                 query = "SELECT user_id, login_name FROM m_user;";
                 sqlCommand = new MySqlCommand(query, mysqlConnection);
                 var result = sqlCommand.ExecuteReader();
