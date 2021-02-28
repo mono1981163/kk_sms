@@ -26,8 +26,8 @@ namespace kk_sms.masterManagement.supplier
             this.supplier_delete_label = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox_supplier_name = new System.Windows.Forms.TextBox();
-            this.textBox_supplier_no = new System.Windows.Forms.TextBox();
+            this.rep_content = new System.Windows.Forms.TextBox();
+            this.rep_no = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.button_delete = new System.Windows.Forms.Button();
@@ -52,8 +52,8 @@ namespace kk_sms.masterManagement.supplier
             // 
             this.groupBox1.BackColor = System.Drawing.Color.PowderBlue;
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.textBox_supplier_name);
-            this.groupBox1.Controls.Add(this.textBox_supplier_no);
+            this.groupBox1.Controls.Add(this.rep_content);
+            this.groupBox1.Controls.Add(this.rep_no);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
@@ -72,23 +72,24 @@ namespace kk_sms.masterManagement.supplier
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(130, 20);
             this.label4.TabIndex = 4;
-            this.label4.Text = "[ - ] で一覧、[ . ]検索";
+            this.label4.Text = "[ - ] で一覧、[ . ] 検索";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // textBox_supplier_name
+            // rep_content
             // 
-            this.textBox_supplier_name.Enabled = false;
-            this.textBox_supplier_name.Location = new System.Drawing.Point(107, 56);
-            this.textBox_supplier_name.Name = "textBox_supplier_name";
-            this.textBox_supplier_name.Size = new System.Drawing.Size(137, 20);
-            this.textBox_supplier_name.TabIndex = 3;
+            this.rep_content.Enabled = false;
+            this.rep_content.Location = new System.Drawing.Point(107, 56);
+            this.rep_content.Name = "rep_content";
+            this.rep_content.Size = new System.Drawing.Size(137, 20);
+            this.rep_content.TabIndex = 3;
             // 
-            // textBox_supplier_no
+            // rep_no
             // 
-            this.textBox_supplier_no.Location = new System.Drawing.Point(107, 26);
-            this.textBox_supplier_no.Name = "textBox_supplier_no";
-            this.textBox_supplier_no.Size = new System.Drawing.Size(40, 20);
-            this.textBox_supplier_no.TabIndex = 2;
+            this.rep_no.Location = new System.Drawing.Point(107, 26);
+            this.rep_no.Name = "rep_no";
+            this.rep_no.Size = new System.Drawing.Size(40, 20);
+            this.rep_no.TabIndex = 2;
+            this.rep_no.TextChanged += new System.EventHandler(this.textBox_supplier_no_TextChanged);
             // 
             // label2
             // 
@@ -152,6 +153,7 @@ namespace kk_sms.masterManagement.supplier
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.supplier_delete_label);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "supplier_delete";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "仕⼊先削除";
@@ -164,8 +166,8 @@ namespace kk_sms.masterManagement.supplier
 
         private System.Windows.Forms.Label supplier_delete_label;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBox_supplier_name;
-        private System.Windows.Forms.TextBox textBox_supplier_no;
+        private System.Windows.Forms.TextBox rep_content;
+        private System.Windows.Forms.TextBox rep_no;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button_delete;

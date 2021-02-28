@@ -74,7 +74,7 @@ namespace kk_sms
 
         private void button_exit_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
     }
 }

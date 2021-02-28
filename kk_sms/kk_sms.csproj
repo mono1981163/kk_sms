@@ -261,6 +261,12 @@
     <Compile Include="masterManagement\customer\customer_list.Designer.cs">
       <DependentUpon>customer_list.cs</DependentUpon>
     </Compile>
+    <Compile Include="masterManagement\customer\rep_list.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="masterManagement\customer\rep_list.Designer.cs">
+      <DependentUpon>rep_list.cs</DependentUpon>
+    </Compile>
     <Compile Include="masterManagement\employee\employee_delete.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -278,6 +284,12 @@
     </Compile>
     <Compile Include="masterManagement\employee\employee_list.Designer.cs">
       <DependentUpon>employee_list.cs</DependentUpon>
+    </Compile>
+    <Compile Include="masterManagement\employee\rep_list.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="masterManagement\employee\rep_list.Designer.cs">
+      <DependentUpon>rep_list.cs</DependentUpon>
     </Compile>
     <Compile Include="masterManagement\Form_group.cs">
       <SubType>Form</SubType>
@@ -381,6 +393,12 @@
     <Compile Include="masterManagement\payment\payment_list.Designer.cs">
       <DependentUpon>payment_list.cs</DependentUpon>
     </Compile>
+    <Compile Include="masterManagement\payment\rep_list.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="masterManagement\payment\rep_list.Designer.cs">
+      <DependentUpon>rep_list.cs</DependentUpon>
+    </Compile>
     <Compile Include="masterManagement\product\product_add.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -398,6 +416,18 @@
     </Compile>
     <Compile Include="masterManagement\product\product_list.Designer.cs">
       <DependentUpon>product_list.cs</DependentUpon>
+    </Compile>
+    <Compile Include="masterManagement\product\rep_list.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="masterManagement\product\rep_list.Designer.cs">
+      <DependentUpon>rep_list.cs</DependentUpon>
+    </Compile>
+    <Compile Include="masterManagement\supplier\rep_list.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="masterManagement\supplier\rep_list.Designer.cs">
+      <DependentUpon>rep_list.cs</DependentUpon>
     </Compile>
     <Compile Include="masterManagement\supplier\supplier_list.cs">
       <SubType>Form</SubType>
@@ -467,6 +497,30 @@
     <EmbeddedResource Include="masterManagement\consumption_tax\tax_set.resx">
       <DependentUpon>tax_set.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="masterManagement\customer\customer_add.resx">
+      <DependentUpon>customer_add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="masterManagement\customer\customer_delete.resx">
+      <DependentUpon>customer_delete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="masterManagement\customer\customer_list.resx">
+      <DependentUpon>customer_list.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="masterManagement\customer\rep_list.resx">
+      <DependentUpon>rep_list.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="masterManagement\employee\employee_add.resx">
+      <DependentUpon>employee_add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="masterManagement\employee\employee_delete.resx">
+      <DependentUpon>employee_delete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="masterManagement\employee\employee_list.resx">
+      <DependentUpon>employee_list.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="masterManagement\employee\rep_list.resx">
+      <DependentUpon>rep_list.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="masterManagement\Form_consumption_tax.resx">
       <DependentUpon>Form_consumption_tax.cs</DependentUpon>
     </EmbeddedResource>
@@ -490,6 +544,51 @@
     </EmbeddedResource>
     <EmbeddedResource Include="masterManagement\Form_supplier.resx">
       <DependentUpon>Form_supplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="masterManagement\grade\grade_add.resx">
+      <DependentUpon>grade_add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="masterManagement\grade\grade_delete.resx">
+      <DependentUpon>grade_delete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="masterManagement\grade\grade_list.resx">
+      <DependentUpon>grade_list.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="masterManagement\group\group_add.resx">
+      <DependentUpon>group_add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="masterManagement\group\group_delete.resx">
+      <DependentUpon>group_delete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="masterManagement\group\group_list.resx">
+      <DependentUpon>group_list.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="masterManagement\payment\payment_add.resx">
+      <DependentUpon>payment_add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="masterManagement\payment\payment_delete.resx">
+      <DependentUpon>payment_delete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="masterManagement\payment\payment_list.resx">
+      <DependentUpon>payment_list.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="masterManagement\payment\rep_list.resx">
+      <DependentUpon>rep_list.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="masterManagement\product\product_add.resx">
+      <DependentUpon>product_add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="masterManagement\product\product_delete.resx">
+      <DependentUpon>product_delete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="masterManagement\product\product_list.resx">
+      <DependentUpon>product_list.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="masterManagement\product\rep_list.resx">
+      <DependentUpon>rep_list.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="masterManagement\supplier\rep_list.resx">
+      <DependentUpon>rep_list.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="masterManagement\supplier\supplier_list.resx">
       <DependentUpon>supplier_list.cs</DependentUpon>
