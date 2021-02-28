@@ -34,7 +34,7 @@ namespace kk_sms.masterManagement
         private void button3_Click(object sender, EventArgs e)
         {
             this.Close();
-            var form = new kk_sms.masterManagement.supplier.list_display();
+            var form = new kk_sms.masterManagement.supplier.supplier_list();
             form.Show();
         }
 
