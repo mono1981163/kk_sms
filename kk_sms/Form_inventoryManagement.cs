@@ -44,7 +44,8 @@ namespace kk_sms
 
         private void button_input_Click(object sender, EventArgs e)
         {
-
+            var form = new kk_sms.inventoryManagement.Form_SelectPerson();
+            form.Show();
         }
 
         private void button_printTable_Click(object sender, EventArgs e)

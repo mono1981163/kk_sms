@@ -38,7 +38,7 @@ namespace kk_sms.inventoryManagement
             label_title.BackColor = System.Drawing.Color.Indigo;
             label_title.Font = new System.Drawing.Font("Meiryo", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             label_title.ForeColor = System.Drawing.Color.Yellow;
-            label_title.Location = new System.Drawing.Point(49, 35);
+            label_title.Location = new System.Drawing.Point(73, 35);
             label_title.Name = "label_title";
             label_title.Size = new System.Drawing.Size(300, 50);
             label_title.TabIndex = 0;
@@ -49,7 +49,7 @@ namespace kk_sms.inventoryManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(421, 489);
+            this.ClientSize = new System.Drawing.Size(454, 561);
             this.Controls.Add(label_title);
             this.Font = new System.Drawing.Font("Meiryo", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -58,6 +58,7 @@ namespace kk_sms.inventoryManagement
             this.Name = "Form_SelectPerson";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form_SelectPerson";
+            this.Load += new System.EventHandler(this.Form_SelectPerson_Load);
             this.ResumeLayout(false);
 
         }
