@@ -41,145 +41,143 @@ namespace kk_sms.purchaseManagement
             {
                 var iniparser = new FileIniDataParser();
                 var folderPath = "";
-                var fileName = "";
                 IniData inidata = iniparser.ReadFile("kk_sms.ini");
                 saveFileDialog_savePdf.InitialDirectory = inidata["Pdf"]["path"];
 
                 saveFileDialog_savePdf.RestoreDirectory = true;
-                saveFileDialog_savePdf.FileName = "代払別売上一覧表__" + date;
+                saveFileDialog_savePdf.FileName = "仕入先別仕入一覧表__" + date;
                 if (saveFileDialog_savePdf.ShowDialog() == DialogResult.OK)
                 {
                     folderPath = inidata["Pdf"]["path"];
-                fileName = inidata["Pdf"]["path"] + "代払別売上一覧表__" + date + ".pdf";
-                string filename = saveFileDialog_savePdf.FileName;
-                PdfWriter writer = new PdfWriter(filename);
-                PdfDocument pdf = new PdfDocument(writer);
-                Document document = new Document(pdf);
-                PdfFont myfont = PdfFontFactory.CreateFont("HeiseiMin-W3", "UniJIS-UCS2-H");
-                document.SetFont(myfont);
-                Paragraph paragraph;
-                paragraph = new Paragraph("代払別売上一覧表")
+                    string filename = saveFileDialog_savePdf.FileName;
+                    PdfWriter writer = new PdfWriter(filename);
+                    PdfDocument pdf = new PdfDocument(writer);
+                    Document document = new Document(pdf);
+                    PdfFont myfont = PdfFontFactory.CreateFont("HeiseiMin-W3", "UniJIS-UCS2-H");
+                    document.SetFont(myfont);
+                    Paragraph paragraph;
+                    paragraph = new Paragraph("仕入先別仕入一覧表")
+                        .SetTextAlignment(TextAlignment.CENTER)
+                        .SetFontSize(16);
+                    document.Add(paragraph);
+                    paragraph = new Paragraph(this.dateTimePicker1.Value.ToString("yyyy年 MM月 dd日"))
+                    .SetTextAlignment(TextAlignment.RIGHT)
+                    .SetFontSize(14);
+                    document.Add(paragraph);
+
+                    // Add table
+                    Table table = new Table(8, false);
+                    table.SetFontSize(12);
+                    table.SetWidth(UnitValue.CreatePercentValue(100));
+                    Cell cell;
+                    String temp;
+
+                    cell = new Cell(1, 1)
+                    .SetBackgroundColor(WebColors.GetRGBColor("#dddddd"))
                     .SetTextAlignment(TextAlignment.CENTER)
-                    .SetFontSize(16);
-                document.Add(paragraph);
-                paragraph = new Paragraph(this.dateTimePicker1.Value.ToString("yyyy年 MM月 dd日"))
-                   .SetTextAlignment(TextAlignment.RIGHT)
-                   .SetFontSize(14);
-                document.Add(paragraph);
+                    .Add(new Paragraph("番号"));
+                    table.AddCell(cell);
 
-                // Add table
-                Table table = new Table(8, false);
-                table.SetFontSize(12);
-                table.SetWidth(UnitValue.CreatePercentValue(100));
-                Cell cell;
-                String temp;
+                    cell = new Cell(1, 1)
+                    .SetBackgroundColor(WebColors.GetRGBColor("#dddddd"))
+                    .SetTextAlignment(TextAlignment.CENTER)
+                    .Add(new Paragraph("仕入先"));
+                    table.AddCell(cell);
 
-                cell = new Cell(1, 1)
-                   .SetBackgroundColor(WebColors.GetRGBColor("#dddddd"))
-                   .SetTextAlignment(TextAlignment.CENTER)
-                   .Add(new Paragraph("番号"));
-                table.AddCell(cell);
+                    cell = new Cell(1, 1)
+                    .SetBackgroundColor(WebColors.GetRGBColor("#dddddd"))
+                    .SetTextAlignment(TextAlignment.CENTER)
+                    .Add(new Paragraph("当日仕入"));
+                    table.AddCell(cell);
 
-                cell = new Cell(1, 1)
-                   .SetBackgroundColor(WebColors.GetRGBColor("#dddddd"))
-                   .SetTextAlignment(TextAlignment.CENTER)
-                   .Add(new Paragraph("代払名"));
-                table.AddCell(cell);
+                    cell = new Cell(1, 1)
+                    .SetBackgroundColor(WebColors.GetRGBColor("#dddddd"))
+                    .SetTextAlignment(TextAlignment.CENTER)
+                    .Add(new Paragraph("当日税"));
+                    table.AddCell(cell);
 
-                cell = new Cell(1, 1)
-                   .SetBackgroundColor(WebColors.GetRGBColor("#dddddd"))
-                   .SetTextAlignment(TextAlignment.CENTER)
-                   .Add(new Paragraph("売上金額"));
-                table.AddCell(cell);
+                    cell = new Cell(1, 1)
+                    .SetBackgroundColor(WebColors.GetRGBColor("#dddddd"))
+                    .SetTextAlignment(TextAlignment.CENTER)
+                    .Add(new Paragraph("当日返品"));
+                    table.AddCell(cell);
 
-                cell = new Cell(1, 1)
-                   .SetBackgroundColor(WebColors.GetRGBColor("#dddddd"))
-                   .SetTextAlignment(TextAlignment.CENTER)
-                   .Add(new Paragraph("返品・値引"));
-                table.AddCell(cell);
+                    cell = new Cell(1, 1)
+                    .SetBackgroundColor(WebColors.GetRGBColor("#dddddd"))
+                    .SetTextAlignment(TextAlignment.CENTER)
+                    .Add(new Paragraph("返品税"));
+                    table.AddCell(cell);
 
-                cell = new Cell(1, 1)
-                   .SetBackgroundColor(WebColors.GetRGBColor("#dddddd"))
-                   .SetTextAlignment(TextAlignment.CENTER)
-                   .Add(new Paragraph("純売上"));
-                table.AddCell(cell);
+                    cell = new Cell(1, 1)
+                    .SetBackgroundColor(WebColors.GetRGBColor("#dddddd"))
+                    .SetTextAlignment(TextAlignment.CENTER)
+                    .Add(new Paragraph("当月仕入"));
+                    table.AddCell(cell);
 
-                cell = new Cell(1, 1)
-                   .SetBackgroundColor(WebColors.GetRGBColor("#dddddd"))
-                   .SetTextAlignment(TextAlignment.CENTER)
-                   .Add(new Paragraph("当月売上累計"));
-                table.AddCell(cell);
+                    cell = new Cell(1, 1)
+                    .SetBackgroundColor(WebColors.GetRGBColor("#dddddd"))
+                    .SetTextAlignment(TextAlignment.CENTER)
+                    .Add(new Paragraph("当月税"));
+                    table.AddCell(cell);
 
-                cell = new Cell(1, 1)
-                   .SetBackgroundColor(WebColors.GetRGBColor("#dddddd"))
-                   .SetTextAlignment(TextAlignment.CENTER)
-                   .Add(new Paragraph("当日消費税"));
-                table.AddCell(cell);
-
-                cell = new Cell(1, 1)
-                   .SetBackgroundColor(WebColors.GetRGBColor("#dddddd"))
-                   .SetTextAlignment(TextAlignment.CENTER)
-                   .Add(new Paragraph("当月消費税"));
-                table.AddCell(cell);
-
-                // Database Connection
-                string mysqlConf = "server=" + inidata["Mysql"]["server"] + ";user=" + inidata["Mysql"]["user"] + ";database=" + inidata["Mysql"]["database"] + ";port=" + inidata["Mysql"]["port"] + ";password=" + inidata["Mysql"]["password"] + ";";
-                var mysqlConnection = new MySqlConnection(mysqlConf);
-                mysqlConnection.Open();
-                string query = "SELECT daino, dainame, daysales, discount, netsales, monthsales, daytax, monthtax FROM tbl_daibarai WHERE dday LIKE '" + date + "%' ORDER BY daino";
-                MySqlCommand sqlCommand = new MySqlCommand(query, mysqlConnection);
-                var result = sqlCommand.ExecuteReader();
-                if (result.HasRows)
-                {
-                    while (result.Read())
+                    // Database Connection
+                    string mysqlConf = "server=" + inidata["Mysql"]["server"] + ";user=" + inidata["Mysql"]["user"] + ";database=" + inidata["Mysql"]["database"] + ";port=" + inidata["Mysql"]["port"] + ";password=" + inidata["Mysql"]["password"] + ";";
+                    var mysqlConnection = new MySqlConnection(mysqlConf);
+                    mysqlConnection.Open();
+                    string query = "SELECT daino, dainame, daysales, discount, netsales, monthsales, daytax, monthtax FROM tbl_daibarai WHERE dday LIKE '" + date + "%' ORDER BY daino";
+                    MySqlCommand sqlCommand = new MySqlCommand(query, mysqlConnection);
+                    var result = sqlCommand.ExecuteReader();
+                    if (result.HasRows)
                     {
-                        for (int i = 0; i < 8; i++)
+                        while (result.Read())
                         {
-                            temp = result.GetString(i);
-                            cell = new Cell(1, 1)
-                                .SetTextAlignment(TextAlignment.LEFT)
-                                .Add(new Paragraph(temp));
-                            table.AddCell(cell);
+                            for (int i = 0; i < 8; i++)
+                            {
+                                temp = result.GetString(i);
+                                cell = new Cell(1, 1)
+                                    .SetTextAlignment(TextAlignment.LEFT)
+                                    .Add(new Paragraph(temp));
+                                table.AddCell(cell);
+                            }
                         }
                     }
-                }
-                else
-                {
-                    cell = new Cell(1, 8)
-                        .SetTextAlignment(TextAlignment.CENTER)
-                        .Add(new Paragraph("データが存在しません"));
-                    table.AddCell(cell);
-                }
-                mysqlConnection.Close();
-                document.Add(table);
-                document.Close();
-                if (Directory.Exists(folderPath))
-                {
-                    string windir = Environment.GetEnvironmentVariable("windir");
-                    if (string.IsNullOrEmpty(windir.Trim()))
+                    else
                     {
-                        windir = "C:\\Windows\\";
+                        cell = new Cell(1, 8)
+                            .SetTextAlignment(TextAlignment.CENTER)
+                            .Add(new Paragraph("データが存在しません"));
+                        table.AddCell(cell);
                     }
-                    if (!windir.EndsWith("\\"))
+                    mysqlConnection.Close();
+                    document.Add(table);
+                    document.Close();
+                    if (Directory.Exists(folderPath))
                     {
-                        windir += "\\";
+                        string windir = Environment.GetEnvironmentVariable("windir");
+                        if (string.IsNullOrEmpty(windir.Trim()))
+                        {
+                            windir = "C:\\Windows\\";
+                        }
+                        if (!windir.EndsWith("\\"))
+                        {
+                            windir += "\\";
+                        }
+                        FileInfo fileToLocate = null;
+                        fileToLocate = new FileInfo(filename);
+
+                        ProcessStartInfo pi = new ProcessStartInfo(windir + "explorer.exe");
+                        pi.Arguments = "/select, \"" + fileToLocate.FullName + "\"";
+                        pi.WindowStyle = ProcessWindowStyle.Normal;
+                        pi.WorkingDirectory = folderPath;
+
+                        //Start Process
+                        Process.Start(pi);
                     }
-                    FileInfo fileToLocate = null;
-                    fileToLocate = new FileInfo(fileName);
-
-                    ProcessStartInfo pi = new ProcessStartInfo(windir + "explorer.exe");
-                    pi.Arguments = "/select, \"" + fileToLocate.FullName + "\"";
-                    pi.WindowStyle = ProcessWindowStyle.Normal;
-                    pi.WorkingDirectory = folderPath;
-
-                    //Start Process
-                    Process.Start(pi);
+                    else
+                    {
+                        MessageBox.Show(string.Format("{0} ディレクトリが存在しません!", folderPath));
+                    }
                 }
-                else
-                {
-                    MessageBox.Show(string.Format("{0} ディレクトリが存在しません!", folderPath));
-                }
-            }
             }
             catch (Exception ex)
             {
