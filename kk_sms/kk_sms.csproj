@@ -461,6 +461,12 @@
     <Compile Include="salesManagement\Form_salesSlipInput.Designer.cs">
       <DependentUpon>Form_salesSlipInput.cs</DependentUpon>
     </Compile>
+    <Compile Include="salesManagement\Form_slipInputClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="salesManagement\Form_slipInputClient.Designer.cs">
+      <DependentUpon>Form_slipInputClient.cs</DependentUpon>
+    </Compile>
     <Compile Include="salesManagement\Form_slipInputSearch.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -577,6 +583,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="salesManagement\Form_salesSlipInput.resx">
       <DependentUpon>Form_salesSlipInput.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="salesManagement\Form_slipInputClient.resx">
+      <DependentUpon>Form_slipInputClient.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="salesManagement\Form_slipInputSearch.resx">
       <DependentUpon>Form_slipInputSearch.cs</DependentUpon>

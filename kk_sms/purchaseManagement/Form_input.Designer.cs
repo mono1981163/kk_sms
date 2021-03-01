@@ -208,7 +208,7 @@ namespace kk_sms.purchaseManagement
             // label_slipNoDescription
             // 
             this.label_slipNoDescription.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(128)))));
-            this.label_slipNoDescription.Font = new System.Drawing.Font("Noto Sans JP", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.label_slipNoDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
             this.label_slipNoDescription.ForeColor = System.Drawing.Color.Yellow;
             this.label_slipNoDescription.Location = new System.Drawing.Point(171, 78);
             this.label_slipNoDescription.Name = "label_slipNoDescription";
