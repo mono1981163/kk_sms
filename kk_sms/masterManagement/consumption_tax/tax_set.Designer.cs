@@ -32,19 +32,19 @@ namespace kk_sms.masterManagement.consumption_tax
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(tax_set));
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.textBox_day = new System.Windows.Forms.TextBox();
+            this.textBox_month = new System.Windows.Forms.TextBox();
+            this.textBox_year = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.textBox_interest_rate = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.textBox_current_tax = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.button_ok = new System.Windows.Forms.Button();
             this.button_end = new System.Windows.Forms.Button();
             this.description_label = new System.Windows.Forms.Label();
@@ -69,11 +69,11 @@ namespace kk_sms.masterManagement.consumption_tax
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.textBox5);
-            this.groupBox1.Controls.Add(this.textBox4);
-            this.groupBox1.Controls.Add(this.textBox3);
+            this.groupBox1.Controls.Add(this.textBox_day);
+            this.groupBox1.Controls.Add(this.textBox_month);
+            this.groupBox1.Controls.Add(this.textBox_year);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.textBox_interest_rate);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.textBox_current_tax);
             this.groupBox1.Controls.Add(this.label4);
@@ -85,6 +85,91 @@ namespace kk_sms.masterManagement.consumption_tax
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "消費税率設定";
+            // 
+            // label9
+            // 
+            this.label9.Location = new System.Drawing.Point(270, 93);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(15, 15);
+            this.label9.TabIndex = 12;
+            this.label9.Text = "日";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label8
+            // 
+            this.label8.Location = new System.Drawing.Point(199, 93);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(15, 15);
+            this.label8.TabIndex = 11;
+            this.label8.Text = "月";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label7
+            // 
+            this.label7.Location = new System.Drawing.Point(131, 94);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(15, 15);
+            this.label7.TabIndex = 10;
+            this.label7.Text = "年";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // textBox_day
+            // 
+            this.textBox_day.Font = new System.Drawing.Font("Meiryo", 6F);
+            this.textBox_day.Location = new System.Drawing.Point(229, 92);
+            this.textBox_day.Name = "textBox_day";
+            this.textBox_day.Size = new System.Drawing.Size(40, 19);
+            this.textBox_day.TabIndex = 9;
+            this.textBox_day.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_day.TextChanged += new System.EventHandler(this.textBox_day_TextChanged);
+            // 
+            // textBox_month
+            // 
+            this.textBox_month.Font = new System.Drawing.Font("Meiryo", 6F);
+            this.textBox_month.Location = new System.Drawing.Point(159, 92);
+            this.textBox_month.Name = "textBox_month";
+            this.textBox_month.Size = new System.Drawing.Size(40, 19);
+            this.textBox_month.TabIndex = 8;
+            this.textBox_month.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_month.TextChanged += new System.EventHandler(this.textBox_month_TextChanged);
+            // 
+            // textBox_year
+            // 
+            this.textBox_year.Font = new System.Drawing.Font("Meiryo", 6F);
+            this.textBox_year.Location = new System.Drawing.Point(91, 92);
+            this.textBox_year.Name = "textBox_year";
+            this.textBox_year.Size = new System.Drawing.Size(40, 19);
+            this.textBox_year.TabIndex = 7;
+            this.textBox_year.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_year.TextChanged += new System.EventHandler(this.textBox_year_TextChanged);
+            // 
+            // label6
+            // 
+            this.label6.Location = new System.Drawing.Point(148, 64);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(15, 15);
+            this.label6.TabIndex = 6;
+            this.label6.Text = "%";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // textBox_interest_rate
+            // 
+            this.textBox_interest_rate.Font = new System.Drawing.Font("Meiryo", 6F);
+            this.textBox_interest_rate.Location = new System.Drawing.Point(91, 61);
+            this.textBox_interest_rate.Name = "textBox_interest_rate";
+            this.textBox_interest_rate.Size = new System.Drawing.Size(53, 19);
+            this.textBox_interest_rate.TabIndex = 5;
+            this.textBox_interest_rate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_interest_rate.TextChanged += new System.EventHandler(this.textBox_interest_rate_TextChanged);
+            // 
+            // label5
+            // 
+            this.label5.Location = new System.Drawing.Point(148, 31);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(15, 15);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "%";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // textBox_current_tax
             // 
@@ -122,87 +207,6 @@ namespace kk_sms.masterManagement.consumption_tax
             this.label2.TabIndex = 0;
             this.label2.Text = "現在の税率";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label5
-            // 
-            this.label5.Location = new System.Drawing.Point(148, 31);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(15, 15);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "%";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Font = new System.Drawing.Font("Meiryo", 6F);
-            this.textBox2.Location = new System.Drawing.Point(91, 61);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(53, 19);
-            this.textBox2.TabIndex = 5;
-            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label6
-            // 
-            this.label6.Location = new System.Drawing.Point(148, 64);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(15, 15);
-            this.label6.TabIndex = 6;
-            this.label6.Text = "%";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Font = new System.Drawing.Font("Meiryo", 6F);
-            this.textBox3.Location = new System.Drawing.Point(91, 92);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(40, 19);
-            this.textBox3.TabIndex = 7;
-            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Font = new System.Drawing.Font("Meiryo", 6F);
-            this.textBox4.Location = new System.Drawing.Point(159, 92);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(40, 19);
-            this.textBox4.TabIndex = 8;
-            this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Font = new System.Drawing.Font("Meiryo", 6F);
-            this.textBox5.Location = new System.Drawing.Point(229, 92);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(40, 19);
-            this.textBox5.TabIndex = 9;
-            this.textBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label7
-            // 
-            this.label7.Location = new System.Drawing.Point(131, 94);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(15, 15);
-            this.label7.TabIndex = 10;
-            this.label7.Text = "年";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label8
-            // 
-            this.label8.Location = new System.Drawing.Point(199, 93);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(15, 15);
-            this.label8.TabIndex = 11;
-            this.label8.Text = "月";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label9
-            // 
-            this.label9.Location = new System.Drawing.Point(270, 93);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(15, 15);
-            this.label9.TabIndex = 12;
-            this.label9.Text = "日";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // button_ok
             // 
@@ -269,11 +273,11 @@ namespace kk_sms.masterManagement.consumption_tax
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox_day;
+        private System.Windows.Forms.TextBox textBox_month;
+        private System.Windows.Forms.TextBox textBox_year;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox_interest_rate;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button button_ok;
         private System.Windows.Forms.Button button_end;

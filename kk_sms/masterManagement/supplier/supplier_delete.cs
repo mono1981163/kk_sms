@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
-using System.Configuration;
 using IniParser;
 using IniParser.Model;
 
@@ -37,7 +36,9 @@ namespace kk_sms.masterManagement.supplier
                     if (MessageBox.Show("削除してよろしいですか", "削除―確認", MessageBoxButtons.OKCancel) == DialogResult.OK)
 
                     {
-                        string mysqlConf = ConfigurationManager.ConnectionStrings["MysqlConnection"].ConnectionString;
+                        var iniparser = new FileIniDataParser();
+                        IniData inidata = iniparser.ReadFile("kk_sms.ini");
+                        string mysqlConf = "server=" + inidata["Mysql"]["server"] + ";user=" + inidata["Mysql"]["user"] + ";database=" + inidata["Mysql"]["database"] + ";port=" + inidata["Mysql"]["port"] + ";password=" + inidata["Mysql"]["password"] + ";";
                         var mysqlConnection = new MySqlConnection(mysqlConf);
                         mysqlConnection.Open();
                         string query = "DELETE FROM m_siire WHERE siireno='" + supplier_no + "'";

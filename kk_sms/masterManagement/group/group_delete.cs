@@ -80,7 +80,7 @@ namespace kk_sms.masterManagement.group
                     description_label.Text = "正確に削除されました。";
                 } else
                 {
-                    description_label.Text = "大湯が発生しました。";
+                    description_label.Text = "エラーが発生しました。";
                 }
                 mysqlConnection.Close();
             }
