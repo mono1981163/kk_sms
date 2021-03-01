@@ -77,5 +77,21 @@ namespace kk_sms.masterManagement.supplier
         {
             this.Close();
         }
+
+        private void no_keypress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                this.ActiveControl = textBox_supplier_name;
+            }
+        }
+
+        private void name_keypress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                this.ActiveControl = button_save;
+            }
+        }
     }
 }
