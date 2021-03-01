@@ -47,7 +47,6 @@ namespace kk_sms.inventoryManagement
                 if (saveFileDialog_savePdf.ShowDialog() == DialogResult.OK)
                 {
                     var folderPath = inidata["Pdf"]["path"];
-                    var filePathName = inidata["Pdf"]["path"] + "在庫商品一覧表印刷__" + date + ".pdf";
                     string filename = saveFileDialog_savePdf.FileName;
                     PdfWriter writer = new PdfWriter(filename);
                     PdfDocument pdf = new PdfDocument(writer);
@@ -223,7 +222,7 @@ namespace kk_sms.inventoryManagement
                             windir += "\\";
                         }
                         FileInfo fileToLocate = null;
-                        fileToLocate = new FileInfo(filePathName);
+                        fileToLocate = new FileInfo(filename);
 
                         ProcessStartInfo pi = new ProcessStartInfo(windir + "explorer.exe");
                         pi.Arguments = "/select, \"" + fileToLocate.FullName + "\"";
