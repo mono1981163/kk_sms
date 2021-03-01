@@ -126,6 +126,7 @@ namespace kk_sms.purchaseManagement
         {
             textBox_repCode.Text = code;
             textBox_rep.Text = name;
+            isRepInvalid = false;
         }
 
         private void TextBox_supplierCode_TextChanged(object sender, EventArgs e)
@@ -524,7 +525,7 @@ namespace kk_sms.purchaseManagement
                 label_description.Text = "仕入数量は0より大きくなければなりません";
                 button_correction.Focus();
             }
-            else if (!float.TryParse(siiresu, out temp_float))
+            else if (!float.TryParse(tanka, out temp_float))
             {
                 label_description.Text = "単価が無効です";
                 button_correction.Focus();
@@ -548,6 +549,7 @@ namespace kk_sms.purchaseManagement
                     MySqlDataReader mySqlDataReader = sqlCommand.ExecuteReader();
                     mysqlConnection.Close();
                     label_description.Text = "入力データが正常に登録されました";
+                    isOrdernoExist = true;
                 }
                 catch (Exception ex)
                 {

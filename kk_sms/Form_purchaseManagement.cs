@@ -24,26 +24,26 @@ namespace kk_sms
 
         private void Button_input_Click(object sender, EventArgs e)
         {
-            this.Close();
             var form = new kk_sms.purchaseManagement.Form_input();
             form.Show();
         }
 
         private void Button_correct_Click(object sender, EventArgs e)
         {
-            this.Close();
             var form = new kk_sms.purchaseManagement.Form_correct();
             form.Show();
         }
 
         private void Button_printTable_Click(object sender, EventArgs e)
         {
-
+            var form = new kk_sms.purchaseManagement.Form_print();
+            form.Show();
         }
 
         private void Button_inputPurchaseSlip_Click(object sender, EventArgs e)
         {
-
+            var form = new kk_sms.purchaseManagement.Form_accident();
+            form.Show();
         }
 
         private void Button_exit_Click(object sender, EventArgs e)

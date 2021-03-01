@@ -140,9 +140,10 @@
             this.textBox1.Margin = new System.Windows.Forms.Padding(0);
             this.textBox1.MaximumSize = new System.Drawing.Size(50, 17);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(50, 17);
+            this.textBox1.Size = new System.Drawing.Size(50, 24);
             this.textBox1.TabIndex = 2;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_Keypress);
             this.textBox1.LostFocus += new System.EventHandler(this.textBox1_LostFocus);
             // 
             // label_date
@@ -661,6 +662,7 @@
             this.textBox14.Size = new System.Drawing.Size(48, 24);
             this.textBox14.TabIndex = 28;
             this.textBox14.TextChanged += new System.EventHandler(this.textBox14_TextChanged);
+            this.textBox14.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox14_Keypress);
             this.textBox14.LostFocus += new System.EventHandler(this.textBox14_LostFocus);
             // 
             // textBox15
@@ -671,6 +673,7 @@
             this.textBox15.Size = new System.Drawing.Size(48, 24);
             this.textBox15.TabIndex = 27;
             this.textBox15.TextChanged += new System.EventHandler(this.textBox15_TextChanged);
+            this.textBox15.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox15_Keypress);
             this.textBox15.LostFocus += new System.EventHandler(this.textBox15_LostFocus);
             // 
             // label41
@@ -692,6 +695,7 @@
             this.textBox16.TabIndex = 25;
             this.textBox16.TextChanged += new System.EventHandler(this.textBox16_TextChanged);
             this.textBox16.GotFocus += new System.EventHandler(this.textBox16_GotFocus);
+            this.textBox16.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox16_Keypress);
             this.textBox16.LostFocus += new System.EventHandler(this.textBox16_LostFocus);
             // 
             // label38
@@ -712,6 +716,7 @@
             this.textBox11.Size = new System.Drawing.Size(48, 24);
             this.textBox11.TabIndex = 23;
             this.textBox11.TextChanged += new System.EventHandler(this.textBox11_TextChanged);
+            this.textBox11.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox11_Keypress);
             this.textBox11.LostFocus += new System.EventHandler(this.textBox11_LostFocus);
             // 
             // textBox12
@@ -722,6 +727,7 @@
             this.textBox12.Size = new System.Drawing.Size(48, 24);
             this.textBox12.TabIndex = 22;
             this.textBox12.TextChanged += new System.EventHandler(this.textBox12_TextChanged);
+            this.textBox12.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox12_Keypress);
             this.textBox12.LostFocus += new System.EventHandler(this.textBox12_LostFocus);
             // 
             // label39
@@ -743,6 +749,7 @@
             this.textBox13.TabIndex = 20;
             this.textBox13.TextChanged += new System.EventHandler(this.textBox13_TextChanged);
             this.textBox13.GotFocus += new System.EventHandler(this.textBox13_GotFocus);
+            this.textBox13.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox13_Keypress);
             this.textBox13.LostFocus += new System.EventHandler(this.textBox13_LostFocus);
             // 
             // label36
@@ -763,6 +770,7 @@
             this.textBox8.Size = new System.Drawing.Size(48, 24);
             this.textBox8.TabIndex = 18;
             this.textBox8.TextChanged += new System.EventHandler(this.textBox8_TextChanged);
+            this.textBox8.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox8_Keypress);
             this.textBox8.LostFocus += new System.EventHandler(this.textBox8_LostFocus);
             // 
             // textBox9
@@ -773,6 +781,7 @@
             this.textBox9.Size = new System.Drawing.Size(48, 24);
             this.textBox9.TabIndex = 17;
             this.textBox9.TextChanged += new System.EventHandler(this.textBox9_TextChanged);
+            this.textBox9.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox9_Keypress);
             this.textBox9.LostFocus += new System.EventHandler(this.textBox9_LostFocus);
             // 
             // label37
@@ -794,6 +803,7 @@
             this.textBox10.TabIndex = 15;
             this.textBox10.TextChanged += new System.EventHandler(this.textBox10_TextChanged);
             this.textBox10.GotFocus += new System.EventHandler(this.textBox10_GotFocus);
+            this.textBox10.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox10_Keypress);
             this.textBox10.LostFocus += new System.EventHandler(this.textBox10_LostFocus);
             // 
             // label34
@@ -814,6 +824,7 @@
             this.textBox5.Size = new System.Drawing.Size(48, 24);
             this.textBox5.TabIndex = 13;
             this.textBox5.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
+            this.textBox5.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox5_Keypress);
             this.textBox5.LostFocus += new System.EventHandler(this.textBox5_LostFocus);
             // 
             // textBox6
@@ -824,6 +835,7 @@
             this.textBox6.Size = new System.Drawing.Size(48, 24);
             this.textBox6.TabIndex = 12;
             this.textBox6.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
+            this.textBox6.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox6_Keypress);
             this.textBox6.LostFocus += new System.EventHandler(this.textBox6_LostFocus);
             // 
             // label35
@@ -845,6 +857,7 @@
             this.textBox7.TabIndex = 10;
             this.textBox7.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
             this.textBox7.GotFocus += new System.EventHandler(this.textBox7_GotFocus);
+            this.textBox7.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox7_Keypress);
             this.textBox7.LostFocus += new System.EventHandler(this.textBox7_LostFocus);
             // 
             // label33
@@ -865,6 +878,7 @@
             this.textBox4.Size = new System.Drawing.Size(48, 24);
             this.textBox4.TabIndex = 8;
             this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
+            this.textBox4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox4_Keypress);
             this.textBox4.LostFocus += new System.EventHandler(this.textBox4_LostFocus);
             // 
             // textBox3
@@ -875,6 +889,7 @@
             this.textBox3.Size = new System.Drawing.Size(48, 24);
             this.textBox3.TabIndex = 7;
             this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            this.textBox3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox3_Keypress);
             this.textBox3.LostFocus += new System.EventHandler(this.textBox3_LostFocus);
             // 
             // label32

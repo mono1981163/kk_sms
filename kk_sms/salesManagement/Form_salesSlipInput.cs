@@ -177,12 +177,15 @@ namespace kk_sms.salesManagement
 
         private void textBox1_LostFocus(object sender, EventArgs e)
         {
-            label48.Text = "得意先番号が入力さわませんでした";
+            if (textBox1.Text == "")
+            {
+                label48.Text = "得意先番号が入力さわませんでした";
+            }
         }
 
-            private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-            this.Close();
+            
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -1345,6 +1348,195 @@ namespace kk_sms.salesManagement
         private void textBox23_LostFocus(object sender, EventArgs e)
         {
             label46.Text = (m_saleamount[7] * m_price[7]).ToString();
+        }
+
+        private void textBox1_Keypress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                this.ActiveControl = textBox2;
+            }
+        }
+
+        private void textBox2_Keypress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                this.ActiveControl = textBox3;
+            }
+        }
+
+        private void textBox3_Keypress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                this.ActiveControl = textBox4;
+            }
+        }
+
+        private void textBox4_Keypress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                this.ActiveControl = textBox7;
+            }
+        }
+        private void textBox7_Keypress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                this.ActiveControl = textBox6;
+            }
+        }
+        private void textBox6_Keypress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                this.ActiveControl = textBox5;
+            }
+        }
+
+        private void textBox5_Keypress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                this.ActiveControl = textBox10;
+            }
+        }
+
+        private void textBox10_Keypress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                this.ActiveControl = textBox9;
+            }
+        }
+
+        private void textBox9_Keypress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                this.ActiveControl = textBox8;
+            }
+        }
+
+        private void textBox8_Keypress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                this.ActiveControl = textBox13;
+            }
+        }
+
+        private void textBox13_Keypress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                this.ActiveControl = textBox12;
+            }
+        }
+
+        private void textBox12_Keypress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                this.ActiveControl = textBox11;
+            }
+        }
+
+        private void textBox11_Keypress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                this.ActiveControl = textBox16;
+            }
+        }
+
+        private void textBox16_Keypress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                this.ActiveControl = textBox15;
+            }
+        }
+
+        private void textBox15_Keypress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                this.ActiveControl = textBox14;
+            }
+        }
+        private void textBox14_Keypress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                this.ActiveControl = textBox19;
+            }
+        }
+
+        private void textBox19_Keypress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                this.ActiveControl = textBox18;
+            }
+        }
+
+        private void textBox18_Keypress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                this.ActiveControl = textBox17;
+            }
+        }
+
+        private void textBox17_Keypress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                this.ActiveControl = textBox22;
+            }
+        }
+
+        private void textBox22_Keypress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                this.ActiveControl = textBox21;
+            }
+        }
+
+        private void textBox21_Keypress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                this.ActiveControl = textBox20;
+            }
+        }
+
+        private void textBox25_Keypress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                this.ActiveControl = textBox24;
+            }
+        }
+
+        private void textBox24_Keypress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                this.ActiveControl = textBox23;
+            }
+        }
+
+        private void textBox23_Keypress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                this.ActiveControl = button1;
+            }
         }
     }
 }

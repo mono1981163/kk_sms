@@ -279,9 +279,7 @@
     <Compile Include="inventoryManagement\Form_SelectPerson.Designer.cs">
       <DependentUpon>Form_SelectPerson.cs</DependentUpon>
     </Compile>
-    <Compile Include="masterManagement\Form_class.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="masterManagement\Form_class.cs" />
     <Compile Include="masterManagement\Form_class.designer.cs">
       <DependentUpon>Form_class.cs</DependentUpon>
     </Compile>
@@ -327,9 +325,7 @@
     <Compile Include="masterManagement\Form_supplier.designer.cs">
       <DependentUpon>Form_supplier.cs</DependentUpon>
     </Compile>
-    <Compile Include="masterManagement\supplier\list_display.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="masterManagement\supplier\list_display.cs" />
     <Compile Include="masterManagement\supplier\list_display.Designer.cs">
       <DependentUpon>list_display.cs</DependentUpon>
     </Compile>
@@ -448,6 +444,12 @@
     </Compile>
     <Compile Include="salesManagement\Form_accidentInput.Designer.cs">
       <DependentUpon>Form_accidentInput.cs</DependentUpon>
+    </Compile>
+    <Compile Include="salesManagement\Form_inputList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="salesManagement\Form_inputList.Designer.cs">
+      <DependentUpon>Form_inputList.cs</DependentUpon>
     </Compile>
     <Compile Include="salesManagement\Form_salesSlipCorrection.cs">
       <SubType>Form</SubType>
@@ -577,6 +579,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="salesManagement\Form_accidentInput.resx">
       <DependentUpon>Form_accidentInput.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="salesManagement\Form_inputList.resx">
+      <DependentUpon>Form_inputList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="salesManagement\Form_salesSlipCorrection.resx">
       <DependentUpon>Form_salesSlipCorrection.cs</DependentUpon>

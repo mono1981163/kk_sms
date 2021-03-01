@@ -47,7 +47,6 @@ namespace kk_sms.dailyReportPrinting
                 if (saveFileDialog_savePdf.ShowDialog() == DialogResult.OK)
                 {
                     var folderPath = inidata["Pdf"]["path"];
-                    var fileName = inidata["Pdf"]["path"] + "在庫チェックリスト__" + date + ".pdf";
                     string filename = saveFileDialog_savePdf.FileName;
                     PdfWriter writer = new PdfWriter(filename);
                     PdfDocument pdf = new PdfDocument(writer);
@@ -174,7 +173,7 @@ namespace kk_sms.dailyReportPrinting
                             windir += "\\";
                         }
                         FileInfo fileToLocate = null;
-                        fileToLocate = new FileInfo(fileName);
+                        fileToLocate = new FileInfo(filename);
 
                         ProcessStartInfo pi = new ProcessStartInfo(windir + "explorer.exe");
                         pi.Arguments = "/select, \"" + fileToLocate.FullName + "\"";

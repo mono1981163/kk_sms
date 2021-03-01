@@ -21,12 +21,6 @@ namespace kk_sms.masterManagement
             base.Dispose(disposing);
         }
 
-        #region Windows Form Designer generated code
-
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_supplier));
@@ -112,13 +106,13 @@ namespace kk_sms.masterManagement
             this.Controls.Add(this.supplier_label_title);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form_supplier";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "仕⼊先DB管理";
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
-        #endregion
 
         private System.Windows.Forms.Label supplier_label_title;
         private System.Windows.Forms.Panel panel1;
