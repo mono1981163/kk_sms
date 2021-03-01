@@ -80,6 +80,7 @@ namespace kk_sms
             this.button2.TabIndex = 1;
             this.button2.Text = "販売代金請求一覧表 ( &H )";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -89,6 +90,7 @@ namespace kk_sms
             this.button1.TabIndex = 0;
             this.button1.Text = "売渡明細書 ( &U )";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button4
             // 

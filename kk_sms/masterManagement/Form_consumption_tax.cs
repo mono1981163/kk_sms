@@ -16,5 +16,25 @@ namespace kk_sms.masterManagement
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //this.Close();
+            var form = new kk_sms.masterManagement.consumption_tax.tax_set();
+            form.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            //this.Close();
+            var form = new kk_sms.masterManagement.consumption_tax.tax_modify();
+            form.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
     }
 }

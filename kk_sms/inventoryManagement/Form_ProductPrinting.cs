@@ -203,7 +203,6 @@ namespace kk_sms.inventoryManagement
                         table.SetFontSize(9);
                         table.SetWidth(UnitValue.CreatePercentValue(100));
                         Cell cell;
-                        String temp;
                         cell = new Cell(1, 13)
                                     .SetTextAlignment(TextAlignment.CENTER)
                                     .Add(new Paragraph("データが存在しません"));

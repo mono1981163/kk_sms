@@ -171,6 +171,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="dailyReportPrinting\Form_selectDate1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dailyReportPrinting\Form_selectDate1.Designer.cs">
+      <DependentUpon>Form_selectDate1.cs</DependentUpon>
+    </Compile>
     <Compile Include="dailyReportPrinting\Form_selectDate6.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -200,12 +206,6 @@
     </Compile>
     <Compile Include="dailyReportPrinting\Form_selectDate2.Designer.cs">
       <DependentUpon>Form_selectDate2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="dailyReportPrinting\Form_selectDate1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="dailyReportPrinting\Form_selectDate1.Designer.cs">
-      <DependentUpon>Form_selectDate1.cs</DependentUpon>
     </Compile>
     <Compile Include="Form_dailyReportPrinting.cs">
       <SubType>Form</SubType>
@@ -255,6 +255,9 @@
     <Compile Include="Form_voucherPrinting.Designer.cs">
       <DependentUpon>Form_voucherPrinting.cs</DependentUpon>
     </Compile>
+    <Compile Include="masterManagement\consumption_tax\tax_modify.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="inventoryManagement\Form_Adjustment.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -279,11 +282,68 @@
     <Compile Include="inventoryManagement\Form_SelectPerson.Designer.cs">
       <DependentUpon>Form_SelectPerson.cs</DependentUpon>
     </Compile>
-    <Compile Include="masterManagement\Form_class.cs">
+    <Compile Include="masterManagement\consumption_tax\tax_modify.Designer.cs">
+      <DependentUpon>tax_modify.cs</DependentUpon>
+    </Compile>
+    <Compile Include="masterManagement\consumption_tax\tax_set.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="masterManagement\Form_class.designer.cs">
-      <DependentUpon>Form_class.cs</DependentUpon>
+    <Compile Include="masterManagement\consumption_tax\tax_set.Designer.cs">
+      <DependentUpon>tax_set.cs</DependentUpon>
+    </Compile>
+    <Compile Include="masterManagement\customer\customer_add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="masterManagement\customer\customer_add.Designer.cs">
+      <DependentUpon>customer_add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="masterManagement\customer\customer_delete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="masterManagement\customer\customer_delete.Designer.cs">
+      <DependentUpon>customer_delete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="masterManagement\customer\customer_list.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="masterManagement\customer\customer_list.Designer.cs">
+      <DependentUpon>customer_list.cs</DependentUpon>
+    </Compile>
+    <Compile Include="masterManagement\customer\rep_list.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="masterManagement\customer\rep_list.Designer.cs">
+      <DependentUpon>rep_list.cs</DependentUpon>
+    </Compile>
+    <Compile Include="masterManagement\employee\employee_delete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="masterManagement\employee\employee_delete.Designer.cs">
+      <DependentUpon>employee_delete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="masterManagement\employee\employee_add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="masterManagement\employee\employee_add.Designer.cs">
+      <DependentUpon>employee_add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="masterManagement\employee\employee_list.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="masterManagement\employee\employee_list.Designer.cs">
+      <DependentUpon>employee_list.cs</DependentUpon>
+    </Compile>
+    <Compile Include="masterManagement\employee\rep_list.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="masterManagement\employee\rep_list.Designer.cs">
+      <DependentUpon>rep_list.cs</DependentUpon>
+    </Compile>
+    <Compile Include="masterManagement\Form_group.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="masterManagement\Form_group.designer.cs">
+      <DependentUpon>Form_group.cs</DependentUpon>
     </Compile>
     <Compile Include="masterManagement\Form_consumption_tax.cs">
       <SubType>Form</SubType>
@@ -327,11 +387,101 @@
     <Compile Include="masterManagement\Form_supplier.designer.cs">
       <DependentUpon>Form_supplier.cs</DependentUpon>
     </Compile>
-    <Compile Include="masterManagement\supplier\list_display.cs">
+    <Compile Include="masterManagement\grade\grade_add.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="masterManagement\supplier\list_display.Designer.cs">
-      <DependentUpon>list_display.cs</DependentUpon>
+    <Compile Include="masterManagement\grade\grade_add.Designer.cs">
+      <DependentUpon>grade_add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="masterManagement\grade\grade_delete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="masterManagement\grade\grade_delete.Designer.cs">
+      <DependentUpon>grade_delete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="masterManagement\grade\grade_list.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="masterManagement\grade\grade_list.Designer.cs">
+      <DependentUpon>grade_list.cs</DependentUpon>
+    </Compile>
+    <Compile Include="masterManagement\group\group_add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="masterManagement\group\group_add.Designer.cs">
+      <DependentUpon>group_add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="masterManagement\group\group_delete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="masterManagement\group\group_delete.Designer.cs">
+      <DependentUpon>group_delete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="masterManagement\group\group_list.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="masterManagement\group\group_list.Designer.cs">
+      <DependentUpon>group_list.cs</DependentUpon>
+    </Compile>
+    <Compile Include="masterManagement\payment\payment_add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="masterManagement\payment\payment_add.Designer.cs">
+      <DependentUpon>payment_add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="masterManagement\payment\payment_delete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="masterManagement\payment\payment_delete.Designer.cs">
+      <DependentUpon>payment_delete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="masterManagement\payment\payment_list.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="masterManagement\payment\payment_list.Designer.cs">
+      <DependentUpon>payment_list.cs</DependentUpon>
+    </Compile>
+    <Compile Include="masterManagement\payment\rep_list.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="masterManagement\payment\rep_list.Designer.cs">
+      <DependentUpon>rep_list.cs</DependentUpon>
+    </Compile>
+    <Compile Include="masterManagement\product\product_add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="masterManagement\product\product_add.Designer.cs">
+      <DependentUpon>product_add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="masterManagement\product\product_delete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="masterManagement\product\product_delete.Designer.cs">
+      <DependentUpon>product_delete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="masterManagement\product\product_list.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="masterManagement\product\product_list.Designer.cs">
+      <DependentUpon>product_list.cs</DependentUpon>
+    </Compile>
+    <Compile Include="masterManagement\product\rep_list.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="masterManagement\product\rep_list.Designer.cs">
+      <DependentUpon>rep_list.cs</DependentUpon>
+    </Compile>
+    <Compile Include="masterManagement\supplier\rep_list.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="masterManagement\supplier\rep_list.Designer.cs">
+      <DependentUpon>rep_list.cs</DependentUpon>
+    </Compile>
+    <Compile Include="masterManagement\supplier\supplier_list.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="masterManagement\supplier\supplier_list.Designer.cs">
+      <DependentUpon>supplier_list.cs</DependentUpon>
     </Compile>
     <Compile Include="masterManagement\supplier\supplier_add.cs">
       <SubType>Form</SubType>
@@ -347,6 +497,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="purchaseManagement\Form_accident.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="purchaseManagement\Form_accident.Designer.cs">
+      <DependentUpon>Form_accident.cs</DependentUpon>
+    </Compile>
     <Compile Include="purchaseManagement\Form_correct.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -365,11 +521,29 @@
     <Compile Include="purchaseManagement\Form_input.Designer.cs">
       <DependentUpon>Form_input.cs</DependentUpon>
     </Compile>
+    <Compile Include="voucherPrinting\Form_selectDate_2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="voucherPrinting\Form_selectDate_2.Designer.cs">
+      <DependentUpon>Form_selectDate_2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="voucherPrinting\Form_selectDate_1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="voucherPrinting\Form_selectDate_1.Designer.cs">
+      <DependentUpon>Form_selectDate_1.cs</DependentUpon>
+    </Compile>
     <Compile Include="purchaseManagement\Form_correct_selectClass.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="purchaseManagement\Form_correct_selectClass.Designer.cs">
       <DependentUpon>Form_correct_selectClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="purchaseManagement\Form_accident_selectClass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="purchaseManagement\Form_accident_selectClass.Designer.cs">
+      <DependentUpon>Form_accident_selectClass.cs</DependentUpon>
     </Compile>
     <Compile Include="purchaseManagement\Form_input_selectClass.cs">
       <SubType>Form</SubType>
@@ -394,6 +568,18 @@
     </Compile>
     <Compile Include="purchaseManagement\Form_correct_selectProduct.Designer.cs">
       <DependentUpon>Form_correct_selectProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="purchaseManagement\Form_accident_selectGrade.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="purchaseManagement\Form_accident_selectGrade.Designer.cs">
+      <DependentUpon>Form_accident_selectGrade.cs</DependentUpon>
+    </Compile>
+    <Compile Include="purchaseManagement\Form_accident_selectProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="purchaseManagement\Form_accident_selectProduct.Designer.cs">
+      <DependentUpon>Form_accident_selectProduct.cs</DependentUpon>
     </Compile>
     <Compile Include="purchaseManagement\Form_input_selectProduct.cs">
       <SubType>Form</SubType>
@@ -425,6 +611,18 @@
     <Compile Include="purchaseManagement\Form_correct_selectSupplier.Designer.cs">
       <DependentUpon>Form_correct_selectSupplier.cs</DependentUpon>
     </Compile>
+    <Compile Include="purchaseManagement\Form_accident_selectRep.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="purchaseManagement\Form_accident_selectRep.Designer.cs">
+      <DependentUpon>Form_accident_selectRep.cs</DependentUpon>
+    </Compile>
+    <Compile Include="purchaseManagement\Form_accident_selectSupplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="purchaseManagement\Form_accident_selectSupplier.Designer.cs">
+      <DependentUpon>Form_accident_selectSupplier.cs</DependentUpon>
+    </Compile>
     <Compile Include="purchaseManagement\Form_input_selectSupplier.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -437,6 +635,7 @@
     <Compile Include="purchaseManagement\Form_input_selectRep.Designer.cs">
       <DependentUpon>Form_input_selectRep.cs</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="salesManagement\Form_accidentCorrection.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -470,8 +669,13 @@
     <EmbeddedResource Include="dailyReportPrinting\Form_selectDate2.resx">
       <DependentUpon>Form_selectDate2.cs</DependentUpon>
     </EmbeddedResource>
+=======
+>>>>>>> main
     <EmbeddedResource Include="dailyReportPrinting\Form_selectDate1.resx">
       <DependentUpon>Form_selectDate1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dailyReportPrinting\Form_selectDate2.resx">
+      <DependentUpon>Form_selectDate2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_dailyReportPrinting.resx">
       <DependentUpon>Form_dailyReportPrinting.cs</DependentUpon>
@@ -497,6 +701,57 @@
     <EmbeddedResource Include="Form_voucherPrinting.resx">
       <DependentUpon>Form_voucherPrinting.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="masterManagement\consumption_tax\tax_modify.resx">
+      <DependentUpon>tax_modify.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="masterManagement\consumption_tax\tax_set.resx">
+      <DependentUpon>tax_set.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="masterManagement\customer\customer_add.resx">
+      <DependentUpon>customer_add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="masterManagement\customer\customer_delete.resx">
+      <DependentUpon>customer_delete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="masterManagement\customer\customer_list.resx">
+      <DependentUpon>customer_list.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="masterManagement\customer\rep_list.resx">
+      <DependentUpon>rep_list.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="masterManagement\employee\employee_add.resx">
+      <DependentUpon>employee_add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="masterManagement\employee\employee_delete.resx">
+      <DependentUpon>employee_delete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="masterManagement\employee\employee_list.resx">
+      <DependentUpon>employee_list.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="masterManagement\employee\rep_list.resx">
+      <DependentUpon>rep_list.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="masterManagement\Form_consumption_tax.resx">
+      <DependentUpon>Form_consumption_tax.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="masterManagement\Form_group.resx">
+      <DependentUpon>Form_group.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="masterManagement\Form_customer.resx">
+      <DependentUpon>Form_customer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="masterManagement\Form_employee.resx">
+      <DependentUpon>Form_employee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="masterManagement\Form_grade.resx">
+      <DependentUpon>Form_grade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="masterManagement\Form_payment.resx">
+      <DependentUpon>Form_payment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="masterManagement\Form_product.resx">
+      <DependentUpon>Form_product.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="inventoryManagement\Form_Adjustment.resx">
       <DependentUpon>Form_Adjustment.cs</DependentUpon>
     </EmbeddedResource>
@@ -509,8 +764,59 @@
     <EmbeddedResource Include="masterManagement\Form_supplier.resx">
       <DependentUpon>Form_supplier.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="masterManagement\grade\grade_add.resx">
+      <DependentUpon>grade_add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="masterManagement\grade\grade_delete.resx">
+      <DependentUpon>grade_delete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="masterManagement\grade\grade_list.resx">
+      <DependentUpon>grade_list.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="masterManagement\group\group_add.resx">
+      <DependentUpon>group_add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="masterManagement\group\group_delete.resx">
+      <DependentUpon>group_delete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="masterManagement\group\group_list.resx">
+      <DependentUpon>group_list.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="masterManagement\payment\payment_add.resx">
+      <DependentUpon>payment_add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="masterManagement\payment\payment_delete.resx">
+      <DependentUpon>payment_delete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="masterManagement\payment\payment_list.resx">
+      <DependentUpon>payment_list.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="masterManagement\payment\rep_list.resx">
+      <DependentUpon>rep_list.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="masterManagement\product\product_add.resx">
+      <DependentUpon>product_add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="masterManagement\product\product_delete.resx">
+      <DependentUpon>product_delete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="masterManagement\product\product_list.resx">
+      <DependentUpon>product_list.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="masterManagement\product\rep_list.resx">
+      <DependentUpon>rep_list.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="masterManagement\supplier\rep_list.resx">
+      <DependentUpon>rep_list.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="masterManagement\supplier\supplier_list.resx">
+      <DependentUpon>supplier_list.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="masterManagement\supplier\supplier_add.resx">
       <DependentUpon>supplier_add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="masterManagement\supplier\supplier_delete.resx">
+      <DependentUpon>supplier_delete.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -521,6 +827,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="purchaseManagement\Form_accident.resx">
+      <DependentUpon>Form_accident.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="purchaseManagement\Form_correct.resx">
       <DependentUpon>Form_correct.cs</DependentUpon>
     </EmbeddedResource>
@@ -530,8 +839,17 @@
     <EmbeddedResource Include="purchaseManagement\Form_input.resx">
       <DependentUpon>Form_input.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="voucherPrinting\Form_selectDate_2.resx">
+      <DependentUpon>Form_selectDate_2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="voucherPrinting\Form_selectDate_1.resx">
+      <DependentUpon>Form_selectDate_1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="purchaseManagement\Form_correct_selectClass.resx">
       <DependentUpon>Form_correct_selectClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="purchaseManagement\Form_accident_selectClass.resx">
+      <DependentUpon>Form_accident_selectClass.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="purchaseManagement\Form_input_selectClass.resx">
       <DependentUpon>Form_input_selectClass.cs</DependentUpon>
@@ -544,6 +862,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="purchaseManagement\Form_correct_selectProduct.resx">
       <DependentUpon>Form_correct_selectProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="purchaseManagement\Form_accident_selectGrade.resx">
+      <DependentUpon>Form_accident_selectGrade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="purchaseManagement\Form_accident_selectProduct.resx">
+      <DependentUpon>Form_accident_selectProduct.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="purchaseManagement\Form_input_selectProduct.resx">
       <DependentUpon>Form_input_selectProduct.cs</DependentUpon>
@@ -559,6 +883,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="purchaseManagement\Form_correct_selectSupplier.resx">
       <DependentUpon>Form_correct_selectSupplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="purchaseManagement\Form_accident_selectRep.resx">
+      <DependentUpon>Form_accident_selectRep.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="purchaseManagement\Form_accident_selectSupplier.resx">
+      <DependentUpon>Form_accident_selectSupplier.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="purchaseManagement\Form_input_selectSupplier.resx">
       <DependentUpon>Form_input_selectSupplier.cs</DependentUpon>
@@ -598,7 +928,11 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="monthlyProcessing\" />
+<<<<<<< HEAD
     <Folder Include="voucherPrinting\" />
+=======
+    <Folder Include="salesManagement\" />
+>>>>>>> main
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
