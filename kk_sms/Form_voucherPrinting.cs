@@ -16,5 +16,17 @@ namespace kk_sms
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var form = new kk_sms.voucherPrinting.Form_selectDate_1();
+            form.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            var form = new kk_sms.voucherPrinting.Form_selectDate_2();
+            form.Show();
+        }
     }
 }

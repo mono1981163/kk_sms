@@ -521,6 +521,18 @@
     <Compile Include="purchaseManagement\Form_input.Designer.cs">
       <DependentUpon>Form_input.cs</DependentUpon>
     </Compile>
+    <Compile Include="voucherPrinting\Form_selectDate_2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="voucherPrinting\Form_selectDate_2.Designer.cs">
+      <DependentUpon>Form_selectDate_2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="voucherPrinting\Form_selectDate_1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="voucherPrinting\Form_selectDate_1.Designer.cs">
+      <DependentUpon>Form_selectDate_1.cs</DependentUpon>
+    </Compile>
     <Compile Include="purchaseManagement\Form_correct_selectClass.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -791,6 +803,12 @@
     <EmbeddedResource Include="purchaseManagement\Form_input.resx">
       <DependentUpon>Form_input.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="voucherPrinting\Form_selectDate_2.resx">
+      <DependentUpon>Form_selectDate_2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="voucherPrinting\Form_selectDate_1.resx">
+      <DependentUpon>Form_selectDate_1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="purchaseManagement\Form_correct_selectClass.resx">
       <DependentUpon>Form_correct_selectClass.cs</DependentUpon>
     </EmbeddedResource>
@@ -860,7 +878,6 @@
   <ItemGroup>
     <Folder Include="monthlyProcessing\" />
     <Folder Include="salesManagement\" />
-    <Folder Include="voucherPrinting\" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
