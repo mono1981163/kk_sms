@@ -120,6 +120,7 @@ namespace kk_sms.masterManagement.consumption_tax
             this.textBox_day.TabIndex = 9;
             this.textBox_day.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox_day.TextChanged += new System.EventHandler(this.textBox_day_TextChanged);
+            this.textBox_day.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.day_keypress);
             // 
             // textBox_month
             // 
@@ -130,6 +131,7 @@ namespace kk_sms.masterManagement.consumption_tax
             this.textBox_month.TabIndex = 8;
             this.textBox_month.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox_month.TextChanged += new System.EventHandler(this.textBox_month_TextChanged);
+            this.textBox_month.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.month_keypress);
             // 
             // textBox_year
             // 
@@ -140,6 +142,7 @@ namespace kk_sms.masterManagement.consumption_tax
             this.textBox_year.TabIndex = 7;
             this.textBox_year.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox_year.TextChanged += new System.EventHandler(this.textBox_year_TextChanged);
+            this.textBox_year.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.year_keypress);
             // 
             // label6
             // 
@@ -159,6 +162,7 @@ namespace kk_sms.masterManagement.consumption_tax
             this.textBox_interest_rate.TabIndex = 5;
             this.textBox_interest_rate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox_interest_rate.TextChanged += new System.EventHandler(this.textBox_interest_rate_TextChanged);
+            this.textBox_interest_rate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.rate_keypress);
             // 
             // label4
             // 

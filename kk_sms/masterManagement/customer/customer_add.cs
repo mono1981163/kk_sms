@@ -75,5 +75,21 @@ namespace kk_sms.masterManagement.customer
         {
             this.Close();
         }
+
+        private void no_keypress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                this.ActiveControl = textBox_customer_name;
+            }
+        }
+
+        private void name_keypress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                this.ActiveControl = button_save;
+            }
+        }
     }
 }

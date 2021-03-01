@@ -75,6 +75,7 @@ namespace kk_sms.masterManagement.employee
             this.textBox_employee_name.Name = "textBox_employee_name";
             this.textBox_employee_name.Size = new System.Drawing.Size(137, 20);
             this.textBox_employee_name.TabIndex = 3;
+            this.textBox_employee_name.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.name_keypress);
             // 
             // textBox_employee_no
             // 
@@ -82,6 +83,7 @@ namespace kk_sms.masterManagement.employee
             this.textBox_employee_no.Name = "textBox_employee_no";
             this.textBox_employee_no.Size = new System.Drawing.Size(40, 20);
             this.textBox_employee_no.TabIndex = 2;
+            this.textBox_employee_no.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.no_keypress);
             // 
             // label2
             // 
