@@ -28,5 +28,11 @@ namespace kk_sms
             var form = new kk_sms.voucherPrinting.Form_selectDate_2();
             form.Show();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            var form = new kk_sms.voucherPrinting.Form_selectDate_3();
+            form.Show();
+        }
     }
 }

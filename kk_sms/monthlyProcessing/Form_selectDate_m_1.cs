@@ -20,17 +20,17 @@ using IniParser.Model;
 using System.Diagnostics;
 using System.IO;
 
-namespace kk_sms.voucherPrinting
+namespace kk_sms.monthlyProcessing
 
 {
-    public partial class Form_selectDate_2 : Form
+    public partial class Form_selectDate_m_1 : Form
     {
-        public Form_selectDate_2()
+        public Form_selectDate_m_1()
         {
             InitializeComponent();
         }
 
-        private void Form_selectDate_2_Load(object sender, EventArgs e)
+        private void Form_selectDate_m_1_Load(object sender, EventArgs e)
         {
 
         }
@@ -45,7 +45,7 @@ namespace kk_sms.voucherPrinting
                 IniData inidata = iniparser.ReadFile("kk_sms.ini");
                 saveFileDialog_savePdf.InitialDirectory = inidata["Pdf"]["path"];
                 saveFileDialog_savePdf.RestoreDirectory = true;
-                saveFileDialog_savePdf.FileName = "販売代金請求一覧表__" + date;
+                saveFileDialog_savePdf.FileName = "代払別完納奨励金印刷表__" + date;
                 if (saveFileDialog_savePdf.ShowDialog() == DialogResult.OK)
                 {
                     var folderPath = inidata["Pdf"]["path"];
@@ -56,7 +56,7 @@ namespace kk_sms.voucherPrinting
                     PdfFont myfont = PdfFontFactory.CreateFont("HeiseiMin-W3", "UniJIS-UCS2-H");
                     document.SetFont(myfont);
                     Paragraph paragraph;
-                    paragraph = new Paragraph("販売代金請求一覧表")
+                    paragraph = new Paragraph("代払別完納奨励金印刷表")
                         .SetTextAlignment(TextAlignment.CENTER)
                         .SetFontSize(16);
                     document.Add(paragraph);
@@ -100,7 +100,7 @@ namespace kk_sms.voucherPrinting
                     string mysqlConf = "server=" + inidata["Mysql"]["server"] + ";user=" + inidata["Mysql"]["user"] + ";database=" + inidata["Mysql"]["database"] + ";port=" + inidata["Mysql"]["port"] + ";password=" + inidata["Mysql"]["password"] + ";";
                     var mysqlConnection = new MySqlConnection(mysqlConf);
                     mysqlConnection.Open();
-                    string query = "SELECT t.tokuisakiname , t.daysales ,  t.daysales * (m.zei /100)  , (t.daysales +  t.daysales * (m.zei /100))   FROM m_tokuisaki t,m_zei m WHERE daino='0006' AND daysales =!0 AND mdate LIKE '" + date + "%' ";
+                    string query = "select t.daino , t.Incentives ,  t.Incentives * (m.zei /100)  , (t.Incentives +  t.Incentives * (m.zei /100))   from m_tokuisaki t,m_zei m where t.Incentives !=0 AND mdate LIKE '" + date + "%' ";
                     MySqlCommand sqlCommand = new MySqlCommand(query, mysqlConnection);
 
                     var result = sqlCommand.ExecuteReader();

@@ -495,6 +495,12 @@
     <Compile Include="masterManagement\supplier\supplier_delete.designer.cs">
       <DependentUpon>supplier_delete.cs</DependentUpon>
     </Compile>
+    <Compile Include="monthlyProcessing\Form_selectDate_m_1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="monthlyProcessing\Form_selectDate_m_1.Designer.cs">
+      <DependentUpon>Form_selectDate_m_1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="purchaseManagement\Form_accident.cs">
@@ -526,6 +532,12 @@
     </Compile>
     <Compile Include="purchaseManagement\Form_print.Designer.cs">
       <DependentUpon>Form_print.cs</DependentUpon>
+    </Compile>
+    <Compile Include="voucherPrinting\Form_selectDate_3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="voucherPrinting\Form_selectDate_3.Designer.cs">
+      <DependentUpon>Form_selectDate_3.cs</DependentUpon>
     </Compile>
     <Compile Include="voucherPrinting\Form_selectDate_2.cs">
       <SubType>Form</SubType>
@@ -830,6 +842,9 @@
     <EmbeddedResource Include="masterManagement\supplier\supplier_delete.resx">
       <DependentUpon>supplier_delete.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="monthlyProcessing\Form_selectDate_m_1.resx">
+      <DependentUpon>Form_selectDate_m_1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -853,6 +868,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="purchaseManagement\Form_print.resx">
       <DependentUpon>Form_print.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="voucherPrinting\Form_selectDate_3.resx">
+      <DependentUpon>Form_selectDate_3.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="voucherPrinting\Form_selectDate_2.resx">
       <DependentUpon>Form_selectDate_2.cs</DependentUpon>
@@ -941,9 +959,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="monthlyProcessing\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
       <Visible>False</Visible>
