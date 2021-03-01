@@ -308,7 +308,7 @@ namespace kk_sms.inventoryManagement
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(10);
             this.groupBox1.Size = new System.Drawing.Size(404, 370);
-            this.groupBox1.TabIndex = 3;
+            this.groupBox1.TabIndex = 100;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = " 在庫涵品リスト ";
             // 
@@ -373,7 +373,7 @@ namespace kk_sms.inventoryManagement
             this.salenum13.Name = "salenum13";
             this.salenum13.ReadOnly = true;
             this.salenum13.Size = new System.Drawing.Size(54, 19);
-            this.salenum13.TabIndex = 0;
+            this.salenum13.TabIndex = 100;
             // 
             // salenum12
             // 
@@ -382,7 +382,7 @@ namespace kk_sms.inventoryManagement
             this.salenum12.Name = "salenum12";
             this.salenum12.ReadOnly = true;
             this.salenum12.Size = new System.Drawing.Size(54, 19);
-            this.salenum12.TabIndex = 0;
+            this.salenum12.TabIndex = 100;
             // 
             // salenum11
             // 
@@ -391,7 +391,7 @@ namespace kk_sms.inventoryManagement
             this.salenum11.Name = "salenum11";
             this.salenum11.ReadOnly = true;
             this.salenum11.Size = new System.Drawing.Size(54, 19);
-            this.salenum11.TabIndex = 0;
+            this.salenum11.TabIndex = 100;
             // 
             // salenum10
             // 
@@ -400,7 +400,7 @@ namespace kk_sms.inventoryManagement
             this.salenum10.Name = "salenum10";
             this.salenum10.ReadOnly = true;
             this.salenum10.Size = new System.Drawing.Size(54, 19);
-            this.salenum10.TabIndex = 0;
+            this.salenum10.TabIndex = 100;
             // 
             // salenum9
             // 
@@ -409,7 +409,7 @@ namespace kk_sms.inventoryManagement
             this.salenum9.Name = "salenum9";
             this.salenum9.ReadOnly = true;
             this.salenum9.Size = new System.Drawing.Size(54, 19);
-            this.salenum9.TabIndex = 0;
+            this.salenum9.TabIndex = 100;
             // 
             // salenum8
             // 
@@ -418,7 +418,7 @@ namespace kk_sms.inventoryManagement
             this.salenum8.Name = "salenum8";
             this.salenum8.ReadOnly = true;
             this.salenum8.Size = new System.Drawing.Size(54, 19);
-            this.salenum8.TabIndex = 0;
+            this.salenum8.TabIndex = 100;
             // 
             // salenum7
             // 
@@ -427,7 +427,7 @@ namespace kk_sms.inventoryManagement
             this.salenum7.Name = "salenum7";
             this.salenum7.ReadOnly = true;
             this.salenum7.Size = new System.Drawing.Size(54, 19);
-            this.salenum7.TabIndex = 0;
+            this.salenum7.TabIndex = 100;
             // 
             // salenum6
             // 
@@ -436,7 +436,7 @@ namespace kk_sms.inventoryManagement
             this.salenum6.Name = "salenum6";
             this.salenum6.ReadOnly = true;
             this.salenum6.Size = new System.Drawing.Size(54, 19);
-            this.salenum6.TabIndex = 0;
+            this.salenum6.TabIndex = 100;
             // 
             // salenum5
             // 
@@ -445,7 +445,7 @@ namespace kk_sms.inventoryManagement
             this.salenum5.Name = "salenum5";
             this.salenum5.ReadOnly = true;
             this.salenum5.Size = new System.Drawing.Size(54, 19);
-            this.salenum5.TabIndex = 0;
+            this.salenum5.TabIndex = 100;
             // 
             // salenum4
             // 
@@ -454,7 +454,7 @@ namespace kk_sms.inventoryManagement
             this.salenum4.Name = "salenum4";
             this.salenum4.ReadOnly = true;
             this.salenum4.Size = new System.Drawing.Size(54, 19);
-            this.salenum4.TabIndex = 0;
+            this.salenum4.TabIndex = 100;
             // 
             // salenum3
             // 
@@ -463,7 +463,7 @@ namespace kk_sms.inventoryManagement
             this.salenum3.Name = "salenum3";
             this.salenum3.ReadOnly = true;
             this.salenum3.Size = new System.Drawing.Size(54, 19);
-            this.salenum3.TabIndex = 0;
+            this.salenum3.TabIndex = 100;
             // 
             // salenum2
             // 
@@ -472,7 +472,7 @@ namespace kk_sms.inventoryManagement
             this.salenum2.Name = "salenum2";
             this.salenum2.ReadOnly = true;
             this.salenum2.Size = new System.Drawing.Size(54, 19);
-            this.salenum2.TabIndex = 0;
+            this.salenum2.TabIndex = 100;
             // 
             // salenum1
             // 
@@ -481,7 +481,7 @@ namespace kk_sms.inventoryManagement
             this.salenum1.Name = "salenum1";
             this.salenum1.ReadOnly = true;
             this.salenum1.Size = new System.Drawing.Size(54, 19);
-            this.salenum1.TabIndex = 0;
+            this.salenum1.TabIndex = 100;
             // 
             // purchasenum13
             // 
@@ -490,7 +490,7 @@ namespace kk_sms.inventoryManagement
             this.purchasenum13.Name = "purchasenum13";
             this.purchasenum13.ReadOnly = true;
             this.purchasenum13.Size = new System.Drawing.Size(54, 19);
-            this.purchasenum13.TabIndex = 0;
+            this.purchasenum13.TabIndex = 100;
             // 
             // purchasenum12
             // 
@@ -499,7 +499,7 @@ namespace kk_sms.inventoryManagement
             this.purchasenum12.Name = "purchasenum12";
             this.purchasenum12.ReadOnly = true;
             this.purchasenum12.Size = new System.Drawing.Size(54, 19);
-            this.purchasenum12.TabIndex = 0;
+            this.purchasenum12.TabIndex = 100;
             // 
             // purchasenum11
             // 
@@ -508,7 +508,7 @@ namespace kk_sms.inventoryManagement
             this.purchasenum11.Name = "purchasenum11";
             this.purchasenum11.ReadOnly = true;
             this.purchasenum11.Size = new System.Drawing.Size(54, 19);
-            this.purchasenum11.TabIndex = 0;
+            this.purchasenum11.TabIndex = 100;
             // 
             // purchasenum10
             // 
@@ -517,7 +517,7 @@ namespace kk_sms.inventoryManagement
             this.purchasenum10.Name = "purchasenum10";
             this.purchasenum10.ReadOnly = true;
             this.purchasenum10.Size = new System.Drawing.Size(54, 19);
-            this.purchasenum10.TabIndex = 0;
+            this.purchasenum10.TabIndex = 100;
             // 
             // purchasenum9
             // 
@@ -526,7 +526,7 @@ namespace kk_sms.inventoryManagement
             this.purchasenum9.Name = "purchasenum9";
             this.purchasenum9.ReadOnly = true;
             this.purchasenum9.Size = new System.Drawing.Size(54, 19);
-            this.purchasenum9.TabIndex = 0;
+            this.purchasenum9.TabIndex = 100;
             // 
             // purchasenum8
             // 
@@ -535,7 +535,7 @@ namespace kk_sms.inventoryManagement
             this.purchasenum8.Name = "purchasenum8";
             this.purchasenum8.ReadOnly = true;
             this.purchasenum8.Size = new System.Drawing.Size(54, 19);
-            this.purchasenum8.TabIndex = 0;
+            this.purchasenum8.TabIndex = 100;
             // 
             // purchasenum7
             // 
@@ -544,7 +544,7 @@ namespace kk_sms.inventoryManagement
             this.purchasenum7.Name = "purchasenum7";
             this.purchasenum7.ReadOnly = true;
             this.purchasenum7.Size = new System.Drawing.Size(54, 19);
-            this.purchasenum7.TabIndex = 0;
+            this.purchasenum7.TabIndex = 100;
             // 
             // purchasenum6
             // 
@@ -553,7 +553,7 @@ namespace kk_sms.inventoryManagement
             this.purchasenum6.Name = "purchasenum6";
             this.purchasenum6.ReadOnly = true;
             this.purchasenum6.Size = new System.Drawing.Size(54, 19);
-            this.purchasenum6.TabIndex = 0;
+            this.purchasenum6.TabIndex = 100;
             // 
             // purchasenum5
             // 
@@ -562,7 +562,7 @@ namespace kk_sms.inventoryManagement
             this.purchasenum5.Name = "purchasenum5";
             this.purchasenum5.ReadOnly = true;
             this.purchasenum5.Size = new System.Drawing.Size(54, 19);
-            this.purchasenum5.TabIndex = 0;
+            this.purchasenum5.TabIndex = 100;
             // 
             // purchasenum4
             // 
@@ -571,7 +571,7 @@ namespace kk_sms.inventoryManagement
             this.purchasenum4.Name = "purchasenum4";
             this.purchasenum4.ReadOnly = true;
             this.purchasenum4.Size = new System.Drawing.Size(54, 19);
-            this.purchasenum4.TabIndex = 0;
+            this.purchasenum4.TabIndex = 100;
             // 
             // purchasenum3
             // 
@@ -580,7 +580,7 @@ namespace kk_sms.inventoryManagement
             this.purchasenum3.Name = "purchasenum3";
             this.purchasenum3.ReadOnly = true;
             this.purchasenum3.Size = new System.Drawing.Size(54, 19);
-            this.purchasenum3.TabIndex = 0;
+            this.purchasenum3.TabIndex = 100;
             // 
             // purchasenum2
             // 
@@ -589,7 +589,7 @@ namespace kk_sms.inventoryManagement
             this.purchasenum2.Name = "purchasenum2";
             this.purchasenum2.ReadOnly = true;
             this.purchasenum2.Size = new System.Drawing.Size(54, 19);
-            this.purchasenum2.TabIndex = 0;
+            this.purchasenum2.TabIndex = 100;
             // 
             // class13
             // 
@@ -598,7 +598,7 @@ namespace kk_sms.inventoryManagement
             this.class13.Name = "class13";
             this.class13.ReadOnly = true;
             this.class13.Size = new System.Drawing.Size(38, 19);
-            this.class13.TabIndex = 0;
+            this.class13.TabIndex = 100;
             // 
             // purchasenum1
             // 
@@ -607,7 +607,7 @@ namespace kk_sms.inventoryManagement
             this.purchasenum1.Name = "purchasenum1";
             this.purchasenum1.ReadOnly = true;
             this.purchasenum1.Size = new System.Drawing.Size(54, 19);
-            this.purchasenum1.TabIndex = 0;
+            this.purchasenum1.TabIndex = 100;
             // 
             // class12
             // 
@@ -616,7 +616,7 @@ namespace kk_sms.inventoryManagement
             this.class12.Name = "class12";
             this.class12.ReadOnly = true;
             this.class12.Size = new System.Drawing.Size(38, 19);
-            this.class12.TabIndex = 0;
+            this.class12.TabIndex = 100;
             // 
             // class11
             // 
@@ -625,7 +625,7 @@ namespace kk_sms.inventoryManagement
             this.class11.Name = "class11";
             this.class11.ReadOnly = true;
             this.class11.Size = new System.Drawing.Size(38, 19);
-            this.class11.TabIndex = 0;
+            this.class11.TabIndex = 100;
             // 
             // class10
             // 
@@ -634,7 +634,7 @@ namespace kk_sms.inventoryManagement
             this.class10.Name = "class10";
             this.class10.ReadOnly = true;
             this.class10.Size = new System.Drawing.Size(38, 19);
-            this.class10.TabIndex = 0;
+            this.class10.TabIndex = 100;
             // 
             // class9
             // 
@@ -643,7 +643,7 @@ namespace kk_sms.inventoryManagement
             this.class9.Name = "class9";
             this.class9.ReadOnly = true;
             this.class9.Size = new System.Drawing.Size(38, 19);
-            this.class9.TabIndex = 0;
+            this.class9.TabIndex = 100;
             // 
             // class8
             // 
@@ -652,7 +652,7 @@ namespace kk_sms.inventoryManagement
             this.class8.Name = "class8";
             this.class8.ReadOnly = true;
             this.class8.Size = new System.Drawing.Size(38, 19);
-            this.class8.TabIndex = 0;
+            this.class8.TabIndex = 100;
             // 
             // class7
             // 
@@ -661,7 +661,7 @@ namespace kk_sms.inventoryManagement
             this.class7.Name = "class7";
             this.class7.ReadOnly = true;
             this.class7.Size = new System.Drawing.Size(38, 19);
-            this.class7.TabIndex = 0;
+            this.class7.TabIndex = 100;
             // 
             // class6
             // 
@@ -670,7 +670,7 @@ namespace kk_sms.inventoryManagement
             this.class6.Name = "class6";
             this.class6.ReadOnly = true;
             this.class6.Size = new System.Drawing.Size(38, 19);
-            this.class6.TabIndex = 0;
+            this.class6.TabIndex = 100;
             // 
             // class5
             // 
@@ -679,7 +679,7 @@ namespace kk_sms.inventoryManagement
             this.class5.Name = "class5";
             this.class5.ReadOnly = true;
             this.class5.Size = new System.Drawing.Size(38, 19);
-            this.class5.TabIndex = 0;
+            this.class5.TabIndex = 100;
             // 
             // class4
             // 
@@ -688,7 +688,7 @@ namespace kk_sms.inventoryManagement
             this.class4.Name = "class4";
             this.class4.ReadOnly = true;
             this.class4.Size = new System.Drawing.Size(38, 19);
-            this.class4.TabIndex = 0;
+            this.class4.TabIndex = 100;
             // 
             // class3
             // 
@@ -697,7 +697,7 @@ namespace kk_sms.inventoryManagement
             this.class3.Name = "class3";
             this.class3.ReadOnly = true;
             this.class3.Size = new System.Drawing.Size(38, 19);
-            this.class3.TabIndex = 0;
+            this.class3.TabIndex = 100;
             // 
             // class2
             // 
@@ -706,7 +706,7 @@ namespace kk_sms.inventoryManagement
             this.class2.Name = "class2";
             this.class2.ReadOnly = true;
             this.class2.Size = new System.Drawing.Size(38, 19);
-            this.class2.TabIndex = 0;
+            this.class2.TabIndex = 100;
             // 
             // grade13
             // 
@@ -715,7 +715,7 @@ namespace kk_sms.inventoryManagement
             this.grade13.Name = "grade13";
             this.grade13.ReadOnly = true;
             this.grade13.Size = new System.Drawing.Size(38, 19);
-            this.grade13.TabIndex = 0;
+            this.grade13.TabIndex = 100;
             // 
             // class1
             // 
@@ -724,7 +724,7 @@ namespace kk_sms.inventoryManagement
             this.class1.Name = "class1";
             this.class1.ReadOnly = true;
             this.class1.Size = new System.Drawing.Size(38, 19);
-            this.class1.TabIndex = 0;
+            this.class1.TabIndex = 100;
             // 
             // grade12
             // 
@@ -733,7 +733,7 @@ namespace kk_sms.inventoryManagement
             this.grade12.Name = "grade12";
             this.grade12.ReadOnly = true;
             this.grade12.Size = new System.Drawing.Size(38, 19);
-            this.grade12.TabIndex = 0;
+            this.grade12.TabIndex = 100;
             // 
             // grade11
             // 
@@ -742,7 +742,7 @@ namespace kk_sms.inventoryManagement
             this.grade11.Name = "grade11";
             this.grade11.ReadOnly = true;
             this.grade11.Size = new System.Drawing.Size(38, 19);
-            this.grade11.TabIndex = 0;
+            this.grade11.TabIndex = 100;
             // 
             // grade10
             // 
@@ -751,7 +751,7 @@ namespace kk_sms.inventoryManagement
             this.grade10.Name = "grade10";
             this.grade10.ReadOnly = true;
             this.grade10.Size = new System.Drawing.Size(38, 19);
-            this.grade10.TabIndex = 0;
+            this.grade10.TabIndex = 100;
             // 
             // grade9
             // 
@@ -760,7 +760,7 @@ namespace kk_sms.inventoryManagement
             this.grade9.Name = "grade9";
             this.grade9.ReadOnly = true;
             this.grade9.Size = new System.Drawing.Size(38, 19);
-            this.grade9.TabIndex = 0;
+            this.grade9.TabIndex = 100;
             // 
             // grade8
             // 
@@ -769,7 +769,7 @@ namespace kk_sms.inventoryManagement
             this.grade8.Name = "grade8";
             this.grade8.ReadOnly = true;
             this.grade8.Size = new System.Drawing.Size(38, 19);
-            this.grade8.TabIndex = 0;
+            this.grade8.TabIndex = 100;
             // 
             // grade7
             // 
@@ -778,7 +778,7 @@ namespace kk_sms.inventoryManagement
             this.grade7.Name = "grade7";
             this.grade7.ReadOnly = true;
             this.grade7.Size = new System.Drawing.Size(38, 19);
-            this.grade7.TabIndex = 0;
+            this.grade7.TabIndex = 100;
             // 
             // grade6
             // 
@@ -787,7 +787,7 @@ namespace kk_sms.inventoryManagement
             this.grade6.Name = "grade6";
             this.grade6.ReadOnly = true;
             this.grade6.Size = new System.Drawing.Size(38, 19);
-            this.grade6.TabIndex = 0;
+            this.grade6.TabIndex = 100;
             // 
             // grade5
             // 
@@ -796,7 +796,7 @@ namespace kk_sms.inventoryManagement
             this.grade5.Name = "grade5";
             this.grade5.ReadOnly = true;
             this.grade5.Size = new System.Drawing.Size(38, 19);
-            this.grade5.TabIndex = 0;
+            this.grade5.TabIndex = 100;
             // 
             // grade4
             // 
@@ -805,7 +805,7 @@ namespace kk_sms.inventoryManagement
             this.grade4.Name = "grade4";
             this.grade4.ReadOnly = true;
             this.grade4.Size = new System.Drawing.Size(38, 19);
-            this.grade4.TabIndex = 0;
+            this.grade4.TabIndex = 100;
             // 
             // grade3
             // 
@@ -814,7 +814,7 @@ namespace kk_sms.inventoryManagement
             this.grade3.Name = "grade3";
             this.grade3.ReadOnly = true;
             this.grade3.Size = new System.Drawing.Size(38, 19);
-            this.grade3.TabIndex = 0;
+            this.grade3.TabIndex = 100;
             // 
             // grade2
             // 
@@ -823,7 +823,7 @@ namespace kk_sms.inventoryManagement
             this.grade2.Name = "grade2";
             this.grade2.ReadOnly = true;
             this.grade2.Size = new System.Drawing.Size(38, 19);
-            this.grade2.TabIndex = 0;
+            this.grade2.TabIndex = 100;
             // 
             // product13
             // 
@@ -832,7 +832,7 @@ namespace kk_sms.inventoryManagement
             this.product13.Name = "product13";
             this.product13.ReadOnly = true;
             this.product13.Size = new System.Drawing.Size(137, 19);
-            this.product13.TabIndex = 0;
+            this.product13.TabIndex = 100;
             // 
             // grade1
             // 
@@ -841,7 +841,7 @@ namespace kk_sms.inventoryManagement
             this.grade1.Name = "grade1";
             this.grade1.ReadOnly = true;
             this.grade1.Size = new System.Drawing.Size(38, 19);
-            this.grade1.TabIndex = 0;
+            this.grade1.TabIndex = 100;
             // 
             // ordertext13
             // 
@@ -850,7 +850,7 @@ namespace kk_sms.inventoryManagement
             this.ordertext13.Name = "ordertext13";
             this.ordertext13.ReadOnly = true;
             this.ordertext13.Size = new System.Drawing.Size(54, 19);
-            this.ordertext13.TabIndex = 0;
+            this.ordertext13.TabIndex = 100;
             // 
             // product12
             // 
@@ -859,7 +859,7 @@ namespace kk_sms.inventoryManagement
             this.product12.Name = "product12";
             this.product12.ReadOnly = true;
             this.product12.Size = new System.Drawing.Size(137, 19);
-            this.product12.TabIndex = 0;
+            this.product12.TabIndex = 100;
             // 
             // ordertext12
             // 
@@ -868,7 +868,7 @@ namespace kk_sms.inventoryManagement
             this.ordertext12.Name = "ordertext12";
             this.ordertext12.ReadOnly = true;
             this.ordertext12.Size = new System.Drawing.Size(54, 19);
-            this.ordertext12.TabIndex = 0;
+            this.ordertext12.TabIndex = 100;
             // 
             // product11
             // 
@@ -877,7 +877,7 @@ namespace kk_sms.inventoryManagement
             this.product11.Name = "product11";
             this.product11.ReadOnly = true;
             this.product11.Size = new System.Drawing.Size(137, 19);
-            this.product11.TabIndex = 0;
+            this.product11.TabIndex = 100;
             // 
             // ordertext11
             // 
@@ -886,7 +886,7 @@ namespace kk_sms.inventoryManagement
             this.ordertext11.Name = "ordertext11";
             this.ordertext11.ReadOnly = true;
             this.ordertext11.Size = new System.Drawing.Size(54, 19);
-            this.ordertext11.TabIndex = 0;
+            this.ordertext11.TabIndex = 100;
             // 
             // product10
             // 
@@ -895,7 +895,7 @@ namespace kk_sms.inventoryManagement
             this.product10.Name = "product10";
             this.product10.ReadOnly = true;
             this.product10.Size = new System.Drawing.Size(137, 19);
-            this.product10.TabIndex = 0;
+            this.product10.TabIndex = 100;
             // 
             // ordertext10
             // 
@@ -904,7 +904,7 @@ namespace kk_sms.inventoryManagement
             this.ordertext10.Name = "ordertext10";
             this.ordertext10.ReadOnly = true;
             this.ordertext10.Size = new System.Drawing.Size(54, 19);
-            this.ordertext10.TabIndex = 0;
+            this.ordertext10.TabIndex = 100;
             // 
             // product9
             // 
@@ -913,7 +913,7 @@ namespace kk_sms.inventoryManagement
             this.product9.Name = "product9";
             this.product9.ReadOnly = true;
             this.product9.Size = new System.Drawing.Size(137, 19);
-            this.product9.TabIndex = 0;
+            this.product9.TabIndex = 100;
             // 
             // ordertext9
             // 
@@ -922,7 +922,7 @@ namespace kk_sms.inventoryManagement
             this.ordertext9.Name = "ordertext9";
             this.ordertext9.ReadOnly = true;
             this.ordertext9.Size = new System.Drawing.Size(54, 19);
-            this.ordertext9.TabIndex = 0;
+            this.ordertext9.TabIndex = 100;
             // 
             // product8
             // 
@@ -931,7 +931,7 @@ namespace kk_sms.inventoryManagement
             this.product8.Name = "product8";
             this.product8.ReadOnly = true;
             this.product8.Size = new System.Drawing.Size(137, 19);
-            this.product8.TabIndex = 0;
+            this.product8.TabIndex = 100;
             // 
             // ordertext8
             // 
@@ -940,7 +940,7 @@ namespace kk_sms.inventoryManagement
             this.ordertext8.Name = "ordertext8";
             this.ordertext8.ReadOnly = true;
             this.ordertext8.Size = new System.Drawing.Size(54, 19);
-            this.ordertext8.TabIndex = 0;
+            this.ordertext8.TabIndex = 100;
             // 
             // product7
             // 
@@ -949,7 +949,7 @@ namespace kk_sms.inventoryManagement
             this.product7.Name = "product7";
             this.product7.ReadOnly = true;
             this.product7.Size = new System.Drawing.Size(137, 19);
-            this.product7.TabIndex = 0;
+            this.product7.TabIndex = 100;
             // 
             // ordertext7
             // 
@@ -958,7 +958,7 @@ namespace kk_sms.inventoryManagement
             this.ordertext7.Name = "ordertext7";
             this.ordertext7.ReadOnly = true;
             this.ordertext7.Size = new System.Drawing.Size(54, 19);
-            this.ordertext7.TabIndex = 0;
+            this.ordertext7.TabIndex = 100;
             // 
             // product6
             // 
@@ -967,7 +967,7 @@ namespace kk_sms.inventoryManagement
             this.product6.Name = "product6";
             this.product6.ReadOnly = true;
             this.product6.Size = new System.Drawing.Size(137, 19);
-            this.product6.TabIndex = 0;
+            this.product6.TabIndex = 100;
             // 
             // ordertext6
             // 
@@ -976,7 +976,7 @@ namespace kk_sms.inventoryManagement
             this.ordertext6.Name = "ordertext6";
             this.ordertext6.ReadOnly = true;
             this.ordertext6.Size = new System.Drawing.Size(54, 19);
-            this.ordertext6.TabIndex = 0;
+            this.ordertext6.TabIndex = 100;
             // 
             // product5
             // 
@@ -985,7 +985,7 @@ namespace kk_sms.inventoryManagement
             this.product5.Name = "product5";
             this.product5.ReadOnly = true;
             this.product5.Size = new System.Drawing.Size(137, 19);
-            this.product5.TabIndex = 0;
+            this.product5.TabIndex = 100;
             // 
             // ordertext5
             // 
@@ -994,7 +994,7 @@ namespace kk_sms.inventoryManagement
             this.ordertext5.Name = "ordertext5";
             this.ordertext5.ReadOnly = true;
             this.ordertext5.Size = new System.Drawing.Size(54, 19);
-            this.ordertext5.TabIndex = 0;
+            this.ordertext5.TabIndex = 100;
             // 
             // product4
             // 
@@ -1003,7 +1003,7 @@ namespace kk_sms.inventoryManagement
             this.product4.Name = "product4";
             this.product4.ReadOnly = true;
             this.product4.Size = new System.Drawing.Size(137, 19);
-            this.product4.TabIndex = 0;
+            this.product4.TabIndex = 100;
             // 
             // ordertext4
             // 
@@ -1012,7 +1012,7 @@ namespace kk_sms.inventoryManagement
             this.ordertext4.Name = "ordertext4";
             this.ordertext4.ReadOnly = true;
             this.ordertext4.Size = new System.Drawing.Size(54, 19);
-            this.ordertext4.TabIndex = 0;
+            this.ordertext4.TabIndex = 100;
             // 
             // product3
             // 
@@ -1021,7 +1021,7 @@ namespace kk_sms.inventoryManagement
             this.product3.Name = "product3";
             this.product3.ReadOnly = true;
             this.product3.Size = new System.Drawing.Size(137, 19);
-            this.product3.TabIndex = 0;
+            this.product3.TabIndex = 100;
             // 
             // ordertext3
             // 
@@ -1030,7 +1030,7 @@ namespace kk_sms.inventoryManagement
             this.ordertext3.Name = "ordertext3";
             this.ordertext3.ReadOnly = true;
             this.ordertext3.Size = new System.Drawing.Size(54, 19);
-            this.ordertext3.TabIndex = 0;
+            this.ordertext3.TabIndex = 100;
             // 
             // product2
             // 
@@ -1039,7 +1039,7 @@ namespace kk_sms.inventoryManagement
             this.product2.Name = "product2";
             this.product2.ReadOnly = true;
             this.product2.Size = new System.Drawing.Size(137, 19);
-            this.product2.TabIndex = 0;
+            this.product2.TabIndex = 100;
             // 
             // ordertext2
             // 
@@ -1048,7 +1048,7 @@ namespace kk_sms.inventoryManagement
             this.ordertext2.Name = "ordertext2";
             this.ordertext2.ReadOnly = true;
             this.ordertext2.Size = new System.Drawing.Size(54, 19);
-            this.ordertext2.TabIndex = 0;
+            this.ordertext2.TabIndex = 100;
             // 
             // product1
             // 
@@ -1057,7 +1057,7 @@ namespace kk_sms.inventoryManagement
             this.product1.Name = "product1";
             this.product1.ReadOnly = true;
             this.product1.Size = new System.Drawing.Size(137, 19);
-            this.product1.TabIndex = 0;
+            this.product1.TabIndex = 100;
             // 
             // ordertext1
             // 
@@ -1066,7 +1066,7 @@ namespace kk_sms.inventoryManagement
             this.ordertext1.Name = "ordertext1";
             this.ordertext1.ReadOnly = true;
             this.ordertext1.Size = new System.Drawing.Size(54, 19);
-            this.ordertext1.TabIndex = 0;
+            this.ordertext1.TabIndex = 100;
             // 
             // groupBox2
             // 
@@ -1154,8 +1154,9 @@ namespace kk_sms.inventoryManagement
             this.others13.Location = new System.Drawing.Point(136, 342);
             this.others13.Name = "others13";
             this.others13.Size = new System.Drawing.Size(60, 19);
-            this.others13.TabIndex = 0;
+            this.others13.TabIndex = 39;
             this.others13.TextChanged += new System.EventHandler(this.others13_TextChanged);
+            this.others13.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.others13_keypress);
             // 
             // theft13
             // 
@@ -1163,8 +1164,9 @@ namespace kk_sms.inventoryManagement
             this.theft13.Location = new System.Drawing.Point(70, 342);
             this.theft13.Name = "theft13";
             this.theft13.Size = new System.Drawing.Size(60, 19);
-            this.theft13.TabIndex = 0;
+            this.theft13.TabIndex = 38;
             this.theft13.TextChanged += new System.EventHandler(this.theft13_TextChanged);
+            this.theft13.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.theft13_keypress);
             // 
             // others12
             // 
@@ -1172,8 +1174,9 @@ namespace kk_sms.inventoryManagement
             this.others12.Location = new System.Drawing.Point(136, 317);
             this.others12.Name = "others12";
             this.others12.Size = new System.Drawing.Size(60, 19);
-            this.others12.TabIndex = 0;
+            this.others12.TabIndex = 36;
             this.others12.TextChanged += new System.EventHandler(this.others12_TextChanged);
+            this.others12.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.others12_keypress);
             // 
             // theft12
             // 
@@ -1181,8 +1184,9 @@ namespace kk_sms.inventoryManagement
             this.theft12.Location = new System.Drawing.Point(70, 317);
             this.theft12.Name = "theft12";
             this.theft12.Size = new System.Drawing.Size(60, 19);
-            this.theft12.TabIndex = 0;
+            this.theft12.TabIndex = 35;
             this.theft12.TextChanged += new System.EventHandler(this.theft12_TextChanged);
+            this.theft12.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.theft12_keypress);
             // 
             // others11
             // 
@@ -1190,8 +1194,9 @@ namespace kk_sms.inventoryManagement
             this.others11.Location = new System.Drawing.Point(136, 292);
             this.others11.Name = "others11";
             this.others11.Size = new System.Drawing.Size(60, 19);
-            this.others11.TabIndex = 0;
+            this.others11.TabIndex = 33;
             this.others11.TextChanged += new System.EventHandler(this.others11_TextChanged);
+            this.others11.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.others11_keypress);
             // 
             // theft11
             // 
@@ -1199,8 +1204,9 @@ namespace kk_sms.inventoryManagement
             this.theft11.Location = new System.Drawing.Point(70, 292);
             this.theft11.Name = "theft11";
             this.theft11.Size = new System.Drawing.Size(60, 19);
-            this.theft11.TabIndex = 0;
+            this.theft11.TabIndex = 32;
             this.theft11.TextChanged += new System.EventHandler(this.theft11_TextChanged);
+            this.theft11.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.theft11_keypress);
             // 
             // others10
             // 
@@ -1208,8 +1214,9 @@ namespace kk_sms.inventoryManagement
             this.others10.Location = new System.Drawing.Point(136, 267);
             this.others10.Name = "others10";
             this.others10.Size = new System.Drawing.Size(60, 19);
-            this.others10.TabIndex = 0;
+            this.others10.TabIndex = 30;
             this.others10.TextChanged += new System.EventHandler(this.others10_TextChanged);
+            this.others10.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.others10_keypress);
             // 
             // theft10
             // 
@@ -1217,8 +1224,9 @@ namespace kk_sms.inventoryManagement
             this.theft10.Location = new System.Drawing.Point(70, 267);
             this.theft10.Name = "theft10";
             this.theft10.Size = new System.Drawing.Size(60, 19);
-            this.theft10.TabIndex = 0;
+            this.theft10.TabIndex = 29;
             this.theft10.TextChanged += new System.EventHandler(this.theft10_TextChanged);
+            this.theft10.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.theft10_keypress);
             // 
             // others9
             // 
@@ -1226,8 +1234,9 @@ namespace kk_sms.inventoryManagement
             this.others9.Location = new System.Drawing.Point(136, 242);
             this.others9.Name = "others9";
             this.others9.Size = new System.Drawing.Size(60, 19);
-            this.others9.TabIndex = 0;
+            this.others9.TabIndex = 27;
             this.others9.TextChanged += new System.EventHandler(this.others9_TextChanged);
+            this.others9.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.others9_keypress);
             // 
             // theft9
             // 
@@ -1235,8 +1244,9 @@ namespace kk_sms.inventoryManagement
             this.theft9.Location = new System.Drawing.Point(70, 242);
             this.theft9.Name = "theft9";
             this.theft9.Size = new System.Drawing.Size(60, 19);
-            this.theft9.TabIndex = 0;
+            this.theft9.TabIndex = 26;
             this.theft9.TextChanged += new System.EventHandler(this.theft9_TextChanged);
+            this.theft9.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.theft9_keypress);
             // 
             // others8
             // 
@@ -1244,8 +1254,9 @@ namespace kk_sms.inventoryManagement
             this.others8.Location = new System.Drawing.Point(136, 217);
             this.others8.Name = "others8";
             this.others8.Size = new System.Drawing.Size(60, 19);
-            this.others8.TabIndex = 0;
+            this.others8.TabIndex = 24;
             this.others8.TextChanged += new System.EventHandler(this.others8_TextChanged);
+            this.others8.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.others8_keypress);
             // 
             // theft8
             // 
@@ -1253,8 +1264,9 @@ namespace kk_sms.inventoryManagement
             this.theft8.Location = new System.Drawing.Point(70, 217);
             this.theft8.Name = "theft8";
             this.theft8.Size = new System.Drawing.Size(60, 19);
-            this.theft8.TabIndex = 0;
+            this.theft8.TabIndex = 23;
             this.theft8.TextChanged += new System.EventHandler(this.theft8_TextChanged);
+            this.theft8.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.theft8_keypress);
             // 
             // others7
             // 
@@ -1262,8 +1274,9 @@ namespace kk_sms.inventoryManagement
             this.others7.Location = new System.Drawing.Point(136, 192);
             this.others7.Name = "others7";
             this.others7.Size = new System.Drawing.Size(60, 19);
-            this.others7.TabIndex = 0;
+            this.others7.TabIndex = 21;
             this.others7.TextChanged += new System.EventHandler(this.others7_TextChanged);
+            this.others7.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.others7_keypress);
             // 
             // theft7
             // 
@@ -1271,8 +1284,9 @@ namespace kk_sms.inventoryManagement
             this.theft7.Location = new System.Drawing.Point(70, 192);
             this.theft7.Name = "theft7";
             this.theft7.Size = new System.Drawing.Size(60, 19);
-            this.theft7.TabIndex = 0;
+            this.theft7.TabIndex = 20;
             this.theft7.TextChanged += new System.EventHandler(this.theft7_TextChanged);
+            this.theft7.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.theft7_keypress);
             // 
             // lost13
             // 
@@ -1280,8 +1294,9 @@ namespace kk_sms.inventoryManagement
             this.lost13.Location = new System.Drawing.Point(5, 342);
             this.lost13.Name = "lost13";
             this.lost13.Size = new System.Drawing.Size(60, 19);
-            this.lost13.TabIndex = 0;
+            this.lost13.TabIndex = 37;
             this.lost13.TextChanged += new System.EventHandler(this.lost13_TextChanged);
+            this.lost13.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.lost13_keypress);
             // 
             // others6
             // 
@@ -1289,8 +1304,9 @@ namespace kk_sms.inventoryManagement
             this.others6.Location = new System.Drawing.Point(136, 167);
             this.others6.Name = "others6";
             this.others6.Size = new System.Drawing.Size(60, 19);
-            this.others6.TabIndex = 0;
+            this.others6.TabIndex = 18;
             this.others6.TextChanged += new System.EventHandler(this.others6_TextChanged);
+            this.others6.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.others6_keypress);
             // 
             // lost12
             // 
@@ -1298,8 +1314,9 @@ namespace kk_sms.inventoryManagement
             this.lost12.Location = new System.Drawing.Point(5, 317);
             this.lost12.Name = "lost12";
             this.lost12.Size = new System.Drawing.Size(60, 19);
-            this.lost12.TabIndex = 0;
+            this.lost12.TabIndex = 34;
             this.lost12.TextChanged += new System.EventHandler(this.lost12_TextChanged);
+            this.lost12.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.lost12_keypress);
             // 
             // theft6
             // 
@@ -1307,8 +1324,9 @@ namespace kk_sms.inventoryManagement
             this.theft6.Location = new System.Drawing.Point(70, 167);
             this.theft6.Name = "theft6";
             this.theft6.Size = new System.Drawing.Size(60, 19);
-            this.theft6.TabIndex = 0;
+            this.theft6.TabIndex = 17;
             this.theft6.TextChanged += new System.EventHandler(this.theft6_TextChanged);
+            this.theft6.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.theft6_keypress);
             // 
             // lost11
             // 
@@ -1316,8 +1334,9 @@ namespace kk_sms.inventoryManagement
             this.lost11.Location = new System.Drawing.Point(5, 292);
             this.lost11.Name = "lost11";
             this.lost11.Size = new System.Drawing.Size(60, 19);
-            this.lost11.TabIndex = 0;
+            this.lost11.TabIndex = 31;
             this.lost11.TextChanged += new System.EventHandler(this.lost11_TextChanged);
+            this.lost11.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.lost11_keypress);
             // 
             // others5
             // 
@@ -1325,8 +1344,9 @@ namespace kk_sms.inventoryManagement
             this.others5.Location = new System.Drawing.Point(136, 142);
             this.others5.Name = "others5";
             this.others5.Size = new System.Drawing.Size(60, 19);
-            this.others5.TabIndex = 0;
+            this.others5.TabIndex = 15;
             this.others5.TextChanged += new System.EventHandler(this.others5_TextChanged);
+            this.others5.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.others5_keypress);
             // 
             // lost10
             // 
@@ -1334,8 +1354,9 @@ namespace kk_sms.inventoryManagement
             this.lost10.Location = new System.Drawing.Point(5, 267);
             this.lost10.Name = "lost10";
             this.lost10.Size = new System.Drawing.Size(60, 19);
-            this.lost10.TabIndex = 0;
+            this.lost10.TabIndex = 28;
             this.lost10.TextChanged += new System.EventHandler(this.lost10_TextChanged);
+            this.lost10.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.lost10_keypress);
             // 
             // theft5
             // 
@@ -1343,8 +1364,9 @@ namespace kk_sms.inventoryManagement
             this.theft5.Location = new System.Drawing.Point(70, 142);
             this.theft5.Name = "theft5";
             this.theft5.Size = new System.Drawing.Size(60, 19);
-            this.theft5.TabIndex = 0;
+            this.theft5.TabIndex = 14;
             this.theft5.TextChanged += new System.EventHandler(this.theft5_TextChanged);
+            this.theft5.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.theft5_keypress);
             // 
             // lost9
             // 
@@ -1352,8 +1374,9 @@ namespace kk_sms.inventoryManagement
             this.lost9.Location = new System.Drawing.Point(5, 242);
             this.lost9.Name = "lost9";
             this.lost9.Size = new System.Drawing.Size(60, 19);
-            this.lost9.TabIndex = 0;
+            this.lost9.TabIndex = 25;
             this.lost9.TextChanged += new System.EventHandler(this.lost9_TextChanged);
+            this.lost9.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.lost9_keypress);
             // 
             // others4
             // 
@@ -1361,8 +1384,9 @@ namespace kk_sms.inventoryManagement
             this.others4.Location = new System.Drawing.Point(136, 117);
             this.others4.Name = "others4";
             this.others4.Size = new System.Drawing.Size(60, 19);
-            this.others4.TabIndex = 0;
+            this.others4.TabIndex = 12;
             this.others4.TextChanged += new System.EventHandler(this.others4_TextChanged);
+            this.others4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.others4_keypress);
             // 
             // lost8
             // 
@@ -1370,8 +1394,9 @@ namespace kk_sms.inventoryManagement
             this.lost8.Location = new System.Drawing.Point(5, 217);
             this.lost8.Name = "lost8";
             this.lost8.Size = new System.Drawing.Size(60, 19);
-            this.lost8.TabIndex = 0;
+            this.lost8.TabIndex = 22;
             this.lost8.TextChanged += new System.EventHandler(this.lost8_TextChanged);
+            this.lost8.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.lost8_keypress);
             // 
             // theft4
             // 
@@ -1379,8 +1404,9 @@ namespace kk_sms.inventoryManagement
             this.theft4.Location = new System.Drawing.Point(70, 117);
             this.theft4.Name = "theft4";
             this.theft4.Size = new System.Drawing.Size(60, 19);
-            this.theft4.TabIndex = 0;
+            this.theft4.TabIndex = 11;
             this.theft4.TextChanged += new System.EventHandler(this.theft4_TextChanged);
+            this.theft4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.theft4_keypress);
             // 
             // lost7
             // 
@@ -1388,8 +1414,9 @@ namespace kk_sms.inventoryManagement
             this.lost7.Location = new System.Drawing.Point(5, 192);
             this.lost7.Name = "lost7";
             this.lost7.Size = new System.Drawing.Size(60, 19);
-            this.lost7.TabIndex = 0;
+            this.lost7.TabIndex = 19;
             this.lost7.TextChanged += new System.EventHandler(this.lost7_TextChanged);
+            this.lost7.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.lost7_keypress);
             // 
             // others3
             // 
@@ -1397,8 +1424,9 @@ namespace kk_sms.inventoryManagement
             this.others3.Location = new System.Drawing.Point(136, 92);
             this.others3.Name = "others3";
             this.others3.Size = new System.Drawing.Size(60, 19);
-            this.others3.TabIndex = 0;
+            this.others3.TabIndex = 9;
             this.others3.TextChanged += new System.EventHandler(this.others3_TextChanged);
+            this.others3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.others3_keypress);
             // 
             // lost6
             // 
@@ -1406,8 +1434,9 @@ namespace kk_sms.inventoryManagement
             this.lost6.Location = new System.Drawing.Point(5, 167);
             this.lost6.Name = "lost6";
             this.lost6.Size = new System.Drawing.Size(60, 19);
-            this.lost6.TabIndex = 0;
+            this.lost6.TabIndex = 16;
             this.lost6.TextChanged += new System.EventHandler(this.lost6_TextChanged);
+            this.lost6.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.lost6_keypress);
             // 
             // theft3
             // 
@@ -1415,8 +1444,9 @@ namespace kk_sms.inventoryManagement
             this.theft3.Location = new System.Drawing.Point(70, 92);
             this.theft3.Name = "theft3";
             this.theft3.Size = new System.Drawing.Size(60, 19);
-            this.theft3.TabIndex = 0;
+            this.theft3.TabIndex = 8;
             this.theft3.TextChanged += new System.EventHandler(this.theft3_TextChanged);
+            this.theft3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.theft3_keypress);
             // 
             // lost5
             // 
@@ -1424,8 +1454,9 @@ namespace kk_sms.inventoryManagement
             this.lost5.Location = new System.Drawing.Point(5, 142);
             this.lost5.Name = "lost5";
             this.lost5.Size = new System.Drawing.Size(60, 19);
-            this.lost5.TabIndex = 0;
+            this.lost5.TabIndex = 13;
             this.lost5.TextChanged += new System.EventHandler(this.lost5_TextChanged);
+            this.lost5.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.lost5_keypress);
             // 
             // others2
             // 
@@ -1433,8 +1464,9 @@ namespace kk_sms.inventoryManagement
             this.others2.Location = new System.Drawing.Point(136, 67);
             this.others2.Name = "others2";
             this.others2.Size = new System.Drawing.Size(60, 19);
-            this.others2.TabIndex = 0;
+            this.others2.TabIndex = 6;
             this.others2.TextChanged += new System.EventHandler(this.others2_TextChanged);
+            this.others2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.others2_keypress);
             // 
             // lost4
             // 
@@ -1442,8 +1474,9 @@ namespace kk_sms.inventoryManagement
             this.lost4.Location = new System.Drawing.Point(5, 117);
             this.lost4.Name = "lost4";
             this.lost4.Size = new System.Drawing.Size(60, 19);
-            this.lost4.TabIndex = 0;
+            this.lost4.TabIndex = 10;
             this.lost4.TextChanged += new System.EventHandler(this.lost4_TextChanged);
+            this.lost4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.lost4_keypress);
             // 
             // theft2
             // 
@@ -1451,8 +1484,9 @@ namespace kk_sms.inventoryManagement
             this.theft2.Location = new System.Drawing.Point(70, 67);
             this.theft2.Name = "theft2";
             this.theft2.Size = new System.Drawing.Size(60, 19);
-            this.theft2.TabIndex = 0;
+            this.theft2.TabIndex = 5;
             this.theft2.TextChanged += new System.EventHandler(this.theft2_TextChanged);
+            this.theft2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.theft2_keypress);
             // 
             // lost3
             // 
@@ -1460,8 +1494,9 @@ namespace kk_sms.inventoryManagement
             this.lost3.Location = new System.Drawing.Point(5, 92);
             this.lost3.Name = "lost3";
             this.lost3.Size = new System.Drawing.Size(60, 19);
-            this.lost3.TabIndex = 0;
+            this.lost3.TabIndex = 7;
             this.lost3.TextChanged += new System.EventHandler(this.lost3_TextChanged);
+            this.lost3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.lost3_keypress);
             // 
             // others1
             // 
@@ -1469,8 +1504,9 @@ namespace kk_sms.inventoryManagement
             this.others1.Location = new System.Drawing.Point(136, 42);
             this.others1.Name = "others1";
             this.others1.Size = new System.Drawing.Size(60, 19);
-            this.others1.TabIndex = 0;
+            this.others1.TabIndex = 3;
             this.others1.TextChanged += new System.EventHandler(this.others1_TextChanged);
+            this.others1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.others1_keypress);
             // 
             // lost2
             // 
@@ -1478,8 +1514,9 @@ namespace kk_sms.inventoryManagement
             this.lost2.Location = new System.Drawing.Point(5, 67);
             this.lost2.Name = "lost2";
             this.lost2.Size = new System.Drawing.Size(60, 19);
-            this.lost2.TabIndex = 0;
+            this.lost2.TabIndex = 4;
             this.lost2.TextChanged += new System.EventHandler(this.lost2_TextChanged);
+            this.lost2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.lost2_keypress);
             // 
             // theft1
             // 
@@ -1487,8 +1524,9 @@ namespace kk_sms.inventoryManagement
             this.theft1.Location = new System.Drawing.Point(70, 42);
             this.theft1.Name = "theft1";
             this.theft1.Size = new System.Drawing.Size(60, 19);
-            this.theft1.TabIndex = 0;
+            this.theft1.TabIndex = 2;
             this.theft1.TextChanged += new System.EventHandler(this.theft1_TextChanged);
+            this.theft1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.theft1_keypress);
             // 
             // lost1
             // 
@@ -1496,8 +1534,9 @@ namespace kk_sms.inventoryManagement
             this.lost1.Location = new System.Drawing.Point(5, 42);
             this.lost1.Name = "lost1";
             this.lost1.Size = new System.Drawing.Size(60, 19);
-            this.lost1.TabIndex = 0;
+            this.lost1.TabIndex = 1;
             this.lost1.TextChanged += new System.EventHandler(this.lost1_TextChanged);
+            this.lost1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.lost1_keypress);
             // 
             // groupBox3
             // 
@@ -1520,7 +1559,7 @@ namespace kk_sms.inventoryManagement
             this.groupBox3.Location = new System.Drawing.Point(637, 118);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(95, 370);
-            this.groupBox3.TabIndex = 5;
+            this.groupBox3.TabIndex = 100;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = " 在庫数 ";
             // 
@@ -1539,7 +1578,7 @@ namespace kk_sms.inventoryManagement
             this.quantity13.Location = new System.Drawing.Point(15, 342);
             this.quantity13.Name = "quantity13";
             this.quantity13.Size = new System.Drawing.Size(60, 19);
-            this.quantity13.TabIndex = 0;
+            this.quantity13.TabIndex = 100;
             // 
             // quantity12
             // 
@@ -1547,7 +1586,7 @@ namespace kk_sms.inventoryManagement
             this.quantity12.Location = new System.Drawing.Point(15, 318);
             this.quantity12.Name = "quantity12";
             this.quantity12.Size = new System.Drawing.Size(60, 19);
-            this.quantity12.TabIndex = 0;
+            this.quantity12.TabIndex = 100;
             // 
             // quantity11
             // 
@@ -1555,7 +1594,7 @@ namespace kk_sms.inventoryManagement
             this.quantity11.Location = new System.Drawing.Point(15, 293);
             this.quantity11.Name = "quantity11";
             this.quantity11.Size = new System.Drawing.Size(60, 19);
-            this.quantity11.TabIndex = 0;
+            this.quantity11.TabIndex = 100;
             // 
             // quantity10
             // 
@@ -1563,7 +1602,7 @@ namespace kk_sms.inventoryManagement
             this.quantity10.Location = new System.Drawing.Point(15, 268);
             this.quantity10.Name = "quantity10";
             this.quantity10.Size = new System.Drawing.Size(60, 19);
-            this.quantity10.TabIndex = 0;
+            this.quantity10.TabIndex = 100;
             // 
             // quantity9
             // 
@@ -1579,7 +1618,7 @@ namespace kk_sms.inventoryManagement
             this.quantity8.Location = new System.Drawing.Point(15, 218);
             this.quantity8.Name = "quantity8";
             this.quantity8.Size = new System.Drawing.Size(60, 19);
-            this.quantity8.TabIndex = 0;
+            this.quantity8.TabIndex = 100;
             // 
             // quantity7
             // 
@@ -1587,7 +1626,7 @@ namespace kk_sms.inventoryManagement
             this.quantity7.Location = new System.Drawing.Point(15, 193);
             this.quantity7.Name = "quantity7";
             this.quantity7.Size = new System.Drawing.Size(60, 19);
-            this.quantity7.TabIndex = 0;
+            this.quantity7.TabIndex = 100;
             // 
             // quantity6
             // 
@@ -1595,7 +1634,7 @@ namespace kk_sms.inventoryManagement
             this.quantity6.Location = new System.Drawing.Point(15, 168);
             this.quantity6.Name = "quantity6";
             this.quantity6.Size = new System.Drawing.Size(60, 19);
-            this.quantity6.TabIndex = 0;
+            this.quantity6.TabIndex = 100;
             // 
             // quantity5
             // 
@@ -1603,7 +1642,7 @@ namespace kk_sms.inventoryManagement
             this.quantity5.Location = new System.Drawing.Point(15, 143);
             this.quantity5.Name = "quantity5";
             this.quantity5.Size = new System.Drawing.Size(60, 19);
-            this.quantity5.TabIndex = 0;
+            this.quantity5.TabIndex = 100;
             // 
             // quantity4
             // 
@@ -1611,7 +1650,7 @@ namespace kk_sms.inventoryManagement
             this.quantity4.Location = new System.Drawing.Point(15, 118);
             this.quantity4.Name = "quantity4";
             this.quantity4.Size = new System.Drawing.Size(60, 19);
-            this.quantity4.TabIndex = 0;
+            this.quantity4.TabIndex = 100;
             // 
             // quantity3
             // 
@@ -1619,7 +1658,7 @@ namespace kk_sms.inventoryManagement
             this.quantity3.Location = new System.Drawing.Point(15, 93);
             this.quantity3.Name = "quantity3";
             this.quantity3.Size = new System.Drawing.Size(60, 19);
-            this.quantity3.TabIndex = 0;
+            this.quantity3.TabIndex = 100;
             // 
             // quantity2
             // 
@@ -1627,7 +1666,7 @@ namespace kk_sms.inventoryManagement
             this.quantity2.Location = new System.Drawing.Point(15, 68);
             this.quantity2.Name = "quantity2";
             this.quantity2.Size = new System.Drawing.Size(60, 19);
-            this.quantity2.TabIndex = 0;
+            this.quantity2.TabIndex = 100;
             // 
             // quantity1
             // 
@@ -1635,14 +1674,14 @@ namespace kk_sms.inventoryManagement
             this.quantity1.Location = new System.Drawing.Point(15, 43);
             this.quantity1.Name = "quantity1";
             this.quantity1.Size = new System.Drawing.Size(60, 19);
-            this.quantity1.TabIndex = 0;
+            this.quantity1.TabIndex = 100;
             // 
             // display
             // 
             this.display.Location = new System.Drawing.Point(123, 494);
             this.display.Name = "display";
             this.display.Size = new System.Drawing.Size(121, 34);
-            this.display.TabIndex = 6;
+            this.display.TabIndex = 40;
             this.display.UseVisualStyleBackColor = true;
             this.display.Click += new System.EventHandler(this.display_Click);
             // 
@@ -1651,7 +1690,7 @@ namespace kk_sms.inventoryManagement
             this.button2.Location = new System.Drawing.Point(459, 494);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(121, 34);
-            this.button2.TabIndex = 6;
+            this.button2.TabIndex = 41;
             this.button2.Text = "終  了 (&E)";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
