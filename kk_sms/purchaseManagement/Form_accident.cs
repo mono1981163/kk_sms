@@ -46,6 +46,10 @@ namespace kk_sms.purchaseManagement
                 label_description.Text = "伝票番号は数字でなければなりません。";
                 button_correction.Focus();
             }
+            else if (slipNo != "" && Int32.Parse(slipNo) < 800)
+            {
+                label_description.Text = "仕入訂正伝票番号は800番台です";
+            }
             else
             {
                 try
@@ -485,6 +489,10 @@ namespace kk_sms.purchaseManagement
             {
                 label_description.Text = "伝票番号は数字でなければなりません";
                 button_correction.Focus();
+            }
+            else if (orderno != "" && Int32.Parse(orderno) < 800)
+            {
+                label_description.Text = "仕入訂正伝票番号は800番台です";
             }
             else if (isOrdernoExist)
             {
