@@ -19,11 +19,11 @@ using IniParser;
 using IniParser.Model;
 using System.Diagnostics;
 using System.IO;
-namespace kk_sms.purchaseManagement
+namespace kk_sms.dailyReportPrinting
 {
-    public partial class Form_print: Form
+    public partial class Form_selectDate1 : Form
     {
-        public Form_print()
+        public Form_selectDate1()
         {
             InitializeComponent();
         }
