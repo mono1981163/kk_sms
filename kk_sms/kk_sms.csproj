@@ -533,6 +533,12 @@
     <Compile Include="purchaseManagement\Form_print.Designer.cs">
       <DependentUpon>Form_print.cs</DependentUpon>
     </Compile>
+    <Compile Include="salesManagement\Form_inputList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="salesManagement\Form_inputList.Designer.cs">
+      <DependentUpon>Form_inputList.cs</DependentUpon>
+    </Compile>
     <Compile Include="salesManagement\Form_slipInputClient.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -874,6 +880,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="purchaseManagement\Form_print.resx">
       <DependentUpon>Form_print.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="salesManagement\Form_inputList.resx">
+      <DependentUpon>Form_inputList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="salesManagement\Form_slipInputClient.resx">
       <DependentUpon>Form_slipInputClient.cs</DependentUpon>
