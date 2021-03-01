@@ -769,5 +769,305 @@ namespace kk_sms.inventoryManagement
             quantity13.Text = m_quantitysdisplay[12].ToString();
             m_othersnew[12] = c;
         }
+
+        private void lost1_keypress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                this.ActiveControl = theft1;
+            }
+        }
+
+        private void theft1_keypress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                this.ActiveControl = others1;
+            }
+        }
+
+        private void others1_keypress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                this.ActiveControl = lost2;
+            }
+        }
+        private void lost2_keypress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                this.ActiveControl = theft2;
+            }
+        }
+
+        private void theft2_keypress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                this.ActiveControl = others2;
+            }
+        }
+
+        private void others2_keypress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                this.ActiveControl = lost3;
+            }
+        }
+        private void lost3_keypress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                this.ActiveControl = theft3;
+            }
+        }
+
+        private void theft3_keypress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                this.ActiveControl = others3;
+            }
+        }
+
+        private void others3_keypress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                this.ActiveControl = lost4;
+            }
+        }
+        private void lost4_keypress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                this.ActiveControl = theft4;
+            }
+        }
+
+        private void theft4_keypress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                this.ActiveControl = others4;
+            }
+        }
+
+        private void others4_keypress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                this.ActiveControl = lost5;
+            }
+        }
+        private void lost5_keypress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                this.ActiveControl = theft5;
+            }
+        }
+
+        private void theft5_keypress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                this.ActiveControl = others5;
+            }
+        }
+
+        private void others5_keypress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                this.ActiveControl = lost6;
+            }
+        }
+        private void lost6_keypress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                this.ActiveControl = theft6;
+            }
+        }
+
+        private void theft6_keypress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                this.ActiveControl = others6;
+            }
+        }
+
+        private void others6_keypress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                this.ActiveControl = lost7;
+            }
+        }
+        private void lost7_keypress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                this.ActiveControl = theft7;
+            }
+        }
+
+        private void theft7_keypress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                this.ActiveControl = others7;
+            }
+        }
+
+        private void others7_keypress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                this.ActiveControl = lost8;
+            }
+        }
+        private void lost8_keypress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                this.ActiveControl = theft8;
+            }
+        }
+
+        private void theft8_keypress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                this.ActiveControl = others8;
+            }
+        }
+
+        private void others8_keypress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                this.ActiveControl = lost9;
+            }
+        }
+        private void lost9_keypress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                this.ActiveControl = theft9;
+            }
+        }
+        private void theft9_keypress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                this.ActiveControl = others9;
+            }
+        }
+
+        private void others9_keypress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                this.ActiveControl = lost10;
+            }
+        }
+
+        private void lost10_keypress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                this.ActiveControl = theft10;
+            }
+        }
+        private void theft10_keypress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                this.ActiveControl = others10;
+            }
+        }
+
+        private void others10_keypress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                this.ActiveControl = lost11;
+            }
+        }
+        private void lost11_keypress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                this.ActiveControl = theft11;
+            }
+        }
+
+        private void theft11_keypress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                this.ActiveControl = others11;
+            }
+        }
+
+        private void others11_keypress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                this.ActiveControl = lost12;
+            }
+        }
+        private void lost12_keypress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                this.ActiveControl = theft12;
+            }
+        }
+
+        private void theft12_keypress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                this.ActiveControl = others12;
+            }
+        }
+
+        private void others12_keypress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                this.ActiveControl = lost13;
+            }
+        }
+        private void lost13_keypress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                this.ActiveControl = theft13;
+            }
+        }
+
+        private void theft13_keypress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                this.ActiveControl = others13;
+            }
+        }
+
+        private void others13_keypress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                this.ActiveControl = lost1;
+            }
+        }
+
     }
 }
