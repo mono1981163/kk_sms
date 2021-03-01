@@ -158,5 +158,37 @@ namespace kk_sms.masterManagement.consumption_tax
         {
             var day = textBox_day.Text;
         }
+
+        private void rate_keypress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                this.ActiveControl = textBox_year;
+            }
+        }
+
+        private void year_keypress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                this.ActiveControl = textBox_month;
+            }
+        }
+
+        private void month_keypress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                this.ActiveControl = textBox_day;
+            }
+        }
+
+        private void day_keypress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                this.ActiveControl = button_ok;
+            }
+        }
     }
 }

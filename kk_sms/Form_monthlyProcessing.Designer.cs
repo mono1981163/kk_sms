@@ -32,10 +32,10 @@ namespace kk_sms
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_monthlyProcessing));
             this.label_title = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.label_description = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
@@ -65,23 +65,14 @@ namespace kk_sms
             this.panel1.Size = new System.Drawing.Size(280, 226);
             this.panel1.TabIndex = 1;
             // 
-            // button1
+            // button4
             // 
-            this.button1.Location = new System.Drawing.Point(27, 21);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(225, 35);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "代払別完納奨励金印刷 ( &P )";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(27, 71);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(225, 35);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "完納奨励金一覧表印刷 ( &Q )";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button4.Location = new System.Drawing.Point(27, 171);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(225, 35);
+            this.button4.TabIndex = 3;
+            this.button4.Text = "一般・得意先利益印刷 ( &G )";
+            this.button4.UseVisualStyleBackColor = true;
             // 
             // button3
             // 
@@ -92,14 +83,24 @@ namespace kk_sms
             this.button3.Text = "代払・得意先利益印刷 ( &D )";
             this.button3.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // button2
             // 
-            this.button4.Location = new System.Drawing.Point(27, 171);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(225, 35);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "一般・得意先利益印刷 ( &G )";
-            this.button4.UseVisualStyleBackColor = true;
+            this.button2.Location = new System.Drawing.Point(27, 71);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(225, 35);
+            this.button2.TabIndex = 1;
+            this.button2.Text = "完納奨励金一覧表印刷 ( &Q )";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(27, 21);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(225, 35);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "代払別完納奨励金印刷 ( &P )";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button5
             // 

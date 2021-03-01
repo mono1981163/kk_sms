@@ -45,29 +45,29 @@ namespace kk_sms.purchaseManagement
             this.label8 = new System.Windows.Forms.Label();
             this.textBox_supplier = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.textBox_productCode = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.textBox_productName = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.textBox_gradeCode = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.textBox_grade = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.textBox_classCode = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
             this.textBox_class = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.textBox_classCode = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.textBox_grade = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.textBox_gradeCode = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.textBox_productName = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.textBox_productCode = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label15 = new System.Windows.Forms.Label();
-            this.textBox_accidentCode = new System.Windows.Forms.TextBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.textBox_accident = new System.Windows.Forms.TextBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.textBox_purchaseQuantity = new System.Windows.Forms.TextBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.textBox_unitPrice = new System.Windows.Forms.TextBox();
-            this.label19 = new System.Windows.Forms.Label();
             this.textBox_amount = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.textBox_unitPrice = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.textBox_purchaseQuantity = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.textBox_accident = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.textBox_accidentCode = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
             this.button_ok = new System.Windows.Forms.Button();
             this.button_correction = new System.Windows.Forms.Button();
             this.button_exit = new System.Windows.Forms.Button();
@@ -120,6 +120,7 @@ namespace kk_sms.purchaseManagement
             this.textBox_slipNo.Size = new System.Drawing.Size(49, 24);
             this.textBox_slipNo.TabIndex = 4;
             this.textBox_slipNo.TextChanged += new System.EventHandler(this.textBox_slipNo_TextChanged);
+            this.textBox_slipNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.slipNo_keypress);
             // 
             // label4
             // 
@@ -148,6 +149,7 @@ namespace kk_sms.purchaseManagement
             this.textBox_repCode.Size = new System.Drawing.Size(49, 24);
             this.textBox_repCode.TabIndex = 7;
             this.textBox_repCode.TextChanged += new System.EventHandler(this.textBox_repCode_TextChanged);
+            this.textBox_repCode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.repCode_keypress);
             // 
             // label6
             // 
@@ -182,6 +184,7 @@ namespace kk_sms.purchaseManagement
             this.textBox_supplierCode.Size = new System.Drawing.Size(49, 24);
             this.textBox_supplierCode.TabIndex = 11;
             this.textBox_supplierCode.TextChanged += new System.EventHandler(this.textBox_supplierCode_TextChanged);
+            this.textBox_supplierCode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.supplierCode_keypress);
             // 
             // label8
             // 
@@ -222,90 +225,13 @@ namespace kk_sms.purchaseManagement
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "仕入潘品";
             // 
-            // label9
+            // textBox_class
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(16, 24);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(63, 17);
-            this.label9.TabIndex = 0;
-            this.label9.Text = "商品コード";
-            // 
-            // textBox_productCode
-            // 
-            this.textBox_productCode.Location = new System.Drawing.Point(85, 17);
-            this.textBox_productCode.Name = "textBox_productCode";
-            this.textBox_productCode.Size = new System.Drawing.Size(52, 24);
-            this.textBox_productCode.TabIndex = 1;
-            this.textBox_productCode.TextChanged += new System.EventHandler(this.textBox_productCode_TextChanged);
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(158, 24);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(41, 17);
-            this.label10.TabIndex = 2;
-            this.label10.Text = "商品名";
-            // 
-            // textBox_productName
-            // 
-            this.textBox_productName.Enabled = false;
-            this.textBox_productName.Location = new System.Drawing.Point(206, 17);
-            this.textBox_productName.Name = "textBox_productName";
-            this.textBox_productName.Size = new System.Drawing.Size(100, 24);
-            this.textBox_productName.TabIndex = 3;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(16, 59);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(63, 17);
-            this.label11.TabIndex = 4;
-            this.label11.Text = "等級コード";
-            // 
-            // textBox_gradeCode
-            // 
-            this.textBox_gradeCode.Location = new System.Drawing.Point(85, 52);
-            this.textBox_gradeCode.Name = "textBox_gradeCode";
-            this.textBox_gradeCode.Size = new System.Drawing.Size(52, 24);
-            this.textBox_gradeCode.TabIndex = 5;
-            this.textBox_gradeCode.TextChanged += new System.EventHandler(this.textBox_gradeCode_TextChanged);
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(168, 59);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(30, 17);
-            this.label12.TabIndex = 6;
-            this.label12.Text = "等級";
-            // 
-            // textBox_grade
-            // 
-            this.textBox_grade.Enabled = false;
-            this.textBox_grade.Location = new System.Drawing.Point(206, 52);
-            this.textBox_grade.Name = "textBox_grade";
-            this.textBox_grade.Size = new System.Drawing.Size(100, 24);
-            this.textBox_grade.TabIndex = 7;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(16, 94);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(63, 17);
-            this.label13.TabIndex = 8;
-            this.label13.Text = "階級コード";
-            // 
-            // textBox_classCode
-            // 
-            this.textBox_classCode.Location = new System.Drawing.Point(85, 87);
-            this.textBox_classCode.Name = "textBox_classCode";
-            this.textBox_classCode.Size = new System.Drawing.Size(52, 24);
-            this.textBox_classCode.TabIndex = 9;
-            this.textBox_classCode.TextChanged += new System.EventHandler(this.textBox_classCode_TextChanged);
+            this.textBox_class.Enabled = false;
+            this.textBox_class.Location = new System.Drawing.Point(206, 87);
+            this.textBox_class.Name = "textBox_class";
+            this.textBox_class.Size = new System.Drawing.Size(100, 24);
+            this.textBox_class.TabIndex = 11;
             // 
             // label14
             // 
@@ -316,13 +242,93 @@ namespace kk_sms.purchaseManagement
             this.label14.TabIndex = 10;
             this.label14.Text = "階級";
             // 
-            // textBox_class
+            // textBox_classCode
             // 
-            this.textBox_class.Enabled = false;
-            this.textBox_class.Location = new System.Drawing.Point(206, 87);
-            this.textBox_class.Name = "textBox_class";
-            this.textBox_class.Size = new System.Drawing.Size(100, 24);
-            this.textBox_class.TabIndex = 11;
+            this.textBox_classCode.Location = new System.Drawing.Point(85, 87);
+            this.textBox_classCode.Name = "textBox_classCode";
+            this.textBox_classCode.Size = new System.Drawing.Size(52, 24);
+            this.textBox_classCode.TabIndex = 9;
+            this.textBox_classCode.TextChanged += new System.EventHandler(this.textBox_classCode_TextChanged);
+            this.textBox_classCode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.classCode_keypress);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(16, 94);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(63, 17);
+            this.label13.TabIndex = 8;
+            this.label13.Text = "階級コード";
+            // 
+            // textBox_grade
+            // 
+            this.textBox_grade.Enabled = false;
+            this.textBox_grade.Location = new System.Drawing.Point(206, 52);
+            this.textBox_grade.Name = "textBox_grade";
+            this.textBox_grade.Size = new System.Drawing.Size(100, 24);
+            this.textBox_grade.TabIndex = 7;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(168, 59);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(30, 17);
+            this.label12.TabIndex = 6;
+            this.label12.Text = "等級";
+            // 
+            // textBox_gradeCode
+            // 
+            this.textBox_gradeCode.Location = new System.Drawing.Point(85, 52);
+            this.textBox_gradeCode.Name = "textBox_gradeCode";
+            this.textBox_gradeCode.Size = new System.Drawing.Size(52, 24);
+            this.textBox_gradeCode.TabIndex = 5;
+            this.textBox_gradeCode.TextChanged += new System.EventHandler(this.textBox_gradeCode_TextChanged);
+            this.textBox_gradeCode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.gradeCode_keypress);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(16, 59);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(63, 17);
+            this.label11.TabIndex = 4;
+            this.label11.Text = "等級コード";
+            // 
+            // textBox_productName
+            // 
+            this.textBox_productName.Enabled = false;
+            this.textBox_productName.Location = new System.Drawing.Point(206, 17);
+            this.textBox_productName.Name = "textBox_productName";
+            this.textBox_productName.Size = new System.Drawing.Size(100, 24);
+            this.textBox_productName.TabIndex = 3;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(158, 24);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(41, 17);
+            this.label10.TabIndex = 2;
+            this.label10.Text = "商品名";
+            // 
+            // textBox_productCode
+            // 
+            this.textBox_productCode.Location = new System.Drawing.Point(85, 17);
+            this.textBox_productCode.Name = "textBox_productCode";
+            this.textBox_productCode.Size = new System.Drawing.Size(52, 24);
+            this.textBox_productCode.TabIndex = 1;
+            this.textBox_productCode.TextChanged += new System.EventHandler(this.textBox_productCode_TextChanged);
+            this.textBox_productCode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.productCode_keypress);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(16, 24);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(63, 17);
+            this.label9.TabIndex = 0;
+            this.label9.Text = "商品コード";
             // 
             // panel1
             // 
@@ -342,73 +348,14 @@ namespace kk_sms.purchaseManagement
             this.panel1.Size = new System.Drawing.Size(365, 82);
             this.panel1.TabIndex = 15;
             // 
-            // label15
+            // textBox_amount
             // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(16, 17);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(85, 17);
-            this.label15.TabIndex = 0;
-            this.label15.Text = "事故区分コード";
-            // 
-            // textBox_accidentCode
-            // 
-            this.textBox_accidentCode.Location = new System.Drawing.Point(106, 10);
-            this.textBox_accidentCode.Name = "textBox_accidentCode";
-            this.textBox_accidentCode.Size = new System.Drawing.Size(20, 24);
-            this.textBox_accidentCode.TabIndex = 1;
-            this.textBox_accidentCode.TextChanged += new System.EventHandler(this.textBox_accidentCode_TextChanged);
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(137, 17);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(52, 17);
-            this.label16.TabIndex = 2;
-            this.label16.Text = "事故区分";
-            // 
-            // textBox_accident
-            // 
-            this.textBox_accident.Enabled = false;
-            this.textBox_accident.Location = new System.Drawing.Point(195, 10);
-            this.textBox_accident.Name = "textBox_accident";
-            this.textBox_accident.Size = new System.Drawing.Size(61, 24);
-            this.textBox_accident.TabIndex = 3;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(16, 52);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(30, 17);
-            this.label17.TabIndex = 4;
-            this.label17.Text = "数量";
-            // 
-            // textBox_purchaseQuantity
-            // 
-            this.textBox_purchaseQuantity.Location = new System.Drawing.Point(52, 45);
-            this.textBox_purchaseQuantity.Name = "textBox_purchaseQuantity";
-            this.textBox_purchaseQuantity.Size = new System.Drawing.Size(58, 24);
-            this.textBox_purchaseQuantity.TabIndex = 5;
-            this.textBox_purchaseQuantity.TextChanged += new System.EventHandler(this.textBox_purchaseQuantity_TextChanged);
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(125, 52);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(30, 17);
-            this.label18.TabIndex = 6;
-            this.label18.Text = "単価";
-            // 
-            // textBox_unitPrice
-            // 
-            this.textBox_unitPrice.Location = new System.Drawing.Point(161, 45);
-            this.textBox_unitPrice.Name = "textBox_unitPrice";
-            this.textBox_unitPrice.Size = new System.Drawing.Size(58, 24);
-            this.textBox_unitPrice.TabIndex = 7;
-            this.textBox_unitPrice.TextChanged += new System.EventHandler(this.textBox_unitPrice_TextChanged);
+            this.textBox_amount.Enabled = false;
+            this.textBox_amount.Location = new System.Drawing.Point(271, 45);
+            this.textBox_amount.Name = "textBox_amount";
+            this.textBox_amount.Size = new System.Drawing.Size(79, 24);
+            this.textBox_amount.TabIndex = 9;
+            this.textBox_amount.TextChanged += new System.EventHandler(this.textBox_amount_TextChanged);
             // 
             // label19
             // 
@@ -419,14 +366,76 @@ namespace kk_sms.purchaseManagement
             this.label19.TabIndex = 8;
             this.label19.Text = "金額";
             // 
-            // textBox_amount
+            // textBox_unitPrice
             // 
-            this.textBox_amount.Enabled = false;
-            this.textBox_amount.Location = new System.Drawing.Point(271, 45);
-            this.textBox_amount.Name = "textBox_amount";
-            this.textBox_amount.Size = new System.Drawing.Size(79, 24);
-            this.textBox_amount.TabIndex = 9;
-            this.textBox_amount.TextChanged += new System.EventHandler(this.textBox_amount_TextChanged);
+            this.textBox_unitPrice.Location = new System.Drawing.Point(161, 45);
+            this.textBox_unitPrice.Name = "textBox_unitPrice";
+            this.textBox_unitPrice.Size = new System.Drawing.Size(58, 24);
+            this.textBox_unitPrice.TabIndex = 7;
+            this.textBox_unitPrice.TextChanged += new System.EventHandler(this.textBox_unitPrice_TextChanged);
+            this.textBox_unitPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.unitprice_keypress);
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(125, 52);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(30, 17);
+            this.label18.TabIndex = 6;
+            this.label18.Text = "単価";
+            // 
+            // textBox_purchaseQuantity
+            // 
+            this.textBox_purchaseQuantity.Location = new System.Drawing.Point(52, 45);
+            this.textBox_purchaseQuantity.Name = "textBox_purchaseQuantity";
+            this.textBox_purchaseQuantity.Size = new System.Drawing.Size(58, 24);
+            this.textBox_purchaseQuantity.TabIndex = 5;
+            this.textBox_purchaseQuantity.TextChanged += new System.EventHandler(this.textBox_purchaseQuantity_TextChanged);
+            this.textBox_purchaseQuantity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.purchaseQuantity_keypress);
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(16, 52);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(30, 17);
+            this.label17.TabIndex = 4;
+            this.label17.Text = "数量";
+            // 
+            // textBox_accident
+            // 
+            this.textBox_accident.Enabled = false;
+            this.textBox_accident.Location = new System.Drawing.Point(195, 10);
+            this.textBox_accident.Name = "textBox_accident";
+            this.textBox_accident.Size = new System.Drawing.Size(61, 24);
+            this.textBox_accident.TabIndex = 3;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(137, 17);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(52, 17);
+            this.label16.TabIndex = 2;
+            this.label16.Text = "事故区分";
+            // 
+            // textBox_accidentCode
+            // 
+            this.textBox_accidentCode.Location = new System.Drawing.Point(106, 10);
+            this.textBox_accidentCode.Name = "textBox_accidentCode";
+            this.textBox_accidentCode.Size = new System.Drawing.Size(20, 24);
+            this.textBox_accidentCode.TabIndex = 1;
+            this.textBox_accidentCode.TextChanged += new System.EventHandler(this.textBox_accidentCode_TextChanged);
+            this.textBox_accidentCode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.accidentCode_keypress);
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(16, 17);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(85, 17);
+            this.label15.TabIndex = 0;
+            this.label15.Text = "事故区分コード";
             // 
             // button_ok
             // 

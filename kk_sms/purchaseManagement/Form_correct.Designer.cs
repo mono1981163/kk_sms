@@ -135,6 +135,7 @@ namespace kk_sms.purchaseManagement
             this.textBox_slipNo.Size = new System.Drawing.Size(50, 20);
             this.textBox_slipNo.TabIndex = 4;
             this.textBox_slipNo.TextChanged += new System.EventHandler(this.TextBox_slipNo_TextChanged);
+            this.textBox_slipNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.slipNo_keypress);
             // 
             // label_repCode
             // 
@@ -153,6 +154,7 @@ namespace kk_sms.purchaseManagement
             this.textBox_repCode.Size = new System.Drawing.Size(50, 20);
             this.textBox_repCode.TabIndex = 6;
             this.textBox_repCode.TextChanged += new System.EventHandler(this.TextBox_repCode_TextChanged);
+            this.textBox_repCode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.repCode_keypress);
             // 
             // label_supplierCode
             // 
@@ -188,6 +190,7 @@ namespace kk_sms.purchaseManagement
             this.textBox_supplierCode.Size = new System.Drawing.Size(50, 20);
             this.textBox_supplierCode.TabIndex = 10;
             this.textBox_supplierCode.TextChanged += new System.EventHandler(this.TextBox_supplierCode_TextChanged);
+            this.textBox_supplierCode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.supplierCode_keypress);
             // 
             // label_supplier
             // 
@@ -299,6 +302,7 @@ namespace kk_sms.purchaseManagement
             this.textBox_classCode.Size = new System.Drawing.Size(35, 20);
             this.textBox_classCode.TabIndex = 9;
             this.textBox_classCode.TextChanged += new System.EventHandler(this.TextBox_classCode_TextChanged);
+            this.textBox_classCode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.classCode_keypress);
             // 
             // label_classCode
             // 
@@ -334,6 +338,7 @@ namespace kk_sms.purchaseManagement
             this.textBox_gradeCode.Size = new System.Drawing.Size(31, 20);
             this.textBox_gradeCode.TabIndex = 5;
             this.textBox_gradeCode.TextChanged += new System.EventHandler(this.TextBox_gradeCode_TextChanged);
+            this.textBox_gradeCode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.gradeCode_keypress);
             // 
             // label1_gradeCode
             // 
@@ -369,6 +374,7 @@ namespace kk_sms.purchaseManagement
             this.textBox_productCode.Size = new System.Drawing.Size(57, 20);
             this.textBox_productCode.TabIndex = 1;
             this.textBox_productCode.TextChanged += new System.EventHandler(this.TextBox_productCode_TextChanged);
+            this.textBox_productCode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.productCode_keypress);
             // 
             // label_productCode
             // 
@@ -422,6 +428,7 @@ namespace kk_sms.purchaseManagement
             this.textBox_unitPrice.Size = new System.Drawing.Size(52, 20);
             this.textBox_unitPrice.TabIndex = 10;
             this.textBox_unitPrice.TextChanged += new System.EventHandler(this.TextBox_unitPrice_TextChanged);
+            this.textBox_unitPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.unitprice_keypress);
             // 
             // label_unitPrice
             // 
@@ -440,6 +447,7 @@ namespace kk_sms.purchaseManagement
             this.textBox_purchaseQuantity.Size = new System.Drawing.Size(42, 20);
             this.textBox_purchaseQuantity.TabIndex = 8;
             this.textBox_purchaseQuantity.TextChanged += new System.EventHandler(this.TextBox_purchaseQuantity_TextChanged);
+            this.textBox_purchaseQuantity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.purchaseQuantity_keypress);
             // 
             // label_purchaseQuantity
             // 
@@ -492,6 +500,7 @@ namespace kk_sms.purchaseManagement
             this.textBox_packingCode.Size = new System.Drawing.Size(31, 20);
             this.textBox_packingCode.TabIndex = 3;
             this.textBox_packingCode.TextChanged += new System.EventHandler(this.TextBox_packingCode_TextChanged);
+            this.textBox_packingCode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.packingCode_keypress);
             // 
             // label_packingCode
             // 
@@ -510,6 +519,7 @@ namespace kk_sms.purchaseManagement
             this.textBox_quantity.Size = new System.Drawing.Size(39, 20);
             this.textBox_quantity.TabIndex = 1;
             this.textBox_quantity.TextChanged += new System.EventHandler(this.TextBox_quantity_TextChanged);
+            this.textBox_quantity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.quantity_keypress);
             // 
             // label_quantity
             // 

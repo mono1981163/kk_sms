@@ -17,6 +17,8 @@ using Color = iText.Kernel.Colors.Color;
 using MySql.Data.MySqlClient;
 using IniParser;
 using IniParser.Model;
+using System.Diagnostics;
+using System.IO;
 
 namespace kk_sms.voucherPrinting
 
@@ -48,6 +50,7 @@ namespace kk_sms.voucherPrinting
                 saveFileDialog_savePdf.FileName = "売渡明細書表__" + date;
                 if (saveFileDialog_savePdf.ShowDialog() == DialogResult.OK)
                 {
+                    var folderPath = inidata["Pdf"]["path"];
                     string filename = saveFileDialog_savePdf.FileName;
                     PdfWriter writer = new PdfWriter(filename);
                     PdfDocument pdf = new PdfDocument(writer);
@@ -200,7 +203,32 @@ namespace kk_sms.voucherPrinting
                     }
                     mysqlConnection.Close();
                     document.Close();
-                    MessageBox.Show("PDFファイルが正常に作成されました。");
+                    if (Directory.Exists(folderPath))
+                    {
+                        string windir = Environment.GetEnvironmentVariable("windir");
+                        if (string.IsNullOrEmpty(windir.Trim()))
+                        {
+                            windir = "C:\\Windows\\";
+                        }
+                        if (!windir.EndsWith("\\"))
+                        {
+                            windir += "\\";
+                        }
+                        FileInfo fileToLocate = null;
+                        fileToLocate = new FileInfo(filename);
+
+                        ProcessStartInfo pi = new ProcessStartInfo(windir + "explorer.exe");
+                        pi.Arguments = "/select, \"" + fileToLocate.FullName + "\"";
+                        pi.WindowStyle = ProcessWindowStyle.Normal;
+                        pi.WorkingDirectory = folderPath;
+
+                        //Start Process
+                        Process.Start(pi);
+                    }
+                    else
+                    {
+                        MessageBox.Show(string.Format("{0} ディレクトリが存在しません!", folderPath));
+                    }
                 }
             }
             catch (Exception ex)

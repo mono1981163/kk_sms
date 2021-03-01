@@ -75,6 +75,7 @@ namespace kk_sms.masterManagement.grade
             this.textBox_grade_name.Name = "textBox_grade_name";
             this.textBox_grade_name.Size = new System.Drawing.Size(137, 20);
             this.textBox_grade_name.TabIndex = 3;
+            this.textBox_grade_name.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.name_keypress);
             // 
             // textBox_grade_no
             // 
@@ -82,6 +83,7 @@ namespace kk_sms.masterManagement.grade
             this.textBox_grade_no.Name = "textBox_grade_no";
             this.textBox_grade_no.Size = new System.Drawing.Size(40, 20);
             this.textBox_grade_no.TabIndex = 2;
+            this.textBox_grade_no.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.no_keypress);
             // 
             // label2
             // 

@@ -75,6 +75,7 @@ namespace kk_sms.masterManagement.product
             this.textBox_product_name.Name = "textBox_product_name";
             this.textBox_product_name.Size = new System.Drawing.Size(137, 20);
             this.textBox_product_name.TabIndex = 3;
+            this.textBox_product_name.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.name_keypress);
             // 
             // textBox_product_no
             // 
@@ -82,6 +83,7 @@ namespace kk_sms.masterManagement.product
             this.textBox_product_no.Name = "textBox_product_no";
             this.textBox_product_no.Size = new System.Drawing.Size(40, 20);
             this.textBox_product_no.TabIndex = 2;
+            this.textBox_product_no.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.no_keypress);
             // 
             // label2
             // 

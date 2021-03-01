@@ -341,6 +341,12 @@
     <Compile Include="masterManagement\supplier\supplier_delete.designer.cs">
       <DependentUpon>supplier_delete.cs</DependentUpon>
     </Compile>
+    <Compile Include="monthlyProcessing\Form_selectDate_m_1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="monthlyProcessing\Form_selectDate_m_1.Designer.cs">
+      <DependentUpon>Form_selectDate_m_1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="purchaseManagement\Form_correct.cs">
@@ -361,6 +367,33 @@
     <Compile Include="purchaseManagement\Form_input.Designer.cs">
       <DependentUpon>Form_input.cs</DependentUpon>
     </Compile>
+<<<<<<< HEAD
+=======
+    <Compile Include="purchaseManagement\Form_print.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="purchaseManagement\Form_print.Designer.cs">
+      <DependentUpon>Form_print.cs</DependentUpon>
+    </Compile>
+    <Compile Include="voucherPrinting\Form_selectDate_3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="voucherPrinting\Form_selectDate_3.Designer.cs">
+      <DependentUpon>Form_selectDate_3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="voucherPrinting\Form_selectDate_2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="voucherPrinting\Form_selectDate_2.Designer.cs">
+      <DependentUpon>Form_selectDate_2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="voucherPrinting\Form_selectDate_1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="voucherPrinting\Form_selectDate_1.Designer.cs">
+      <DependentUpon>Form_selectDate_1.cs</DependentUpon>
+    </Compile>
+>>>>>>> 9a970412a27478f250e80852b89daea9174eece4
     <Compile Include="purchaseManagement\Form_correct_selectClass.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -520,6 +553,15 @@
     <EmbeddedResource Include="masterManagement\supplier\supplier_add.resx">
       <DependentUpon>supplier_add.cs</DependentUpon>
     </EmbeddedResource>
+<<<<<<< HEAD
+=======
+    <EmbeddedResource Include="masterManagement\supplier\supplier_delete.resx">
+      <DependentUpon>supplier_delete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="monthlyProcessing\Form_selectDate_m_1.resx">
+      <DependentUpon>Form_selectDate_m_1.cs</DependentUpon>
+    </EmbeddedResource>
+>>>>>>> 9a970412a27478f250e80852b89daea9174eece4
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -538,6 +580,21 @@
     <EmbeddedResource Include="purchaseManagement\Form_input.resx">
       <DependentUpon>Form_input.cs</DependentUpon>
     </EmbeddedResource>
+<<<<<<< HEAD
+=======
+    <EmbeddedResource Include="purchaseManagement\Form_print.resx">
+      <DependentUpon>Form_print.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="voucherPrinting\Form_selectDate_3.resx">
+      <DependentUpon>Form_selectDate_3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="voucherPrinting\Form_selectDate_2.resx">
+      <DependentUpon>Form_selectDate_2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="voucherPrinting\Form_selectDate_1.resx">
+      <DependentUpon>Form_selectDate_1.cs</DependentUpon>
+    </EmbeddedResource>
+>>>>>>> 9a970412a27478f250e80852b89daea9174eece4
     <EmbeddedResource Include="purchaseManagement\Form_correct_selectClass.resx">
       <DependentUpon>Form_correct_selectClass.cs</DependentUpon>
     </EmbeddedResource>
@@ -610,10 +667,14 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+<<<<<<< HEAD
   <ItemGroup>
     <Folder Include="monthlyProcessing\" />
     <Folder Include="voucherPrinting\" />
   </ItemGroup>
+=======
+  <ItemGroup />
+>>>>>>> 9a970412a27478f250e80852b89daea9174eece4
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
       <Visible>False</Visible>

@@ -75,6 +75,7 @@ namespace kk_sms.masterManagement.payment
             this.textBox_pay_name.Name = "textBox_pay_name";
             this.textBox_pay_name.Size = new System.Drawing.Size(137, 20);
             this.textBox_pay_name.TabIndex = 3;
+            this.textBox_pay_name.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.name_keypress);
             // 
             // textBox_pay_no
             // 
@@ -82,6 +83,7 @@ namespace kk_sms.masterManagement.payment
             this.textBox_pay_no.Name = "textBox_pay_no";
             this.textBox_pay_no.Size = new System.Drawing.Size(40, 20);
             this.textBox_pay_no.TabIndex = 2;
+            this.textBox_pay_no.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.no_keypress);
             // 
             // label2
             // 
