@@ -41,7 +41,6 @@ namespace kk_sms.dailyReportPrinting
             {
                 var iniparser = new FileIniDataParser();
                 var folderPath = "";
-                var fileName = "";
                 IniData inidata = iniparser.ReadFile("kk_sms.ini");
                 saveFileDialog_savePdf.InitialDirectory = inidata["Pdf"]["path"];
 
@@ -50,7 +49,7 @@ namespace kk_sms.dailyReportPrinting
                 if (saveFileDialog_savePdf.ShowDialog() == DialogResult.OK)
                 {
                     folderPath = inidata["Pdf"]["path"];
-                fileName = inidata["Pdf"]["path"] + "代払別売上一覧表__" + date + ".pdf";
+                // fileName = inidata["Pdf"]["path"] + "代払別売上一覧表__" + date + ".pdf";
                 string filename = saveFileDialog_savePdf.FileName;
                 PdfWriter writer = new PdfWriter(filename);
                 PdfDocument pdf = new PdfDocument(writer);
@@ -165,7 +164,7 @@ namespace kk_sms.dailyReportPrinting
                         windir += "\\";
                     }
                     FileInfo fileToLocate = null;
-                    fileToLocate = new FileInfo(fileName);
+                    fileToLocate = new FileInfo(filename);
 
                     ProcessStartInfo pi = new ProcessStartInfo(windir + "explorer.exe");
                     pi.Arguments = "/select, \"" + fileToLocate.FullName + "\"";
