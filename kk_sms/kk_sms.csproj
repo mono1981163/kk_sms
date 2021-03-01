@@ -171,6 +171,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="dailyReportPrinting\Form_selectDate1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dailyReportPrinting\Form_selectDate1.Designer.cs">
+      <DependentUpon>Form_selectDate1.cs</DependentUpon>
+    </Compile>
     <Compile Include="dailyReportPrinting\Form_selectDate6.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -200,12 +206,6 @@
     </Compile>
     <Compile Include="dailyReportPrinting\Form_selectDate2.Designer.cs">
       <DependentUpon>Form_selectDate2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="dailyReportPrinting\Form_selectDate1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="dailyReportPrinting\Form_selectDate1.Designer.cs">
-      <DependentUpon>Form_selectDate1.cs</DependentUpon>
     </Compile>
     <Compile Include="Form_dailyReportPrinting.cs">
       <SubType>Form</SubType>
@@ -623,11 +623,11 @@
     <Compile Include="purchaseManagement\Form_input_selectRep.Designer.cs">
       <DependentUpon>Form_input_selectRep.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="dailyReportPrinting\Form_selectDate2.resx">
-      <DependentUpon>Form_selectDate2.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="dailyReportPrinting\Form_selectDate1.resx">
       <DependentUpon>Form_selectDate1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dailyReportPrinting\Form_selectDate2.resx">
+      <DependentUpon>Form_selectDate2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_dailyReportPrinting.resx">
       <DependentUpon>Form_dailyReportPrinting.cs</DependentUpon>
