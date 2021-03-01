@@ -1,5 +1,5 @@
 ﻿
-namespace kk_sms.dailyReportPrinting
+namespace kk_sms.purchaseManagement
 {
     partial class Form_print
     {
@@ -29,7 +29,7 @@ namespace kk_sms.dailyReportPrinting
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_selectDate1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_print));
             this.label1 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.button_ok = new System.Windows.Forms.Button();
