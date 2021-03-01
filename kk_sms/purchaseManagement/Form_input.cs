@@ -567,5 +567,85 @@ namespace kk_sms.purchaseManagement
         {
             this.Close();
         }
+
+        private void slipNo_keypress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                this.ActiveControl = textBox_repCode;
+            }
+        }
+
+        private void repCode_keypress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                this.ActiveControl = textBox_supplierCode;
+            }
+        }
+
+        private void supplierCode_keypress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                this.ActiveControl = textBox_productCode;
+            }
+        }
+
+        private void productCode_keypress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                this.ActiveControl = textBox_gradeCode;
+            }
+        }
+
+        private void gradeCode_keypress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                this.ActiveControl = textBox_classCode;
+            }
+        }
+
+        private void classCode_keypress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                this.ActiveControl = textBox_quantity;
+            }
+        }
+
+        private void quantity_keypress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                this.ActiveControl = textBox_packingCode;
+            }
+        }
+
+        private void packingCode_keypress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                this.ActiveControl = textBox_purchaseQuantity;
+            }
+        }
+
+        private void purchaseQuantity_keypress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                this.ActiveControl = textBox_unitPrice;
+            }
+        }
+
+        private void unitprice_keypress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                this.ActiveControl = button_ok;
+            }
+        }
     }
 }
