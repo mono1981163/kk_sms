@@ -126,6 +126,7 @@ namespace kk_sms.purchaseManagement
         {
             textBox_repCode.Text = code;
             textBox_rep.Text = name;
+            isRepInvalid = false;
         }
 
         private void TextBox_supplierCode_TextChanged(object sender, EventArgs e)
