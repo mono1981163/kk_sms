@@ -70,7 +70,7 @@ namespace kk_sms.purchaseManagement
                     table.SetFontSize(12);
                     table.SetWidth(UnitValue.CreatePercentValue(100));
                     Cell cell;
-                    String temp;
+                    string temp;
 
                     cell = new Cell(1, 1)
                     .SetBackgroundColor(WebColors.GetRGBColor("#dddddd"))
@@ -124,21 +124,41 @@ namespace kk_sms.purchaseManagement
                     string mysqlConf = "server=" + inidata["Mysql"]["server"] + ";user=" + inidata["Mysql"]["user"] + ";database=" + inidata["Mysql"]["database"] + ";port=" + inidata["Mysql"]["port"] + ";password=" + inidata["Mysql"]["password"] + ";";
                     var mysqlConnection = new MySqlConnection(mysqlConf);
                     mysqlConnection.Open();
-                    string query = "SELECT daino, dainame, daysales, discount, netsales, monthsales, daytax, monthtax FROM tbl_daibarai WHERE dday LIKE '" + date + "%' ORDER BY daino";
+                    string query = "SELECT n.siireno, n.siirename, (CASE WHEN n.kuban = 0 THEN SUM(n.kingaku) END), (CASE WHEN n.kuban = 0 THEN SUM(n.kingaku) * (z.zei / 100) END), (CASE WHEN n.kuban = 2 THEN SUM(n.kingaku) END), (CASE WHEN n.kuban = 2 THEN SUM(n.kingaku) * (z.zei / 100) END) FROM tbl_nyuko AS n, m_zei AS z WHERE nyukoday LIKE '" + date + "%' GROUP BY siireno";
                     MySqlCommand sqlCommand = new MySqlCommand(query, mysqlConnection);
                     var result = sqlCommand.ExecuteReader();
                     if (result.HasRows)
-                    {
+                    {                        
                         while (result.Read())
                         {
-                            for (int i = 0; i < 8; i++)
+                            string siireno = "";
+                            for (int i = 0; i < 6; i++)
                             {
-                                temp = result.GetString(i);
+                                temp = result.GetValue(i).ToString();
+                                if (i == 0)
+                                {
+                                    siireno = temp;
+                                }
                                 cell = new Cell(1, 1)
                                     .SetTextAlignment(TextAlignment.LEFT)
                                     .Add(new Paragraph(temp));
                                 table.AddCell(cell);
                             }
+                            var mysqlConnection1 = new MySqlConnection(mysqlConf);
+                            mysqlConnection1.Open();
+                            string query1 = "SELECT SUM(n.kingaku), SUM(n.kingaku) * (z.zei/100)   FROM tbl_nyuko n,m_zei z  WHERE nyukoday LIKE '" + dateTimePicker1.Value.ToString("yyyy-MM") + "%' AND siireno = '" + siireno + "'";
+                            MySqlCommand sqlCommand1 = new MySqlCommand(query1, mysqlConnection1);
+                            var result1 = sqlCommand1.ExecuteReader();
+                            result1.Read();
+                            cell = new Cell(1, 1)
+                                .SetTextAlignment(TextAlignment.LEFT)
+                                .Add(new Paragraph(result1.GetValue(0).ToString()));
+                            table.AddCell(cell);
+                            cell = new Cell(1, 1)
+                                .SetTextAlignment(TextAlignment.LEFT)
+                                .Add(new Paragraph(result1.GetValue(1).ToString()));
+                            table.AddCell(cell);
+                            mysqlConnection1.Close();
                         }
                     }
                     else

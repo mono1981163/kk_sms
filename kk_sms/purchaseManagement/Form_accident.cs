@@ -16,13 +16,13 @@ namespace kk_sms.purchaseManagement
     public partial class Form_accident : Form
     {
 
-        private bool isOrdernoDontExist = true;
+        private bool isOrdernoExist = true;
         private bool isRepInvalid = true;
         private bool isSupplierInvalid = true;
         private bool isProductInvalid = true;
         private bool isGradeInvalid = true;
         private bool isClassInvalid = true;
-        private bool isPackingInvalid = true;
+        private bool isAccidentInvalid = true;
 
         public Form_accident()
         {
@@ -36,7 +36,46 @@ namespace kk_sms.purchaseManagement
 
         private void textBox_slipNo_TextChanged(object sender, EventArgs e)
         {
-
+            var slipNo = textBox_slipNo.Text;
+            if (slipNo.EndsWith("。") || slipNo.EndsWith("．") || slipNo.EndsWith("."))
+            {
+                button_exit.Focus();
+            }
+            else if (!slipNo.All(char.IsDigit))
+            {
+                label_description.Text = "伝票番号は数字でなければなりません。";
+                button_correction.Focus();
+            }
+            else
+            {
+                try
+                {
+                    var iniparser = new FileIniDataParser();
+                    IniData inidata = iniparser.ReadFile("kk_sms.ini");
+                    string mysqlConf = "server=" + inidata["Mysql"]["server"] + ";user=" + inidata["Mysql"]["user"] + ";database=" + inidata["Mysql"]["database"] + ";port=" + inidata["Mysql"]["port"] + ";password=" + inidata["Mysql"]["password"] + ";";
+                    var inputValue = textBox_slipNo.Text;
+                    var mysqlConnection = new MySqlConnection(mysqlConf);
+                    mysqlConnection.Open();
+                    string query = "SELECT uid FROM tbl_nyuko WHERE orderno = " + inputValue;
+                    MySqlCommand sqlCommand = new MySqlCommand(query, mysqlConnection);
+                    var result = sqlCommand.ExecuteScalar();
+                    if (result != null)
+                    {
+                        label_description.Text = "入力された伝票番号は既にあります";
+                        isOrdernoExist = true;
+                    }
+                    else
+                    {
+                        label_description.Text = "";
+                        isOrdernoExist = false;
+                    }
+                    mysqlConnection.Close();
+                }
+                catch (Exception ex)
+                {
+                    label_description.Text = "";
+                }
+            }
         }
 
         private void textBox_repCode_TextChanged(object sender, EventArgs e)
@@ -292,6 +331,18 @@ namespace kk_sms.purchaseManagement
         private void textBox_accidentCode_TextChanged(object sender, EventArgs e)
         {
             var inputValue = textBox_accidentCode.Text;
+            if (inputValue == "2" || inputValue == "3")
+            {
+                float temp_float;
+                float.TryParse(textBox_amount.Text, out temp_float);
+                textBox_amount.Text = (-Math.Abs(temp_float)).ToString();
+            }
+            else
+            {
+                float temp_float;
+                float.TryParse(textBox_amount.Text, out temp_float);
+                textBox_amount.Text = (Math.Abs(temp_float)).ToString();
+            }
             try
             {
                 var iniparser = new FileIniDataParser();
@@ -309,12 +360,12 @@ namespace kk_sms.purchaseManagement
                 if (result != null)
                 {
                     textBox_accident.Text = result.ToString();
-                    isRepInvalid = false;
+                    isAccidentInvalid = false;
                 }
                 else
                 {
                     textBox_accident.Text = "";
-                    isRepInvalid = true;
+                    isAccidentInvalid = true;
                 }
                 mysqlConnection.Close();
             }
@@ -338,7 +389,16 @@ namespace kk_sms.purchaseManagement
                 }
                 else if (float.TryParse(textBox_unitPrice.Text, out temp_float2))
                 {
-                    textBox_amount.Text = (temp_float * temp_float2).ToString();
+                    var accidentCode = textBox_accidentCode.Text;
+                    if (accidentCode == "2" || inputValue == "3")
+                    {
+                        textBox_amount.Text = (-Math.Abs(temp_float * temp_float2)).ToString();
+                    }
+                    else
+                    {
+                        textBox_amount.Text = (temp_float * temp_float2).ToString();
+                    }
+                    
                 }
             }
             catch (Exception ex)
@@ -360,7 +420,15 @@ namespace kk_sms.purchaseManagement
                 }
                 else if (float.TryParse(textBox_purchaseQuantity.Text, out temp_float2))
                 {
-                    textBox_amount.Text = (temp_float * temp_float2).ToString();
+                    var accidentCode = textBox_accidentCode.Text;
+                    if (accidentCode == "2" || inputValue == "3")
+                    {
+                        textBox_amount.Text = (-Math.Abs(temp_float * temp_float2)).ToString();
+                    }
+                    else
+                    {
+                        textBox_amount.Text = (temp_float * temp_float2).ToString();
+                    }
                 }
             }
             catch (Exception ex)
@@ -376,7 +444,129 @@ namespace kk_sms.purchaseManagement
 
         private void button_ok_Click(object sender, EventArgs e)
         {
+            string orderno = textBox_slipNo.Text;
+            string nyukoday = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+            string syainno = textBox_repCode.Text;
+            string syainname = textBox_rep.Text;
+            string siireno = textBox_supplierCode.Text;
+            string siirename = textBox_supplier.Text;
+            string hinban = textBox_productCode.Text;
+            string hinmaei = textBox_productName.Text;
+            string toukyuno = textBox_gradeCode.Text;
+            string toukyuname = textBox_grade.Text;
+            string kaikyuno = textBox_classCode.Text;
+            string kaikyuname = textBox_class.Text;
+            string irisu = "0";
+            string siiresu = textBox_purchaseQuantity.Text;
+            string nisugatano = "";
+            string nisugataname = "";
+            string zaikosu = siiresu;
+            string souurisu = "";
 
+            string tanka = textBox_unitPrice.Text;
+            string kingaku = textBox_amount.Text;
+            string kuban = textBox_accidentCode.Text;
+            string nyuukokubun = textBox_accident.Text;
+            string zaikoadjust1 = "0";
+            string zaikoadjust2 = "0";
+            string zaikoadjust3 = "0";
+            string adjustCumulative1 = "0";
+            string adjustCumulative2 = "0";
+            string adjustCumulative3 = "0";
+
+            float temp_float;
+
+            if (orderno == "")
+            {
+                label_description.Text = "伝票番号を入力してください";
+                button_correction.Focus();
+            }
+            else if (!orderno.All(char.IsDigit))
+            {
+                label_description.Text = "伝票番号は数字でなければなりません";
+                button_correction.Focus();
+            }
+            else if (isOrdernoExist)
+            {
+                label_description.Text = "入力された伝票番号は既にあります";
+                button_correction.Focus();
+            }
+            else if (isRepInvalid)
+            {
+                label_description.Text = "担当者コードが無効です";
+                button_correction.Focus();
+            }
+            else if (isSupplierInvalid)
+            {
+                label_description.Text = "仕入先コードが無効です";
+                button_correction.Focus();
+            }
+            else if (isProductInvalid)
+            {
+                label_description.Text = "商品コードが無効です";
+                button_correction.Focus();
+            }
+            else if (isGradeInvalid)
+            {
+                label_description.Text = "等級コードが無効です";
+                button_correction.Focus();
+            }
+            else if (isClassInvalid)
+            {
+                label_description.Text = "階級コードが無効です";
+                button_correction.Focus();
+            }
+            else if (isAccidentInvalid)
+            {
+                label_description.Text = "事故区分コードが無効です";
+                button_correction.Focus();
+            }
+            else if (!irisu.All(char.IsDigit))
+            {
+                label_description.Text = "入数は数字でなければなりません";
+                button_correction.Focus();
+            }
+            else if (!float.TryParse(siiresu, out temp_float))
+            {
+                label_description.Text = "仕入数量が無効です";
+                button_correction.Focus();
+            }
+            else if (temp_float <= 0)
+            {
+                label_description.Text = "仕入数量は0より大きくなければなりません";
+                button_correction.Focus();
+            }
+            else if (!float.TryParse(tanka, out temp_float))
+            {
+                label_description.Text = "単価が無効です";
+                button_correction.Focus();
+            }
+            else if (temp_float <= 0)
+            {
+                label_description.Text = "単価は0より大きくなければなりません";
+                button_correction.Focus();
+            }
+            else
+            {
+                try
+                {
+                    var iniparser = new FileIniDataParser();
+                    IniData inidata = iniparser.ReadFile("kk_sms.ini");
+                    string mysqlConf = "server=" + inidata["Mysql"]["server"] + ";user=" + inidata["Mysql"]["user"] + ";database=" + inidata["Mysql"]["database"] + ";port=" + inidata["Mysql"]["port"] + ";password=" + inidata["Mysql"]["password"] + ";";
+                    var mysqlConnection = new MySqlConnection(mysqlConf);
+                    mysqlConnection.Open();
+                    string query = "INSERT INTO tbl_nyuko(orderno, nyukoday, syainno, syainname, siireno, siirename, hinban, hinmaei, toukyuno, toukyuname, kaikyuno, kaikyuname, irisu, siiresu, nisugatano, nisugataname, zaikosu, souurisu, tanka, kingaku, kuban, nyuukokubun, zaikoadjust1, zaikoadjust2, zaikoadjust3, adjustCumulative1, adjustCumulative2, adjustCumulative3) VALUES('" + orderno + "','" + nyukoday + "','" + syainno + "','" + syainname + "','" + siireno + "','" + siirename + "','" + hinban + "','" + hinmaei + "','" + toukyuno + "','" + toukyuname + "','" + kaikyuno + "','" + kaikyuname + "','" + irisu + "','" + siiresu + "','" + nisugatano + "','" + nisugataname + "','" + zaikosu + "','" + souurisu + "','" + tanka + "','" + kingaku + "','" + kuban + "','" + nyuukokubun + "','" + zaikoadjust1 + "','" + zaikoadjust2 + "','" + zaikoadjust3 + "','" + adjustCumulative1 + "','" + adjustCumulative2 + "','" + adjustCumulative3 + "')";
+                    MySqlCommand sqlCommand = new MySqlCommand(query, mysqlConnection);
+                    MySqlDataReader mySqlDataReader = sqlCommand.ExecuteReader();
+                    mysqlConnection.Close();
+                    label_description.Text = "入力データが正常に登録されました";
+                    isOrdernoExist = true;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
         }
 
         private void button_correction_Click(object sender, EventArgs e)
