@@ -37,7 +37,9 @@ namespace kk_sms.masterManagement.payment
                     if (MessageBox.Show("削除してよろしいですか", "削除―確認", MessageBoxButtons.OKCancel) == DialogResult.OK)
 
                     {
-                        string mysqlConf = ConfigurationManager.ConnectionStrings["MysqlConnection"].ConnectionString;
+                        var iniparser = new FileIniDataParser();
+                        IniData inidata = iniparser.ReadFile("kk_sms.ini");
+                        string mysqlConf = "server=" + inidata["Mysql"]["server"] + ";user=" + inidata["Mysql"]["user"] + ";database=" + inidata["Mysql"]["database"] + ";port=" + inidata["Mysql"]["port"] + ";password=" + inidata["Mysql"]["password"] + ";";
                         var mysqlConnection = new MySqlConnection(mysqlConf);
                         mysqlConnection.Open();
                         string query = "DELETE FROM tbl_daibarai WHERE daino='" + pay_no + "'";

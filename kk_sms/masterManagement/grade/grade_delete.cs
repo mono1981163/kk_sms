@@ -81,7 +81,7 @@ namespace kk_sms.masterManagement.grade
                 }
                 else
                 {
-                    description_label.Text = "大湯が発生しました。";
+                    description_label.Text = "エラーが発生しました。";
                 }
                 mysqlConnection.Close();
                 this.Close();

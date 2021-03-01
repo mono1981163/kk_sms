@@ -36,22 +36,26 @@ namespace kk_sms
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+            var form = new kk_sms.dailyReportPrinting.Form_selectDate3();
+            form.Show();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-
+            var form = new kk_sms.dailyReportPrinting.Form_selectDate4();
+            form.Show();
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-
+            var form = new kk_sms.dailyReportPrinting.Form_selectDate5();
+            form.Show();
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-
+            var form = new kk_sms.dailyReportPrinting.Form_selectDate6();
+            form.Show();
         }
 
         private void button7_Click(object sender, EventArgs e)

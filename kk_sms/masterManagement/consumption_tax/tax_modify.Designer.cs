@@ -35,18 +35,18 @@ namespace kk_sms.masterManagement.consumption_tax
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox_day = new System.Windows.Forms.TextBox();
+            this.textBox_month = new System.Windows.Forms.TextBox();
+            this.textBox_year = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox_interest_rate = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.button_ok = new System.Windows.Forms.Button();
             this.button_end = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox_current_tax = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.description_label = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
@@ -70,11 +70,11 @@ namespace kk_sms.masterManagement.consumption_tax
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.textBox5);
-            this.groupBox1.Controls.Add(this.textBox4);
-            this.groupBox1.Controls.Add(this.textBox3);
+            this.groupBox1.Controls.Add(this.textBox_day);
+            this.groupBox1.Controls.Add(this.textBox_month);
+            this.groupBox1.Controls.Add(this.textBox_year);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.textBox_interest_rate);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Location = new System.Drawing.Point(17, 119);
@@ -111,32 +111,35 @@ namespace kk_sms.masterManagement.consumption_tax
             this.label7.Text = "年";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // textBox5
+            // textBox_day
             // 
-            this.textBox5.Font = new System.Drawing.Font("Meiryo", 6F);
-            this.textBox5.Location = new System.Drawing.Point(229, 62);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(40, 19);
-            this.textBox5.TabIndex = 9;
-            this.textBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_day.Font = new System.Drawing.Font("Meiryo", 6F);
+            this.textBox_day.Location = new System.Drawing.Point(229, 62);
+            this.textBox_day.Name = "textBox_day";
+            this.textBox_day.Size = new System.Drawing.Size(40, 19);
+            this.textBox_day.TabIndex = 9;
+            this.textBox_day.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_day.TextChanged += new System.EventHandler(this.textBox_day_TextChanged);
             // 
-            // textBox4
+            // textBox_month
             // 
-            this.textBox4.Font = new System.Drawing.Font("Meiryo", 6F);
-            this.textBox4.Location = new System.Drawing.Point(159, 63);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(40, 19);
-            this.textBox4.TabIndex = 8;
-            this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_month.Font = new System.Drawing.Font("Meiryo", 6F);
+            this.textBox_month.Location = new System.Drawing.Point(159, 63);
+            this.textBox_month.Name = "textBox_month";
+            this.textBox_month.Size = new System.Drawing.Size(40, 19);
+            this.textBox_month.TabIndex = 8;
+            this.textBox_month.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_month.TextChanged += new System.EventHandler(this.textBox_month_TextChanged);
             // 
-            // textBox3
+            // textBox_year
             // 
-            this.textBox3.Font = new System.Drawing.Font("Meiryo", 6F);
-            this.textBox3.Location = new System.Drawing.Point(91, 62);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(40, 19);
-            this.textBox3.TabIndex = 7;
-            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_year.Font = new System.Drawing.Font("Meiryo", 6F);
+            this.textBox_year.Location = new System.Drawing.Point(91, 62);
+            this.textBox_year.Name = "textBox_year";
+            this.textBox_year.Size = new System.Drawing.Size(40, 19);
+            this.textBox_year.TabIndex = 7;
+            this.textBox_year.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_year.TextChanged += new System.EventHandler(this.textBox_year_TextChanged);
             // 
             // label6
             // 
@@ -147,14 +150,15 @@ namespace kk_sms.masterManagement.consumption_tax
             this.label6.Text = "%";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // textBox2
+            // textBox_interest_rate
             // 
-            this.textBox2.Font = new System.Drawing.Font("Meiryo", 6F);
-            this.textBox2.Location = new System.Drawing.Point(91, 29);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(53, 19);
-            this.textBox2.TabIndex = 5;
-            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_interest_rate.Font = new System.Drawing.Font("Meiryo", 6F);
+            this.textBox_interest_rate.Location = new System.Drawing.Point(91, 29);
+            this.textBox_interest_rate.Name = "textBox_interest_rate";
+            this.textBox_interest_rate.Size = new System.Drawing.Size(53, 19);
+            this.textBox_interest_rate.TabIndex = 5;
+            this.textBox_interest_rate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_interest_rate.TextChanged += new System.EventHandler(this.textBox_interest_rate_TextChanged);
             // 
             // label4
             // 
@@ -212,15 +216,15 @@ namespace kk_sms.masterManagement.consumption_tax
             this.label2.Text = "現在の税率";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // textBox1
+            // textBox_current_tax
             // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Font = new System.Drawing.Font("Meiryo", 6F);
-            this.textBox1.Location = new System.Drawing.Point(125, 85);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(53, 19);
-            this.textBox1.TabIndex = 6;
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_current_tax.Enabled = false;
+            this.textBox_current_tax.Font = new System.Drawing.Font("Meiryo", 6F);
+            this.textBox_current_tax.Location = new System.Drawing.Point(125, 85);
+            this.textBox_current_tax.Name = "textBox_current_tax";
+            this.textBox_current_tax.Size = new System.Drawing.Size(53, 19);
+            this.textBox_current_tax.TabIndex = 6;
+            this.textBox_current_tax.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label5
             // 
@@ -250,7 +254,7 @@ namespace kk_sms.masterManagement.consumption_tax
             this.ClientSize = new System.Drawing.Size(334, 311);
             this.Controls.Add(this.description_label);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBox_current_tax);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.button_end);
@@ -263,6 +267,7 @@ namespace kk_sms.masterManagement.consumption_tax
             this.Name = "tax_modify";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "消費税変更設定";
+            this.Load += new System.EventHandler(this.tax_modify_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -280,15 +285,15 @@ namespace kk_sms.masterManagement.consumption_tax
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox_day;
+        private System.Windows.Forms.TextBox textBox_month;
+        private System.Windows.Forms.TextBox textBox_year;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox_interest_rate;
         private System.Windows.Forms.Button button_ok;
         private System.Windows.Forms.Button button_end;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox_current_tax;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label description_label;
     }
