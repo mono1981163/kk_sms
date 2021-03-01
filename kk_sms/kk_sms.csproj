@@ -171,41 +171,29 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="dailyReportPrinting\Form_selectDate1.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="dailyReportPrinting\Form_selectDate1.cs" />
     <Compile Include="dailyReportPrinting\Form_selectDate1.Designer.cs">
       <DependentUpon>Form_selectDate1.cs</DependentUpon>
     </Compile>
-    <Compile Include="dailyReportPrinting\Form_selectDate6.cs">
-      <SubType>Form</SubType>
+    <Compile Include="dailyReportPrinting\Form_selectDate2.cs" />
+    <Compile Include="dailyReportPrinting\Form_selectDate2.Designer.cs">
+      <DependentUpon>Form_selectDate2.cs</DependentUpon>
     </Compile>
-    <Compile Include="dailyReportPrinting\Form_selectDate6.Designer.cs">
-      <DependentUpon>Form_selectDate6.cs</DependentUpon>
-    </Compile>
-    <Compile Include="dailyReportPrinting\Form_selectDate5.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="dailyReportPrinting\Form_selectDate5.Designer.cs">
-      <DependentUpon>Form_selectDate5.cs</DependentUpon>
-    </Compile>
-    <Compile Include="dailyReportPrinting\Form_selectDate4.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="dailyReportPrinting\Form_selectDate4.Designer.cs">
-      <DependentUpon>Form_selectDate4.cs</DependentUpon>
-    </Compile>
-    <Compile Include="dailyReportPrinting\Form_selectDate3.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="dailyReportPrinting\Form_selectDate3.cs" />
     <Compile Include="dailyReportPrinting\Form_selectDate3.Designer.cs">
       <DependentUpon>Form_selectDate3.cs</DependentUpon>
     </Compile>
-    <Compile Include="dailyReportPrinting\Form_selectDate2.cs">
-      <SubType>Form</SubType>
+    <Compile Include="dailyReportPrinting\Form_selectDate4.cs" />
+    <Compile Include="dailyReportPrinting\Form_selectDate4.Designer.cs">
+      <DependentUpon>Form_selectDate4.cs</DependentUpon>
     </Compile>
-    <Compile Include="dailyReportPrinting\Form_selectDate2.Designer.cs">
-      <DependentUpon>Form_selectDate2.cs</DependentUpon>
+    <Compile Include="dailyReportPrinting\Form_selectDate5.cs" />
+    <Compile Include="dailyReportPrinting\Form_selectDate5.Designer.cs">
+      <DependentUpon>Form_selectDate5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dailyReportPrinting\Form_selectDate6.cs" />
+    <Compile Include="dailyReportPrinting\Form_selectDate6.Designer.cs">
+      <DependentUpon>Form_selectDate6.cs</DependentUpon>
     </Compile>
     <Compile Include="Form_dailyReportPrinting.cs">
       <SubType>Form</SubType>
@@ -635,7 +623,6 @@
     <Compile Include="purchaseManagement\Form_input_selectRep.Designer.cs">
       <DependentUpon>Form_input_selectRep.cs</DependentUpon>
     </Compile>
-<<<<<<< HEAD
     <Compile Include="salesManagement\Form_accidentCorrection.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -666,16 +653,23 @@
     <Compile Include="salesManagement\Form_slipInputSearch.Designer.cs">
       <DependentUpon>Form_slipInputSearch.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="dailyReportPrinting\Form_selectDate2.resx">
-      <DependentUpon>Form_selectDate2.cs</DependentUpon>
-    </EmbeddedResource>
-=======
->>>>>>> main
     <EmbeddedResource Include="dailyReportPrinting\Form_selectDate1.resx">
       <DependentUpon>Form_selectDate1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="dailyReportPrinting\Form_selectDate2.resx">
       <DependentUpon>Form_selectDate2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dailyReportPrinting\Form_selectDate3.resx">
+      <DependentUpon>Form_selectDate3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dailyReportPrinting\Form_selectDate4.resx">
+      <DependentUpon>Form_selectDate4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dailyReportPrinting\Form_selectDate5.resx">
+      <DependentUpon>Form_selectDate5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dailyReportPrinting\Form_selectDate6.resx">
+      <DependentUpon>Form_selectDate6.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_dailyReportPrinting.resx">
       <DependentUpon>Form_dailyReportPrinting.cs</DependentUpon>
@@ -928,11 +922,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="monthlyProcessing\" />
-<<<<<<< HEAD
-    <Folder Include="voucherPrinting\" />
-=======
-    <Folder Include="salesManagement\" />
->>>>>>> main
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
