@@ -23,14 +23,14 @@ using System.IO;
 namespace kk_sms.voucherPrinting
 
 {
-    public partial class Form_selectDate_2 : Form
+    public partial class Form_selectDate_3 : Form
     {
-        public Form_selectDate_2()
+        public Form_selectDate_3()
         {
             InitializeComponent();
         }
 
-        private void Form_selectDate_2_Load(object sender, EventArgs e)
+        private void Form_selectDate_3_Load(object sender, EventArgs e)
         {
 
         }
@@ -45,7 +45,7 @@ namespace kk_sms.voucherPrinting
                 IniData inidata = iniparser.ReadFile("kk_sms.ini");
                 saveFileDialog_savePdf.InitialDirectory = inidata["Pdf"]["path"];
                 saveFileDialog_savePdf.RestoreDirectory = true;
-                saveFileDialog_savePdf.FileName = "販売代金請求一覧表__" + date;
+                saveFileDialog_savePdf.FileName = "売渡代金請求一覧表__" + date;
                 if (saveFileDialog_savePdf.ShowDialog() == DialogResult.OK)
                 {
                     var folderPath = inidata["Pdf"]["path"];
@@ -56,7 +56,7 @@ namespace kk_sms.voucherPrinting
                     PdfFont myfont = PdfFontFactory.CreateFont("HeiseiMin-W3", "UniJIS-UCS2-H");
                     document.SetFont(myfont);
                     Paragraph paragraph;
-                    paragraph = new Paragraph("販売代金請求一覧表")
+                    paragraph = new Paragraph("売渡代金請求一覧表")
                         .SetTextAlignment(TextAlignment.CENTER)
                         .SetFontSize(16);
                     document.Add(paragraph);

@@ -71,6 +71,7 @@ namespace kk_sms
             this.button3.TabIndex = 2;
             this.button3.Text = "売渡代金請求一覧表 ( &D )";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
