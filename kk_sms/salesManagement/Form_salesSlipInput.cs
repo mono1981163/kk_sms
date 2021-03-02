@@ -151,7 +151,7 @@ namespace kk_sms.salesManagement
             if (slipNo == "-")
             {
                 var form_dialog = new kk_sms.salesManagement.Form_slipInputSearch(this);
-                form_dialog.Show();
+                form_dialog.ShowDialog();
             }
             else if (slipNo.EndsWith("。") || slipNo.EndsWith("．") || slipNo.EndsWith("."))
             {
@@ -241,7 +241,114 @@ namespace kk_sms.salesManagement
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+            string syainno = "";
+            string hinban = "";
+            string hinmei = "";
+            string toukyuno = "";
+            string toukyuname = "";
+            string kaikyuno = "";
+            string kaikyuname = "";
+            string irisu = "";
+            string nisugataname = "";
+            string kubun = "";
+            bool fff = false;
+            if (textBox1.Text == "")
+            {
+                fff = false;
+            }
+            else
+            {
+                fff = true;
+            }
+            for (int i = 0; i < 8; i++)
+            {
+                if (((m_clientname[i] != "") && (m_saleamount[i] != 0) && (m_price[i] != 0)) || ((m_clientname[i] == "") && (m_saleamount[i] == 0) && (m_price[i] == 0)))
+                {
+                    fff = true;
+                }
+                else
+                {
+                    fff = false;
+                    break;
+                }
+            }
+            if (fff == true)
+            {
+                try
+                {
+                    var iniparser = new FileIniDataParser();
+                    IniData inidata = iniparser.ReadFile("kk_sms.ini");
+                    string mysqlConf = "server=" + inidata["Mysql"]["server"] + ";user=" + inidata["Mysql"]["user"] + ";database=" + inidata["Mysql"]["database"] + ";port=" + inidata["Mysql"]["port"] + ";password=" + inidata["Mysql"]["password"] + ";";
+
+                    var mysqlConnection = new MySqlConnection(mysqlConf);
+                    mysqlConnection.Open();
+                    string query = "UPDATE tbl_nyuko SET zaikosu = '" + label24.Text + "', souurisu = '" + label26.Text + "' WHERE orderno = " + textBox1.Text + ";";
+                    MySqlCommand sqlCommand = new MySqlCommand(query, mysqlConnection);
+                    var result1 = sqlCommand.ExecuteScalar();
+                    mysqlConnection.Close();
+                    mysqlConnection.Open();
+                    query = "SELECT syainno, hinban, hinmaei, toukyuno, toukyuname, kaikyuno, kaikyuname, irisu, nisugataname, kuban FROM tbl_nyuko WHERE orderno =" + textBox1.Text + ";";
+                    sqlCommand = new MySqlCommand(query, mysqlConnection);
+                    var result = sqlCommand.ExecuteReader();
+                    if (result.HasRows)
+                    {
+                        while (result.Read())
+                        {
+                            syainno = result.GetString(0);
+                            hinban = result.GetString(1);
+                            hinmei = result.GetString(2);
+                            toukyuno = result.GetString(3);
+                            toukyuname = result.GetString(4);
+                            kaikyuno = result.GetString(5);
+                            kaikyuname = result.GetString(6);
+                            irisu = result.GetString(7);
+                            nisugataname = result.GetString(8);
+                            kubun = result.GetString(9);
+                        }
+                    }
+                    mysqlConnection.Close();
+                    for (int i = 0; i < 8; i++)
+                    {
+                        if (m_clientname[i] != "")
+                        {
+                            mysqlConnection.Open();
+                            query = "INSERT INTO tbl_hanbai (orderno, hday, syainno, tokuisakino, tokuisakiname, hinban, hinmei, toukyuno, toukyuname, kaikyuno, kaikyuname, irisu, nisugataname, hanbaisu, tanka, kingaku, kubun, saleskubun, accrualdate, serialno, ipflag) VALUES ('";
+                            query = query + textBox1.Text + "', '";
+                            query = query + DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss.fff") + "', '";
+                            query = query + syainno + "', '";
+                            query = query + m_clientno[i] + "', '";
+                            query = query + m_clientname[i] + "', '";
+                            query = query + hinban + "', '";
+                            query = query + hinmei + "', '";
+                            query = query + toukyuno + "', '";
+                            query = query + toukyuname + "', '";
+                            query = query + kaikyuno + "', '";
+                            query = query + kaikyuname + "', '";
+                            query = query + irisu + "', '";
+                            query = query + nisugataname + "', '";
+                            query = query + m_saleamount[i] + "', '";
+                            query = query + m_price[i] + "', '";
+                            query = query + m_totalprice[i] + "', '";
+                            query = query + kubun + "', '";
+                            query = query + "', '";
+                            query = query + DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss.fff") + "', '";
+                            query = query + "888', '";
+                            query = query + "');";
+                            sqlCommand = new MySqlCommand(query, mysqlConnection);
+                            result1 = sqlCommand.ExecuteScalar();
+                            mysqlConnection.Close();
+                        }
+                    }
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            else
+            {
+                
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -254,11 +361,7 @@ namespace kk_sms.salesManagement
             if (textBox2.Text == "-")
             {
                 var form_dialog = new kk_sms.salesManagement.Form_slipInputClient(this);
-                form_dialog.Show();
-                form_dialog.WindowState = FormWindowState.Normal;
-                form_dialog.BringToFront();
-                form_dialog.TopMost = true;
-                form_dialog.Focus();
+                form_dialog.ShowDialog();
             }
             else if (textBox2.Text.EndsWith("。") || textBox2.Text.EndsWith("．") || textBox2.Text.EndsWith("."))
             {
@@ -323,11 +426,7 @@ namespace kk_sms.salesManagement
             if (textBox7.Text == "-")
             {
                 var form_dialog = new kk_sms.salesManagement.Form_slipInputClient(this);
-                form_dialog.Show();
-                form_dialog.WindowState = FormWindowState.Normal;
-                form_dialog.BringToFront();
-                form_dialog.TopMost = true;
-                form_dialog.Focus();
+                form_dialog.ShowDialog();
             }
             else if (textBox7.Text.EndsWith("。") || textBox7.Text.EndsWith("．") || textBox7.Text.EndsWith("."))
             {
@@ -392,11 +491,7 @@ namespace kk_sms.salesManagement
             if (textBox10.Text == "-")
             {
                 var form_dialog = new kk_sms.salesManagement.Form_slipInputClient(this);
-                form_dialog.Show();
-                form_dialog.WindowState = FormWindowState.Normal;
-                form_dialog.BringToFront();
-                form_dialog.TopMost = true;
-                form_dialog.Focus();
+                form_dialog.ShowDialog();
             }
             else if (textBox10.Text.EndsWith("。") || textBox10.Text.EndsWith("．") || textBox10.Text.EndsWith("."))
             {
@@ -461,11 +556,7 @@ namespace kk_sms.salesManagement
             if (textBox13.Text == "-")
             {
                 var form_dialog = new kk_sms.salesManagement.Form_slipInputClient(this);
-                form_dialog.Show();
-                form_dialog.WindowState = FormWindowState.Normal;
-                form_dialog.BringToFront();
-                form_dialog.TopMost = true;
-                form_dialog.Focus();
+                form_dialog.ShowDialog();
             }
             else if (textBox13.Text.EndsWith("。") || textBox13.Text.EndsWith("．") || textBox13.Text.EndsWith("."))
             {
@@ -529,11 +620,7 @@ namespace kk_sms.salesManagement
             if (textBox16.Text == "-")
             {
                 var form_dialog = new kk_sms.salesManagement.Form_slipInputClient(this);
-                form_dialog.Show();
-                form_dialog.WindowState = FormWindowState.Normal;
-                form_dialog.BringToFront();
-                form_dialog.TopMost = true;
-                form_dialog.Focus();
+                form_dialog.ShowDialog();
             }
             else if (textBox16.Text.EndsWith("。") || textBox16.Text.EndsWith("．") || textBox16.Text.EndsWith("."))
             {
@@ -598,11 +685,7 @@ namespace kk_sms.salesManagement
             if (textBox19.Text == "-")
             {
                 var form_dialog = new kk_sms.salesManagement.Form_slipInputClient(this);
-                form_dialog.Show();
-                form_dialog.WindowState = FormWindowState.Normal;
-                form_dialog.BringToFront();
-                form_dialog.TopMost = true;
-                form_dialog.Focus();
+                form_dialog.ShowDialog();
             }
             else if (textBox19.Text.EndsWith("。") || textBox19.Text.EndsWith("．") || textBox19.Text.EndsWith("."))
             {
@@ -666,11 +749,7 @@ namespace kk_sms.salesManagement
             if (textBox22.Text == "-")
             {
                 var form_dialog = new kk_sms.salesManagement.Form_slipInputClient(this);
-                form_dialog.Show();
-                form_dialog.WindowState = FormWindowState.Normal;
-                form_dialog.BringToFront();
-                form_dialog.TopMost = true;
-                form_dialog.Focus();
+                form_dialog.ShowDialog();
             }
             else if (textBox22.Text.EndsWith("。") || textBox22.Text.EndsWith("．") || textBox22.Text.EndsWith("."))
             {
@@ -734,11 +813,7 @@ namespace kk_sms.salesManagement
             if (textBox25.Text == "-")
             {
                 var form_dialog = new kk_sms.salesManagement.Form_slipInputClient(this);
-                form_dialog.Show();
-                form_dialog.WindowState = FormWindowState.Normal;
-                form_dialog.BringToFront();
-                form_dialog.TopMost = true;
-                form_dialog.Focus();
+                form_dialog.ShowDialog();
             }
             else if (textBox25.Text.EndsWith("。") || textBox25.Text.EndsWith("．") || textBox25.Text.EndsWith("."))
             {
@@ -819,10 +894,6 @@ namespace kk_sms.salesManagement
             {
                 m_saleamount[0] = 0;
             }
-        }
-
-        private void textBox3_LostFocus(object sender, EventArgs e)
-        {
             m_salechange = 0;
             for (int i = 0; i < 8; i++)
             {
@@ -846,6 +917,11 @@ namespace kk_sms.salesManagement
             }
         }
 
+        private void textBox3_LostFocus(object sender, EventArgs e)
+        {
+            
+        }
+
         private void textBox6_TextChanged(object sender, EventArgs e)
         {
             if (textBox6.Text == "")
@@ -867,10 +943,6 @@ namespace kk_sms.salesManagement
             {
                 m_saleamount[1] = 0;
             }
-        }
-
-        private void textBox6_LostFocus(object sender, EventArgs e)
-        {
             m_salechange = 0;
             for (int i = 0; i < 8; i++)
             {
@@ -894,6 +966,11 @@ namespace kk_sms.salesManagement
             }
         }
 
+        private void textBox6_LostFocus(object sender, EventArgs e)
+        {
+            
+        }
+
         private void textBox9_TextChanged(object sender, EventArgs e)
         {
             if (textBox9.Text == "")
@@ -915,10 +992,6 @@ namespace kk_sms.salesManagement
             {
                 m_saleamount[2] = 0;
             }
-        }
-
-        private void textBox9_LostFocus(object sender, EventArgs e)
-        {
             m_salechange = 0;
             for (int i = 0; i < 8; i++)
             {
@@ -942,6 +1015,11 @@ namespace kk_sms.salesManagement
             }
         }
 
+        private void textBox9_LostFocus(object sender, EventArgs e)
+        {
+            
+        }
+
         private void textBox12_TextChanged(object sender, EventArgs e)
         {
             if (textBox12.Text == "")
@@ -963,10 +1041,6 @@ namespace kk_sms.salesManagement
             {
                 m_saleamount[3] = 0;
             }
-        }
-
-        private void textBox12_LostFocus(object sender, EventArgs e)
-        {
             m_salechange = 0;
             for (int i = 0; i < 8; i++)
             {
@@ -990,6 +1064,11 @@ namespace kk_sms.salesManagement
             }
         }
 
+        private void textBox12_LostFocus(object sender, EventArgs e)
+        {
+            
+        }
+
         private void textBox15_TextChanged(object sender, EventArgs e)
         {
             if (textBox15.Text == "")
@@ -1011,9 +1090,6 @@ namespace kk_sms.salesManagement
             {
                 m_saleamount[4] = 0;
             }
-        }
-        private void textBox15_LostFocus(object sender, EventArgs e)
-        {
             m_salechange = 0;
             for (int i = 0; i < 8; i++)
             {
@@ -1035,6 +1111,10 @@ namespace kk_sms.salesManagement
                     label48.Text = "在庫数が負になります。";
                 }
             }
+        }
+        private void textBox15_LostFocus(object sender, EventArgs e)
+        {
+            
         }
 
         private void textBox18_TextChanged(object sender, EventArgs e)
@@ -1058,10 +1138,6 @@ namespace kk_sms.salesManagement
             {
                 m_saleamount[5] = 0;
             }
-        }
-
-        private void textBox18_LostFocus(object sender, EventArgs e)
-        {
             m_salechange = 0;
             for (int i = 0; i < 8; i++)
             {
@@ -1083,6 +1159,11 @@ namespace kk_sms.salesManagement
                     label48.Text = "在庫数が負になります。";
                 }
             }
+        }
+
+        private void textBox18_LostFocus(object sender, EventArgs e)
+        {
+            
         }
 
         private void textBox21_TextChanged(object sender, EventArgs e)
@@ -1107,10 +1188,6 @@ namespace kk_sms.salesManagement
             {
                 m_saleamount[6] = 0;
             }
-        }
-
-        private void textBox21_LostFocus(object sender, EventArgs e)
-        {
             m_salechange = 0;
             for (int i = 0; i < 8; i++)
             {
@@ -1134,6 +1211,11 @@ namespace kk_sms.salesManagement
             }
         }
 
+        private void textBox21_LostFocus(object sender, EventArgs e)
+        {
+            
+        }
+
         private void textBox24_TextChanged(object sender, EventArgs e)
         {
             if (textBox24.Text == "")
@@ -1155,10 +1237,6 @@ namespace kk_sms.salesManagement
             {
                 m_saleamount[7] = 0;
             }
-        }
-
-        private void textBox24_LostFocus(object sender, EventArgs e)
-        {
             m_salechange = 0;
             for (int i = 0; i < 8; i++)
             {
@@ -1182,6 +1260,11 @@ namespace kk_sms.salesManagement
             }
         }
 
+        private void textBox24_LostFocus(object sender, EventArgs e)
+        {
+            
+        }
+
         private void textBox4_TextChanged(object sender, EventArgs e)
         {
             if (textBox4.Text == "")
@@ -1203,11 +1286,13 @@ namespace kk_sms.salesManagement
             {
                 m_price[0] = 0;
             }
+            label33.Text = (m_saleamount[0] * m_price[0]).ToString();
+            m_totalprice[0] = m_saleamount[0] * m_price[0];
         }
 
         private void textBox4_LostFocus(object sender, EventArgs e)
         {
-            label33.Text = (m_saleamount[0] * m_price[0]).ToString();
+            
         }
 
         private void textBox5_TextChanged(object sender, EventArgs e)
@@ -1231,11 +1316,13 @@ namespace kk_sms.salesManagement
             {
                 m_price[1] = 0;
             }
+            label34.Text = (m_saleamount[1] * m_price[1]).ToString();
+            m_totalprice[1] = m_saleamount[1] * m_price[1];
         }
 
         private void textBox5_LostFocus(object sender, EventArgs e)
         {
-            label34.Text = (m_saleamount[1] * m_price[1]).ToString();
+            
         }
 
         private void textBox8_TextChanged(object sender, EventArgs e)
@@ -1259,11 +1346,13 @@ namespace kk_sms.salesManagement
             {
                 m_price[2] = 0;
             }
+            label36.Text = (m_saleamount[2] * m_price[2]).ToString();
+            m_totalprice[2] = m_saleamount[2] * m_price[2];
         }
 
         private void textBox8_LostFocus(object sender, EventArgs e)
         {
-            label36.Text = (m_saleamount[2] * m_price[2]).ToString();
+            
         }
 
         private void textBox11_TextChanged(object sender, EventArgs e)
@@ -1287,11 +1376,13 @@ namespace kk_sms.salesManagement
             {
                 m_price[3] = 0;
             }
+            label38.Text = (m_saleamount[3] * m_price[3]).ToString();
+            m_totalprice[3] = m_saleamount[3] * m_price[3];
         }
 
         private void textBox11_LostFocus(object sender, EventArgs e)
         {
-            label38.Text = (m_saleamount[3] * m_price[3]).ToString();
+            
         }
 
         private void textBox14_TextChanged(object sender, EventArgs e)
@@ -1315,11 +1406,13 @@ namespace kk_sms.salesManagement
             {
                 m_price[4] = 0;
             }
+            label40.Text = (m_saleamount[4] * m_price[4]).ToString();
+            m_totalprice[4] = m_saleamount[4] * m_price[4];
         }
 
         private void textBox14_LostFocus(object sender, EventArgs e)
         {
-            label40.Text = (m_saleamount[4] * m_price[4]).ToString();
+            
         }
 
         private void textBox17_TextChanged(object sender, EventArgs e)
@@ -1343,11 +1436,13 @@ namespace kk_sms.salesManagement
             {
                 m_price[5] = 0;
             }
+            label42.Text = (m_saleamount[5] * m_price[5]).ToString();
+            m_totalprice[5] = m_saleamount[5] * m_price[5];
         }
 
         private void textBox17_LostFocus(object sender, EventArgs e)
         {
-            label42.Text = (m_saleamount[5] * m_price[5]).ToString();
+            
         }
 
         private void textBox20_TextChanged(object sender, EventArgs e)
@@ -1371,11 +1466,13 @@ namespace kk_sms.salesManagement
             {
                 m_price[6] = 0;
             }
+            label44.Text = (m_saleamount[6] * m_price[6]).ToString();
+            m_totalprice[6] = m_saleamount[6] * m_price[6];
         }
 
         private void textBox20_LostFocus(object sender, EventArgs e)
         {
-            label44.Text = (m_saleamount[6] * m_price[6]).ToString();
+            
         }
 
         private void textBox23_TextChanged(object sender, EventArgs e)
@@ -1399,11 +1496,13 @@ namespace kk_sms.salesManagement
             {
                 m_price[7] = 0;
             }
+            label46.Text = (m_saleamount[7] * m_price[7]).ToString();
+            m_totalprice[7] = m_saleamount[7] * m_price[7];
         }
 
         private void textBox23_LostFocus(object sender, EventArgs e)
         {
-            label46.Text = (m_saleamount[7] * m_price[7]).ToString();
+            
         }
 
         private void textBox1_Keypress(object sender, KeyPressEventArgs e)
@@ -1606,13 +1705,53 @@ namespace kk_sms.salesManagement
         private void button4_Click(object sender, EventArgs e)
         {
             var form_dialog = new kk_sms.salesManagement.Form_inputList();
-            form_dialog.Show();
+            form_dialog.ShowDialog();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             clear();
             initData();
+        }
+
+        private void label32_textChanged(object sender, EventArgs e)
+        {
+            m_clientname[0] = label32.Text;
+        }
+
+        private void label35_textChanged(object sender, EventArgs e)
+        {
+            m_clientname[1] = label35.Text;
+        }
+
+        private void label37_textChanged(object sender, EventArgs e)
+        {
+            m_clientname[2] = label37.Text;
+        }
+
+        private void label39_textChanged(object sender, EventArgs e)
+        {
+            m_clientname[3] = label39.Text;
+        }
+
+        private void label41_textChanged(object sender, EventArgs e)
+        {
+            m_clientname[4] = label41.Text;
+        }
+
+        private void label43_textChanged(object sender, EventArgs e)
+        {
+            m_clientname[5] = label43.Text;
+        }
+
+        private void label45_textChanged(object sender, EventArgs e)
+        {
+            m_clientname[6] = label45.Text;
+        }
+
+        private void label47_textChanged(object sender, EventArgs e)
+        {
+            m_clientname[7] = label47.Text;
         }
     }
 }
