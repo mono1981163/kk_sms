@@ -46,6 +46,10 @@ namespace kk_sms.purchaseManagement
                 label_description.Text = "伝票番号は数字でなければなりません。";
                 button_correction.Focus();
             }
+            else if (slipNo != "" && Int32.Parse(slipNo) >= 800)
+            {
+                label_description.Text = "伝票番号に（800）以上の数値が入力されました!";
+            }
             else
             {
                 try
@@ -474,7 +478,11 @@ namespace kk_sms.purchaseManagement
             {
                 label_description.Text = "伝票番号は数字でなければなりません";
                 button_correction.Focus();
-            }    
+            }
+            else if (orderno != "" && Int32.Parse(orderno) >= 800)
+            {
+                label_description.Text = "伝票番号に（800）以上の数値が入力されました!";
+            }
             else if (isOrdernoExist)
             {
                 label_description.Text = "入力された伝票番号は既にあります";
@@ -566,6 +574,96 @@ namespace kk_sms.purchaseManagement
         private void Button_exit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void slipNo_keypress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                this.ActiveControl = textBox_repCode;
+            }
+        }
+
+        private void repCode_keypress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                this.ActiveControl = textBox_supplierCode;
+            }
+        }
+
+        private void supplierCode_keypress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                this.ActiveControl = textBox_productCode;
+            }
+        }
+
+        private void productCode_keypress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                this.ActiveControl = textBox_gradeCode;
+            }
+        }
+
+        private void gradeCode_keypress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                this.ActiveControl = textBox_classCode;
+            }
+        }
+
+        private void classCode_keypress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                this.ActiveControl = textBox_quantity;
+            }
+        }
+
+        private void quantity_keypress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                this.ActiveControl = textBox_packingCode;
+            }
+        }
+
+        private void packingCode_keypress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                this.ActiveControl = textBox_purchaseQuantity;
+            }
+        }
+
+        private void purchaseQuantity_keypress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                this.ActiveControl = textBox_unitPrice;
+            }
+        }
+
+        private void unitprice_keypress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                this.ActiveControl = button_ok;
+            }
+        }
+
+        private void label_explain01(object sender, EventArgs e)
+        {
+            label_description.Text = "[-]で一覧入力できます,[.]で終了ボタンへ";
+        }
+
+        private void label_clear(object sender, EventArgs e)
+        {
+            label_description.Text = "";
         }
     }
 }

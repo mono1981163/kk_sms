@@ -13,29 +13,30 @@ using IniParser.Model;
 
 namespace kk_sms.salesManagement
 {
-    public partial class Form_slipInputSearch : Form
+    public partial class Form_slipInputClient : Form
     {
-        private Form_salesSlipInput parentForm;
+        public Form_salesSlipInput parentForm;
 
-        public Form_slipInputSearch(Form_salesSlipInput parent)
+        public Form_slipInputClient(Form_salesSlipInput parent)
         {
             InitializeComponent();
             parentForm = parent;
         }
 
-        private void Form_slipInputSearch_Load(object sender, EventArgs e)
+        private void Form_slipInputClient_Load(object sender, EventArgs e)
         {
             try
             {
                 var iniparser = new FileIniDataParser();
                 IniData inidata = iniparser.ReadFile("kk_sms.ini");
                 string mysqlConf = "server=" + inidata["Mysql"]["server"] + ";user=" + inidata["Mysql"]["user"] + ";database=" + inidata["Mysql"]["database"] + ";port=" + inidata["Mysql"]["port"] + ";password=" + inidata["Mysql"]["password"] + ";";
+
                 var mysqlConnection = new MySqlConnection(mysqlConf);
                 mysqlConnection.Open();
-                string query = "SELECT COUNT(orderno) FROM tbl_nyuko WHERE orderno!='0';";
+                string query = "SELECT COUNT(uid) FROM m_tokuisaki";
                 MySqlCommand sqlCommand = new MySqlCommand(query, mysqlConnection);
                 dataGridView1.RowCount = Int32.Parse(sqlCommand.ExecuteScalar().ToString());
-                query = "SELECT * FROM tbl_nyuko WHERE orderno!='0' ORDER BY orderno;";
+                query = "SELECT tokuisakino, tokuisakiname FROM m_tokuisaki ORDER BY uid;";
                 sqlCommand = new MySqlCommand(query, mysqlConnection);
                 var result = sqlCommand.ExecuteReader();
                 if (result.HasRows)
@@ -43,30 +44,16 @@ namespace kk_sms.salesManagement
                     var row_no = 0;
                     while (result.Read())
                     {
-                        for (int i = 0; i < 28; i++)
+                        for (int i = 0; i < 2; i++)
                         {
-                            dataGridView1[i, row_no].Value = result.GetValue(i + 1).ToString();
+                            dataGridView1[i, row_no ].Value = result.GetString(i);
                         }
                         row_no++;
                     }
+                    
                 }
                 mysqlConnection.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                string param = "";
-                var current_row = dataGridView1.CurrentCell.RowIndex;
-                param = dataGridView1[0, current_row].Value.ToString();
-                parentForm.textChange(param);
-                Close();
             }
             catch (Exception ex)
             {
@@ -80,7 +67,7 @@ namespace kk_sms.salesManagement
             var rows = dataGridView1.Rows.Count;
             if (inputValue == "")
             {
-                label3.Text = "伝票番号が入力さわませんでした";
+                label4.Text = "得意先番号が入力さわませんでした";
             }
             else if (inputValue.All(char.IsDigit))
             {
@@ -92,6 +79,22 @@ namespace kk_sms.salesManagement
                         break;
                     }
                 }
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string param = "";
+                var current_row = dataGridView1.CurrentCell.RowIndex;
+                param = dataGridView1[0, current_row].Value.ToString();
+                parentForm.textClientChange(param);
+                Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
     }
