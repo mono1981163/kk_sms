@@ -60,25 +60,28 @@ namespace kk_sms.masterManagement.supplier
             this.dataGridView1.Location = new System.Drawing.Point(17, 70);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.Size = new System.Drawing.Size(300, 212);
             this.dataGridView1.TabIndex = 1;
-            this.dataGridView1.ReadOnly = true;
             // 
             // Column1
             // 
             this.Column1.HeaderText = "Rec";
             this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
             // 
             // supplier_no
             // 
             this.supplier_no.HeaderText = "仕番";
             this.supplier_no.Name = "supplier_no";
+            this.supplier_no.ReadOnly = true;
             // 
             // Column3
             // 
             this.Column3.HeaderText = "仕⼊先";
             this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
             // 
             // label2
             // 

@@ -99,6 +99,7 @@ namespace kk_sms.masterManagement
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.consumption_label);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "Form_consumption_tax";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DB管理";
