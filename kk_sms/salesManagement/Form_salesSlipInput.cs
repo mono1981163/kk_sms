@@ -161,6 +161,11 @@ namespace kk_sms.salesManagement
             {
                 button2.Focus();
             }
+            else if (slipNo !="" && (999 >= int.Parse(slipNo)) && (int.Parse(slipNo) >= 900))
+            {
+                label48.Text = "伝票番号900以上の数値を入力しないでください！";
+                textBox1.Text = "";
+            }
             else if (slipNo=="")
             {
                 label6.Text = "";

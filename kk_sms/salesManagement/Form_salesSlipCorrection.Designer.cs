@@ -136,6 +136,7 @@
             this.textBox1.TabIndex = 6;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.textBox1.GotFocus += new System.EventHandler(this.textBox1_GotFocus);
+            this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_Keypress);
             // 
             // groupBox1
             // 
@@ -422,6 +423,7 @@
             this.textBox3.Size = new System.Drawing.Size(60, 24);
             this.textBox3.TabIndex = 5;
             this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            this.textBox3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox3_Keypress);
             // 
             // label26
             // 
@@ -440,6 +442,7 @@
             this.textBox2.Size = new System.Drawing.Size(60, 24);
             this.textBox2.TabIndex = 3;
             this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.textBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox2_Keypress);
             // 
             // label25
             // 

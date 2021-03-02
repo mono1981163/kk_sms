@@ -32,10 +32,10 @@ namespace kk_sms.salesManagement
                 string mysqlConf = "server=" + inidata["Mysql"]["server"] + ";user=" + inidata["Mysql"]["user"] + ";database=" + inidata["Mysql"]["database"] + ";port=" + inidata["Mysql"]["port"] + ";password=" + inidata["Mysql"]["password"] + ";";
                 var mysqlConnection = new MySqlConnection(mysqlConf);
                 mysqlConnection.Open();
-                string query = "SELECT COUNT(orderno) FROM tbl_hanbai";
+                string query = "SELECT COUNT(orderno) FROM tbl_hanbai WHERE (orderno>999 OR orderno<900)";
                 MySqlCommand sqlCommand = new MySqlCommand(query, mysqlConnection);
                 dataGridView1.RowCount = Int32.Parse(sqlCommand.ExecuteScalar().ToString());
-                query = "SELECT orderno, tokuisakino, tokuisakiname, hinmei, hanbaisu, tanka, kingaku FROM tbl_hanbai;";
+                query = "SELECT orderno, tokuisakino, tokuisakiname, hinmei, hanbaisu, tanka, kingaku FROM tbl_hanbai WHERE (orderno>999 OR orderno<900);";
                 sqlCommand = new MySqlCommand(query, mysqlConnection);
                 var result = sqlCommand.ExecuteReader();
                 if (result.HasRows)

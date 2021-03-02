@@ -233,5 +233,29 @@ namespace kk_sms.salesManagement
                 clear();
             }
         }
+
+        private void textBox1_Keypress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                this.ActiveControl = textBox2;
+            }
+        }
+
+        private void textBox2_Keypress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                this.ActiveControl = textBox3;
+            }
+        }
+
+        private void textBox3_Keypress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                this.ActiveControl = button1;
+            }
+        }
     }
 }
