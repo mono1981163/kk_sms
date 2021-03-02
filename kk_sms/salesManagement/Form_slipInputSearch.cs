@@ -32,10 +32,10 @@ namespace kk_sms.salesManagement
                 string mysqlConf = "server=" + inidata["Mysql"]["server"] + ";user=" + inidata["Mysql"]["user"] + ";database=" + inidata["Mysql"]["database"] + ";port=" + inidata["Mysql"]["port"] + ";password=" + inidata["Mysql"]["password"] + ";";
                 var mysqlConnection = new MySqlConnection(mysqlConf);
                 mysqlConnection.Open();
-                string query = "SELECT COUNT(N.uid) FROM tbl_nyuko AS N INNER JOIN tbl_hanbai AS H WHERE N.orderno = H.orderno AND N.orderno != '0'";
+                string query = "SELECT COUNT(orderno) FROM tbl_nyuko WHERE orderno!='0';";
                 MySqlCommand sqlCommand = new MySqlCommand(query, mysqlConnection);
                 dataGridView1.RowCount = Int32.Parse(sqlCommand.ExecuteScalar().ToString());
-                query = "SELECT N.orderno, N.nyukoday, N.syainno, N.syainname, H.tokuisakino, H.tokuisakiname, H.hinban, H.hinmei, N.toukyuno, N.toukyuname, N.kaikyuno, N.kaikyuname, N.irisu, N.siiresu, N.nisugatano, N.nisugataname, N.zaikosu, N.souurisu, N.tanka, N.kingaku, N.kuban, N.nyuukokubun, N.zaikoadjust1, N.zaikoadjust2, N.zaikoadjust3, N.adjustCumulative1, N.adjustCumulative2, N.adjustCumulative3 FROM tbl_nyuko AS N INNER JOIN tbl_hanbai AS H WHERE N.orderno = H.orderno AND N.orderno != '0' ORDER BY N.orderno;";
+                query = "SELECT * FROM tbl_nyuko WHERE orderno!='0' ORDER BY orderno;";
                 sqlCommand = new MySqlCommand(query, mysqlConnection);
                 var result = sqlCommand.ExecuteReader();
                 if (result.HasRows)
@@ -45,7 +45,7 @@ namespace kk_sms.salesManagement
                     {
                         for (int i = 0; i < 28; i++)
                         {
-                            dataGridView1[i, row_no].Value = result.GetValue(i).ToString();
+                            dataGridView1[i, row_no].Value = result.GetValue(i + 1).ToString();
                         }
                         row_no++;
                     }

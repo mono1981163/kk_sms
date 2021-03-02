@@ -42,6 +42,62 @@ namespace kk_sms.salesManagement
             }
         }
 
+        private void clear()
+        {
+            textBox1.Text = "";
+            textBox2.Text = "";
+            textBox3.Text = "";
+            textBox4.Text = "";
+            textBox5.Text = "";
+            textBox6.Text = "";
+            textBox7.Text = "";
+            textBox8.Text = "";
+            textBox9.Text = "";
+            textBox10.Text = "";
+            textBox11.Text = "";
+            textBox12.Text = "";
+            textBox13.Text = "";
+            textBox14.Text = "";
+            textBox15.Text = "";
+            textBox16.Text = "";
+            textBox17.Text = "";
+            textBox18.Text = "";
+            textBox19.Text = "";
+            textBox20.Text = "";
+            textBox21.Text = "";
+            textBox22.Text = "";
+            textBox23.Text = "";
+            textBox24.Text = "";
+            textBox25.Text = "";
+            label6.Text = "";
+            label10.Text = "";
+            label12.Text = "";
+            label14.Text = "";
+            label16.Text = "";
+            label18.Text = "";
+            label19.Text = "";
+            label21.Text = "";
+            label24.Text = "";
+            label26.Text = "";
+            label32.Text = "";
+            label33.Text = "";
+            label34.Text = "";
+            label35.Text = "";
+            label36.Text = "";
+            label37.Text = "";
+            label38.Text = "";
+            label39.Text = "";
+            label40.Text = "";
+            label41.Text = "";
+            label42.Text = "";
+            label43.Text = "";
+            label44.Text = "";
+            label45.Text = "";
+            label46.Text = "";
+            label47.Text = "";
+            label48.Text = "";
+        }
+
         private void Form_salesSlipInput_Load(object sender, EventArgs e)
         {
             string today = DateTime.Now.ToString("yyyy/MM/dd");
@@ -130,7 +186,7 @@ namespace kk_sms.salesManagement
                     
                     var mysqlConnection = new MySqlConnection(mysqlConf);
                     mysqlConnection.Open();
-                    string query = "SELECT H.tokuisakiname, N.syainname, N.hinmaei, N.toukyuname, N.kaikyuname, N.irisu, N.siiresu,N.nisugataname, N.tanka, N.zaikosu, N.souurisu FROM tbl_nyuko AS N INNER JOIN tbl_hanbai AS H ON N.orderno=H.orderno WHERE N.orderno = '" + m_orderno +  "';";
+                    string query = "SELECT syainname, siirename, hinmaei, toukyuname, kaikyuname, irisu, siiresu, nisugataname, tanka, zaikosu, souurisu FROM tbl_nyuko WHERE orderno ='" + m_orderno +  "';";
                     MySqlCommand sqlCommand = new MySqlCommand(query, mysqlConnection);
                     var result = sqlCommand.ExecuteReader();
                     if (result.HasRows)
@@ -1515,6 +1571,14 @@ namespace kk_sms.salesManagement
             }
         }
 
+        private void textBox20_Keypress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                this.ActiveControl = textBox25;
+            }
+        }
+
         private void textBox25_Keypress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)Keys.Enter)
@@ -1537,6 +1601,18 @@ namespace kk_sms.salesManagement
             {
                 this.ActiveControl = button1;
             }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            var form_dialog = new kk_sms.salesManagement.Form_inputList();
+            form_dialog.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            clear();
+            initData();
         }
     }
 }
