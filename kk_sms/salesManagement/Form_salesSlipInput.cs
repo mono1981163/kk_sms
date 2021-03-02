@@ -339,6 +339,8 @@ namespace kk_sms.salesManagement
                             mysqlConnection.Close();
                         }
                     }
+                    clear();
+                    initData();
                 }
                 catch(Exception ex)
                 {

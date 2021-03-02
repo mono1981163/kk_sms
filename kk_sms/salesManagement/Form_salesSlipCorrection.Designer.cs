@@ -54,17 +54,16 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label26 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label27 = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
-            this.label29 = new System.Windows.Forms.Label();
-            this.label30 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label26 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -135,6 +134,8 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(50, 24);
             this.textBox1.TabIndex = 6;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.textBox1.GotFocus += new System.EventHandler(this.textBox1_GotFocus);
             // 
             // groupBox1
             // 
@@ -374,15 +375,81 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "販売データ";
             // 
-            // label7
+            // label31
             // 
-            this.label7.AutoSize = true;
-            this.label7.ForeColor = System.Drawing.Color.Blue;
-            this.label7.Location = new System.Drawing.Point(6, 20);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(52, 17);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "得意先名";
+            this.label31.AutoSize = true;
+            this.label31.ForeColor = System.Drawing.Color.Blue;
+            this.label31.Location = new System.Drawing.Point(384, 47);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(19, 17);
+            this.label31.TabIndex = 9;
+            this.label31.Text = "円";
+            // 
+            // label30
+            // 
+            this.label30.BackColor = System.Drawing.Color.DarkGray;
+            this.label30.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label30.Location = new System.Drawing.Point(315, 47);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(66, 17);
+            this.label30.TabIndex = 8;
+            this.label30.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.ForeColor = System.Drawing.Color.Blue;
+            this.label29.Location = new System.Drawing.Point(283, 48);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(30, 17);
+            this.label29.TabIndex = 7;
+            this.label29.Text = "金額";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.ForeColor = System.Drawing.Color.Blue;
+            this.label27.Location = new System.Drawing.Point(255, 46);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(19, 17);
+            this.label27.TabIndex = 6;
+            this.label27.Text = "円";
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(194, 43);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(60, 24);
+            this.textBox3.TabIndex = 5;
+            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.ForeColor = System.Drawing.Color.Blue;
+            this.label26.Location = new System.Drawing.Point(140, 46);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(52, 17);
+            this.label26.TabIndex = 4;
+            this.label26.Text = "販売単価";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(69, 43);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(60, 24);
+            this.textBox2.TabIndex = 3;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.ForeColor = System.Drawing.Color.Blue;
+            this.label25.Location = new System.Drawing.Point(6, 46);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(52, 17);
+            this.label25.TabIndex = 2;
+            this.label25.Text = "販売数量";
             // 
             // label8
             // 
@@ -395,88 +462,15 @@
             this.label8.Size = new System.Drawing.Size(185, 17);
             this.label8.TabIndex = 1;
             // 
-            // label25
+            // label7
             // 
-            this.label25.AutoSize = true;
-            this.label25.ForeColor = System.Drawing.Color.Blue;
-            this.label25.Location = new System.Drawing.Point(6, 46);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(52, 17);
-            this.label25.TabIndex = 2;
-            this.label25.Text = "販売数量";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(69, 43);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(60, 24);
-            this.textBox2.TabIndex = 3;
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.ForeColor = System.Drawing.Color.Blue;
-            this.label26.Location = new System.Drawing.Point(140, 46);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(52, 17);
-            this.label26.TabIndex = 4;
-            this.label26.Text = "販売単価";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(194, 43);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(60, 24);
-            this.textBox3.TabIndex = 5;
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.ForeColor = System.Drawing.Color.Blue;
-            this.label27.Location = new System.Drawing.Point(255, 46);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(19, 17);
-            this.label27.TabIndex = 6;
-            this.label27.Text = "円";
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(0, 0);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(47, 17);
-            this.label28.TabIndex = 13;
-            this.label28.Text = "label28";
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.ForeColor = System.Drawing.Color.Blue;
-            this.label29.Location = new System.Drawing.Point(283, 48);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(30, 17);
-            this.label29.TabIndex = 7;
-            this.label29.Text = "金額";
-            // 
-            // label30
-            // 
-            this.label30.BackColor = System.Drawing.Color.DarkGray;
-            this.label30.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label30.Location = new System.Drawing.Point(315, 47);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(66, 17);
-            this.label30.TabIndex = 8;
-            this.label30.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.ForeColor = System.Drawing.Color.Blue;
-            this.label31.Location = new System.Drawing.Point(384, 47);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(19, 17);
-            this.label31.TabIndex = 9;
-            this.label31.Text = "円";
+            this.label7.AutoSize = true;
+            this.label7.ForeColor = System.Drawing.Color.Blue;
+            this.label7.Location = new System.Drawing.Point(6, 20);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(52, 17);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "得意先名";
             // 
             // button1
             // 
@@ -486,6 +480,7 @@
             this.button1.TabIndex = 14;
             this.button1.Text = "保存(&S)";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -495,6 +490,7 @@
             this.button2.TabIndex = 15;
             this.button2.Text = "訂正(&M)";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -504,6 +500,7 @@
             this.button3.TabIndex = 16;
             this.button3.Text = "削除(&D)";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
@@ -528,13 +525,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(466, 453);
+            this.ClientSize = new System.Drawing.Size(464, 453);
             this.Controls.Add(this.label48);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.label28);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label4);
@@ -596,11 +592,17 @@
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label label48;
+
+        private int m_saleamount;
+        private int m_saleamount1;
+        private int m_stock;
+        private int m_totalsale;
+        private int m_price;
+        private int m_totalprice;
     }
 }

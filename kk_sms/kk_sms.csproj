@@ -539,6 +539,12 @@
     <Compile Include="salesManagement\Form_inputList.Designer.cs">
       <DependentUpon>Form_inputList.cs</DependentUpon>
     </Compile>
+    <Compile Include="salesManagement\Form_slipCorrectionSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="salesManagement\Form_slipCorrectionSearch.Designer.cs">
+      <DependentUpon>Form_slipCorrectionSearch.cs</DependentUpon>
+    </Compile>
     <Compile Include="salesManagement\Form_slipInputClient.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -883,6 +889,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="salesManagement\Form_inputList.resx">
       <DependentUpon>Form_inputList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="salesManagement\Form_slipCorrectionSearch.resx">
+      <DependentUpon>Form_slipCorrectionSearch.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="salesManagement\Form_slipInputClient.resx">
       <DependentUpon>Form_slipInputClient.cs</DependentUpon>
