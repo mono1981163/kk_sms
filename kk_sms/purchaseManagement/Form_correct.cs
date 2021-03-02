@@ -725,5 +725,15 @@ namespace kk_sms.purchaseManagement
                 this.ActiveControl = button_ok;
             }
         }
+        private void label_explain01(object sender, EventArgs e)
+        {
+            label_description.Text = "[-]で一覧入力できます,[.]で終了ボタンへ";
+        }
+
+        private void label_clear(object sender, EventArgs e)
+        {
+            label_description.Text = "";
+        }
+
     }
 }

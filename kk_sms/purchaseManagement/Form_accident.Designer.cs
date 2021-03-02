@@ -150,6 +150,8 @@ namespace kk_sms.purchaseManagement
             this.textBox_repCode.TabIndex = 7;
             this.textBox_repCode.TextChanged += new System.EventHandler(this.textBox_repCode_TextChanged);
             this.textBox_repCode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.repCode_keypress);
+            this.textBox_repCode.GotFocus += new System.EventHandler(this.label_explain01);
+            this.textBox_repCode.LostFocus += new System.EventHandler(this.label_clear);
             // 
             // label6
             // 
@@ -185,6 +187,8 @@ namespace kk_sms.purchaseManagement
             this.textBox_supplierCode.TabIndex = 11;
             this.textBox_supplierCode.TextChanged += new System.EventHandler(this.textBox_supplierCode_TextChanged);
             this.textBox_supplierCode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.supplierCode_keypress);
+            this.textBox_supplierCode.GotFocus += new System.EventHandler(this.label_explain01);
+            this.textBox_supplierCode.LostFocus += new System.EventHandler(this.label_clear);
             // 
             // label8
             // 
@@ -250,6 +254,8 @@ namespace kk_sms.purchaseManagement
             this.textBox_classCode.TabIndex = 9;
             this.textBox_classCode.TextChanged += new System.EventHandler(this.textBox_classCode_TextChanged);
             this.textBox_classCode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.classCode_keypress);
+            this.textBox_classCode.GotFocus += new System.EventHandler(this.label_explain01);
+            this.textBox_classCode.LostFocus += new System.EventHandler(this.label_clear);
             // 
             // label13
             // 
@@ -285,6 +291,8 @@ namespace kk_sms.purchaseManagement
             this.textBox_gradeCode.TabIndex = 5;
             this.textBox_gradeCode.TextChanged += new System.EventHandler(this.textBox_gradeCode_TextChanged);
             this.textBox_gradeCode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.gradeCode_keypress);
+            this.textBox_gradeCode.GotFocus += new System.EventHandler(this.label_explain01);
+            this.textBox_gradeCode.LostFocus += new System.EventHandler(this.label_clear);
             // 
             // label11
             // 
@@ -320,6 +328,8 @@ namespace kk_sms.purchaseManagement
             this.textBox_productCode.TabIndex = 1;
             this.textBox_productCode.TextChanged += new System.EventHandler(this.textBox_productCode_TextChanged);
             this.textBox_productCode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.productCode_keypress);
+            this.textBox_productCode.GotFocus += new System.EventHandler(this.label_explain01);
+            this.textBox_productCode.LostFocus += new System.EventHandler(this.label_clear);
             // 
             // label9
             // 
@@ -427,6 +437,8 @@ namespace kk_sms.purchaseManagement
             this.textBox_accidentCode.TabIndex = 1;
             this.textBox_accidentCode.TextChanged += new System.EventHandler(this.textBox_accidentCode_TextChanged);
             this.textBox_accidentCode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.accidentCode_keypress);
+            this.textBox_accidentCode.GotFocus += new System.EventHandler(this.label_explain02);
+            this.textBox_accidentCode.LostFocus += new System.EventHandler(this.label_clear);
             // 
             // label15
             // 
