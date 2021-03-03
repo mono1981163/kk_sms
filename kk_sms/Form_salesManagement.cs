@@ -54,5 +54,12 @@ namespace kk_sms
         {
             this.Close();
         }
+
+        private void button_printTable_Click(object sender, EventArgs e)
+        {
+            var form = new kk_sms.salesManagement.Form_salesPrint();
+            form.Show();
+            this.Close();
+        }
     }
 }
