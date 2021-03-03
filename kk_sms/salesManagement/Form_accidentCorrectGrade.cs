@@ -13,17 +13,17 @@ using IniParser.Model;
 
 namespace kk_sms.salesManagement
 {
-    public partial class Form_accidentClass : Form
+    public partial class Form_accidentCorrectGrade : Form
     {
-        private Form_accidentInput parentForm;
+        private Form_accidentCorrection parentForm;
 
-        public Form_accidentClass(Form_accidentInput parent)
+        public Form_accidentCorrectGrade(Form_accidentCorrection parent)
         {
             InitializeComponent();
             parentForm = parent;
         }
 
-        private void Form_accidentClass_Load(object sender, EventArgs e)
+        private void Form_accidentCorrectGrade_Load(object sender, EventArgs e)
         {
             try
             {
@@ -32,10 +32,10 @@ namespace kk_sms.salesManagement
                 string mysqlConf = "server=" + inidata["Mysql"]["server"] + ";user=" + inidata["Mysql"]["user"] + ";database=" + inidata["Mysql"]["database"] + ";port=" + inidata["Mysql"]["port"] + ";password=" + inidata["Mysql"]["password"] + ";";
                 var mysqlConnection = new MySqlConnection(mysqlConf);
                 mysqlConnection.Open();
-                string query = "SELECT COUNT(uid) FROM m_kaikyu;";
+                string query = "SELECT COUNT(uid) FROM m_tokyu;";
                 MySqlCommand sqlCommand = new MySqlCommand(query, mysqlConnection);
                 dataGridView1.RowCount = Int32.Parse(sqlCommand.ExecuteScalar().ToString());
-                query = "SELECT * FROM m_kaikyu ORDER BY kaikyuno;";
+                query = "SELECT * FROM m_tokyu ORDER BY toukyuno;";
                 sqlCommand = new MySqlCommand(query, mysqlConnection);
                 var result = sqlCommand.ExecuteReader();
                 if (result.HasRows)
@@ -65,7 +65,7 @@ namespace kk_sms.salesManagement
                 string param = "";
                 var current_row = dataGridView1.CurrentCell.RowIndex;
                 param = dataGridView1[1, current_row].Value.ToString();
-                parentForm.textChange4(param);
+                parentForm.textChange3(param);
                 Close();
             }
             catch (Exception ex)
@@ -73,6 +73,5 @@ namespace kk_sms.salesManagement
                 MessageBox.Show(ex.Message);
             }
         }
-
     }
 }

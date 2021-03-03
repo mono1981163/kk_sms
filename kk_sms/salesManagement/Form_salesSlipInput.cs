@@ -256,6 +256,7 @@ namespace kk_sms.salesManagement
             string irisu = "";
             string nisugataname = "";
             string kubun = "";
+            int serialno = 0;
             bool fff = false;
             if (textBox1.Text == "")
             {
@@ -312,6 +313,15 @@ namespace kk_sms.salesManagement
                         }
                     }
                     mysqlConnection.Close();
+                    mysqlConnection.Open();
+                    query = "SELECT MAX(serialno)+1 FROM tbl_hanbai";
+                    sqlCommand = new MySqlCommand(query, mysqlConnection);
+                    result1 = sqlCommand.ExecuteScalar();
+                    if (result1 != null)
+                    {
+                        serialno = int.Parse(result1.ToString());
+                    }
+                    mysqlConnection.Close();
                     for (int i = 0; i < 8; i++)
                     {
                         if (m_clientname[i] != "")
@@ -336,8 +346,8 @@ namespace kk_sms.salesManagement
                             query = query + m_totalprice[i] + "', '";
                             query = query + kubun + "', '";
                             query = query + "', '";
-                            query = query + DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss.fff") + "', '";
-                            query = query + "888', '";
+                            query = query + "0000-00-00 00:00:00', '";
+                            query = query + serialno + "', '";
                             query = query + "');";
                             sqlCommand = new MySqlCommand(query, mysqlConnection);
                             result1 = sqlCommand.ExecuteScalar();
@@ -1717,8 +1727,7 @@ namespace kk_sms.salesManagement
 
         private void button2_Click(object sender, EventArgs e)
         {
-            clear();
-            initData();
+            textBox1.Focus();
         }
 
         private void label32_textChanged(object sender, EventArgs e)
