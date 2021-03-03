@@ -95,6 +95,7 @@ namespace kk_sms
             this.button_printTable.TabIndex = 2;
             this.button_printTable.Text = "売上一覧表印刷 ( &P )";
             this.button_printTable.UseVisualStyleBackColor = true;
+            this.button_printTable.Click += new System.EventHandler(this.button_printTable_Click);
             // 
             // button_correct
             // 
