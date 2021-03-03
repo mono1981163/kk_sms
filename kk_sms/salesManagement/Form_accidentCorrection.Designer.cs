@@ -445,7 +445,7 @@
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(30, 17);
             this.label11.TabIndex = 10;
-            this.label11.Text = "等級";
+            this.label11.Text = "階級";
             // 
             // textBox4
             // 
@@ -463,7 +463,7 @@
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(63, 17);
             this.label12.TabIndex = 8;
-            this.label12.Text = "等級コード";
+            this.label12.Text = "階級コード";
             // 
             // label9
             // 
@@ -567,7 +567,7 @@
             this.textBox1.Margin = new System.Windows.Forms.Padding(0);
             this.textBox1.MaximumSize = new System.Drawing.Size(58, 17);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(58, 17);
+            this.textBox1.Size = new System.Drawing.Size(58, 24);
             this.textBox1.TabIndex = 21;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.textBox1.GotFocus += new System.EventHandler(this.textBox1_GotFocus);
