@@ -13,17 +13,17 @@ using IniParser.Model;
 
 namespace kk_sms.salesManagement
 {
-    public partial class Form_accidentClass : Form
+    public partial class Form_accidentCorrectClass : Form
     {
-        private Form_accidentInput parentForm;
+        private Form_accidentCorrection parentForm;
 
-        public Form_accidentClass(Form_accidentInput parent)
+        public Form_accidentCorrectClass(Form_accidentCorrection parent)
         {
             InitializeComponent();
             parentForm = parent;
         }
 
-        private void Form_accidentClass_Load(object sender, EventArgs e)
+        private void Form_accidentCorrectClass_Load(object sender, EventArgs e)
         {
             try
             {
@@ -73,6 +73,5 @@ namespace kk_sms.salesManagement
                 MessageBox.Show(ex.Message);
             }
         }
-
     }
 }

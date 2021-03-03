@@ -168,8 +168,7 @@ namespace kk_sms.salesManagement
 
         private void button2_Click(object sender, EventArgs e)
         {
-            initData();
-            clear();
+            textBox1.Focus();
         }
 
         private void button3_Click(object sender, EventArgs e)

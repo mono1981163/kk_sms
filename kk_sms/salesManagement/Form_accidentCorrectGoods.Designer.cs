@@ -1,6 +1,6 @@
 ﻿namespace kk_sms.salesManagement
 {
-    partial class Form_accidentGrade
+    partial class Form_accidentCorrectGoods
     {
         /// <summary>
         /// Required designer variable.
@@ -28,26 +28,55 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(181, 418);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 36);
+            this.button2.TabIndex = 13;
+            this.button2.Text = "OK(&O)";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(39, 327);
+            this.button1.Location = new System.Drawing.Point(31, 418);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(176, 36);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "OK(&O)";
+            this.button1.Size = new System.Drawing.Size(75, 36);
+            this.button1.TabIndex = 12;
+            this.button1.Text = "検索(&S)";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(96, 377);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(49, 20);
+            this.textBox1.TabIndex = 11;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.Blue;
+            this.label3.Location = new System.Drawing.Point(38, 380);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(55, 13);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "検索品番";
             // 
             // dataGridView1
             // 
@@ -62,11 +91,11 @@
             this.Column1,
             this.Column2,
             this.Column3});
-            this.dataGridView1.Location = new System.Drawing.Point(22, 96);
+            this.dataGridView1.Location = new System.Drawing.Point(19, 112);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.Size = new System.Drawing.Size(210, 221);
-            this.dataGridView1.TabIndex = 8;
+            this.dataGridView1.Size = new System.Drawing.Size(249, 250);
+            this.dataGridView1.TabIndex = 9;
             // 
             // Column1
             // 
@@ -75,23 +104,23 @@
             // 
             // Column2
             // 
-            this.Column2.HeaderText = "等番";
+            this.Column2.HeaderText = "品番";
             this.Column2.Name = "Column2";
             // 
             // Column3
             // 
-            this.Column3.HeaderText = "等級";
+            this.Column3.HeaderText = "品名";
             this.Column3.Name = "Column3";
             // 
             // label2
             // 
             this.label2.BackColor = System.Drawing.SystemColors.ControlDark;
             this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label2.Location = new System.Drawing.Point(22, 73);
+            this.label2.Location = new System.Drawing.Point(19, 89);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(210, 23);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "等級データ";
+            this.label2.Size = new System.Drawing.Size(249, 23);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "商品データ";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label1
@@ -99,54 +128,47 @@
             this.label1.BackColor = System.Drawing.Color.Indigo;
             this.label1.Font = new System.Drawing.Font("Meiryo", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Yellow;
-            this.label1.Location = new System.Drawing.Point(21, 14);
+            this.label1.Location = new System.Drawing.Point(18, 16);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(211, 50);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "等級ー覧";
+            this.label1.Size = new System.Drawing.Size(250, 50);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "商品ー覧";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label3
-            // 
-            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.label3.ForeColor = System.Drawing.Color.Yellow;
-            this.label3.Location = new System.Drawing.Point(64, 371);
-            this.label3.Name = "label3";
-            this.label3.Padding = new System.Windows.Forms.Padding(3);
-            this.label3.Size = new System.Drawing.Size(117, 20);
-            this.label3.TabIndex = 12;
-            this.label3.Text = "OKで番号入力します";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // Form_accidentGrade
+            // Form_accidentCorrectGoods
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(256, 400);
-            this.Controls.Add(this.label3);
+            this.ClientSize = new System.Drawing.Size(286, 462);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.MaximizeBox = false;
-            this.Name = "Form_accidentGrade";
+            this.Name = "Form_accidentCorrectGoods";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "等級ー覧";
-            this.Load += new System.EventHandler(this.Form_accidentGrade_Load);
+            this.Text = "商品ー覧";
+            this.Load += new System.EventHandler(this.Form_accidentCorrectGoods_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
+        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
     }
 }

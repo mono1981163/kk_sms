@@ -13,17 +13,17 @@ using IniParser.Model;
 
 namespace kk_sms.salesManagement
 {
-    public partial class Form_accidentClass : Form
+    public partial class Form_accidentCorrectGoods : Form
     {
-        private Form_accidentInput parentForm;
+        private Form_accidentCorrection parentForm;
 
-        public Form_accidentClass(Form_accidentInput parent)
+        public Form_accidentCorrectGoods(Form_accidentCorrection parent)
         {
             InitializeComponent();
             parentForm = parent;
         }
 
-        private void Form_accidentClass_Load(object sender, EventArgs e)
+        private void Form_accidentCorrectGoods_Load(object sender, EventArgs e)
         {
             try
             {
@@ -32,10 +32,10 @@ namespace kk_sms.salesManagement
                 string mysqlConf = "server=" + inidata["Mysql"]["server"] + ";user=" + inidata["Mysql"]["user"] + ";database=" + inidata["Mysql"]["database"] + ";port=" + inidata["Mysql"]["port"] + ";password=" + inidata["Mysql"]["password"] + ";";
                 var mysqlConnection = new MySqlConnection(mysqlConf);
                 mysqlConnection.Open();
-                string query = "SELECT COUNT(uid) FROM m_kaikyu;";
+                string query = "SELECT COUNT(uid) FROM m_hinban WHERE hinmei !='';";
                 MySqlCommand sqlCommand = new MySqlCommand(query, mysqlConnection);
                 dataGridView1.RowCount = Int32.Parse(sqlCommand.ExecuteScalar().ToString());
-                query = "SELECT * FROM m_kaikyu ORDER BY kaikyuno;";
+                query = "SELECT * FROM m_hinban WHERE hinmei !='' ORDER BY hinban;";
                 sqlCommand = new MySqlCommand(query, mysqlConnection);
                 var result = sqlCommand.ExecuteReader();
                 if (result.HasRows)
@@ -60,12 +60,30 @@ namespace kk_sms.salesManagement
 
         private void button1_Click(object sender, EventArgs e)
         {
+            var inputValue = textBox1.Text;
+            var rows = dataGridView1.Rows.Count;
+
+            if (inputValue.All(char.IsDigit))
+            {
+                for (int i = 0; i < rows; i++)
+                {
+                    if (dataGridView1[1, i].Value.ToString() == inputValue)
+                    {
+                        dataGridView1.CurrentCell = this.dataGridView1[1, i];
+                        break;
+                    }
+                }
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
             try
             {
                 string param = "";
                 var current_row = dataGridView1.CurrentCell.RowIndex;
                 param = dataGridView1[1, current_row].Value.ToString();
-                parentForm.textChange4(param);
+                parentForm.textChange2(param);
                 Close();
             }
             catch (Exception ex)
@@ -73,6 +91,5 @@ namespace kk_sms.salesManagement
                 MessageBox.Show(ex.Message);
             }
         }
-
     }
 }
