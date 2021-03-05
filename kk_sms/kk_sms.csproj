@@ -533,11 +533,89 @@
     <Compile Include="purchaseManagement\Form_print.Designer.cs">
       <DependentUpon>Form_print.cs</DependentUpon>
     </Compile>
+    <Compile Include="salesManagement\Form_accidentClass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="salesManagement\Form_accidentClass.Designer.cs">
+      <DependentUpon>Form_accidentClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="salesManagement\Form_accidentCorrectClass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="salesManagement\Form_accidentCorrectClass.Designer.cs">
+      <DependentUpon>Form_accidentCorrectClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="salesManagement\Form_accidentCorrectCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="salesManagement\Form_accidentCorrectCustomer.Designer.cs">
+      <DependentUpon>Form_accidentCorrectCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="salesManagement\Form_accidentCorrectGoods.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="salesManagement\Form_accidentCorrectGoods.Designer.cs">
+      <DependentUpon>Form_accidentCorrectGoods.cs</DependentUpon>
+    </Compile>
+    <Compile Include="salesManagement\Form_accidentCorrectGrade.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="salesManagement\Form_accidentCorrectGrade.Designer.cs">
+      <DependentUpon>Form_accidentCorrectGrade.cs</DependentUpon>
+    </Compile>
+    <Compile Include="salesManagement\Form_accidentCorrectSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="salesManagement\Form_accidentCorrectSearch.Designer.cs">
+      <DependentUpon>Form_accidentCorrectSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="salesManagement\Form_accidentCorrectUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="salesManagement\Form_accidentCorrectUser.Designer.cs">
+      <DependentUpon>Form_accidentCorrectUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="salesManagement\Form_accidentCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="salesManagement\Form_accidentCustomer.Designer.cs">
+      <DependentUpon>Form_accidentCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="salesManagement\Form_accidentGoods.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="salesManagement\Form_accidentGoods.Designer.cs">
+      <DependentUpon>Form_accidentGoods.cs</DependentUpon>
+    </Compile>
+    <Compile Include="salesManagement\Form_accidentGrade.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="salesManagement\Form_accidentGrade.Designer.cs">
+      <DependentUpon>Form_accidentGrade.cs</DependentUpon>
+    </Compile>
+    <Compile Include="salesManagement\Form_accidentUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="salesManagement\Form_accidentUser.Designer.cs">
+      <DependentUpon>Form_accidentUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="salesManagement\Form_inputList.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="salesManagement\Form_inputList.Designer.cs">
       <DependentUpon>Form_inputList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="salesManagement\Form_salesPrint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="salesManagement\Form_salesPrint.Designer.cs">
+      <DependentUpon>Form_salesPrint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="salesManagement\Form_slipCorrectionSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="salesManagement\Form_slipCorrectionSearch.Designer.cs">
+      <DependentUpon>Form_slipCorrectionSearch.cs</DependentUpon>
     </Compile>
     <Compile Include="salesManagement\Form_slipInputClient.cs">
       <SubType>Form</SubType>
@@ -881,8 +959,47 @@
     <EmbeddedResource Include="purchaseManagement\Form_print.resx">
       <DependentUpon>Form_print.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="salesManagement\Form_accidentClass.resx">
+      <DependentUpon>Form_accidentClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="salesManagement\Form_accidentCorrectClass.resx">
+      <DependentUpon>Form_accidentCorrectClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="salesManagement\Form_accidentCorrectCustomer.resx">
+      <DependentUpon>Form_accidentCorrectCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="salesManagement\Form_accidentCorrectGoods.resx">
+      <DependentUpon>Form_accidentCorrectGoods.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="salesManagement\Form_accidentCorrectGrade.resx">
+      <DependentUpon>Form_accidentCorrectGrade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="salesManagement\Form_accidentCorrectSearch.resx">
+      <DependentUpon>Form_accidentCorrectSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="salesManagement\Form_accidentCorrectUser.resx">
+      <DependentUpon>Form_accidentCorrectUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="salesManagement\Form_accidentCustomer.resx">
+      <DependentUpon>Form_accidentCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="salesManagement\Form_accidentGoods.resx">
+      <DependentUpon>Form_accidentGoods.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="salesManagement\Form_accidentGrade.resx">
+      <DependentUpon>Form_accidentGrade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="salesManagement\Form_accidentUser.resx">
+      <DependentUpon>Form_accidentUser.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="salesManagement\Form_inputList.resx">
       <DependentUpon>Form_inputList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="salesManagement\Form_salesPrint.resx">
+      <DependentUpon>Form_salesPrint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="salesManagement\Form_slipCorrectionSearch.resx">
+      <DependentUpon>Form_slipCorrectionSearch.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="salesManagement\Form_slipInputClient.resx">
       <DependentUpon>Form_slipInputClient.cs</DependentUpon>
