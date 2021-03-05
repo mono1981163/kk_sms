@@ -64,6 +64,7 @@ namespace kk_sms.masterManagement.supplier
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.Size = new System.Drawing.Size(300, 212);
             this.dataGridView1.TabIndex = 1;
+            this.dataGridView1.TabStop = false;
             // 
             // Column1
             // 
@@ -101,6 +102,7 @@ namespace kk_sms.masterManagement.supplier
             this.textBox_search.Name = "textBox_search";
             this.textBox_search.Size = new System.Drawing.Size(60, 24);
             this.textBox_search.TabIndex = 3;
+            this.textBox_search.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.search_keypress);
             // 
             // button_search
             // 
@@ -140,12 +142,12 @@ namespace kk_sms.masterManagement.supplier
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(334, 391);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.button_ok);
             this.Controls.Add(this.button_search);
             this.Controls.Add(this.textBox_search);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Meiryo", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

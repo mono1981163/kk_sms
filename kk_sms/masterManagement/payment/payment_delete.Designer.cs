@@ -91,6 +91,7 @@ namespace kk_sms.masterManagement.payment
             this.rep_no.Size = new System.Drawing.Size(40, 20);
             this.rep_no.TabIndex = 2;
             this.rep_no.TextChanged += new System.EventHandler(this.textBox_supplier_no_TextChanged);
+            this.rep_no.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.no_keypress);
             // 
             // label2
             // 
