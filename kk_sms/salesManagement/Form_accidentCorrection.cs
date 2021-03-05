@@ -66,7 +66,7 @@ namespace kk_sms.salesManagement
             {
                 var iniparser = new FileIniDataParser();
                 IniData inidata = iniparser.ReadFile("kk_sms.ini");
-                string mysqlConf = "server=" + inidata["Mysql"]["server"] + ";user=" + inidata["Mysql"]["user"] + ";database=" + inidata["Mysql"]["database"] + ";port=" + inidata["Mysql"]["port"] + ";password=" + inidata["Mysql"]["password"] + ";";
+                string mysqlConf = "server=" + inidata["Mysql"]["server"] + ";user=" + inidata["Mysql"]["user"] + ";database=" + inidata["Mysql"]["database"] + ";port=" + inidata["Mysql"]["port"] + ";password=" + inidata["Mysql"]["password"] + ";Character Set=utf8";
                 var mysqlConnection = new MySqlConnection(mysqlConf);
                 mysqlConnection.Open();
                 string query = "SELECT H.hinban, H.hinmei, H.toukyuno, H.toukyuname, H.kaikyuno, H.kaikyuname, H.syainno, U.login_name, H.accrualdate, H.tokuisakino, H.tokuisakiname, H.kubun, K.kbnname, H.hanbaisu, H.tanka, H.kingaku FROM tbl_hanbai H INNER JOIN m_user U ON H.syainno = U.user_id INNER JOIN m_hanbaikubun AS K ON H.kubun = K.kbnno WHERE H.orderno = '" + textBox1.Text + "'";
@@ -991,6 +991,10 @@ namespace kk_sms.salesManagement
                 {
 
                 }
+            }
+            else
+            {
+                label48.Text = "入力したデータが正しくありません。";
             }
         }
 

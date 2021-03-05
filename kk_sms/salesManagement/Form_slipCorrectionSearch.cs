@@ -29,7 +29,7 @@ namespace kk_sms.salesManagement
             { 
                 var iniparser = new FileIniDataParser();
                 IniData inidata = iniparser.ReadFile("kk_sms.ini");
-                string mysqlConf = "server=" + inidata["Mysql"]["server"] + ";user=" + inidata["Mysql"]["user"] + ";database=" + inidata["Mysql"]["database"] + ";port=" + inidata["Mysql"]["port"] + ";password=" + inidata["Mysql"]["password"] + ";";
+                string mysqlConf = "server=" + inidata["Mysql"]["server"] + ";user=" + inidata["Mysql"]["user"] + ";database=" + inidata["Mysql"]["database"] + ";port=" + inidata["Mysql"]["port"] + ";password=" + inidata["Mysql"]["password"] + ";Character Set=utf8";
                 var mysqlConnection = new MySqlConnection(mysqlConf);
                 mysqlConnection.Open();
                 string query = "SELECT COUNT(orderno) FROM tbl_hanbai WHERE (orderno>999 OR orderno<900)";
@@ -100,7 +100,7 @@ namespace kk_sms.salesManagement
 
                 var iniparser = new FileIniDataParser();
                 IniData inidata = iniparser.ReadFile("kk_sms.ini");
-                string mysqlConf = "server=" + inidata["Mysql"]["server"] + ";user=" + inidata["Mysql"]["user"] + ";database=" + inidata["Mysql"]["database"] + ";port=" + inidata["Mysql"]["port"] + ";password=" + inidata["Mysql"]["password"] + ";";
+                string mysqlConf = "server=" + inidata["Mysql"]["server"] + ";user=" + inidata["Mysql"]["user"] + ";database=" + inidata["Mysql"]["database"] + ";port=" + inidata["Mysql"]["port"] + ";password=" + inidata["Mysql"]["password"] + ";Character Set=utf8";
                 var mysqlConnection = new MySqlConnection(mysqlConf);
                 mysqlConnection.Open();
                 var query = "SELECT H.orderno, H.hinmei, H.toukyuname, H.kaikyuname, H.irisu, N.souurisu, N.siiresu, N.nisugataname, N.tanka, N.zaikosu, H.tokuisakiname, H.hanbaisu, H.tanka, H.kingaku FROM tbl_hanbai AS H INNER JOIN tbl_nyuko AS N ON H.orderno = N.orderno WHERE H.orderno = '" + orderno + "' AND H.tokuisakino = '" + tokuisakino + "' AND H.kingaku = '" + kingaku + "';";
@@ -124,6 +124,21 @@ namespace kk_sms.salesManagement
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+                (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // only allow one decimal point
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
             }
         }
     }
