@@ -136,6 +136,7 @@
             this.textBox1.TabIndex = 6;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.textBox1.GotFocus += new System.EventHandler(this.textBox1_GotFocus);
+            this.textBox1.LostFocus += new System.EventHandler(this.textBox1_LostFocus);
             this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_Keypress);
             // 
             // groupBox1

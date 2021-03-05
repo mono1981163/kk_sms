@@ -105,6 +105,7 @@ namespace kk_sms.masterManagement
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.payment_label_title);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "Form_payment";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "仕⼊先DB管理";

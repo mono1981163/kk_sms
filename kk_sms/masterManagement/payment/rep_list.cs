@@ -36,6 +36,7 @@ namespace kk_sms.masterManagement.payment
                     no = no + 1;
                     if (row.Cells[1].Value.ToString().Equals(searchValue))
                     {
+                        dataGridView1.ClearSelection();
                         row.Selected = true;
                         dataGridView1.CurrentCell = dataGridView1[1, row.Index];
                         //row.DefaultCellStyle.BackColor = Color.Blue;
@@ -67,11 +68,12 @@ namespace kk_sms.masterManagement.payment
 
         private void rep_list_Load(object sender, EventArgs e)
         {
+            textBox_search.Select();
             try
             {
                 var iniparser = new FileIniDataParser();
                 IniData inidata = iniparser.ReadFile("kk_sms.ini");
-                string mysqlConf = "server=" + inidata["Mysql"]["server"] + ";user=" + inidata["Mysql"]["user"] + ";database=" + inidata["Mysql"]["database"] + ";port=" + inidata["Mysql"]["port"] + ";password=" + inidata["Mysql"]["password"] + ";";
+                string mysqlConf = "server=" + inidata["Mysql"]["server"] + ";user=" + inidata["Mysql"]["user"] + ";database=" + inidata["Mysql"]["database"] + ";port=" + inidata["Mysql"]["port"] + ";password=" + inidata["Mysql"]["password"] + ";Character Set=utf8";
                 var mysqlConnection = new MySqlConnection(mysqlConf);
                 mysqlConnection.Open();
                 string query = "SELECT COUNT(uid) FROM tbl_daibarai";
@@ -99,6 +101,36 @@ namespace kk_sms.masterManagement.payment
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void search_keypress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                var searchValue = textBox_search.Text;
+                dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+                dataGridView1.DefaultCellStyle.SelectionBackColor = Color.Blue;
+                try
+                {
+                    var no = 0;
+                    foreach (DataGridViewRow row in dataGridView1.Rows)
+                    {
+                        no = no + 1;
+                        if (row.Cells[1].Value.ToString().Equals(searchValue))
+                        {
+                            dataGridView1.ClearSelection();
+                            row.Selected = true;
+                            dataGridView1.CurrentCell = dataGridView1[1, row.Index];
+                            //row.DefaultCellStyle.BackColor = Color.Blue;
+                            break;
+                        }
+                    }
+                }
+                catch (Exception exc)
+                {
+                    MessageBox.Show(exc.Message);
+                }
             }
         }
     }

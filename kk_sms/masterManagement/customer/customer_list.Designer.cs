@@ -32,14 +32,14 @@ namespace kk_sms.masterManagement.customer
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(customer_list));
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.supplier_no = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox_search = new System.Windows.Forms.TextBox();
             this.button_search = new System.Windows.Forms.Button();
             this.button_ok = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.supplier_no = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -69,6 +69,25 @@ namespace kk_sms.masterManagement.customer
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.Size = new System.Drawing.Size(300, 250);
             this.dataGridView1.TabIndex = 1;
+            this.dataGridView1.TabStop = false;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Rec";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // supplier_no
+            // 
+            this.supplier_no.HeaderText = "得意先番号";
+            this.supplier_no.Name = "supplier_no";
+            this.supplier_no.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "得意先";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
             // 
             // label2
             // 
@@ -87,6 +106,7 @@ namespace kk_sms.masterManagement.customer
             this.textBox_search.Name = "textBox_search";
             this.textBox_search.Size = new System.Drawing.Size(50, 20);
             this.textBox_search.TabIndex = 3;
+            this.textBox_search.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.search_keypress);
             // 
             // button_search
             // 
@@ -118,24 +138,6 @@ namespace kk_sms.masterManagement.customer
             this.label3.TabIndex = 6;
             this.label3.Text = "OKで番号入力します。";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Rec";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // supplier_no
-            // 
-            this.supplier_no.HeaderText = "得意先番号";
-            this.supplier_no.Name = "supplier_no";
-            this.supplier_no.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "得意先";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
             // 
             // customer_list
             // 
