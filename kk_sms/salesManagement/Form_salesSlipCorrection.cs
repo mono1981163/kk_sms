@@ -83,6 +83,15 @@ namespace kk_sms.salesManagement
             label48.Text = "[-]入力でー覧表から伝票を抽出してください";
         }
 
+        private void textBox1_LostFocus(object sender, EventArgs e)
+        {
+            if (textBox1.Text != "" && textBox1.Text.All(char.IsDigit))
+            {
+                textBox1.Focus();
+                label48.Text = "番号を直接入力しないでください";
+            }
+        }
+
         public void textChange(string[] param)
         {
             m_stock = int.Parse(param[9]);
@@ -133,9 +142,9 @@ namespace kk_sms.salesManagement
             if (m_stock + m_saleamount1 - m_saleamount < 0)
             {
                 m_saleamount = m_saleamount1;
+                textBox2.Text = m_saleamount.ToString();
             }
             
-            textBox2.Text = m_saleamount.ToString();
             label5.Text = (m_totalsale + m_saleamount - m_saleamount1).ToString();
             label24.Text = (m_stock + m_saleamount1 - m_saleamount).ToString();
             label30.Text = (m_saleamount * m_price).ToString();
@@ -173,7 +182,7 @@ namespace kk_sms.salesManagement
 
         private void button3_Click(object sender, EventArgs e)
         {
-            if (textBox2.Text !="")
+            if (textBox2.Text !="" && textBox1.Text != "" && textBox3.Text !="")
             {
                 try
                 {
@@ -199,6 +208,11 @@ namespace kk_sms.salesManagement
                 }
                 initData();
                 clear();
+                label48.Text = "データがセーブされました";
+            }
+            else
+            {
+                label48.Text = "入力したデータが正しくありません。";
             }
         }
 
@@ -214,7 +228,7 @@ namespace kk_sms.salesManagement
 
                     var mysqlConnection = new MySqlConnection(mysqlConf);
                     mysqlConnection.Open();
-                    string query = "UPDATE tbl_nyuko SET zaikosu = '" + (m_stock + m_saleamount1).ToString() + "', souurisu = '" + (m_totalsale - m_saleamount1).ToString() + "' WHERE orderno = '" + textBox1.Text + "';";
+                    string query = "UPDATE tbl_nyuko SET zaikosu = '" + (m_stock - m_saleamount1).ToString() + "', souurisu = '" + (m_totalsale + m_saleamount1).ToString() + "' WHERE orderno = '" + textBox1.Text + "';";
                     MySqlCommand sqlCommand = new MySqlCommand(query, mysqlConnection);
                     var result1 = sqlCommand.ExecuteScalar();
                     mysqlConnection.Close();

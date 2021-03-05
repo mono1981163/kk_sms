@@ -58,6 +58,7 @@ namespace kk_sms.salesManagement
             {
                 MessageBox.Show(ex.Message);
             }
+            this.ActiveControl = textBox1;
         }
 
         private void button1_Click(object sender, EventArgs e)

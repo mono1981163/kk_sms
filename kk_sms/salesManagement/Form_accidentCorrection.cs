@@ -369,7 +369,7 @@ namespace kk_sms.salesManagement
 
         private void textBox3_LostFocus(object sender, EventArgs e)
         {
-            if (label9.Text == "" && textBox3.Text != "")
+            if ((label9.Text == "" && textBox3.Text != "") && !(label9.Text == "" && textBox3.Text == "0"))
             {
                 textBox3.Text = "-";
             }
@@ -441,7 +441,7 @@ namespace kk_sms.salesManagement
 
         private void textBox4_LostFocus(object sender, EventArgs e)
         {
-            if (label10.Text == "" && textBox4.Text != "")
+            if ((label10.Text == "" && textBox4.Text != "") && !(label10.Text == "" && textBox4.Text == "0"))
             {
                 textBox4.Text = "-";
             }
