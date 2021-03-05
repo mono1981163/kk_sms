@@ -139,7 +139,7 @@ namespace kk_sms.salesManagement
                    .Add(new Paragraph("利益率"));
                 table.AddCell(cell);
                 // Database Connection
-                string mysqlConf = "server=" + inidata["Mysql"]["server"] + ";user=" + inidata["Mysql"]["user"] + ";database=" + inidata["Mysql"]["database"] + ";port=" + inidata["Mysql"]["port"] + ";password=" + inidata["Mysql"]["password"] + ";";
+                string mysqlConf = "server=" + inidata["Mysql"]["server"] + ";user=" + inidata["Mysql"]["user"] + ";database=" + inidata["Mysql"]["database"] + ";port=" + inidata["Mysql"]["port"] + ";password=" + inidata["Mysql"]["password"] + ";Character Set=utf8";
                 var mysqlConnection = new MySqlConnection(mysqlConf);
                 mysqlConnection.Open();
                 string query = "SELECT orderno , tokuisakino , hinmei , toukyuname , kaikyuname , hanbaisu , tanka , kingaku , kubun , tokuisakiname  FROM tbl_hanbai where hday LIKE '" + date + "%' ORDER BY orderno";
