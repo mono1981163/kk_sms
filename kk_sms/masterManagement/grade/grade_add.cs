@@ -46,7 +46,7 @@ namespace kk_sms.masterManagement.grade
                 {
                     var iniparser = new FileIniDataParser();
                     IniData inidata = iniparser.ReadFile("kk_sms.ini");
-                    string mysqlConf = "server=" + inidata["Mysql"]["server"] + ";user=" + inidata["Mysql"]["user"] + ";database=" + inidata["Mysql"]["database"] + ";port=" + inidata["Mysql"]["port"] + ";password=" + inidata["Mysql"]["password"] + ";";
+                    string mysqlConf = "server=" + inidata["Mysql"]["server"] + ";user=" + inidata["Mysql"]["user"] + ";database=" + inidata["Mysql"]["database"] + ";port=" + inidata["Mysql"]["port"] + ";password=" + inidata["Mysql"]["password"] + ";Character Set=utf8";
                     var mysqlConnection = new MySqlConnection(mysqlConf);
                     mysqlConnection.Open();
                     string query = "SELECT toukyuname FROM m_tokyu WHERE toukyuno = " + grade_no;
@@ -60,7 +60,15 @@ namespace kk_sms.masterManagement.grade
                     {
                         string que = "INSERT INTO m_tokyu(toukyuno, toukyuname) VALUES('" + grade_no + "','" + grade_name + "')";
                         MySqlCommand sqlorder = new MySqlCommand(que, mysqlConnection);
-                        MySqlDataReader mySqlDataReader = sqlorder.ExecuteReader();
+                        var res = sqlorder.ExecuteReader();
+                        if (res.RecordsAffected > 0)
+                        {
+                            label_description.Text = "操作が成功しました。";
+                        }
+                        else
+                        {
+                            label_description.Text = "エラーが発生しました。";
+                        }
                         mysqlConnection.Close();
                     }
                 }

@@ -26,7 +26,7 @@ namespace kk_sms.masterManagement.consumption_tax
             {
                 var iniparser = new FileIniDataParser();
                 IniData inidata = iniparser.ReadFile("kk_sms.ini");
-                string mysqlConf = "server=" + inidata["Mysql"]["server"] + ";user=" + inidata["Mysql"]["user"] + ";database=" + inidata["Mysql"]["database"] + ";port=" + inidata["Mysql"]["port"] + ";password=" + inidata["Mysql"]["password"] + ";";
+                string mysqlConf = "server=" + inidata["Mysql"]["server"] + ";user=" + inidata["Mysql"]["user"] + ";database=" + inidata["Mysql"]["database"] + ";port=" + inidata["Mysql"]["port"] + ";password=" + inidata["Mysql"]["password"] + ";Character Set=utf8";
                 var mysqlConnection = new MySqlConnection(mysqlConf);
                 mysqlConnection.Open();
                 string query = "SELECT zei FROM m_zei ORDER BY uid DESC Limit 1";
@@ -107,7 +107,7 @@ namespace kk_sms.masterManagement.consumption_tax
                     {
                         var iniparser = new FileIniDataParser();
                         IniData inidata = iniparser.ReadFile("kk_sms.ini");
-                        string mysqlConf = "server=" + inidata["Mysql"]["server"] + ";user=" + inidata["Mysql"]["user"] + ";database=" + inidata["Mysql"]["database"] + ";port=" + inidata["Mysql"]["port"] + ";password=" + inidata["Mysql"]["password"] + ";";
+                        string mysqlConf = "server=" + inidata["Mysql"]["server"] + ";user=" + inidata["Mysql"]["user"] + ";database=" + inidata["Mysql"]["database"] + ";port=" + inidata["Mysql"]["port"] + ";password=" + inidata["Mysql"]["password"] + ";Character Set=utf8";
                         var mysqlConnection = new MySqlConnection(mysqlConf);
                         mysqlConnection.Open();
                         string query = "UPDATE m_zei SET createday ='" + end_date + "' ORDER BY uid desc limit 1";

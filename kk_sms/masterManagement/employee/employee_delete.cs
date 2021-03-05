@@ -39,7 +39,7 @@ namespace kk_sms.masterManagement.employee
                     {
                         var iniparser = new FileIniDataParser();
                         IniData inidata = iniparser.ReadFile("kk_sms.ini");
-                        string mysqlConf = "server=" + inidata["Mysql"]["server"] + ";user=" + inidata["Mysql"]["user"] + ";database=" + inidata["Mysql"]["database"] + ";port=" + inidata["Mysql"]["port"] + ";password=" + inidata["Mysql"]["password"] + ";";
+                        string mysqlConf = "server=" + inidata["Mysql"]["server"] + ";user=" + inidata["Mysql"]["user"] + ";database=" + inidata["Mysql"]["database"] + ";port=" + inidata["Mysql"]["port"] + ";password=" + inidata["Mysql"]["password"] + ";Character Set=utf8";
                         var mysqlConnection = new MySqlConnection(mysqlConf);
                         mysqlConnection.Open();
                         string query = "DELETE FROM m_user WHERE user_id='" + user_id + "'";
@@ -75,16 +75,37 @@ namespace kk_sms.masterManagement.employee
             }
             if (inputValue == "-")
             {
-                var form_selectRep = new kk_sms.masterManagement.employee.rep_list(this);
-                form_selectRep.ShowDialog(this);
+                label_description.Text = "Enter件を押してください。";
             }
             else
             {
+                label_description.Text = "";
+
+            }
+        }
+
+        public void change_rep(string code, string name)
+        {
+            rep_no.Text = code;
+            rep_content.Text = name;
+        }
+
+        private void no_keypress(object sender, KeyPressEventArgs e)
+        {
+            var inputValue = rep_no.Text;
+            if (e.KeyChar == (char)Keys.Enter && inputValue == "-")
+            {
+                var form_selectRep = new kk_sms.masterManagement.employee.rep_list(this);
+                form_selectRep.ShowDialog(this);
+            }
+            else if (e.KeyChar == (char)Keys.Enter && inputValue != "-")
+            {
+
                 try
                 {
                     var iniparser = new FileIniDataParser();
                     IniData inidata = iniparser.ReadFile("kk_sms.ini");
-                    string mysqlConf = "server=" + inidata["Mysql"]["server"] + ";user=" + inidata["Mysql"]["user"] + ";database=" + inidata["Mysql"]["database"] + ";port=" + inidata["Mysql"]["port"] + ";password=" + inidata["Mysql"]["password"] + ";";
+                    string mysqlConf = "server=" + inidata["Mysql"]["server"] + ";user=" + inidata["Mysql"]["user"] + ";database=" + inidata["Mysql"]["database"] + ";port=" + inidata["Mysql"]["port"] + ";password=" + inidata["Mysql"]["password"] + ";Character Set=utf8";
                     if (!inputValue.All(char.IsDigit))
                     {
                         label_description.Text = "番号を入力してください。";
@@ -98,6 +119,10 @@ namespace kk_sms.masterManagement.employee
                     {
                         rep_content.Text = result.ToString();
                     }
+                    else
+                    {
+                        label_description.Text = "入力内容が存在しません。";
+                    }
                     mysqlConnection.Close();
                 }
                 catch (Exception ex)
@@ -105,12 +130,6 @@ namespace kk_sms.masterManagement.employee
                     rep_content.Text = "";
                 }
             }
-        }
-
-        public void change_rep(string code, string name)
-        {
-            rep_no.Text = code;
-            rep_content.Text = name;
         }
     }
 }

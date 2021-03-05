@@ -97,7 +97,7 @@ namespace kk_sms.monthlyProcessing
                     table.AddCell(cell);
 
                     // Database Connection
-                    string mysqlConf = "server=" + inidata["Mysql"]["server"] + ";user=" + inidata["Mysql"]["user"] + ";database=" + inidata["Mysql"]["database"] + ";port=" + inidata["Mysql"]["port"] + ";password=" + inidata["Mysql"]["password"] + ";";
+                    string mysqlConf = "server=" + inidata["Mysql"]["server"] + ";user=" + inidata["Mysql"]["user"] + ";database=" + inidata["Mysql"]["database"] + ";port=" + inidata["Mysql"]["port"] + ";password=" + inidata["Mysql"]["password"] + ";Character Set=utf8";
                     var mysqlConnection = new MySqlConnection(mysqlConf);
                     mysqlConnection.Open();
                     string query = "select t.daino , t.Incentives ,  t.Incentives * (m.zei /100)  , (t.Incentives +  t.Incentives * (m.zei /100))   from m_tokuisaki t,m_zei m where t.Incentives !=0 AND mdate LIKE '" + date + "%' ";

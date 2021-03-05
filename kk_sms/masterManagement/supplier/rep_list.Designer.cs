@@ -60,25 +60,29 @@ namespace kk_sms.masterManagement.supplier
             this.dataGridView1.Location = new System.Drawing.Point(17, 70);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.Size = new System.Drawing.Size(300, 212);
             this.dataGridView1.TabIndex = 1;
-            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.TabStop = false;
             // 
             // Column1
             // 
             this.Column1.HeaderText = "Rec";
             this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
             // 
             // supplier_no
             // 
             this.supplier_no.HeaderText = "仕番";
             this.supplier_no.Name = "supplier_no";
+            this.supplier_no.ReadOnly = true;
             // 
             // Column3
             // 
             this.Column3.HeaderText = "仕⼊先";
             this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
             // 
             // label2
             // 
@@ -98,6 +102,7 @@ namespace kk_sms.masterManagement.supplier
             this.textBox_search.Name = "textBox_search";
             this.textBox_search.Size = new System.Drawing.Size(60, 24);
             this.textBox_search.TabIndex = 3;
+            this.textBox_search.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.search_keypress);
             // 
             // button_search
             // 
@@ -137,12 +142,12 @@ namespace kk_sms.masterManagement.supplier
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(334, 391);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.button_ok);
             this.Controls.Add(this.button_search);
             this.Controls.Add(this.textBox_search);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Meiryo", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
