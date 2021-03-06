@@ -175,11 +175,11 @@ namespace kk_sms.inventoryManagement
                     TextBox quantity = this.Controls.Find("quantity" + i, true).FirstOrDefault() as TextBox;
                     TextBox lost = this.Controls.Find("lost" + i, true).FirstOrDefault() as TextBox;
                     TextBox others = this.Controls.Find("others" + i, true).FirstOrDefault() as TextBox;
-                    TextBox theft = this.Controls.Find("theft" + i, true).FirstOrDefault() as TextBox;
-                    quantity.Text = "";
+                    TextBox theft = this.Controls.Find("theft" + i, true).FirstOrDefault() as TextBox;                    
                     lost.Text = "";
                     others.Text = "";
                     theft.Text = "";
+                    quantity.Text = "";
                 }
             }
         }
