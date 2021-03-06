@@ -29,7 +29,7 @@ namespace kk_sms.purchaseManagement
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_input_selectSupplier));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_accident_selectSupplier));
             this.label_title = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.no = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -120,7 +120,7 @@ namespace kk_sms.purchaseManagement
             this.textBox_search.Location = new System.Drawing.Point(81, 297);
             this.textBox_search.MaximumSize = new System.Drawing.Size(400, 21);
             this.textBox_search.Name = "textBox_search";
-            this.textBox_search.Size = new System.Drawing.Size(50, 21);
+            this.textBox_search.Size = new System.Drawing.Size(50, 24);
             this.textBox_search.TabIndex = 5;
             // 
             // button_search
@@ -143,12 +143,11 @@ namespace kk_sms.purchaseManagement
             this.button_ok.UseVisualStyleBackColor = true;
             this.button_ok.Click += new System.EventHandler(this.button_ok_Click);
             // 
-            // Form_input_selectSupplier
+            // Form_accident_selectSupplier
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 387);
-            this.ControlBox = false;
             this.Controls.Add(this.button_ok);
             this.Controls.Add(this.button_search);
             this.Controls.Add(this.textBox_search);
@@ -160,7 +159,8 @@ namespace kk_sms.purchaseManagement
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
-            this.Name = "Form_input_selectSupplier";
+            this.MaximizeBox = false;
+            this.Name = "Form_accident_selectSupplier";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "仕入先一覽";
             this.Load += new System.EventHandler(this.Form_selectRep_Load);

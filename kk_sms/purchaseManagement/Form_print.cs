@@ -121,7 +121,7 @@ namespace kk_sms.purchaseManagement
                     table.AddCell(cell);
 
                     // Database Connection
-                    string mysqlConf = "server=" + inidata["Mysql"]["server"] + ";user=" + inidata["Mysql"]["user"] + ";database=" + inidata["Mysql"]["database"] + ";port=" + inidata["Mysql"]["port"] + ";password=" + inidata["Mysql"]["password"] + ";";
+                    string mysqlConf = "server=" + inidata["Mysql"]["server"] + ";user=" + inidata["Mysql"]["user"] + ";database=" + inidata["Mysql"]["database"] + ";port=" + inidata["Mysql"]["port"] + ";password=" + inidata["Mysql"]["password"] + ";convert zero datetime=True" + ";Character Set=utf8";
                     var mysqlConnection = new MySqlConnection(mysqlConf);
                     mysqlConnection.Open();
                     string query = "SELECT n.siireno, n.siirename, (CASE WHEN n.kuban = 0 THEN SUM(n.kingaku) END), (CASE WHEN n.kuban = 0 THEN SUM(n.kingaku) * (z.zei / 100) END), (CASE WHEN n.kuban = 2 THEN SUM(n.kingaku) END), (CASE WHEN n.kuban = 2 THEN SUM(n.kingaku) * (z.zei / 100) END) FROM tbl_nyuko AS n, m_zei AS z WHERE nyukoday LIKE '" + date + "%' GROUP BY siireno";
