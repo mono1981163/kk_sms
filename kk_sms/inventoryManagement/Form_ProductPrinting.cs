@@ -48,7 +48,8 @@ namespace kk_sms.inventoryManagement
                 {
                     var folderPath = inidata["Pdf"]["path"];
                     string filename = saveFileDialog_savePdf.FileName;
-                    PdfWriter writer = new PdfWriter(filename);
+                   string tempfile = "temp.pdf";
+                    PdfWriter writer = new PdfWriter(tempfile);
                     PdfDocument pdf = new PdfDocument(writer);
                     Document document = new Document(pdf);
                     PdfFont myfont = PdfFontFactory.CreateFont("HeiseiMin-W3", "UniJIS-UCS2-H");
@@ -61,7 +62,7 @@ namespace kk_sms.inventoryManagement
                     
 
                     // Database Connection
-                    string mysqlConf = "server=" + inidata["Mysql"]["server"] + ";user=" + inidata["Mysql"]["user"] + ";database=" + inidata["Mysql"]["database"] + ";port=" + inidata["Mysql"]["port"] + ";password=" + inidata["Mysql"]["password"] + ";";
+                    string mysqlConf = "server=" + inidata["Mysql"]["server"] + ";user=" + inidata["Mysql"]["user"] + ";database=" + inidata["Mysql"]["database"] + ";port=" + inidata["Mysql"]["port"] + ";password=" + inidata["Mysql"]["password"] + ";convert zero datetime=True" + ";Character Set=utf8";
                     var mysqlConnection = new MySqlConnection(mysqlConf);
                     mysqlConnection.Open();
                     string query = "SELECT syainname FROM tbl_nyuko  GROUP BY syainname";
@@ -210,6 +211,18 @@ namespace kk_sms.inventoryManagement
                     
                     mysqlConnection.Close();
                     document.Close();
+                    PdfDocument pdfDoc = new PdfDocument(new PdfReader(tempfile), new PdfWriter(filename));
+                    Document doc = new Document(pdfDoc);
+                    int numberOfPages = pdfDoc.GetNumberOfPages();
+                    for (int i = 1; i <= numberOfPages; i++)
+                    {
+                        
+                        // Write aligned text to the specified by parameters point
+                        doc.ShowTextAligned(new Paragraph("Page " + i),
+                                559, 826, i, TextAlignment.RIGHT, VerticalAlignment.TOP, 0);
+                    }
+
+                    doc.Close();
                     if (Directory.Exists(folderPath))
                     {
                         string windir = Environment.GetEnvironmentVariable("windir");
