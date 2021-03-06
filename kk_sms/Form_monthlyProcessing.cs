@@ -27,5 +27,10 @@ namespace kk_sms
             var form = new kk_sms.monthlyProcessing.Form_selectDate_m_1();
             form.Show();
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
