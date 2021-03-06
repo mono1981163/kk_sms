@@ -29,14 +29,14 @@ namespace kk_sms.purchaseManagement
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_input_selectPacking));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_correct_selectPacking));
             this.label_title = new System.Windows.Forms.Label();
             this.label_description = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button_ok = new System.Windows.Forms.Button();
             this.no = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.packing_no = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button_ok = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -83,16 +83,6 @@ namespace kk_sms.purchaseManagement
             this.dataGridView1.Size = new System.Drawing.Size(163, 98);
             this.dataGridView1.TabIndex = 2;
             // 
-            // button_ok
-            // 
-            this.button_ok.Location = new System.Drawing.Point(58, 208);
-            this.button_ok.Name = "button_ok";
-            this.button_ok.Size = new System.Drawing.Size(88, 33);
-            this.button_ok.TabIndex = 3;
-            this.button_ok.Text = "OK ( &O )";
-            this.button_ok.UseVisualStyleBackColor = true;
-            this.button_ok.Click += new System.EventHandler(this.button_ok_Click);
-            // 
             // no
             // 
             this.no.HeaderText = "Rec";
@@ -111,12 +101,21 @@ namespace kk_sms.purchaseManagement
             this.name.Name = "name";
             this.name.ReadOnly = true;
             // 
-            // Form_input_selectPacking
+            // button_ok
+            // 
+            this.button_ok.Location = new System.Drawing.Point(58, 208);
+            this.button_ok.Name = "button_ok";
+            this.button_ok.Size = new System.Drawing.Size(88, 33);
+            this.button_ok.TabIndex = 3;
+            this.button_ok.Text = "OK ( &O )";
+            this.button_ok.UseVisualStyleBackColor = true;
+            this.button_ok.Click += new System.EventHandler(this.button_ok_Click);
+            // 
+            // Form_correct_selectPacking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(206, 283);
-            this.ControlBox = false;
             this.Controls.Add(this.button_ok);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label_description);
@@ -125,7 +124,8 @@ namespace kk_sms.purchaseManagement
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
-            this.Name = "Form_input_selectPacking";
+            this.MaximizeBox = false;
+            this.Name = "Form_correct_selectPacking";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "荷姿一覧";
             this.Load += new System.EventHandler(this.Form_selectRep_Load);

@@ -121,6 +121,7 @@ namespace kk_sms.purchaseManagement
             this.textBox_slipNo.TabIndex = 4;
             this.textBox_slipNo.TextChanged += new System.EventHandler(this.textBox_slipNo_TextChanged);
             this.textBox_slipNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.slipNo_keypress);
+            this.textBox_slipNo.LostFocus += new System.EventHandler(this.TextBox_slipNo_lostFocus);
             // 
             // label4
             // 
