@@ -129,7 +129,9 @@ namespace kk_sms.inventoryManagement
                 MySqlCommand sqlCommand = new MySqlCommand(query, mysqlConnection);
                 dataGridView1.RowCount = Int32.Parse(sqlCommand.ExecuteScalar().ToString());
                 dataGridView1.Columns[0].DefaultCellStyle.BackColor = Color.FromArgb(255, 233, 233, 233);
-                query = "SELECT orderno, hinmaei, N.syainno, syainname, S.siirename, nyukoday FROM tbl_nyuko AS N INNER JOIN m_siire AS S ON N.siireno = S.siireno ORDER BY orderno;";
+                DateTime today = DateTime.Today;
+                var datetimestring = today.ToString("yyyy-MM-dd");
+                query = "SELECT orderno, hinmaei, N.syainno, syainname, S.siirename, nyukoday FROM tbl_nyuko AS N INNER JOIN m_siire AS S ON N.siireno = S.siireno WHERE nyukoday='" + datetimestring + "' ORDER BY orderno;";
                 sqlCommand = new MySqlCommand(query, mysqlConnection);
                 var result = sqlCommand.ExecuteReader();
                 if (result.HasRows)

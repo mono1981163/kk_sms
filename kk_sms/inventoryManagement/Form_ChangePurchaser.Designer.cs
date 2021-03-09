@@ -31,12 +31,6 @@ namespace kk_sms.inventoryManagement
         {
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.SNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ENum = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Suplier = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DateText = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label2 = new System.Windows.Forms.Label();
             this.Snumval = new System.Windows.Forms.TextBox();
             this.EmNoval = new System.Windows.Forms.TextBox();
@@ -45,6 +39,12 @@ namespace kk_sms.inventoryManagement
             this.Modify = new System.Windows.Forms.Button();
             this.Exit = new System.Windows.Forms.Button();
             this.statusLabel = new System.Windows.Forms.Label();
+            this.SNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ENum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Suplier = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DateText = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -63,7 +63,8 @@ namespace kk_sms.inventoryManagement
             // 
             // dataGridView1
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToAddRows = false;            
+            this.dataGridView1.AllowUserToResizeRows = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -80,37 +81,6 @@ namespace kk_sms.inventoryManagement
             this.dataGridView1.Size = new System.Drawing.Size(617, 214);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // SNum
-            // 
-            this.SNum.HeaderText = "伝票番号";
-            this.SNum.Name = "SNum";
-            this.SNum.ReadOnly = true;
-            // 
-            // PName
-            // 
-            this.PName.HeaderText = "品名";
-            this.PName.Name = "PName";
-            // 
-            // ENum
-            // 
-            this.ENum.HeaderText = "社員番号";
-            this.ENum.Name = "ENum";
-            // 
-            // EName
-            // 
-            this.EName.HeaderText = "氏名";
-            this.EName.Name = "EName";
-            // 
-            // Suplier
-            // 
-            this.Suplier.HeaderText = "仕入先";
-            this.Suplier.Name = "Suplier";
-            // 
-            // DateText
-            // 
-            this.DateText.HeaderText = "日付";
-            this.DateText.Name = "DateText";
             // 
             // label2
             // 
@@ -200,6 +170,43 @@ namespace kk_sms.inventoryManagement
             this.statusLabel.TabIndex = 7;
             this.statusLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // SNum
+            // 
+            this.SNum.HeaderText = "伝票番号";
+            this.SNum.Name = "SNum";
+            this.SNum.ReadOnly = true;
+            this.SNum.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // PName
+            // 
+            this.PName.HeaderText = "品名";
+            this.PName.Name = "PName";
+            this.PName.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // ENum
+            // 
+            this.ENum.HeaderText = "社員番号";
+            this.ENum.Name = "ENum";
+            this.ENum.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // EName
+            // 
+            this.EName.HeaderText = "氏名";
+            this.EName.Name = "EName";
+            this.EName.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // Suplier
+            // 
+            this.Suplier.HeaderText = "仕入先";
+            this.Suplier.Name = "Suplier";
+            this.Suplier.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // DateText
+            // 
+            this.DateText.HeaderText = "日付";
+            this.DateText.Name = "DateText";
+            this.DateText.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
             // Form_ChangePurchaser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -233,12 +240,6 @@ namespace kk_sms.inventoryManagement
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SNum;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ENum;
-        private System.Windows.Forms.DataGridViewTextBoxColumn EName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Suplier;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DateText;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox Snumval;
         private System.Windows.Forms.TextBox EmNoval;
@@ -247,5 +248,11 @@ namespace kk_sms.inventoryManagement
         private System.Windows.Forms.Button Modify;
         private System.Windows.Forms.Button Exit;
         private System.Windows.Forms.Label statusLabel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SNum;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ENum;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Suplier;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DateText;
     }
 }
