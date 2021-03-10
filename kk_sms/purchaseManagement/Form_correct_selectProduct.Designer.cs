@@ -29,16 +29,16 @@ namespace kk_sms.purchaseManagement
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_input_selectProduct));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_correct_selectProduct));
             this.label_title = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.no = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.product_no = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox_search = new System.Windows.Forms.TextBox();
             this.button_search = new System.Windows.Forms.Button();
             this.button_ok = new System.Windows.Forms.Button();
-            this.no = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.product_no = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -74,6 +74,24 @@ namespace kk_sms.purchaseManagement
             this.dataGridView1.Size = new System.Drawing.Size(240, 194);
             this.dataGridView1.TabIndex = 2;
             // 
+            // no
+            // 
+            this.no.HeaderText = "Rec";
+            this.no.Name = "no";
+            this.no.ReadOnly = true;
+            // 
+            // product_no
+            // 
+            this.product_no.HeaderText = "品番";
+            this.product_no.Name = "product_no";
+            this.product_no.ReadOnly = true;
+            // 
+            // name
+            // 
+            this.name.HeaderText = "品名";
+            this.name.Name = "name";
+            this.name.ReadOnly = true;
+            // 
             // label1
             // 
             this.label1.BackColor = System.Drawing.Color.DarkBlue;
@@ -90,8 +108,9 @@ namespace kk_sms.purchaseManagement
             this.textBox_search.Location = new System.Drawing.Point(81, 297);
             this.textBox_search.MaximumSize = new System.Drawing.Size(400, 21);
             this.textBox_search.Name = "textBox_search";
-            this.textBox_search.Size = new System.Drawing.Size(64, 21);
+            this.textBox_search.Size = new System.Drawing.Size(64, 24);
             this.textBox_search.TabIndex = 5;
+            this.textBox_search.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_search_KeyPress);
             // 
             // button_search
             // 
@@ -113,30 +132,11 @@ namespace kk_sms.purchaseManagement
             this.button_ok.UseVisualStyleBackColor = true;
             this.button_ok.Click += new System.EventHandler(this.button_ok_Click);
             // 
-            // no
-            // 
-            this.no.HeaderText = "Rec";
-            this.no.Name = "no";
-            this.no.ReadOnly = true;
-            // 
-            // product_no
-            // 
-            this.product_no.HeaderText = "品番";
-            this.product_no.Name = "product_no";
-            this.product_no.ReadOnly = true;
-            // 
-            // name
-            // 
-            this.name.HeaderText = "品名";
-            this.name.Name = "name";
-            this.name.ReadOnly = true;
-            // 
-            // Form_input_selectProduct
+            // Form_correct_selectProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 387);
-            this.ControlBox = false;
             this.Controls.Add(this.button_ok);
             this.Controls.Add(this.button_search);
             this.Controls.Add(this.textBox_search);
@@ -147,7 +147,8 @@ namespace kk_sms.purchaseManagement
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
-            this.Name = "Form_input_selectProduct";
+            this.MaximizeBox = false;
+            this.Name = "Form_correct_selectProduct";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "商品一覽";
             this.Load += new System.EventHandler(this.Form_selectRep_Load);

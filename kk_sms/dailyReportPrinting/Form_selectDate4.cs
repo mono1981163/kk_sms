@@ -48,7 +48,8 @@ namespace kk_sms.dailyReportPrinting
                 {
                     var folderPath = inidata["Pdf"]["path"];
                     string filename = saveFileDialog_savePdf.FileName;
-                    PdfWriter writer = new PdfWriter(filename);
+                     string tempfile = "temp.pdf";
+                    PdfWriter writer = new PdfWriter(tempfile);
                     PdfDocument pdf = new PdfDocument(writer);
                     Document document = new Document(pdf);
                     PdfFont myfont = PdfFontFactory.CreateFont("HeiseiMin-W3", "UniJIS-UCS2-H");
@@ -119,10 +120,10 @@ namespace kk_sms.dailyReportPrinting
                 table.AddCell(cell);
 
                     // Database Connection
-                    string mysqlConf = "server=" + inidata["Mysql"]["server"] + ";user=" + inidata["Mysql"]["user"] + ";database=" + inidata["Mysql"]["database"] + ";port=" + inidata["Mysql"]["port"] + ";password=" + inidata["Mysql"]["password"] + ";";
+                    string mysqlConf = "server=" + inidata["Mysql"]["server"] + ";user=" + inidata["Mysql"]["user"] + ";database=" + inidata["Mysql"]["database"] + ";port=" + inidata["Mysql"]["port"] + ";password=" + inidata["Mysql"]["password"] + ";convert zero datetime=True" + ";Character Set=utf8";
                     var mysqlConnection = new MySqlConnection(mysqlConf);
                     mysqlConnection.Open();
-                    string query = "SELECT n.siireno , n.siirename , IFNULL((  CASE WHEN n.kuban = 0 THEN SUM(n.kingaku)    END ),'')  ,    IFNULL(( CASE WHEN n.kuban = 0 THEN SUM(n.kingaku) * (z.zei/100)    END ) ,'') , IFNULL((  CASE WHEN n.kuban = 2 THEN SUM(n.kingaku)    END ),'')  ,    IFNULL(( CASE WHEN n.kuban = 2 THEN SUM(n.kingaku) * (z.zei/100)    END ),''),IFNULL(SUM(n.kingaku),''), IFNULL(SUM(n.kingaku) * (z.zei/100),'')  FROM tbl_nyuko n,m_zei z WHERE nyukoday BETWEEN  '2021-02-01' AND '2021-02-28' ";
+                    string query = "SELECT n.siireno , n.syainname , IFNULL((  CASE WHEN n.kuban = 0 THEN SUM(n.kingaku)    END ),'0')  ,    IFNULL(( CASE WHEN n.kuban = 0 THEN SUM(n.kingaku) * (z.zei/100)    END ) ,'0') , IFNULL((  CASE WHEN n.kuban = 2 THEN SUM(n.kingaku)    END ),'0')  ,    IFNULL(( CASE WHEN n.kuban = 2 THEN SUM(n.kingaku) * (z.zei/100)    END ),'0'),IFNULL(SUM(n.kingaku),'0'), IFNULL(SUM(n.kingaku) * (z.zei/100),'0')  from tbl_nyuko n,m_zei z where nyukoday ='" + date +"' GROUP BY n.syainname ";
                     MySqlCommand sqlCommand = new MySqlCommand(query, mysqlConnection);
                     var result = sqlCommand.ExecuteReader();
                     if (result.HasRows)
@@ -150,6 +151,18 @@ namespace kk_sms.dailyReportPrinting
                     mysqlConnection.Close();
                     document.Add(table);
                     document.Close();
+                    PdfDocument pdfDoc = new PdfDocument(new PdfReader(tempfile), new PdfWriter(filename));
+                    Document doc = new Document(pdfDoc);
+                    int numberOfPages = pdfDoc.GetNumberOfPages();
+                    for (int i = 1; i <= numberOfPages; i++)
+                    {
+                        
+                        // Write aligned text to the specified by parameters point
+                        doc.ShowTextAligned(new Paragraph("Page " + i),
+                                559, 826, i, TextAlignment.RIGHT, VerticalAlignment.TOP, 0);
+                    }
+
+                    doc.Close();
                     if (Directory.Exists(folderPath))
                     {
                         string windir = Environment.GetEnvironmentVariable("windir");

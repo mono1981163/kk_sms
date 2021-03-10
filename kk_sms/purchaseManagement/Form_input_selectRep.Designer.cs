@@ -115,7 +115,6 @@ namespace kk_sms.purchaseManagement
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(283, 364);
-            this.ControlBox = false;
             this.Controls.Add(this.button_ok);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label_description);
@@ -124,6 +123,7 @@ namespace kk_sms.purchaseManagement
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
+            this.MaximizeBox = false;
             this.Name = "Form_input_selectRep";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "社員一覽";

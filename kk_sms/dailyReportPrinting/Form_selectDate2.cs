@@ -38,106 +38,106 @@ namespace kk_sms.dailyReportPrinting
         {
             var date = this.dateTimePicker1.Value.ToString("yyyy-MM-dd");
             this.Close();
-            var iniparser = new FileIniDataParser();
-            IniData inidata = iniparser.ReadFile("kk_sms.ini");
-            saveFileDialog_savePdf.InitialDirectory = inidata["Pdf"]["path"];
-            saveFileDialog_savePdf.RestoreDirectory = true;
-            saveFileDialog_savePdf.FileName = "現金取引先売上一覧表__" + date;
-            if (saveFileDialog_savePdf.ShowDialog() == DialogResult.OK)
-            {
-                var folderPath = inidata["Pdf"]["path"];
+             try{
+               var iniparser = new FileIniDataParser();
+                var folderPath = "";
+                IniData inidata = iniparser.ReadFile("kk_sms.ini");
+                saveFileDialog_savePdf.InitialDirectory = inidata["Pdf"]["path"];
 
-            string filename = saveFileDialog_savePdf.FileName;
-            PdfWriter writer = new PdfWriter(filename);
-            PdfDocument pdf = new PdfDocument(writer);
-            Document document = new Document(pdf);
-            
-            PdfFont myfont = PdfFontFactory.CreateFont("HeiseiMin-W3", "UniJIS-UCS2-H");
-            document.SetFont(myfont);
-            Paragraph paragraph;
-            paragraph = new Paragraph("現金取引先売上一覧表")
-                .SetTextAlignment(TextAlignment.CENTER)
-                .SetFontSize(16);
-            document.Add(paragraph);
-            paragraph = new Paragraph(this.dateTimePicker1.Value.ToString("yyyy年 MM月 dd日"))
-               .SetTextAlignment(TextAlignment.RIGHT)
-               .SetFontSize(14);
-            document.Add(paragraph);
-
-            // Add table
-            Table table = new Table(9, false);
-            table.SetFontSize(12);
-            table.SetWidth(UnitValue.CreatePercentValue(100));
-            Cell cell;
-            String temp;
-            // Database Connection
-            string mysqlConf = "server=" + inidata["Mysql"]["server"] + ";user=" + inidata["Mysql"]["user"] + ";database=" + inidata["Mysql"]["database"] + ";port=" + inidata["Mysql"]["port"] + ";password=" + inidata["Mysql"]["password"] + ";";
-            var mysqlConnection = new MySqlConnection(mysqlConf);
-            mysqlConnection.Open();
-                try
+                saveFileDialog_savePdf.RestoreDirectory = true;
+                saveFileDialog_savePdf.FileName = "現金取引先売上一覧表__" + date;
+                if (saveFileDialog_savePdf.ShowDialog() == DialogResult.OK)
                 {
+                    folderPath = inidata["Pdf"]["path"];
+                // fileName = inidata["Pdf"]["path"] + "代払別売上一覧表__" + date + ".pdf";
+                string filename = saveFileDialog_savePdf.FileName;
+                string tempfile = "temp.pdf";
+                    PdfWriter writer = new PdfWriter(tempfile);
+                PdfDocument pdf = new PdfDocument(writer);
+                Document document = new Document(pdf);
+                PdfFont myfont = PdfFontFactory.CreateFont("HeiseiMin-W3", "UniJIS-UCS2-H");
+                document.SetFont(myfont);
+                Paragraph paragraph;
+                   
+                    paragraph = new Paragraph("現金取引先売上一覧表")
+                        .SetTextAlignment(TextAlignment.CENTER)
+                        .SetFontSize(16);
+                    document.Add(paragraph);
+                    paragraph = new Paragraph(this.dateTimePicker1.Value.ToString("yyyy年 MM月 dd日"))
+                    .SetTextAlignment(TextAlignment.RIGHT)
+                    .SetFontSize(14);
+                    document.Add(paragraph);
 
-
+                    // Add table
+                    Table table = new Table(9, false);
+                    table.SetFontSize(12);
+                    table.SetWidth(UnitValue.CreatePercentValue(100));
+                    Cell cell;
+                    String temp;
+                    // Database Connection
+                    string mysqlConf = "server=" + inidata["Mysql"]["server"] + ";user=" + inidata["Mysql"]["user"] + ";database=" + inidata["Mysql"]["database"] + ";port=" + inidata["Mysql"]["port"] + ";password=" + inidata["Mysql"]["password"] + ";convert zero datetime=True" + ";Character Set=utf8";
+                    var mysqlConnection = new MySqlConnection(mysqlConf);
+                    mysqlConnection.Open();
+                
                     cell = new Cell(1, 1)
-                       .SetBackgroundColor(WebColors.GetRGBColor("#dddddd"))
-                       .SetTextAlignment(TextAlignment.CENTER)
-                       .Add(new Paragraph("番号"));
+                        .SetBackgroundColor(WebColors.GetRGBColor("#dddddd"))
+                        .SetTextAlignment(TextAlignment.CENTER)
+                        .Add(new Paragraph("番号"));
                     table.AddCell(cell);
 
                     cell = new Cell(1, 1)
-                       .SetBackgroundColor(WebColors.GetRGBColor("#dddddd"))
-                       .SetTextAlignment(TextAlignment.CENTER)
-                       .Add(new Paragraph("得意先名"));
+                        .SetBackgroundColor(WebColors.GetRGBColor("#dddddd"))
+                        .SetTextAlignment(TextAlignment.CENTER)
+                        .Add(new Paragraph("得意先名"));
                     table.AddCell(cell);
 
                     cell = new Cell(1, 1)
-                       .SetBackgroundColor(WebColors.GetRGBColor("#dddddd"))
-                       .SetTextAlignment(TextAlignment.CENTER)
-                       .Add(new Paragraph("売上日額"));
+                        .SetBackgroundColor(WebColors.GetRGBColor("#dddddd"))
+                        .SetTextAlignment(TextAlignment.CENTER)
+                        .Add(new Paragraph("売上日額"));
                     table.AddCell(cell);
 
                     cell = new Cell(1, 1)
-                       .SetBackgroundColor(WebColors.GetRGBColor("#dddddd"))
-                       .SetTextAlignment(TextAlignment.CENTER)
-                       .Add(new Paragraph("当日税"));
+                        .SetBackgroundColor(WebColors.GetRGBColor("#dddddd"))
+                        .SetTextAlignment(TextAlignment.CENTER)
+                        .Add(new Paragraph("当日税"));
                     table.AddCell(cell);
 
                     cell = new Cell(1, 1)
-                       .SetBackgroundColor(WebColors.GetRGBColor("#dddddd"))
-                       .SetTextAlignment(TextAlignment.CENTER)
-                       .Add(new Paragraph("当日売上"));
+                        .SetBackgroundColor(WebColors.GetRGBColor("#dddddd"))
+                        .SetTextAlignment(TextAlignment.CENTER)
+                        .Add(new Paragraph("当日売上"));
                     table.AddCell(cell);
 
                     cell = new Cell(1, 1)
-                       .SetBackgroundColor(WebColors.GetRGBColor("#dddddd"))
-                       .SetTextAlignment(TextAlignment.CENTER)
-                       .Add(new Paragraph("利益率(%)"));
+                        .SetBackgroundColor(WebColors.GetRGBColor("#dddddd"))
+                        .SetTextAlignment(TextAlignment.CENTER)
+                        .Add(new Paragraph("利益率(%)"));
                     table.AddCell(cell);
 
                     cell = new Cell(1, 1)
-                       .SetBackgroundColor(WebColors.GetRGBColor("#dddddd"))
-                       .SetTextAlignment(TextAlignment.CENTER)
-                       .Add(new Paragraph("売上月額"));
+                        .SetBackgroundColor(WebColors.GetRGBColor("#dddddd"))
+                        .SetTextAlignment(TextAlignment.CENTER)
+                        .Add(new Paragraph("売上月額"));
                     table.AddCell(cell);
 
                     cell = new Cell(1, 1)
-                       .SetBackgroundColor(WebColors.GetRGBColor("#dddddd"))
-                       .SetTextAlignment(TextAlignment.CENTER)
-                       .Add(new Paragraph("当月税"));
+                        .SetBackgroundColor(WebColors.GetRGBColor("#dddddd"))
+                        .SetTextAlignment(TextAlignment.CENTER)
+                        .Add(new Paragraph("当月税"));
                     table.AddCell(cell);
 
                     cell = new Cell(1, 1)
-                       .SetBackgroundColor(WebColors.GetRGBColor("#dddddd"))
-                       .SetTextAlignment(TextAlignment.CENTER)
-                       .Add(new Paragraph("当月売上"));
+                        .SetBackgroundColor(WebColors.GetRGBColor("#dddddd"))
+                        .SetTextAlignment(TextAlignment.CENTER)
+                        .Add(new Paragraph("当月売上"));
                     table.AddCell(cell);
 
 
-                    string query = "SELECT h.tokuisakino , h.tokuisakiname , IFNULL(SUM(CASE WHEN hday = '" + date + "' THEN h.kingaku END),''),IFNULL(SUM(CASE WHEN hday = '" + date + "' THEN h.kingaku END) *  m.zei,'') ,IFNULL(SUM(CASE WHEN hday = '" + date + "' THEN h.kingaku END),''),IFNULL(SUM(CASE WHEN hday = '" + date + "' THEN h.kingaku END)  - ( (SELECT SUM(kingaku) FROM tbl_nyuko WHERE nyukoday = '" + date + "') / SUM(CASE WHEN hday = '" + date + "' THEN h.kingaku END)  ),'') ,IFNULL(SUM(CASE WHEN hday BETWEEN  '" + date + "' AND '" + date + "'  THEN h.kingaku END),'') ,IFNULL(SUM(CASE WHEN hday BETWEEN  '" + date + "' AND '" + date + "'  THEN h.kingaku END) * m.zei,''), IFNULL(SUM(CASE WHEN hday BETWEEN  '" + date + "' AND '" + date + "'  THEN h.kingaku END),'') FROM tbl_hanbai h , m_zei m GROUP BY h.tokuisakino,h.tokuisakiname";
+                    string query = "SELECT h.tokuisakino , h.tokuisakiname , IFNULL(SUM(CASE WHEN hday = '" + date + "' THEN h.kingaku END),'0'),IFNULL(SUM(CASE WHEN hday = '" + date + "' THEN h.kingaku END) *  m.zei,'0') ,IFNULL(SUM(CASE WHEN hday = '" + date + "' THEN h.kingaku END),'0'),IFNULL(SUM(CASE WHEN hday = '" + date + "' THEN h.kingaku END)  - ( (SELECT SUM(kingaku) FROM tbl_nyuko WHERE nyukoday = '" + date + "') / SUM(CASE WHEN hday = '" + date + "' THEN h.kingaku END)  ),'0') ,IFNULL(SUM(CASE WHEN hday BETWEEN  '" + date + "' AND '" + date + "'  THEN h.kingaku END),'0') ,IFNULL(SUM(CASE WHEN hday BETWEEN  '" + date + "' AND '" + date + "'  THEN h.kingaku END) * m.zei,'0'), IFNULL(SUM(CASE WHEN hday BETWEEN  '" + date + "' AND '" + date + "'  THEN h.kingaku END),'0') FROM tbl_hanbai h , m_zei m GROUP BY h.tokuisakino,h.tokuisakiname";
                     //string query = "SELECT daino, dainame, daysales, discount, netsales, monthsales, daytax, monthtax FROM tbl_daibarai WHERE dday LIKE '" + date + "%' ORDER BY daino";
                     MySqlCommand sqlCommand = new MySqlCommand(query, mysqlConnection);
                     var result = sqlCommand.ExecuteReader();
-
                     if (result.HasRows)
                     {
                         while (result.Read())
@@ -152,6 +152,7 @@ namespace kk_sms.dailyReportPrinting
                                     .Add(new Paragraph(temp));
                                 table.AddCell(cell);
                             }
+                        
                         }
                     }
                     else
@@ -164,7 +165,18 @@ namespace kk_sms.dailyReportPrinting
                     mysqlConnection.Close();
                     document.Add(table);
                     document.Close();
-                   
+                    PdfDocument pdfDoc = new PdfDocument(new PdfReader(tempfile), new PdfWriter(filename));
+                    Document doc = new Document(pdfDoc);
+                    int numberOfPages = pdfDoc.GetNumberOfPages();
+                    for (int i = 1; i <= numberOfPages; i++)
+                    {
+                       
+                        // Write aligned text to the specified by parameters point
+                        doc.ShowTextAligned(new Paragraph("Page " + i),
+                                559, 826, i, TextAlignment.RIGHT, VerticalAlignment.TOP, 0);
+                    }
+
+                    doc.Close();
                     if (Directory.Exists(folderPath))
                     {
                         string windir = Environment.GetEnvironmentVariable("windir");
@@ -192,13 +204,12 @@ namespace kk_sms.dailyReportPrinting
                         MessageBox.Show(string.Format("{0} ディレクトリが存在しません!", folderPath));
                     }
 
+                
                 }
-                catch (Exception ex)
-                {
-                   
-                      MessageBox.Show(ex.Message);
-                   
-                }
+            }
+             catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 

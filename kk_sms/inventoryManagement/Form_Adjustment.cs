@@ -61,7 +61,9 @@ namespace kk_sms.inventoryManagement
                 string mysqlConf = "server=" + inidata["Mysql"]["server"] + ";user=" + inidata["Mysql"]["user"] + ";database=" + inidata["Mysql"]["database"] + ";port=" + inidata["Mysql"]["port"] + ";password=" + inidata["Mysql"]["password"] + ";convert zero datetime=True";
                 var mysqlConnection = new MySqlConnection(mysqlConf);
                 mysqlConnection.Open();
-                string query = "SELECT COUNT(uid) FROM tbl_nyuko WHERE syainno='" + id + "'";
+                DateTime today = DateTime.Today;
+                var datetimestring = today.ToString("yyyy-MM-dd");
+                string query = "SELECT COUNT(uid) FROM tbl_nyuko WHERE nyukoday='" + datetimestring + "' AND syainno='" + id + "'";
                 MySqlCommand sqlCommand = new MySqlCommand(query, mysqlConnection);
                 m_totalRecord = Int32.Parse(sqlCommand.ExecuteScalar().ToString());
                 m_pageCount =(int)Math.Ceiling((double)m_totalRecord / 13);
@@ -105,7 +107,9 @@ namespace kk_sms.inventoryManagement
                         string mysqlConf = "server=" + inidata["Mysql"]["server"] + ";user=" + inidata["Mysql"]["user"] + ";database=" + inidata["Mysql"]["database"] + ";port=" + inidata["Mysql"]["port"] + ";password=" + inidata["Mysql"]["password"] + ";convert zero datetime=True";
                         var mysqlConnection = new MySqlConnection(mysqlConf);
                         mysqlConnection.Open();
-                        string query = "SELECT orderno, hinmaei, toukyuname, kaikyuname, siiresu, souurisu, zaikosu, zaikoadjust1, zaikoadjust2, zaikoadjust3, adjustCumulative1, adjustCumulative2, adjustCumulative3  FROM tbl_nyuko WHERE syainno='" + id + "'  ORDER BY orderno LIMIT 13 OFFSET " + (m_currentPage - 1) * 13 + ";";
+                        DateTime today = DateTime.Today;
+                        var datetimestring = today.ToString("yyyy-MM-dd");
+                        string query = "SELECT orderno, hinmaei, toukyuname, kaikyuname, siiresu, souurisu, zaikosu, zaikoadjust1, zaikoadjust2, zaikoadjust3, adjustCumulative1, adjustCumulative2, adjustCumulative3  FROM tbl_nyuko WHERE nyukoday='" + datetimestring + "' AND syainno='" + id + "'  ORDER BY orderno LIMIT 13 OFFSET " + (m_currentPage - 1) * 13 + ";";
                         MySqlCommand sqlCommand = new MySqlCommand(query, mysqlConnection);
                         var result = sqlCommand.ExecuteReader();
                         if (result.HasRows)
@@ -175,11 +179,11 @@ namespace kk_sms.inventoryManagement
                     TextBox quantity = this.Controls.Find("quantity" + i, true).FirstOrDefault() as TextBox;
                     TextBox lost = this.Controls.Find("lost" + i, true).FirstOrDefault() as TextBox;
                     TextBox others = this.Controls.Find("others" + i, true).FirstOrDefault() as TextBox;
-                    TextBox theft = this.Controls.Find("theft" + i, true).FirstOrDefault() as TextBox;
-                    quantity.Text = "";
+                    TextBox theft = this.Controls.Find("theft" + i, true).FirstOrDefault() as TextBox;                    
                     lost.Text = "";
                     others.Text = "";
                     theft.Text = "";
+                    quantity.Text = "";
                 }
             }
         }

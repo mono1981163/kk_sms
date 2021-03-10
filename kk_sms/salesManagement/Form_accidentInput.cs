@@ -90,7 +90,7 @@ namespace kk_sms.salesManagement
                 {
                     var iniparser = new FileIniDataParser();
                     IniData inidata = iniparser.ReadFile("kk_sms.ini");
-                    string mysqlConf = "server=" + inidata["Mysql"]["server"] + ";user=" + inidata["Mysql"]["user"] + ";database=" + inidata["Mysql"]["database"] + ";port=" + inidata["Mysql"]["port"] + ";password=" + inidata["Mysql"]["password"] + ";";
+                    string mysqlConf = "server=" + inidata["Mysql"]["server"] + ";user=" + inidata["Mysql"]["user"] + ";database=" + inidata["Mysql"]["database"] + ";port=" + inidata["Mysql"]["port"] + ";password=" + inidata["Mysql"]["password"] + ";Character Set=utf8";
                     var mysqlConnection = new MySqlConnection(mysqlConf);
                     mysqlConnection.Open();
                     string query = "SELECT orderno FROM tbl_hanbai WHERE orderno = '" + textBox1.Text + "';";
@@ -140,7 +140,7 @@ namespace kk_sms.salesManagement
                 {
                     var iniparser = new FileIniDataParser();
                     IniData inidata = iniparser.ReadFile("kk_sms.ini");
-                    string mysqlConf = "server=" + inidata["Mysql"]["server"] + ";user=" + inidata["Mysql"]["user"] + ";database=" + inidata["Mysql"]["database"] + ";port=" + inidata["Mysql"]["port"] + ";password=" + inidata["Mysql"]["password"] + ";";
+                    string mysqlConf = "server=" + inidata["Mysql"]["server"] + ";user=" + inidata["Mysql"]["user"] + ";database=" + inidata["Mysql"]["database"] + ";port=" + inidata["Mysql"]["port"] + ";password=" + inidata["Mysql"]["password"] + ";Character Set=utf8";
 
                     var mysqlConnection = new MySqlConnection(mysqlConf);
                     mysqlConnection.Open();
@@ -212,7 +212,7 @@ namespace kk_sms.salesManagement
                 {
                     var iniparser = new FileIniDataParser();
                     IniData inidata = iniparser.ReadFile("kk_sms.ini");
-                    string mysqlConf = "server=" + inidata["Mysql"]["server"] + ";user=" + inidata["Mysql"]["user"] + ";database=" + inidata["Mysql"]["database"] + ";port=" + inidata["Mysql"]["port"] + ";password=" + inidata["Mysql"]["password"] + ";";
+                    string mysqlConf = "server=" + inidata["Mysql"]["server"] + ";user=" + inidata["Mysql"]["user"] + ";database=" + inidata["Mysql"]["database"] + ";port=" + inidata["Mysql"]["port"] + ";password=" + inidata["Mysql"]["password"] + ";Character Set=utf8";
 
                     var mysqlConnection = new MySqlConnection(mysqlConf);
                     mysqlConnection.Open();
@@ -238,7 +238,7 @@ namespace kk_sms.salesManagement
 
         private void textBox3_LostFocus(object sender, EventArgs e)
         {
-            if (label9.Text == "" && textBox3.Text != "")
+            if ((label9.Text == "" && textBox3.Text != "") && !(label9.Text == "" && textBox3.Text == "0"))
             {
                 textBox3.Text = "-";
             }
@@ -284,7 +284,7 @@ namespace kk_sms.salesManagement
                 {
                     var iniparser = new FileIniDataParser();
                     IniData inidata = iniparser.ReadFile("kk_sms.ini");
-                    string mysqlConf = "server=" + inidata["Mysql"]["server"] + ";user=" + inidata["Mysql"]["user"] + ";database=" + inidata["Mysql"]["database"] + ";port=" + inidata["Mysql"]["port"] + ";password=" + inidata["Mysql"]["password"] + ";";
+                    string mysqlConf = "server=" + inidata["Mysql"]["server"] + ";user=" + inidata["Mysql"]["user"] + ";database=" + inidata["Mysql"]["database"] + ";port=" + inidata["Mysql"]["port"] + ";password=" + inidata["Mysql"]["password"] + ";Character Set=utf8";
 
                     var mysqlConnection = new MySqlConnection(mysqlConf);
                     mysqlConnection.Open();
@@ -309,7 +309,7 @@ namespace kk_sms.salesManagement
         }
         private void textBox4_LostFocus(object sender, EventArgs e)
         {
-            if (label10.Text == "" && textBox4.Text != "")
+            if ((label10.Text == "" && textBox4.Text != "") && !(label10.Text == "" && textBox4.Text == "0"))
             {
                 textBox4.Text = "-";
             }
@@ -355,7 +355,7 @@ namespace kk_sms.salesManagement
                 {
                     var iniparser = new FileIniDataParser();
                     IniData inidata = iniparser.ReadFile("kk_sms.ini");
-                    string mysqlConf = "server=" + inidata["Mysql"]["server"] + ";user=" + inidata["Mysql"]["user"] + ";database=" + inidata["Mysql"]["database"] + ";port=" + inidata["Mysql"]["port"] + ";password=" + inidata["Mysql"]["password"] + ";";
+                    string mysqlConf = "server=" + inidata["Mysql"]["server"] + ";user=" + inidata["Mysql"]["user"] + ";database=" + inidata["Mysql"]["database"] + ";port=" + inidata["Mysql"]["port"] + ";password=" + inidata["Mysql"]["password"] + ";Character Set=utf8";
 
                     var mysqlConnection = new MySqlConnection(mysqlConf);
                     mysqlConnection.Open();
@@ -426,7 +426,7 @@ namespace kk_sms.salesManagement
                 {
                     var iniparser = new FileIniDataParser();
                     IniData inidata = iniparser.ReadFile("kk_sms.ini");
-                    string mysqlConf = "server=" + inidata["Mysql"]["server"] + ";user=" + inidata["Mysql"]["user"] + ";database=" + inidata["Mysql"]["database"] + ";port=" + inidata["Mysql"]["port"] + ";password=" + inidata["Mysql"]["password"] + ";";
+                    string mysqlConf = "server=" + inidata["Mysql"]["server"] + ";user=" + inidata["Mysql"]["user"] + ";database=" + inidata["Mysql"]["database"] + ";port=" + inidata["Mysql"]["port"] + ";password=" + inidata["Mysql"]["password"] + ";Character Set=utf8";
 
                     var mysqlConnection = new MySqlConnection(mysqlConf);
                     mysqlConnection.Open();
@@ -601,7 +601,7 @@ namespace kk_sms.salesManagement
                 {
                     var iniparser = new FileIniDataParser();
                     IniData inidata = iniparser.ReadFile("kk_sms.ini");
-                    string mysqlConf = "server=" + inidata["Mysql"]["server"] + ";user=" + inidata["Mysql"]["user"] + ";database=" + inidata["Mysql"]["database"] + ";port=" + inidata["Mysql"]["port"] + ";password=" + inidata["Mysql"]["password"] + ";";
+                    string mysqlConf = "server=" + inidata["Mysql"]["server"] + ";user=" + inidata["Mysql"]["user"] + ";database=" + inidata["Mysql"]["database"] + ";port=" + inidata["Mysql"]["port"] + ";password=" + inidata["Mysql"]["password"] + ";Character Set=utf8";
 
                     var mysqlConnection = new MySqlConnection(mysqlConf);
                     mysqlConnection.Open();
@@ -660,6 +660,10 @@ namespace kk_sms.salesManagement
                 {
 
                 }
+            }
+            else
+            {
+                label48.Text = "入力したデータが正しくありません。";
             }
         }
 

@@ -32,14 +32,14 @@ namespace kk_sms.purchaseManagement
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_input_selectClass));
             this.label_title = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.no = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.class_no = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox_search = new System.Windows.Forms.TextBox();
             this.button_search = new System.Windows.Forms.Button();
             this.button_ok = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.no = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.class_no = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -75,6 +75,24 @@ namespace kk_sms.purchaseManagement
             this.dataGridView1.Size = new System.Drawing.Size(240, 194);
             this.dataGridView1.TabIndex = 2;
             // 
+            // no
+            // 
+            this.no.HeaderText = "Rec";
+            this.no.Name = "no";
+            this.no.ReadOnly = true;
+            // 
+            // class_no
+            // 
+            this.class_no.HeaderText = "階番";
+            this.class_no.Name = "class_no";
+            this.class_no.ReadOnly = true;
+            // 
+            // name
+            // 
+            this.name.HeaderText = "階級";
+            this.name.Name = "name";
+            this.name.ReadOnly = true;
+            // 
             // label1
             // 
             this.label1.BackColor = System.Drawing.Color.DarkBlue;
@@ -93,6 +111,7 @@ namespace kk_sms.purchaseManagement
             this.textBox_search.Name = "textBox_search";
             this.textBox_search.Size = new System.Drawing.Size(50, 24);
             this.textBox_search.TabIndex = 5;
+            this.textBox_search.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_search_KeyPress);
             // 
             // button_search
             // 
@@ -125,30 +144,11 @@ namespace kk_sms.purchaseManagement
             this.label2.TabIndex = 4;
             this.label2.Text = "OKで番号入力します";
             // 
-            // no
-            // 
-            this.no.HeaderText = "Rec";
-            this.no.Name = "no";
-            this.no.ReadOnly = true;
-            // 
-            // class_no
-            // 
-            this.class_no.HeaderText = "階番";
-            this.class_no.Name = "class_no";
-            this.class_no.ReadOnly = true;
-            // 
-            // name
-            // 
-            this.name.HeaderText = "階級";
-            this.name.Name = "name";
-            this.name.ReadOnly = true;
-            // 
             // Form_input_selectClass
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 387);
-            this.ControlBox = false;
             this.Controls.Add(this.button_ok);
             this.Controls.Add(this.button_search);
             this.Controls.Add(this.textBox_search);
@@ -160,6 +160,7 @@ namespace kk_sms.purchaseManagement
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
+            this.MaximizeBox = false;
             this.Name = "Form_input_selectClass";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "階級一覽";

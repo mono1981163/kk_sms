@@ -120,8 +120,9 @@ namespace kk_sms.purchaseManagement
             this.textBox_search.Location = new System.Drawing.Point(81, 297);
             this.textBox_search.MaximumSize = new System.Drawing.Size(400, 21);
             this.textBox_search.Name = "textBox_search";
-            this.textBox_search.Size = new System.Drawing.Size(50, 21);
+            this.textBox_search.Size = new System.Drawing.Size(50, 24);
             this.textBox_search.TabIndex = 5;
+            this.textBox_search.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_search_KeyPress);
             // 
             // button_search
             // 
@@ -148,7 +149,6 @@ namespace kk_sms.purchaseManagement
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 387);
-            this.ControlBox = false;
             this.Controls.Add(this.button_ok);
             this.Controls.Add(this.button_search);
             this.Controls.Add(this.textBox_search);
@@ -160,6 +160,7 @@ namespace kk_sms.purchaseManagement
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
+            this.MaximizeBox = false;
             this.Name = "Form_input_selectSupplier";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "仕入先一覽";

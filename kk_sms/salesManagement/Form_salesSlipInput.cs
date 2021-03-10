@@ -100,8 +100,7 @@ namespace kk_sms.salesManagement
 
         private void Form_salesSlipInput_Load(object sender, EventArgs e)
         {
-            string today = DateTime.Now.ToString("yyyy/MM/dd");
-            label_date.Text = today;
+
         }
 
         public void textChange(string param)
@@ -187,7 +186,7 @@ namespace kk_sms.salesManagement
                     m_orderno = slipNo;
                     var iniparser = new FileIniDataParser();
                     IniData inidata = iniparser.ReadFile("kk_sms.ini");
-                    string mysqlConf = "server=" + inidata["Mysql"]["server"] + ";user=" + inidata["Mysql"]["user"] + ";database=" + inidata["Mysql"]["database"] + ";port=" + inidata["Mysql"]["port"] + ";password=" + inidata["Mysql"]["password"] + ";";
+                    string mysqlConf = "server=" + inidata["Mysql"]["server"] + ";user=" + inidata["Mysql"]["user"] + ";database=" + inidata["Mysql"]["database"] + ";port=" + inidata["Mysql"]["port"] + ";password=" + inidata["Mysql"]["password"] + ";Character Set=utf8";
                     
                     var mysqlConnection = new MySqlConnection(mysqlConf);
                     mysqlConnection.Open();
@@ -244,6 +243,11 @@ namespace kk_sms.salesManagement
             }
         }
 
+        private void textBox1_GotFocus(object sender, EventArgs e)
+        {
+            label48.Text = "";
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             string syainno = "";
@@ -284,7 +288,7 @@ namespace kk_sms.salesManagement
                 {
                     var iniparser = new FileIniDataParser();
                     IniData inidata = iniparser.ReadFile("kk_sms.ini");
-                    string mysqlConf = "server=" + inidata["Mysql"]["server"] + ";user=" + inidata["Mysql"]["user"] + ";database=" + inidata["Mysql"]["database"] + ";port=" + inidata["Mysql"]["port"] + ";password=" + inidata["Mysql"]["password"] + ";";
+                    string mysqlConf = "server=" + inidata["Mysql"]["server"] + ";user=" + inidata["Mysql"]["user"] + ";database=" + inidata["Mysql"]["database"] + ";port=" + inidata["Mysql"]["port"] + ";password=" + inidata["Mysql"]["password"] + ";Character Set=utf8";
 
                     var mysqlConnection = new MySqlConnection(mysqlConf);
                     mysqlConnection.Open();
@@ -329,7 +333,7 @@ namespace kk_sms.salesManagement
                             mysqlConnection.Open();
                             query = "INSERT INTO tbl_hanbai (orderno, hday, syainno, tokuisakino, tokuisakiname, hinban, hinmei, toukyuno, toukyuname, kaikyuno, kaikyuname, irisu, nisugataname, hanbaisu, tanka, kingaku, kubun, saleskubun, accrualdate, serialno, ipflag) VALUES ('";
                             query = query + textBox1.Text + "', '";
-                            query = query + DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss.fff") + "', '";
+                            query = query + dateTimePicker1.Value.ToString("yyyy-MM-dd hh:mm:ss.fff") + "', '";
                             query = query + syainno + "', '";
                             query = query + m_clientno[i] + "', '";
                             query = query + m_clientname[i] + "', '";
@@ -356,6 +360,7 @@ namespace kk_sms.salesManagement
                     }
                     clear();
                     initData();
+                    label48.Text = "データがセーブされました";
                 }
                 catch(Exception ex)
                 {
@@ -364,7 +369,7 @@ namespace kk_sms.salesManagement
             }
             else
             {
-                
+                label48.Text = "入力したデータが正しくありません。";
             }
         }
 
@@ -399,7 +404,7 @@ namespace kk_sms.salesManagement
                     m_clientno[0] = int.Parse(textBox2.Text);
                     var iniparser = new FileIniDataParser();
                     IniData inidata = iniparser.ReadFile("kk_sms.ini");
-                    string mysqlConf = "server=" + inidata["Mysql"]["server"] + ";user=" + inidata["Mysql"]["user"] + ";database=" + inidata["Mysql"]["database"] + ";port=" + inidata["Mysql"]["port"] + ";password=" + inidata["Mysql"]["password"] + ";";
+                    string mysqlConf = "server=" + inidata["Mysql"]["server"] + ";user=" + inidata["Mysql"]["user"] + ";database=" + inidata["Mysql"]["database"] + ";port=" + inidata["Mysql"]["port"] + ";password=" + inidata["Mysql"]["password"] + ";Character Set=utf8";
 
                     var mysqlConnection = new MySqlConnection(mysqlConf);
                     mysqlConnection.Open();
@@ -431,7 +436,10 @@ namespace kk_sms.salesManagement
 
         private void textBox2_LostFocus(object sender, EventArgs e)
         {
-            label48.Text = "得意先番号が入力さわませんでした";
+            if (textBox1.Text == "") 
+            {
+                label48.Text = "得意先番号が入力さわませんでした";
+            }
             if (label32.Text=="" && textBox2.Text != "")
             {
                 textBox2.Text = "-";
@@ -464,7 +472,7 @@ namespace kk_sms.salesManagement
                     m_clientno[1] = int.Parse(textBox7.Text);
                     var iniparser = new FileIniDataParser();
                     IniData inidata = iniparser.ReadFile("kk_sms.ini");
-                    string mysqlConf = "server=" + inidata["Mysql"]["server"] + ";user=" + inidata["Mysql"]["user"] + ";database=" + inidata["Mysql"]["database"] + ";port=" + inidata["Mysql"]["port"] + ";password=" + inidata["Mysql"]["password"] + ";";
+                    string mysqlConf = "server=" + inidata["Mysql"]["server"] + ";user=" + inidata["Mysql"]["user"] + ";database=" + inidata["Mysql"]["database"] + ";port=" + inidata["Mysql"]["port"] + ";password=" + inidata["Mysql"]["password"] + ";Character Set=utf8";
 
                     var mysqlConnection = new MySqlConnection(mysqlConf);
                     mysqlConnection.Open();
@@ -496,7 +504,10 @@ namespace kk_sms.salesManagement
 
         private void textBox7_LostFocus(object sender, EventArgs e)
         {
-            label48.Text = "得意先番号が入力さわませんでした";
+            if (textBox1.Text == "")
+            {
+                label48.Text = "得意先番号が入力さわませんでした";
+            }
             if (label35.Text == "" && textBox7.Text != "")
             {
                 textBox7.Text = "-";
@@ -529,7 +540,7 @@ namespace kk_sms.salesManagement
                     m_clientno[2] = int.Parse(textBox10.Text);
                     var iniparser = new FileIniDataParser();
                     IniData inidata = iniparser.ReadFile("kk_sms.ini");
-                    string mysqlConf = "server=" + inidata["Mysql"]["server"] + ";user=" + inidata["Mysql"]["user"] + ";database=" + inidata["Mysql"]["database"] + ";port=" + inidata["Mysql"]["port"] + ";password=" + inidata["Mysql"]["password"] + ";";
+                    string mysqlConf = "server=" + inidata["Mysql"]["server"] + ";user=" + inidata["Mysql"]["user"] + ";database=" + inidata["Mysql"]["database"] + ";port=" + inidata["Mysql"]["port"] + ";password=" + inidata["Mysql"]["password"] + ";Character Set=utf8";
 
                     var mysqlConnection = new MySqlConnection(mysqlConf);
                     mysqlConnection.Open();
@@ -561,7 +572,10 @@ namespace kk_sms.salesManagement
 
         private void textBox10_LostFocus(object sender, EventArgs e)
         {
-            label48.Text = "得意先番号が入力さわませんでした";
+            if (textBox1.Text == "")
+            {
+                label48.Text = "得意先番号が入力さわませんでした";
+            }
             if (label37.Text == "" && textBox10.Text != "")
             {
                 textBox10.Text = "-";
@@ -594,7 +608,7 @@ namespace kk_sms.salesManagement
                     m_clientno[3] = int.Parse(textBox13.Text);
                     var iniparser = new FileIniDataParser();
                     IniData inidata = iniparser.ReadFile("kk_sms.ini");
-                    string mysqlConf = "server=" + inidata["Mysql"]["server"] + ";user=" + inidata["Mysql"]["user"] + ";database=" + inidata["Mysql"]["database"] + ";port=" + inidata["Mysql"]["port"] + ";password=" + inidata["Mysql"]["password"] + ";";
+                    string mysqlConf = "server=" + inidata["Mysql"]["server"] + ";user=" + inidata["Mysql"]["user"] + ";database=" + inidata["Mysql"]["database"] + ";port=" + inidata["Mysql"]["port"] + ";password=" + inidata["Mysql"]["password"] + ";Character Set=utf8";
 
                     var mysqlConnection = new MySqlConnection(mysqlConf);
                     mysqlConnection.Open();
@@ -625,7 +639,10 @@ namespace kk_sms.salesManagement
 
         private void textBox13_LostFocus(object sender, EventArgs e)
         {
-            label48.Text = "得意先番号が入力さわませんでした";
+            if (textBox1.Text == "")
+            {
+                label48.Text = "得意先番号が入力さわませんでした";
+            }
             if (label39.Text == "" && textBox13.Text != "")
             {
                 textBox13.Text = "-";
@@ -658,7 +675,7 @@ namespace kk_sms.salesManagement
                     m_clientno[4] = int.Parse(textBox16.Text);
                     var iniparser = new FileIniDataParser();
                     IniData inidata = iniparser.ReadFile("kk_sms.ini");
-                    string mysqlConf = "server=" + inidata["Mysql"]["server"] + ";user=" + inidata["Mysql"]["user"] + ";database=" + inidata["Mysql"]["database"] + ";port=" + inidata["Mysql"]["port"] + ";password=" + inidata["Mysql"]["password"] + ";";
+                    string mysqlConf = "server=" + inidata["Mysql"]["server"] + ";user=" + inidata["Mysql"]["user"] + ";database=" + inidata["Mysql"]["database"] + ";port=" + inidata["Mysql"]["port"] + ";password=" + inidata["Mysql"]["password"] + ";Character Set=utf8";
 
                     var mysqlConnection = new MySqlConnection(mysqlConf);
                     mysqlConnection.Open();
@@ -690,7 +707,10 @@ namespace kk_sms.salesManagement
 
         private void textBox16_LostFocus(object sender, EventArgs e)
         {
-            label48.Text = "得意先番号が入力さわませんでした";
+            if (textBox1.Text == "")
+            {
+                label48.Text = "得意先番号が入力さわませんでした";
+            }
             if (label41.Text == "" && textBox16.Text != "")
             {
                 textBox16.Text = "-";
@@ -723,7 +743,7 @@ namespace kk_sms.salesManagement
                     m_clientno[5] = int.Parse(textBox19.Text);
                     var iniparser = new FileIniDataParser();
                     IniData inidata = iniparser.ReadFile("kk_sms.ini");
-                    string mysqlConf = "server=" + inidata["Mysql"]["server"] + ";user=" + inidata["Mysql"]["user"] + ";database=" + inidata["Mysql"]["database"] + ";port=" + inidata["Mysql"]["port"] + ";password=" + inidata["Mysql"]["password"] + ";";
+                    string mysqlConf = "server=" + inidata["Mysql"]["server"] + ";user=" + inidata["Mysql"]["user"] + ";database=" + inidata["Mysql"]["database"] + ";port=" + inidata["Mysql"]["port"] + ";password=" + inidata["Mysql"]["password"] + ";Character Set=utf8";
 
                     var mysqlConnection = new MySqlConnection(mysqlConf);
                     mysqlConnection.Open();
@@ -755,7 +775,10 @@ namespace kk_sms.salesManagement
 
         private void textBox19_LostFocus(object sender, EventArgs e)
         {
-            label48.Text = "得意先番号が入力さわませんでした";
+            if (textBox1.Text == "")
+            {
+                label48.Text = "得意先番号が入力さわませんでした";
+            }
             if (label43.Text == "" && textBox19.Text != "")
             {
                 textBox19.Text = "-";
@@ -787,7 +810,7 @@ namespace kk_sms.salesManagement
                     m_clientno[6] = int.Parse(textBox22.Text);
                     var iniparser = new FileIniDataParser();
                     IniData inidata = iniparser.ReadFile("kk_sms.ini");
-                    string mysqlConf = "server=" + inidata["Mysql"]["server"] + ";user=" + inidata["Mysql"]["user"] + ";database=" + inidata["Mysql"]["database"] + ";port=" + inidata["Mysql"]["port"] + ";password=" + inidata["Mysql"]["password"] + ";";
+                    string mysqlConf = "server=" + inidata["Mysql"]["server"] + ";user=" + inidata["Mysql"]["user"] + ";database=" + inidata["Mysql"]["database"] + ";port=" + inidata["Mysql"]["port"] + ";password=" + inidata["Mysql"]["password"] + ";Character Set=utf8";
 
                     var mysqlConnection = new MySqlConnection(mysqlConf);
                     mysqlConnection.Open();
@@ -819,7 +842,10 @@ namespace kk_sms.salesManagement
 
         private void textBox22_LostFocus(object sender, EventArgs e)
         {
-            label48.Text = "得意先番号が入力さわませんでした";
+            if (textBox1.Text == "")
+            {
+                label48.Text = "得意先番号が入力さわませんでした";
+            }
             if (label45.Text == "" && textBox22.Text != "")
             {
                 textBox22.Text = "-";
@@ -851,7 +877,7 @@ namespace kk_sms.salesManagement
                     m_clientno[7] = int.Parse(textBox25.Text);
                     var iniparser = new FileIniDataParser();
                     IniData inidata = iniparser.ReadFile("kk_sms.ini");
-                    string mysqlConf = "server=" + inidata["Mysql"]["server"] + ";user=" + inidata["Mysql"]["user"] + ";database=" + inidata["Mysql"]["database"] + ";port=" + inidata["Mysql"]["port"] + ";password=" + inidata["Mysql"]["password"] + ";";
+                    string mysqlConf = "server=" + inidata["Mysql"]["server"] + ";user=" + inidata["Mysql"]["user"] + ";database=" + inidata["Mysql"]["database"] + ";port=" + inidata["Mysql"]["port"] + ";password=" + inidata["Mysql"]["password"] + ";Character Set=utf8";
 
                     var mysqlConnection = new MySqlConnection(mysqlConf);
                     mysqlConnection.Open();
@@ -883,7 +909,10 @@ namespace kk_sms.salesManagement
 
         private void textBox25_LostFocus(object sender, EventArgs e)
         {
-            label48.Text = "得意先番号が入力さわませんでした";
+            if (textBox1.Text == "")
+            {
+                label48.Text = "得意先番号が入力さわませんでした";
+            }
             if (label47.Text == "" && textBox25.Text != "")
             {
                 textBox25.Text = "-";
@@ -922,12 +951,16 @@ namespace kk_sms.salesManagement
                 {
                     label24.Text = (m_stock - m_salechange).ToString();
                     label26.Text = (m_totalsale + m_salechange).ToString();
+                    label33.Text = (m_saleamount[0] * m_price[0]).ToString();
+                    m_totalprice[0] = m_saleamount[0] * m_price[0];
                 }
                 else
                 {
                     m_salechange -= m_saleamount[0];
                     label24.Text = (m_stock - m_salechange).ToString();
                     label26.Text = (m_totalsale + m_salechange).ToString();
+                    label33.Text = (m_saleamount[0] * m_price[0]).ToString();
+                    m_totalprice[0] = m_saleamount[0] * m_price[0];
                     textBox3.Text = "";
                     label48.Text = "在庫数が負になります。";
                 }
@@ -971,12 +1004,16 @@ namespace kk_sms.salesManagement
                 {
                     label24.Text = (m_stock - m_salechange).ToString();
                     label26.Text = (m_totalsale + m_salechange).ToString();
+                    label34.Text = (m_saleamount[1] * m_price[1]).ToString();
+                    m_totalprice[1] = m_saleamount[1] * m_price[1];
                 }
                 else
                 {
                     m_salechange -= m_saleamount[1];
                     label24.Text = (m_stock - m_salechange).ToString();
                     label26.Text = (m_totalsale + m_salechange).ToString();
+                    label34.Text = (m_saleamount[1] * m_price[1]).ToString();
+                    m_totalprice[1] = m_saleamount[1] * m_price[1];
                     textBox6.Text = "";
                     label48.Text = "在庫数が負になります。";
                 }
@@ -1020,12 +1057,16 @@ namespace kk_sms.salesManagement
                 {
                     label24.Text = (m_stock - m_salechange).ToString();
                     label26.Text = (m_totalsale + m_salechange).ToString();
+                    label36.Text = (m_saleamount[2] * m_price[2]).ToString();
+                    m_totalprice[1] = m_saleamount[2] * m_price[2];
                 }
                 else
                 {
                     m_salechange -= m_saleamount[2];
                     label24.Text = (m_stock - m_salechange).ToString();
                     label26.Text = (m_totalsale + m_salechange).ToString();
+                    label36.Text = (m_saleamount[2] * m_price[2]).ToString();
+                    m_totalprice[1] = m_saleamount[2] * m_price[2];
                     textBox9.Text = "";
                     label48.Text = "在庫数が負になります。";
                 }
@@ -1069,12 +1110,16 @@ namespace kk_sms.salesManagement
                 {
                     label24.Text = (m_stock - m_salechange).ToString();
                     label26.Text = (m_totalsale + m_salechange).ToString();
+                    label38.Text = (m_saleamount[3] * m_price[3]).ToString();
+                    m_totalprice[1] = m_saleamount[3] * m_price[3];
                 }
                 else
                 {
                     m_salechange -= m_saleamount[3];
                     label24.Text = (m_stock - m_salechange).ToString();
                     label26.Text = (m_totalsale + m_salechange).ToString();
+                    label38.Text = (m_saleamount[3] * m_price[3]).ToString();
+                    m_totalprice[1] = m_saleamount[3] * m_price[3];
                     textBox12.Text = "";
                     label48.Text = "在庫数が負になります。";
                 }
@@ -1118,12 +1163,16 @@ namespace kk_sms.salesManagement
                 {
                     label24.Text = (m_stock - m_salechange).ToString();
                     label26.Text = (m_totalsale + m_salechange).ToString();
+                    label40.Text = (m_saleamount[4] * m_price[4]).ToString();
+                    m_totalprice[1] = m_saleamount[4] * m_price[4];
                 }
                 else
                 {
                     m_salechange -= m_saleamount[4];
                     label24.Text = (m_stock - m_salechange).ToString();
                     label26.Text = (m_totalsale + m_salechange).ToString();
+                    label40.Text = (m_saleamount[4] * m_price[4]).ToString();
+                    m_totalprice[1] = m_saleamount[4] * m_price[4];
                     textBox15.Text = "";
                     label48.Text = "在庫数が負になります。";
                 }
@@ -1166,12 +1215,16 @@ namespace kk_sms.salesManagement
                 {
                     label24.Text = (m_stock - m_salechange).ToString();
                     label26.Text = (m_totalsale + m_salechange).ToString();
+                    label42.Text = (m_saleamount[5] * m_price[5]).ToString();
+                    m_totalprice[1] = m_saleamount[5] * m_price[5];
                 }
                 else
                 {
                     m_salechange -= m_saleamount[5];
                     label24.Text = (m_stock - m_salechange).ToString();
                     label26.Text = (m_totalsale + m_salechange).ToString();
+                    label42.Text = (m_saleamount[5] * m_price[5]).ToString();
+                    m_totalprice[1] = m_saleamount[5] * m_price[5];
                     textBox18.Text = "";
                     label48.Text = "在庫数が負になります。";
                 }
@@ -1216,12 +1269,16 @@ namespace kk_sms.salesManagement
                 {
                     label24.Text = (m_stock - m_salechange).ToString();
                     label26.Text = (m_totalsale + m_salechange).ToString();
+                    label44.Text = (m_saleamount[6] * m_price[6]).ToString();
+                    m_totalprice[1] = m_saleamount[6] * m_price[6];
                 }
                 else
                 {
                     m_salechange -= m_saleamount[6];
                     label24.Text = (m_stock - m_salechange).ToString();
                     label26.Text = (m_totalsale + m_salechange).ToString();
+                    label44.Text = (m_saleamount[6] * m_price[6]).ToString();
+                    m_totalprice[1] = m_saleamount[6] * m_price[6];
                     textBox21.Text = "";
                     label48.Text = "在庫数が負になります。";
                 }
@@ -1265,12 +1322,16 @@ namespace kk_sms.salesManagement
                 {
                     label24.Text = (m_stock - m_salechange).ToString();
                     label26.Text = (m_totalsale + m_salechange).ToString();
+                    label46.Text = (m_saleamount[7] * m_price[7]).ToString();
+                    m_totalprice[1] = m_saleamount[7] * m_price[7];
                 }
                 else
                 {
                     m_salechange -= m_saleamount[7];
                     label24.Text = (m_stock - m_salechange).ToString();
                     label26.Text = (m_totalsale + m_salechange).ToString();
+                    label46.Text = (m_saleamount[7] * m_price[7]).ToString();
+                    m_totalprice[1] = m_saleamount[7] * m_price[7];
                     textBox24.Text = "";
                     label48.Text = "在庫数が負になります。";
                 }

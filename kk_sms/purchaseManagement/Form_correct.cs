@@ -57,7 +57,7 @@ namespace kk_sms.purchaseManagement
                 {
                     var iniparser = new FileIniDataParser();
                     IniData inidata = iniparser.ReadFile("kk_sms.ini");
-                    string mysqlConf = "server=" + inidata["Mysql"]["server"] + ";user=" + inidata["Mysql"]["user"] + ";database=" + inidata["Mysql"]["database"] + ";port=" + inidata["Mysql"]["port"] + ";password=" + inidata["Mysql"]["password"] + ";";
+                    string mysqlConf = "server=" + inidata["Mysql"]["server"] + ";user=" + inidata["Mysql"]["user"] + ";database=" + inidata["Mysql"]["database"] + ";port=" + inidata["Mysql"]["port"] + ";password=" + inidata["Mysql"]["password"] + ";convert zero datetime=True" + ";Character Set=utf8";
                     var inputValue = textBox_slipNo.Text;
                     var mysqlConnection = new MySqlConnection(mysqlConf);
                     mysqlConnection.Open();
@@ -167,7 +167,7 @@ namespace kk_sms.purchaseManagement
                 {
                     var iniparser = new FileIniDataParser();
                     IniData inidata = iniparser.ReadFile("kk_sms.ini");
-                    string mysqlConf = "server=" + inidata["Mysql"]["server"] + ";user=" + inidata["Mysql"]["user"] + ";database=" + inidata["Mysql"]["database"] + ";port=" + inidata["Mysql"]["port"] + ";password=" + inidata["Mysql"]["password"] + ";";
+                    string mysqlConf = "server=" + inidata["Mysql"]["server"] + ";user=" + inidata["Mysql"]["user"] + ";database=" + inidata["Mysql"]["database"] + ";port=" + inidata["Mysql"]["port"] + ";password=" + inidata["Mysql"]["password"] + ";convert zero datetime=True" + ";Character Set=utf8";
                     if (!inputValue.All(char.IsDigit))
                     {
                         button_correction.Focus();
@@ -221,7 +221,7 @@ namespace kk_sms.purchaseManagement
                     }
                     var iniparser = new FileIniDataParser();
                     IniData inidata = iniparser.ReadFile("kk_sms.ini");
-                    string mysqlConf = "server=" + inidata["Mysql"]["server"] + ";user=" + inidata["Mysql"]["user"] + ";database=" + inidata["Mysql"]["database"] + ";port=" + inidata["Mysql"]["port"] + ";password=" + inidata["Mysql"]["password"] + ";";
+                    string mysqlConf = "server=" + inidata["Mysql"]["server"] + ";user=" + inidata["Mysql"]["user"] + ";database=" + inidata["Mysql"]["database"] + ";port=" + inidata["Mysql"]["port"] + ";password=" + inidata["Mysql"]["password"] + ";convert zero datetime=True" + ";Character Set=utf8";
                     var mysqlConnection = new MySqlConnection(mysqlConf);
                     mysqlConnection.Open();
                     string query = "SELECT siirename FROM m_siire WHERE siireno = " + inputValue;
@@ -271,7 +271,7 @@ namespace kk_sms.purchaseManagement
                     }
                     var iniparser = new FileIniDataParser();
                     IniData inidata = iniparser.ReadFile("kk_sms.ini");
-                    string mysqlConf = "server=" + inidata["Mysql"]["server"] + ";user=" + inidata["Mysql"]["user"] + ";database=" + inidata["Mysql"]["database"] + ";port=" + inidata["Mysql"]["port"] + ";password=" + inidata["Mysql"]["password"] + ";";
+                    string mysqlConf = "server=" + inidata["Mysql"]["server"] + ";user=" + inidata["Mysql"]["user"] + ";database=" + inidata["Mysql"]["database"] + ";port=" + inidata["Mysql"]["port"] + ";password=" + inidata["Mysql"]["password"] + ";convert zero datetime=True" + ";Character Set=utf8";
                     var mysqlConnection = new MySqlConnection(mysqlConf);
                     mysqlConnection.Open();
                     string query = "SELECT hinmei FROM m_hinban WHERE hinban = " + inputValue;
@@ -321,7 +321,7 @@ namespace kk_sms.purchaseManagement
                     }
                     var iniparser = new FileIniDataParser();
                     IniData inidata = iniparser.ReadFile("kk_sms.ini");
-                    string mysqlConf = "server=" + inidata["Mysql"]["server"] + ";user=" + inidata["Mysql"]["user"] + ";database=" + inidata["Mysql"]["database"] + ";port=" + inidata["Mysql"]["port"] + ";password=" + inidata["Mysql"]["password"] + ";";
+                    string mysqlConf = "server=" + inidata["Mysql"]["server"] + ";user=" + inidata["Mysql"]["user"] + ";database=" + inidata["Mysql"]["database"] + ";port=" + inidata["Mysql"]["port"] + ";password=" + inidata["Mysql"]["password"] + ";convert zero datetime=True" + ";Character Set=utf8";
                     var mysqlConnection = new MySqlConnection(mysqlConf);
                     mysqlConnection.Open();
                     string query = "SELECT toukyuname FROM m_tokyu WHERE toukyuno = " + inputValue;
@@ -371,7 +371,7 @@ namespace kk_sms.purchaseManagement
                     }
                     var iniparser = new FileIniDataParser();
                     IniData inidata = iniparser.ReadFile("kk_sms.ini");
-                    string mysqlConf = "server=" + inidata["Mysql"]["server"] + ";user=" + inidata["Mysql"]["user"] + ";database=" + inidata["Mysql"]["database"] + ";port=" + inidata["Mysql"]["port"] + ";password=" + inidata["Mysql"]["password"] + ";";
+                    string mysqlConf = "server=" + inidata["Mysql"]["server"] + ";user=" + inidata["Mysql"]["user"] + ";database=" + inidata["Mysql"]["database"] + ";port=" + inidata["Mysql"]["port"] + ";password=" + inidata["Mysql"]["password"] + ";convert zero datetime=True" + ";Character Set=utf8";
                     var mysqlConnection = new MySqlConnection(mysqlConf);
                     mysqlConnection.Open();
                     string query = "SELECT kaikyuname FROM m_kaikyu WHERE kaikyuno = " + inputValue;
@@ -430,7 +430,7 @@ namespace kk_sms.purchaseManagement
                     }
                     var iniparser = new FileIniDataParser();
                     IniData inidata = iniparser.ReadFile("kk_sms.ini");
-                    string mysqlConf = "server=" + inidata["Mysql"]["server"] + ";user=" + inidata["Mysql"]["user"] + ";database=" + inidata["Mysql"]["database"] + ";port=" + inidata["Mysql"]["port"] + ";password=" + inidata["Mysql"]["password"] + ";";
+                    string mysqlConf = "server=" + inidata["Mysql"]["server"] + ";user=" + inidata["Mysql"]["user"] + ";database=" + inidata["Mysql"]["database"] + ";port=" + inidata["Mysql"]["port"] + ";password=" + inidata["Mysql"]["password"] + ";convert zero datetime=True" + ";Character Set=utf8";
                     var mysqlConnection = new MySqlConnection(mysqlConf);
                     mysqlConnection.Open();
                     string query = "SELECT nisugataname FROM m_nisugata WHERE nisugatano = " + inputValue;
@@ -621,12 +621,13 @@ namespace kk_sms.purchaseManagement
                 {
                     var iniparser = new FileIniDataParser();
                     IniData inidata = iniparser.ReadFile("kk_sms.ini");
-                    string mysqlConf = "server=" + inidata["Mysql"]["server"] + ";user=" + inidata["Mysql"]["user"] + ";database=" + inidata["Mysql"]["database"] + ";port=" + inidata["Mysql"]["port"] + ";password=" + inidata["Mysql"]["password"] + ";";
+                    string mysqlConf = "server=" + inidata["Mysql"]["server"] + ";user=" + inidata["Mysql"]["user"] + ";database=" + inidata["Mysql"]["database"] + ";port=" + inidata["Mysql"]["port"] + ";password=" + inidata["Mysql"]["password"] + ";convert zero datetime=True" + ";Character Set=utf8";
                     var mysqlConnection = new MySqlConnection(mysqlConf);
                     mysqlConnection.Open();
                     MySqlCommand sqlCommand = new MySqlCommand(query, mysqlConnection);
                     MySqlDataReader mySqlDataReader = sqlCommand.ExecuteReader();
                     mysqlConnection.Close();
+                    form_init();
                     label_description.Text = "正常に変更されました";
                 }
                 catch (Exception ex)
@@ -735,5 +736,25 @@ namespace kk_sms.purchaseManagement
             label_description.Text = "";
         }
 
+        private void form_init()
+        {
+            textBox_slipNo.Text = "";
+            textBox_repCode.Text = "";
+            textBox_rep.Text = "";
+            textBox_supplierCode.Text = "";
+            textBox_supplier.Text = "";
+            textBox_productCode.Text = "";
+            textBox_productName.Text = "";
+            textBox_gradeCode.Text = "";
+            textBox_grade.Text = "";
+            textBox_classCode.Text = "";
+            textBox_class.Text = "";
+            textBox_quantity.Text = "";
+            textBox_packingCode.Text = "";
+            textBox_packing.Text = "";
+            textBox_purchaseQuantity.Text = "";
+            textBox_unitPrice.Text = "";
+            textBox_amount.Text = "";
+        }
     }
 }

@@ -29,7 +29,7 @@ namespace kk_sms.purchaseManagement
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_input_selectRep));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_correct_selectRep));
             this.label_title = new System.Windows.Forms.Label();
             this.label_description = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -110,12 +110,11 @@ namespace kk_sms.purchaseManagement
             this.button_ok.UseVisualStyleBackColor = true;
             this.button_ok.Click += new System.EventHandler(this.button_ok_Click);
             // 
-            // Form_input_selectRep
+            // Form_correct_selectRep
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(283, 364);
-            this.ControlBox = false;
             this.Controls.Add(this.button_ok);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label_description);
@@ -124,7 +123,8 @@ namespace kk_sms.purchaseManagement
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
-            this.Name = "Form_input_selectRep";
+            this.MaximizeBox = false;
+            this.Name = "Form_correct_selectRep";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "社員一覽";
             this.Load += new System.EventHandler(this.Form_selectRep_Load);

@@ -29,17 +29,17 @@ namespace kk_sms.purchaseManagement
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_input_selectGrade));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_accident_selectGrade));
             this.label_title = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.no = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.grade_no = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox_search = new System.Windows.Forms.TextBox();
             this.button_search = new System.Windows.Forms.Button();
             this.button_ok = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.no = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.grade_no = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -75,6 +75,24 @@ namespace kk_sms.purchaseManagement
             this.dataGridView1.Size = new System.Drawing.Size(240, 194);
             this.dataGridView1.TabIndex = 2;
             // 
+            // no
+            // 
+            this.no.HeaderText = "Rec";
+            this.no.Name = "no";
+            this.no.ReadOnly = true;
+            // 
+            // grade_no
+            // 
+            this.grade_no.HeaderText = "等番";
+            this.grade_no.Name = "grade_no";
+            this.grade_no.ReadOnly = true;
+            // 
+            // name
+            // 
+            this.name.HeaderText = "等級";
+            this.name.Name = "name";
+            this.name.ReadOnly = true;
+            // 
             // label1
             // 
             this.label1.BackColor = System.Drawing.Color.DarkBlue;
@@ -91,8 +109,9 @@ namespace kk_sms.purchaseManagement
             this.textBox_search.Location = new System.Drawing.Point(81, 297);
             this.textBox_search.MaximumSize = new System.Drawing.Size(400, 21);
             this.textBox_search.Name = "textBox_search";
-            this.textBox_search.Size = new System.Drawing.Size(50, 21);
+            this.textBox_search.Size = new System.Drawing.Size(50, 24);
             this.textBox_search.TabIndex = 5;
+            this.textBox_search.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_search_KeyPress);
             // 
             // button_search
             // 
@@ -125,30 +144,11 @@ namespace kk_sms.purchaseManagement
             this.label2.TabIndex = 4;
             this.label2.Text = "OKで番号入力します";
             // 
-            // no
-            // 
-            this.no.HeaderText = "Rec";
-            this.no.Name = "no";
-            this.no.ReadOnly = true;
-            // 
-            // grade_no
-            // 
-            this.grade_no.HeaderText = "等番";
-            this.grade_no.Name = "grade_no";
-            this.grade_no.ReadOnly = true;
-            // 
-            // name
-            // 
-            this.name.HeaderText = "等級";
-            this.name.Name = "name";
-            this.name.ReadOnly = true;
-            // 
-            // Form_input_selectGrade
+            // Form_accident_selectGrade
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 387);
-            this.ControlBox = false;
             this.Controls.Add(this.button_ok);
             this.Controls.Add(this.button_search);
             this.Controls.Add(this.textBox_search);
@@ -160,7 +160,8 @@ namespace kk_sms.purchaseManagement
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
-            this.Name = "Form_input_selectGrade";
+            this.MaximizeBox = false;
+            this.Name = "Form_accident_selectGrade";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "等級一覽";
             this.Load += new System.EventHandler(this.Form_selectRep_Load);

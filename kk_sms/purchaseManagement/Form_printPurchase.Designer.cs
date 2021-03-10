@@ -1,7 +1,7 @@
 ﻿
 namespace kk_sms.purchaseManagement
 {
-    partial class Form_print
+    partial class Form_printPurchase
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace kk_sms.purchaseManagement
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_print));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_printPurchase));
             this.label1 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.button_ok = new System.Windows.Forms.Button();

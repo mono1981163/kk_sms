@@ -50,8 +50,7 @@ namespace kk_sms.salesManagement
 
         private void Form_salesSlipCorrection_Load(object sender, EventArgs e)
         {
-            string today = DateTime.Now.ToString("yyyy/MM/dd");
-            this.label_date.Text = today;
+            
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -81,6 +80,15 @@ namespace kk_sms.salesManagement
         private void textBox1_GotFocus(object sender, EventArgs e)
         {
             label48.Text = "[-]入力でー覧表から伝票を抽出してください";
+        }
+
+        private void textBox1_LostFocus(object sender, EventArgs e)
+        {
+            if (textBox1.Text != "" && textBox1.Text.All(char.IsDigit) && label10.Text == "")
+            {
+                textBox1.Focus();
+                label48.Text = "番号を直接入力しないでください";
+            }
         }
 
         public void textChange(string[] param)
@@ -133,13 +141,25 @@ namespace kk_sms.salesManagement
             if (m_stock + m_saleamount1 - m_saleamount < 0)
             {
                 m_saleamount = m_saleamount1;
+                textBox2.Text = m_saleamount.ToString();
             }
             
-            textBox2.Text = m_saleamount.ToString();
             label5.Text = (m_totalsale + m_saleamount - m_saleamount1).ToString();
             label24.Text = (m_stock + m_saleamount1 - m_saleamount).ToString();
             label30.Text = (m_saleamount * m_price).ToString();
             
+        }
+
+        private void textBox2_GotFocus(object sender, EventArgs e)
+        {
+            if (textBox1.Text == "")
+            {
+                label48.Text = "得意先番号が入力さわませんでした";
+            }
+            else
+            {
+                label48.Text = "";
+            }
         }
 
         private void textBox3_TextChanged(object sender, EventArgs e)
@@ -166,6 +186,18 @@ namespace kk_sms.salesManagement
             label30.Text = (m_saleamount * m_price).ToString();
         }
 
+        private void textBox3_GotFocus(object sender, EventArgs e)
+        {
+            if (textBox1.Text == "")
+            {
+                label48.Text = "得意先番号が入力さわませんでした";
+            }
+            else
+            {
+                label48.Text = "";
+            }
+        }
+
         private void button2_Click(object sender, EventArgs e)
         {
             textBox1.Focus();
@@ -173,13 +205,13 @@ namespace kk_sms.salesManagement
 
         private void button3_Click(object sender, EventArgs e)
         {
-            if (textBox2.Text !="")
+            if (textBox2.Text !="" && textBox1.Text != "" && textBox3.Text !="")
             {
                 try
                 {
                     var iniparser = new FileIniDataParser();
                     IniData inidata = iniparser.ReadFile("kk_sms.ini");
-                    string mysqlConf = "server=" + inidata["Mysql"]["server"] + ";user=" + inidata["Mysql"]["user"] + ";database=" + inidata["Mysql"]["database"] + ";port=" + inidata["Mysql"]["port"] + ";password=" + inidata["Mysql"]["password"] + ";";
+                    string mysqlConf = "server=" + inidata["Mysql"]["server"] + ";user=" + inidata["Mysql"]["user"] + ";database=" + inidata["Mysql"]["database"] + ";port=" + inidata["Mysql"]["port"] + ";password=" + inidata["Mysql"]["password"] + ";Character Set=utf8";
 
                     var mysqlConnection = new MySqlConnection(mysqlConf);
                     mysqlConnection.Open();
@@ -199,27 +231,32 @@ namespace kk_sms.salesManagement
                 }
                 initData();
                 clear();
+                label48.Text = "データがセーブされました";
+            }
+            else
+            {
+                label48.Text = "入力したデータが正しくありません。";
             }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (textBox2.Text != "")
+            if (textBox2.Text != "" && textBox1.Text !="" && textBox3.Text !="")
             {
                 try
                 {
                     var iniparser = new FileIniDataParser();
                     IniData inidata = iniparser.ReadFile("kk_sms.ini");
-                    string mysqlConf = "server=" + inidata["Mysql"]["server"] + ";user=" + inidata["Mysql"]["user"] + ";database=" + inidata["Mysql"]["database"] + ";port=" + inidata["Mysql"]["port"] + ";password=" + inidata["Mysql"]["password"] + ";";
+                    string mysqlConf = "server=" + inidata["Mysql"]["server"] + ";user=" + inidata["Mysql"]["user"] + ";database=" + inidata["Mysql"]["database"] + ";port=" + inidata["Mysql"]["port"] + ";password=" + inidata["Mysql"]["password"] + ";Character Set=utf8";
 
                     var mysqlConnection = new MySqlConnection(mysqlConf);
                     mysqlConnection.Open();
-                    string query = "UPDATE tbl_nyuko SET zaikosu = '" + (m_stock + m_saleamount1).ToString() + "', souurisu = '" + (m_totalsale - m_saleamount1).ToString() + "' WHERE orderno = '" + textBox1.Text + "';";
+                    string query = "UPDATE tbl_nyuko SET zaikosu = '" + (m_stock - m_saleamount1).ToString() + "', souurisu = '" + (m_totalsale + m_saleamount1).ToString() + "' WHERE orderno = '" + textBox1.Text + "';";
                     MySqlCommand sqlCommand = new MySqlCommand(query, mysqlConnection);
                     var result1 = sqlCommand.ExecuteScalar();
                     mysqlConnection.Close();
                     mysqlConnection.Open();
-                    query = "UPDATE tbl_hanbai SET hanbaisu = '" + m_saleamount.ToString() + "', tanka = '" + m_price.ToString() + "', kingaku = '" + label30.Text + "' WHERE orderno='" + textBox1.Text + "' AND tokuisakiname = '" + label8.Text + "' AND kingaku = '" + m_totalprice.ToString() + "';";
+                    query = "UPDATE tbl_hanbai SET hday = '" + dateTimePicker1.Value.ToString("yyyy-MM-dd hh:mm:ss.fff") + "', hanbaisu = '" + m_saleamount.ToString() + "', tanka = '" + m_price.ToString() + "', kingaku = '" + label30.Text + "' WHERE orderno='" + textBox1.Text + "' AND tokuisakiname = '" + label8.Text + "' AND kingaku = '" + m_totalprice.ToString() + "';";
                     sqlCommand = new MySqlCommand(query, mysqlConnection);
                     result1 = sqlCommand.ExecuteScalar();
                     mysqlConnection.Close();
@@ -230,6 +267,11 @@ namespace kk_sms.salesManagement
                 }
                 initData();
                 clear();
+                label48.Text = "データがセーブされました";
+            }
+            else
+            {
+                label48.Text = "入力したデータが正しくありません。";
             }
         }
 
