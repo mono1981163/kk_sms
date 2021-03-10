@@ -50,8 +50,7 @@ namespace kk_sms.salesManagement
 
         private void Form_salesSlipCorrection_Load(object sender, EventArgs e)
         {
-            string today = DateTime.Now.ToString("yyyy/MM/dd");
-            this.label_date.Text = today;
+            
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -85,7 +84,7 @@ namespace kk_sms.salesManagement
 
         private void textBox1_LostFocus(object sender, EventArgs e)
         {
-            if (textBox1.Text != "" && textBox1.Text.All(char.IsDigit))
+            if (textBox1.Text != "" && textBox1.Text.All(char.IsDigit) && label10.Text == "")
             {
                 textBox1.Focus();
                 label48.Text = "番号を直接入力しないでください";
@@ -151,6 +150,18 @@ namespace kk_sms.salesManagement
             
         }
 
+        private void textBox2_GotFocus(object sender, EventArgs e)
+        {
+            if (textBox1.Text == "")
+            {
+                label48.Text = "得意先番号が入力さわませんでした";
+            }
+            else
+            {
+                label48.Text = "";
+            }
+        }
+
         private void textBox3_TextChanged(object sender, EventArgs e)
         {
             if (textBox3.Text == "")
@@ -173,6 +184,18 @@ namespace kk_sms.salesManagement
                 m_saleamount = 0;
             }
             label30.Text = (m_saleamount * m_price).ToString();
+        }
+
+        private void textBox3_GotFocus(object sender, EventArgs e)
+        {
+            if (textBox1.Text == "")
+            {
+                label48.Text = "得意先番号が入力さわませんでした";
+            }
+            else
+            {
+                label48.Text = "";
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -233,7 +256,7 @@ namespace kk_sms.salesManagement
                     var result1 = sqlCommand.ExecuteScalar();
                     mysqlConnection.Close();
                     mysqlConnection.Open();
-                    query = "UPDATE tbl_hanbai SET hanbaisu = '" + m_saleamount.ToString() + "', tanka = '" + m_price.ToString() + "', kingaku = '" + label30.Text + "' WHERE orderno='" + textBox1.Text + "' AND tokuisakiname = '" + label8.Text + "' AND kingaku = '" + m_totalprice.ToString() + "';";
+                    query = "UPDATE tbl_hanbai SET hday = '" + dateTimePicker1.Value.ToString("yyyy-MM-dd hh:mm:ss.fff") + "', hanbaisu = '" + m_saleamount.ToString() + "', tanka = '" + m_price.ToString() + "', kingaku = '" + label30.Text + "' WHERE orderno='" + textBox1.Text + "' AND tokuisakiname = '" + label8.Text + "' AND kingaku = '" + m_totalprice.ToString() + "';";
                     sqlCommand = new MySqlCommand(query, mysqlConnection);
                     result1 = sqlCommand.ExecuteScalar();
                     mysqlConnection.Close();

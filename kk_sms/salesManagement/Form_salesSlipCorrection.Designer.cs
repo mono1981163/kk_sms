@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.label_date = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -69,6 +68,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.label48 = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -78,29 +78,18 @@
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.label1.Font = new System.Drawing.Font("Meiryo", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Yellow;
-            this.label1.Location = new System.Drawing.Point(30, 15);
+            this.label1.Location = new System.Drawing.Point(23, 15);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(220, 45);
             this.label1.TabIndex = 1;
             this.label1.Text = "販売デ一タ修正";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label_date
-            // 
-            this.label_date.BackColor = System.Drawing.Color.White;
-            this.label_date.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label_date.Location = new System.Drawing.Point(348, 43);
-            this.label_date.Margin = new System.Windows.Forms.Padding(0);
-            this.label_date.Name = "label_date";
-            this.label_date.Size = new System.Drawing.Size(78, 17);
-            this.label_date.TabIndex = 5;
-            this.label_date.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.DarkBlue;
-            this.label2.Location = new System.Drawing.Point(282, 43);
+            this.label2.Location = new System.Drawing.Point(257, 15);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(63, 17);
             this.label2.TabIndex = 4;
@@ -136,8 +125,8 @@
             this.textBox1.TabIndex = 6;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.textBox1.GotFocus += new System.EventHandler(this.textBox1_GotFocus);
-            this.textBox1.LostFocus += new System.EventHandler(this.textBox1_LostFocus);
             this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_Keypress);
+            this.textBox1.LostFocus += new System.EventHandler(this.textBox1_LostFocus);
             // 
             // groupBox1
             // 
@@ -424,6 +413,7 @@
             this.textBox3.Size = new System.Drawing.Size(60, 24);
             this.textBox3.TabIndex = 5;
             this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            this.textBox3.GotFocus += new System.EventHandler(this.textBox3_GotFocus);
             this.textBox3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox3_Keypress);
             // 
             // label26
@@ -443,6 +433,7 @@
             this.textBox2.Size = new System.Drawing.Size(60, 24);
             this.textBox2.TabIndex = 3;
             this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.textBox2.GotFocus += new System.EventHandler(this.textBox2_GotFocus);
             this.textBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox2_Keypress);
             // 
             // label25
@@ -525,11 +516,19 @@
             this.label48.Size = new System.Drawing.Size(418, 17);
             this.label48.TabIndex = 18;
             // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(254, 35);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 24);
+            this.dateTimePicker1.TabIndex = 19;
+            // 
             // Form_salesSlipCorrection
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(464, 453);
+            this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.label48);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
@@ -540,7 +539,6 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label_date);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Meiryo", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -561,7 +559,6 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label_date;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
@@ -608,5 +605,6 @@
         private int m_totalsale;
         private int m_price;
         private int m_totalprice;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }
