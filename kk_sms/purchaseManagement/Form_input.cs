@@ -556,9 +556,9 @@ namespace kk_sms.purchaseManagement
                     MySqlCommand sqlCommand = new MySqlCommand(query, mysqlConnection);
                     MySqlDataReader mySqlDataReader = sqlCommand.ExecuteReader();
                     mysqlConnection.Close();
-                    label_description.Text = "入力データが正常に登録されました";
                     isOrdernoExist = true;
                     form_init();
+                    label_description.Text = "入力データが正常に登録されました";
                 }
                 catch (Exception ex)
                 {
@@ -587,10 +587,22 @@ namespace kk_sms.purchaseManagement
 
         private void TextBox_slipNo_lostFocus(object sender, EventArgs e)
         {
-            if (isOrdernoExist == true)
+            var slipNo = textBox_slipNo.Text;
+            if (slipNo.EndsWith("。") || slipNo.EndsWith("．") || slipNo.EndsWith("."))
+            {
+                button_exit.Focus();
+            }
+            else if (!slipNo.All(char.IsDigit))
+            {
+                label_description.Text = "伝票番号は数字でなければなりません。";
+            }
+            else if (slipNo != "" && Int32.Parse(slipNo) >= 800)
+            {
+                label_description.Text = "伝票番号に（800）以上の数値が入力されました!";
+            }
+            else if (isOrdernoExist == true)
             {
                 this.ActiveControl = button_correction;
-                var slipNo = textBox_slipNo.Text;
                 if (slipNo != "" && Int32.Parse(slipNo) > 800)
                 {
                     label_description.Text = "伝票番号に（800）以上の数値が入力されました!";

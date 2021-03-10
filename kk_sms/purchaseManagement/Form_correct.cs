@@ -627,8 +627,8 @@ namespace kk_sms.purchaseManagement
                     MySqlCommand sqlCommand = new MySqlCommand(query, mysqlConnection);
                     MySqlDataReader mySqlDataReader = sqlCommand.ExecuteReader();
                     mysqlConnection.Close();
-                    label_description.Text = "正常に変更されました";
                     form_init();
+                    label_description.Text = "正常に変更されました";
                 }
                 catch (Exception ex)
                 {
