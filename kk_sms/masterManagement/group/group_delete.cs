@@ -75,7 +75,7 @@ namespace kk_sms.masterManagement.group
                 string query = "DELETE FROM m_kaikyu WHERE kaikyuno='" + class_no + "'";
                 MySqlCommand sqlCommand = new MySqlCommand(query, mysqlConnection);
                 var result = sqlCommand.ExecuteReader();
-                if(result.HasRows) 
+                if(result.RecordsAffected > 0) 
                 {
                     description_label.Text = "正確に削除されました。";
                 } else

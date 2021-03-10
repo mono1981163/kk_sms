@@ -49,7 +49,7 @@ namespace kk_sms.masterManagement.payment
                     string mysqlConf = "server=" + inidata["Mysql"]["server"] + ";user=" + inidata["Mysql"]["user"] + ";database=" + inidata["Mysql"]["database"] + ";port=" + inidata["Mysql"]["port"] + ";password=" + inidata["Mysql"]["password"] + ";Character Set=utf8";
                     var mysqlConnection = new MySqlConnection(mysqlConf);
                     mysqlConnection.Open();
-                    string query = "SELECT siirename FROM tbl_daibarai WHERE daino = " + payment_no;
+                    string query = "SELECT dainame FROM tbl_daibarai WHERE daino = " + payment_no;
                     MySqlCommand sqlCommand = new MySqlCommand(query, mysqlConnection);
                     var result = sqlCommand.ExecuteScalar();
                     if (result != null)
@@ -63,7 +63,9 @@ namespace kk_sms.masterManagement.payment
                         var res = sqlorder.ExecuteReader();
                         if (res.RecordsAffected > 0)
                         {
-                            label_description.Text = "操作が成功しました。";
+                            label_description.Text = "正常に保存されました。";
+                            textBox_pay_no.Clear();
+                            textBox_pay_name.Clear();
                         }
                         else
                         {

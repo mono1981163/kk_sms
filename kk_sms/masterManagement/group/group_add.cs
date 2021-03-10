@@ -63,7 +63,9 @@ namespace kk_sms.masterManagement.group
                         var res = sqlorder.ExecuteReader();
                         if (res.RecordsAffected > 0)
                         {
-                            label_description.Text = "操作が成功しました。";
+                            label_description.Text = "正常に保存されました。";
+                            textBox_class_no.Clear();
+                            textBox_class_name.Clear();
                         }
                         else
                         {

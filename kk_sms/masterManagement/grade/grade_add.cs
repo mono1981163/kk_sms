@@ -63,7 +63,9 @@ namespace kk_sms.masterManagement.grade
                         var res = sqlorder.ExecuteReader();
                         if (res.RecordsAffected > 0)
                         {
-                            label_description.Text = "操作が成功しました。";
+                            label_description.Text = "正常に保存されました。";
+                            textBox_grade_no.Clear();
+                            textBox_grade_name.Clear();
                         }
                         else
                         {

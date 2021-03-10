@@ -32,11 +32,11 @@ namespace kk_sms.masterManagement.grade
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(grade_list));
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button_ok = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.supplier_no = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button_ok = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,6 +55,9 @@ namespace kk_sms.masterManagement.grade
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToResizeColumns = false;
+            this.dataGridView1.AllowUserToResizeRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -67,6 +70,24 @@ namespace kk_sms.masterManagement.grade
             this.dataGridView1.Size = new System.Drawing.Size(300, 250);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.TabStop = false;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Rec";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // supplier_no
+            // 
+            this.supplier_no.HeaderText = "等番";
+            this.supplier_no.Name = "supplier_no";
+            this.supplier_no.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "等級";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
             // 
             // button_ok
             // 
@@ -88,24 +109,6 @@ namespace kk_sms.masterManagement.grade
             this.label2.Size = new System.Drawing.Size(300, 17);
             this.label2.TabIndex = 6;
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Rec";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // supplier_no
-            // 
-            this.supplier_no.HeaderText = "等番";
-            this.supplier_no.Name = "supplier_no";
-            this.supplier_no.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "等級";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
             // 
             // grade_list
             // 
