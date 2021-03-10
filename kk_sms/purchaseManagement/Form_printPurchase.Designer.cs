@@ -1,7 +1,7 @@
 ﻿
 namespace kk_sms.purchaseManagement
 {
-    partial class Form_print
+    partial class Form_printPurchase
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace kk_sms.purchaseManagement
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_print));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_printPurchase));
             this.label1 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.button_ok = new System.Windows.Forms.Button();
@@ -80,11 +80,11 @@ namespace kk_sms.purchaseManagement
             this.saveFileDialog_savePdf.RestoreDirectory = true;
             this.saveFileDialog_savePdf.FileOk += new System.ComponentModel.CancelEventHandler(this.saveFileDialog_savePdf_FileOk);
             // 
-            // Form_print
+            // Form_selectDate1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(279, 134);
+            this.ClientSize = new System.Drawing.Size(279, 133);
             this.ControlBox = false;
             this.Controls.Add(this.button_cancel);
             this.Controls.Add(this.button_ok);
@@ -92,7 +92,7 @@ namespace kk_sms.purchaseManagement
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Form_print";
+            this.Name = "Form_selectDate1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "日付を選択";
             this.Load += new System.EventHandler(this.Form_selectDate1_Load);

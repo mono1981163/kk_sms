@@ -36,7 +36,7 @@ namespace kk_sms
 
         private void Button_printTable_Click(object sender, EventArgs e)
         {
-            var form = new kk_sms.purchaseManagement.Form_print();
+            var form = new kk_sms.purchaseManagement.Form_printPurchase();
             form.Show();
         }
 

@@ -21,9 +21,9 @@ using System.Diagnostics;
 using System.IO;
 namespace kk_sms.purchaseManagement
 {
-    public partial class Form_print : Form
+    public partial class Form_printPurchase : Form
     {
-        public Form_print()
+        public Form_printPurchase()
         {
             InitializeComponent();
         }
@@ -129,7 +129,7 @@ namespace kk_sms.purchaseManagement
                     MySqlCommand sqlCommand = new MySqlCommand(query, mysqlConnection);
                     var result = sqlCommand.ExecuteReader();
                     if (result.HasRows)
-                    {                        
+                    {
                         while (result.Read())
                         {
                             string siireno = "";
