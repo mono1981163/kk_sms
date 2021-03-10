@@ -169,7 +169,7 @@ namespace kk_sms.inventoryManagement
                             string mysqlConf_sec = "server=" + inidata["Mysql"]["server"] + ";user=" + inidata["Mysql"]["user"] + ";database=" + inidata["Mysql"]["database"] + ";port=" + inidata["Mysql"]["port"] + ";password=" + inidata["Mysql"]["password"] + ";";
                             var mysqlConnection_sec = new MySqlConnection(mysqlConf_sec);
                             mysqlConnection_sec.Open();
-                            string query_sec = "SELECT orderno , syainno  , hinmaei , toukyuname ,  kaikyuname , siiresu , souurisu ,'0' AS z1,'0' AS z2,'0' AS z3, zaikosu , nyukoday , syainno FROM tbl_nyuko WHERE nyukoday='" + date + "' AND syainname='" + syainname + "'";
+                            string query_sec = "SELECT orderno , syainno  , hinmaei , toukyuname ,  kaikyuname , siiresu , souurisu ,'0' AS z1,'0' AS z2,'0' AS z3, zaikosu , nyukoday , syainno FROM tbl_nyuko WHERE  syainname='" + syainname + "'";
                             MySqlCommand sqlCommand_sec = new MySqlCommand(query_sec, mysqlConnection_sec);
                             var result_sec = sqlCommand_sec.ExecuteReader();
                             if (result_sec.HasRows)
@@ -194,7 +194,10 @@ namespace kk_sms.inventoryManagement
                                 table.AddCell(cell);
                             }
                             mysqlConnection_sec.Close();
+                            // Creating an Area Break    
+                            AreaBreak Break = new AreaBreak();
                             document.Add(table);
+                            document.Add(Break);
                         }
                     }
                     else
