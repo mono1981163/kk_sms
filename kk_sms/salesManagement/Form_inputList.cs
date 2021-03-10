@@ -34,10 +34,10 @@ namespace kk_sms.salesManagement
                 string mysqlConf = "server=" + inidata["Mysql"]["server"] + ";user=" + inidata["Mysql"]["user"] + ";database=" + inidata["Mysql"]["database"] + ";port=" + inidata["Mysql"]["port"] + ";password=" + inidata["Mysql"]["password"] + ";Character Set=utf8";
                 var mysqlConnection = new MySqlConnection(mysqlConf);
                 mysqlConnection.Open();
-                string query = "SELECT COUNT(uid) FROM tbl_hanbai WHERE orderno != '0'";
+                string query = "SELECT COUNT(uid) FROM tbl_hanbai WHERE orderno != '0' AND hday >= CURDATE() AND hday < DATE_ADD(CURDATE(),INTERVAL 1 DAY);";
                 MySqlCommand sqlCommand = new MySqlCommand(query, mysqlConnection);
                 dataGridView1.RowCount = Int32.Parse(sqlCommand.ExecuteScalar().ToString());
-                query = "SELECT orderno, tokuisakiname, hinmei, toukyuname, kaikyuname, hanbaisu, syainno, tanka, kingaku FROM tbl_hanbai WHERE orderno !='0' ORDER BY uid;";
+                query = "SELECT orderno, tokuisakiname, hinmei, toukyuname, kaikyuname, hanbaisu, syainno, tanka, kingaku FROM tbl_hanbai WHERE orderno !='0' AND hday >= CURDATE() AND hday < DATE_ADD(CURDATE(),INTERVAL 1 DAY) ORDER BY uid;";
                 sqlCommand = new MySqlCommand(query, mysqlConnection);
                 var result = sqlCommand.ExecuteReader();
                 if (result.HasRows)
@@ -93,6 +93,25 @@ namespace kk_sms.salesManagement
             if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
             {
                 e.Handled = true;
+            }
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                var inputValue = textBox1.Text;
+                var rows = dataGridView1.Rows.Count;
+                if (inputValue == "")
+                {
+                }
+                else if (inputValue.All(char.IsDigit))
+                {
+                    for (int i = 0; i < rows; i++)
+                    {
+                        if (dataGridView1[0, i].Value.ToString() == inputValue)
+                        {
+                            dataGridView1.CurrentCell = this.dataGridView1[0, i];
+                            break;
+                        }
+                    }
+                }
             }
         }
     }

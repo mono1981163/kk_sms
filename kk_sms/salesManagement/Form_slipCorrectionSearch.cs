@@ -141,6 +141,30 @@ namespace kk_sms.salesManagement
             {
                 e.Handled = true;
             }
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                var inputValue = textBox1.Text;
+                var rows = dataGridView1.Rows.Count;
+                if (inputValue == "")
+                {
+                    label5.Text = "伝票番号が入力さわませんでした";
+                }
+                else if (inputValue.All(char.IsDigit))
+                {
+                    for (int i = 0; i < rows; i++)
+                    {
+                        if (dataGridView1[0, i].Value.ToString() == inputValue)
+                        {
+                            dataGridView1.CurrentCell = this.dataGridView1[0, i];
+                            break;
+                        }
+                        else if (i == rows - 1)
+                        {
+                            label5.Text = "入力さわた伝票番号はあらません！再入力してください";
+                        }
+                    }
+                }
+            }
         }
     }
 }

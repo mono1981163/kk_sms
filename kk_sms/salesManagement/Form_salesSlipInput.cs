@@ -100,8 +100,7 @@ namespace kk_sms.salesManagement
 
         private void Form_salesSlipInput_Load(object sender, EventArgs e)
         {
-            string today = DateTime.Now.ToString("yyyy/MM/dd");
-            label_date.Text = today;
+
         }
 
         public void textChange(string param)
@@ -244,6 +243,11 @@ namespace kk_sms.salesManagement
             }
         }
 
+        private void textBox1_GotFocus(object sender, EventArgs e)
+        {
+            label48.Text = "";
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             string syainno = "";
@@ -329,7 +333,7 @@ namespace kk_sms.salesManagement
                             mysqlConnection.Open();
                             query = "INSERT INTO tbl_hanbai (orderno, hday, syainno, tokuisakino, tokuisakiname, hinban, hinmei, toukyuno, toukyuname, kaikyuno, kaikyuname, irisu, nisugataname, hanbaisu, tanka, kingaku, kubun, saleskubun, accrualdate, serialno, ipflag) VALUES ('";
                             query = query + textBox1.Text + "', '";
-                            query = query + DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss.fff") + "', '";
+                            query = query + dateTimePicker1.Value.ToString("yyyy-MM-dd hh:mm:ss.fff") + "', '";
                             query = query + syainno + "', '";
                             query = query + m_clientno[i] + "', '";
                             query = query + m_clientname[i] + "', '";
@@ -432,7 +436,10 @@ namespace kk_sms.salesManagement
 
         private void textBox2_LostFocus(object sender, EventArgs e)
         {
-            label48.Text = "得意先番号が入力さわませんでした";
+            if (textBox1.Text == "") 
+            {
+                label48.Text = "得意先番号が入力さわませんでした";
+            }
             if (label32.Text=="" && textBox2.Text != "")
             {
                 textBox2.Text = "-";
@@ -497,7 +504,10 @@ namespace kk_sms.salesManagement
 
         private void textBox7_LostFocus(object sender, EventArgs e)
         {
-            label48.Text = "得意先番号が入力さわませんでした";
+            if (textBox1.Text == "")
+            {
+                label48.Text = "得意先番号が入力さわませんでした";
+            }
             if (label35.Text == "" && textBox7.Text != "")
             {
                 textBox7.Text = "-";
@@ -562,7 +572,10 @@ namespace kk_sms.salesManagement
 
         private void textBox10_LostFocus(object sender, EventArgs e)
         {
-            label48.Text = "得意先番号が入力さわませんでした";
+            if (textBox1.Text == "")
+            {
+                label48.Text = "得意先番号が入力さわませんでした";
+            }
             if (label37.Text == "" && textBox10.Text != "")
             {
                 textBox10.Text = "-";
@@ -626,7 +639,10 @@ namespace kk_sms.salesManagement
 
         private void textBox13_LostFocus(object sender, EventArgs e)
         {
-            label48.Text = "得意先番号が入力さわませんでした";
+            if (textBox1.Text == "")
+            {
+                label48.Text = "得意先番号が入力さわませんでした";
+            }
             if (label39.Text == "" && textBox13.Text != "")
             {
                 textBox13.Text = "-";
@@ -691,7 +707,10 @@ namespace kk_sms.salesManagement
 
         private void textBox16_LostFocus(object sender, EventArgs e)
         {
-            label48.Text = "得意先番号が入力さわませんでした";
+            if (textBox1.Text == "")
+            {
+                label48.Text = "得意先番号が入力さわませんでした";
+            }
             if (label41.Text == "" && textBox16.Text != "")
             {
                 textBox16.Text = "-";
@@ -756,7 +775,10 @@ namespace kk_sms.salesManagement
 
         private void textBox19_LostFocus(object sender, EventArgs e)
         {
-            label48.Text = "得意先番号が入力さわませんでした";
+            if (textBox1.Text == "")
+            {
+                label48.Text = "得意先番号が入力さわませんでした";
+            }
             if (label43.Text == "" && textBox19.Text != "")
             {
                 textBox19.Text = "-";
@@ -820,7 +842,10 @@ namespace kk_sms.salesManagement
 
         private void textBox22_LostFocus(object sender, EventArgs e)
         {
-            label48.Text = "得意先番号が入力さわませんでした";
+            if (textBox1.Text == "")
+            {
+                label48.Text = "得意先番号が入力さわませんでした";
+            }
             if (label45.Text == "" && textBox22.Text != "")
             {
                 textBox22.Text = "-";
@@ -884,7 +909,10 @@ namespace kk_sms.salesManagement
 
         private void textBox25_LostFocus(object sender, EventArgs e)
         {
-            label48.Text = "得意先番号が入力さわませんでした";
+            if (textBox1.Text == "")
+            {
+                label48.Text = "得意先番号が入力さわませんでした";
+            }
             if (label47.Text == "" && textBox25.Text != "")
             {
                 textBox25.Text = "-";

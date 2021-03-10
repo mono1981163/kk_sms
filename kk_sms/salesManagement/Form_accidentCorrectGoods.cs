@@ -106,6 +106,23 @@ namespace kk_sms.salesManagement
             {
                 e.Handled = true;
             }
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                var inputValue = textBox1.Text;
+                var rows = dataGridView1.Rows.Count;
+
+                if (inputValue.All(char.IsDigit))
+                {
+                    for (int i = 0; i < rows; i++)
+                    {
+                        if (dataGridView1[1, i].Value.ToString() == inputValue)
+                        {
+                            dataGridView1.CurrentCell = this.dataGridView1[1, i];
+                            break;
+                        }
+                    }
+                }
+            }
         }
     }
 }
