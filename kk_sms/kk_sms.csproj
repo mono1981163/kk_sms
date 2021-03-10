@@ -527,11 +527,11 @@
     <Compile Include="purchaseManagement\Form_input.Designer.cs">
       <DependentUpon>Form_input.cs</DependentUpon>
     </Compile>
-    <Compile Include="purchaseManagement\Form_print.cs">
+    <Compile Include="purchaseManagement\Form_printPurchase.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="purchaseManagement\Form_print.Designer.cs">
-      <DependentUpon>Form_print.cs</DependentUpon>
+    <Compile Include="purchaseManagement\Form_printPurchase.Designer.cs">
+      <DependentUpon>Form_printPurchase.cs</DependentUpon>
     </Compile>
     <Compile Include="salesManagement\Form_accidentClass.cs">
       <SubType>Form</SubType>
@@ -956,8 +956,8 @@
     <EmbeddedResource Include="purchaseManagement\Form_input.resx">
       <DependentUpon>Form_input.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="purchaseManagement\Form_print.resx">
-      <DependentUpon>Form_print.cs</DependentUpon>
+    <EmbeddedResource Include="purchaseManagement\Form_printPurchase.resx">
+      <DependentUpon>Form_printPurchase.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="salesManagement\Form_accidentClass.resx">
       <DependentUpon>Form_accidentClass.cs</DependentUpon>

@@ -123,7 +123,7 @@ namespace kk_sms.dailyReportPrinting
                     string mysqlConf = "server=" + inidata["Mysql"]["server"] + ";user=" + inidata["Mysql"]["user"] + ";database=" + inidata["Mysql"]["database"] + ";port=" + inidata["Mysql"]["port"] + ";password=" + inidata["Mysql"]["password"] + ";convert zero datetime=True" + ";Character Set=utf8";
                     var mysqlConnection = new MySqlConnection(mysqlConf);
                     mysqlConnection.Open();
-                    string query = "SELECT n.siireno , n.syainname , IFNULL((  CASE WHEN n.kuban = 0 THEN SUM(n.kingaku)    END ),'')  ,    IFNULL(( CASE WHEN n.kuban = 0 THEN SUM(n.kingaku) * (z.zei/100)    END ) ,'') , IFNULL((  CASE WHEN n.kuban = 2 THEN SUM(n.kingaku)    END ),'0')  ,    IFNULL(( CASE WHEN n.kuban = 2 THEN SUM(n.kingaku) * (z.zei/100)    END ),'0'),IFNULL(SUM(n.kingaku),''), IFNULL(SUM(n.kingaku) * (z.zei/100),'')  from tbl_nyuko n,m_zei z where nyukoday ='" + date +"' GROUP BY n.syainname ";
+                    string query = "SELECT n.siireno , n.syainname , IFNULL((  CASE WHEN n.kuban = 0 THEN SUM(n.kingaku)    END ),'0')  ,    IFNULL(( CASE WHEN n.kuban = 0 THEN SUM(n.kingaku) * (z.zei/100)    END ) ,'0') , IFNULL((  CASE WHEN n.kuban = 2 THEN SUM(n.kingaku)    END ),'0')  ,    IFNULL(( CASE WHEN n.kuban = 2 THEN SUM(n.kingaku) * (z.zei/100)    END ),'0'),IFNULL(SUM(n.kingaku),'0'), IFNULL(SUM(n.kingaku) * (z.zei/100),'0')  from tbl_nyuko n,m_zei z where nyukoday ='" + date +"' GROUP BY n.syainname ";
                     MySqlCommand sqlCommand = new MySqlCommand(query, mysqlConnection);
                     var result = sqlCommand.ExecuteReader();
                     if (result.HasRows)

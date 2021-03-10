@@ -110,6 +110,7 @@ namespace kk_sms.purchaseManagement
             this.textBox_search.Name = "textBox_search";
             this.textBox_search.Size = new System.Drawing.Size(64, 24);
             this.textBox_search.TabIndex = 5;
+            this.textBox_search.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_search_KeyPress);
             // 
             // button_search
             // 

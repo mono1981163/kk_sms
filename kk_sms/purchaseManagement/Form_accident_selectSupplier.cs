@@ -25,6 +25,7 @@ namespace kk_sms.purchaseManagement
 
         private void Form_selectRep_Load(object sender, EventArgs e)
         {
+            this.ActiveControl = textBox_search;
             try
             {
                 var iniparser = new FileIniDataParser();
@@ -86,6 +87,23 @@ namespace kk_sms.purchaseManagement
                 {
                     dataGridView1.CurrentCell = this.dataGridView1[2, i];
                     break;
+                }
+            }
+        }
+
+        private void textBox_search_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                var inputValue = textBox_search.Text;
+                var rows = dataGridView1.Rows.Count;
+                for (int i = 0; i < rows; i++)
+                {
+                    if (dataGridView1[1, i].Value.ToString() == inputValue)
+                    {
+                        dataGridView1.CurrentCell = this.dataGridView1[2, i];
+                        break;
+                    }
                 }
             }
         }
