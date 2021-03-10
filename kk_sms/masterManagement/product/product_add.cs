@@ -63,7 +63,9 @@ namespace kk_sms.masterManagement.product
                         var res = sqlorder.ExecuteReader();
                         if (res.RecordsAffected > 0)
                         {
-                            label_description.Text = "操作が成功しました。";
+                            label_description.Text = "正常に保存されました。";
+                            textBox_product_no.Clear();
+                            textBox_product_name.Clear();
                         }
                         else
                         {

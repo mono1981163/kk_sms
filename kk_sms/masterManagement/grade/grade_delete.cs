@@ -75,7 +75,7 @@ namespace kk_sms.masterManagement.grade
                 string query = "DELETE FROM m_tokyu WHERE toukyuno='" + grade_no + "'";
                 MySqlCommand sqlCommand = new MySqlCommand(query, mysqlConnection);
                 var result = sqlCommand.ExecuteReader();
-                if (result.HasRows)
+                if (result.RecordsAffected > 0)
                 {
                     description_label.Text = "正確に削除されました。";
                 }
@@ -84,7 +84,6 @@ namespace kk_sms.masterManagement.grade
                     description_label.Text = "エラーが発生しました。";
                 }
                 mysqlConnection.Close();
-                this.Close();
             }
             catch (Exception ex)
             {
